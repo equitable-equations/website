@@ -1,0 +1,44 @@
+{
+  "index.qmd": {
+    "index.html": "11d363b2"
+  },
+  "projects/index.qmd": {
+    "index.html": "99f43914"
+  },
+  "blog/third-post/index.ipynb": {
+    "index.html": "6b887995"
+  },
+  "blog/first-post/index.qmd": {
+    "index.html": "78694e55"
+  },
+  "blog/second-post/index.qmd": {
+    "index.html": "6ffeaf90"
+  },
+  "kn.qmd": {
+    "kn.html": "7a930d8b"
+  },
+  "yt.qmd": {
+    "yt.html": "1c3d1f8b"
+  },
+  "ee.qmd": {
+    "ee.html": "c5095215"
+  },
+  "nk.qmd": {
+    "nk.html": "25537b75"
+  },
+  "consulting.qmd": {
+    "consulting.html": "2646887a"
+  },
+  "cv/Gard CV 2024.Rmd": {
+    "Gard CV 2024.html": "f85405fe"
+  },
+  "cv.qmd": {
+    "cv.html": "caaee79c"
+  },
+  "pubs.qmd": {
+    "pubs.html": "dab8ff6d"
+  },
+  "license.qmd": {
+    "license.html": "b4da0396"
+  }
+}

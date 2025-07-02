@@ -1,0 +1,37 @@
+project:
+  type: website
+
+website:
+  title: "Andrew Gard, Ph.D"
+  open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
+  favicon: logo_transparent.png
+  navbar:
+    logo: logo_transparent.png
+    background: "#5798A6"
+    left:
+      - text: Equitable Equations
+        href: ee.qmd
+      - text: Normal Knowledge
+        href: nk.qmd
+      - text: Consulting
+        href: consulting.qmd
+      - text: Publications
+        href: pubs.qmd
+      - text: Narrative CV
+        href: cv.qmd
+  
+  page-footer:
+    border: true
+    left: "&#169; 2025 Andrew Gard"
+    center:  
+      - text: License
+        href: license.qmd
+    right: "made with ︎♥️ & [Quarto](https://quarto.org)"      
+        
+        
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    smooth-scroll: true
+    link-external-newwindow: true
+

@@ -1,0 +1,9 @@
+---
+title: "Equitable Equations"
+---
+
+(This page is under construction. Please excuse the mess.)
+
+If you're learning data science, you've come to the right place! My focus is R, but I've also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don't sleep on this last one, which is maybe the most important of all!
+
+Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities. 

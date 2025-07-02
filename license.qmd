@@ -1,0 +1,9 @@
+---
+title: "CC BY-NC-SA 4.0 license"
+---
+
+&#169; 2025 Andrew Gard
+
+My content is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license](https://creativecommons.org/licenses/by-nc-sa/4.0/). Basically, you can share and adapt this content with appropriate credit and notation of any changes. You may NOT use this material for any commercial purposes without my explicit written consent.
+
+Any opinions expressed are my own and do not reflect those of my employers, collaborators, or affiliates.

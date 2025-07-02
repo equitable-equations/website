@@ -1,0 +1,18 @@
+---
+title: "cv"
+---
+
+
+## {{< fa briefcase >}} Professional Experience
+
+::: {.d-inline-flex style="align-items:baseline"}
+::: p-2
+![](logo_beige.png){width="80px"}
+:::
+
+::: h3
+Lake Forest College
+:::
+:::
+
+[Data Scientist]{.h5} [Jan 2022 -- Present]{.cv-date}

@@ -1,0 +1,148 @@
+---
+name: Andrew
+surname: Gard
+position: "Assistant Professor of Mathematics"
+address: "Lake Forest College"
+phone: +1 847 735 6043
+email: "agard@lfc.edu"
+# www: https://www.youtube.com/c/EquitableEquations
+github: equitable-equations
+www: www.equitableequations.com
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Professional Experience
+
+```{r}
+library(tibble)
+tribble(
+  ~ Title, ~ Years, ~ Institution, ~ Where,
+  "Assistant Professor of Mathematics", "2019-present", "Lake Forest College", "Lake Forest, Illinois, USA",
+  "Assistant Professor of Mathematics", "2014-2019", "University of the Virgin Islands", "Saint Croix, US Virgin Islands",
+  "Visiting Assistant Professor of Mathematics", "2012-2014", "Ohio Wesleyan University", "Delaware, Ohio") %>%
+  detailed_entries(Title, Years, Institution, Where)
+# "Professor of Mathematics", "Summer 2012", "ONPS International Summer School", "Chengdu, China"
+```
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Doctor of Philosophy, Mathematics", "", "Ohio State University", "Columbus, Ohio",
+  "Bachelor of Science, Mathematics", "", "Ohio State University", "Columbus, Ohio",
+  "Bachelor of Arts, Philosophy", "", "Ohio State University", "Columbus, Ohio"
+) %>%
+  detailed_entries(Institution, Year, Degree)
+```
+
+# Software development
+
+- The **fqar** package. Tools in R for downloading and analyzing floristic quality assessment data\*. Published to the Central R Archive Network (CRAN) September 2022. Major update (0.5.3) April 2024. Visit the package website and install the development version at https://github.com/equitable-equations/fqar. 
+
+# Publications
+
+- Gard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. *Under contract with No Starch Press*. Expected completion: February 2025.
+
+- Gard, A., et. al. A new metric for measuring the conservancy of plant species\*. *Completed*. Expected submission to the *Journal of Applied Ecology*: October 2024.
+
+-  Gard, A., Myers A., & Luwabelwa, I (2024). The *fqar* package: R tools for analyzing floristic quality assessment data\*. *Journal of Open Source Software*, 9(96), 6366, https://doi.org/10.21105/joss.06366
+
+- Gard, A., & Wilson, O. (2023). Prediction intervals for interpolants\*. *Rocky Mountain Journal of Mathematics*. Accepted Sept. 2023, DOI pending.
+
+- Gard, A. (2023). Equal-speed pursuit and evasion on manifolds. *International Journal of Game Theory*, 1-14. https://doi.org/10.1007/s00182-023-00868-x
+
+- Gard, A. (2018). The wild goose chase problem. *The American Mathematical Monthly*, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785
+
+- Ekici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. *PRIMUS*, 27. https://doi.org/10.1080/10511970.2016.1214654
+
+- Gard, A. (2013). Procedings of the midstates conference of undergraduate research in mathematics and computer science (editor). Ohio Wesleyan University.
+
+- Gard, A. (2012). Reverse isoperimetric inequalities in $\mathbb{R}^3$ [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578
+
+*Includes undergraduate co-authors
+
+# Undergraduate Research
+
+Projects completed in the last five years include:
+
+* _Enhancing accessibility in Lake Forest College's data science major_, with Tobias Ellis. Summer 2024.
+
+* _Hypoxia reversal improves antimalarial immune response_, with Kateryna Malkina. Academic year 2023-2024.
+
+* _Investigating co-occurrence in Chicagoland floristic quality assessments_, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.
+
+* _Measuring success in Formula 1 racing_, with Lethu Mncube. Spring 2023. 
+
+* _Using machine learning to detect the presence of the onchocerca parasite_, with Jovana Jovanovska. Academic year 2022-2023.
+
+* _Developing quantitative tools for floristic quality assessment_, with Alexia Myers. Summer 2022
+
+* _Uncertainty in SIR epidemiological models_, with Kateryna Malkina. Summer 2022
+
+* _Exploring the broader impacts of the COVID-19 pandemic_, with Veronika Chernikov, Christopher Arzate-Benitez, and Kenza Kantour. Summer 2021
+
+* _The lion-and-man problem in the hyperbolic disk_, with Dipika Subramaniam. Academic year 2020-2021. 
+
+* _Prediction intervals for interpolants_, with Ethan Wilson. Summer 2020 Richter scholars program.
+
+# Teaching
+
+Over twelve years of experience as a college professor. Exceptionally high reviews from students, peers, and supervisors. **Specialization: statistics in the _R_ programming environment**. Selected recent courses:
+
+* _Introduction to Statistical Programming_. A project-based introduction to data science using _R_. Topics include data cleaning and visualization, multiple linear regression, analysis of variance, and bootstrapping.
+* _Mathematical Probability_. Discrete and continuous probability distributions, the law of large numbers, the central limit theorem, random variables, and moment-generating functions. 
+* _Introduction to Probability and Statistics_. Comprehensive coverage of standard statistical techniques utilizing _R_ as the primary technological tool.
+
+I am also qualified to teach a wide range of courses in advanced statistics and machine learning, including using Python. 
+
+# YouTube
+
+My YouTube channel, Equitable Equations (<https://www.youtube.com/c/EquitableEquations>), includes over 400 tutorials in statistics, R programming, and mathematics. It currently has over 32,000 subscribers and attracts more than 1,000,000 views annually. Some highlights:
+
+* _Logistic regression in R_ (https://youtu.be/E7J3M1oYVlc), which showcases my statistical and R programming skills.
+
+* _Ethical AI in Healthcare_ (https://youtu.be/jazrwe08BXk), a conversation with Dr. Heather Mattie of Harvard's T.H. Chan School of Public Health.
+
+* _Learn R in 39 minutes_ (https://youtu.be/yZ0bV2Afkjc), my most popular video to date with over 600,000 views since publication in February, 2023. 
+
+# Private consulting
+
+* Domain expert in statistics and R programming at _EnterpriseDNA_ (https://enterprisedna.co). Courses available: _Inferential statistics I_, _Inferential statistics II_. 
+
+\newpage 
+
+# Service
+
+Recent service to the Department of Mathematics and Computer Science and the Lake Forest College community:
+
+* _Panelist_ for the Humanities Day 2024 discussion of W.E.B. Du Bois with Drs. Tracey Taylor (Art) and Courtney Pierre Joseph (History and African American Studies).
+
+*	_Mentor_ for the 2023 Public Policy Research Challenge, where my team reached the finals. 
+
+*	_Data analyst_ for the Applied Data Center, spring 2023. Assisted Dr. Sean Menke (Biology) and his student researcher with statistical methods for their green rooftops project.
+
+* _Organizer and host_ of the 2023 S.M.A.R.T. Colloquium. Planned, publicized, and hosted a 150-person event featuring student speakers in Statistics, Mathematics, Algorithms, and Related Things. 
+
+* _Member_, 2023 Computer Science Search Committee.
+
+Recent roles within the Lake Forest College shared governance structure:
+
+* _Office of Faculty Development Junior Fellow_ (2022-present). Supports incoming tenure-track faculty members through training and mentorship. Advances the mission of the OFD through planning & attendance at events. 
+* _Pre-Health Advising Committee_ (2021-present). Provides support and guidance for students intending to go to graduate school in health-related fields. 
+
+* _Educational Advisory Committee_ (2023-present). Coordinates with LFC’s education department to support and mentor aspiring math teachers, particularly at the high school level.
+
+* _LFC-RFU Steering Committee_ (2020-2022). Supports Lake Forest College's partnership programs with Rosalind-Franklin University, particularly the Health Professionals Program. 
+
+* _Academic Honesty Judicial Board_ (2020-2022). Adjudicates claims of student misconduct in classes, including accusations of cheating on exams and plagarism of papers
+

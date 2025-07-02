@@ -1,0 +1,28 @@
+---
+title: "Andrew Gard, Ph.D"
+subtitle: "Statistics, Data Science, Mathematics"
+about: # https://quarto.org/docs/websites/website-about.html
+  template: trestles
+  image: me_contemplative_sm.jpg
+  image-shape: round
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/equitable-equations
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/andrew-gard-0953a5258/
+    - icon: envelope
+      text: Email
+      href: mailto:equitable.equations@gmail.com
+    - icon: youtube
+      text: Equitable Equations
+      href: https://www.youtube.com/@EquitableEquations 
+    - icon: youtube
+      text: Normal Knowledge
+      href: https://www.youtube.com/@NormalKnowledgeAG
+---
+
+Hi everybody! I'm a professor at Lake Forest College, just outside of Chicago, USA, where I teach data science and do research in quantitative botany and other areas. I'm somehow also a successful YouTuber, with channels focused on R programming ([Equitable Equations](ee.qmd)) and statics and machine learning ([Normal Knowledge](nk.qmd)). Poke around this site to learn more and connect with me using the links below.
+
+
