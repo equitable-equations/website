@@ -3,7 +3,7 @@ title: "Andrew Gard, Ph.D"
 subtitle: "Statistics, Data Science, Mathematics"
 about: # https://quarto.org/docs/websites/website-about.html
   template: trestles
-  image: me_contemplative_sm.jpg
+  image: assets/me_contemplative_sm.jpg
   image-shape: round
   links:
     - icon: github
@@ -23,6 +23,9 @@ about: # https://quarto.org/docs/websites/website-about.html
       href: https://www.youtube.com/@NormalKnowledgeAG
 ---
 
-Hi everybody! I'm a professor at Lake Forest College, just outside of Chicago, USA, where I teach data science and do research in quantitative botany and other areas. I'm somehow also a successful YouTuber, with channels focused on R programming ([Equitable Equations](ee.qmd)) and statics and machine learning ([Normal Knowledge](nk.qmd)). Poke around this site to learn more and connect with me using the links below.
+Hi everybody! I'm a professor at Lake Forest College, just outside of Chicago, USA, where I teach data science and do all sort of cool research, particularly in quantitative botany. I'm somehow also a successful YouTuber, with channels focused on R programming ([Equitable Equations](ee.qmd)) and statics and machine learning ([Normal Knowledge](nk.qmd)). Poke around this site to learn more and connect with me using the links below.
+
+This site is under heavy construction. Please excuse the dust and come back soon to see the finished product!
+
 
 

@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./logo_transparent.png" rel="icon" type="image/png">
+<link href="./assets/logo_transparent.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -40,7 +40,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-47435d7ddf025d6c7757ae92cdc366aa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-ffbff251675f308deb2d46995182c6b3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 <meta property="og:title" content="Normal Knowledge – Andrew Gard, Ph.D">
@@ -83,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./logo_transparent.png" alt="" class="navbar-logo">
+    <img src="./assets/logo_beige.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Andrew Gard, Ph.D</span>
@@ -111,6 +112,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./pubs.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">CV</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-cv">    
+        <li>
+    <a class="dropdown-item" href="./cv.html">
+ <span class="dropdown-text">Narrative</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./cv_formal.html">
+ <span class="dropdown-text">Formal</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -146,11 +162,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>(This page is under construction. Please excuse the mess.)</p>
-<p>My new YouTube channel, currently under construction, will offer complete courses on statistics and machine learning. Currently available:</p>
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg">Normal Knowledge College Statistics</a></li>
-</ul>
-<p>Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities.</p>
+<p>My new YouTube channel, currently under construction, will offer complete professional-grade courses on statistics and machine learning. Check out my debut offering, <a href="https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg">Normal Knowledge College Statistics</a>.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/pDBhmrT4ll4" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Like Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.</p>
 
 
 
@@ -241,6 +255,11 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -558,18 +577,40 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>© 2025 Andrew Gard</p>
+</div>   
     <div class="nav-footer-center">
-<p>Made with ❤️ and Quarto</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="./license.html">
+<p>License</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./about.html">
+<p>About this site</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./coc.html">
+<p>Code of conduct</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="./accessibility.html">
+<p>Accessibility</p>
+</a>
+  </li>  
+</ul>
     </div>
+    <div class="nav-footer-right">
+<p>made with ︎♥️ &amp; <a href="https://quarto.org">Quarto</a></p>
+</div>
   </div>
 </footer>
 
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

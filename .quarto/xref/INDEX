@@ -40,5 +40,17 @@
   },
   "license.qmd": {
     "license.html": "b4da0396"
+  },
+  "cv_formal.qmd": {
+    "cv_formal.html": "edde6f25"
+  },
+  "about.qmd": {
+    "about.html": "78913ad0"
+  },
+  "coc.qmd": {
+    "coc.html": "8f1c31b9"
+  },
+  "accessibility.qmd": {
+    "accessibility.html": "8ddbe71b"
   }
 }

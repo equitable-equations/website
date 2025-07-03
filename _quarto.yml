@@ -4,9 +4,9 @@ project:
 website:
   title: "Andrew Gard, Ph.D"
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
-  favicon: logo_transparent.png
+  favicon: assets/logo_transparent.png
   navbar:
-    logo: logo_transparent.png
+    logo: assets/logo_beige.png
     background: "#5798A6"
     left:
       - text: Equitable Equations
@@ -17,8 +17,13 @@ website:
         href: consulting.qmd
       - text: Publications
         href: pubs.qmd
-      - text: Narrative CV
-        href: cv.qmd
+      - text: CV
+        menu:
+          - text: Narrative
+            href: cv.qmd
+          - text: Formal
+            href: cv_formal.qmd
+          
   
   page-footer:
     border: true
@@ -26,6 +31,12 @@ website:
     center:  
       - text: License
         href: license.qmd
+      - text: About this site
+        href: about.qmd
+      - text: Code of conduct
+        href: coc.qmd
+      - text: Accessibility
+        href: accessibility.qmd
     right: "made with ︎♥️ & [Quarto](https://quarto.org)"      
         
         
