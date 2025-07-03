@@ -2,8 +2,10 @@
 title: "Equitable Equations"
 ---
 
-(This page is under construction. Please excuse the mess.)
+![](assets/logo_transparent.png){style="float: right; margin: 5px;" width=140}
 
-If you're learning data science, you've come to the right place! My focus is R, but I've also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don't sleep on this last one, which is maybe the most important of all!
+If you're learning data science, you've come to the right place! My focus is R, but I've also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don't sleep on this last one, which may be the most important of all!
 
-Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities. 
+Click [here](https://www.youtube.com/@EquitableEquations) to visit the channel. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MuETD4Irwa4?si=58Fd27v6bD0DgF5l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

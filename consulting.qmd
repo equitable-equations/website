@@ -4,13 +4,13 @@ title: "Consulting"
 
 I offer several forms of consulting, depending on your needs and budget.
 
-- Professional statistical and #Rstats consulting: $250/hour
+- Professional statistical modeling and #Rstats consulting: $250/hour
 
 - Video content for commercial enterprises (including online courses): $750+/recorded hour
 
 - One-on-one Zoom tutoring: $150/hour.
 
-My areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don't include extras such as quizzes for online courses. Sorry but, I'm usually unable to help with domain-specific packages such as those used in genomics. 
+My areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don't include extras such as quizzes for online courses. I'm usually unable to help with domain-specific packages such as those used in genomics - sorry! 
 
 Consulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me at one of the links below to discuss your specific needs and the costs associated.
 

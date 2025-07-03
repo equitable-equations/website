@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Andrew Gard, Ph.D",
     "section": "",
-    "text": "Hi everybody! I’m a professor at Lake Forest College, just outside of Chicago, USA, where I teach data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below.\ntest"
+    "text": "Hi everybody! I’m a professor at Lake Forest College, just outside of Chicago, USA, where I teach data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below.\nThis site is under heavy construction. Please excuse the dust and come back soon to see the finished product!"
   },
   {
     "objectID": "index.html#education",
@@ -67,21 +67,21 @@
     "href": "ee.html",
     "title": "Equitable Equations",
     "section": "",
-    "text": "(This page is under construction. Please excuse the mess.)\nIf you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which is maybe the most important of all!\nAlways free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
+    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to visit the channel. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
   },
   {
     "objectID": "nk.html",
     "href": "nk.html",
     "title": "Normal Knowledge",
     "section": "",
-    "text": "(This page is under construction. Please excuse the mess.)\nMy new YouTube channel, currently under construction, will offer complete professional-grade courses on statistics and machine learning. Check out my debut offering, Normal Knowledge College Statistics.\n\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\n\n\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
   },
   {
     "objectID": "consulting.html",
     "href": "consulting.html",
     "title": "Consulting",
     "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nProfessional statistical and #Rstats consulting: $250/hour\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. Sorry but, I’m usually unable to help with domain-specific packages such as those used in genomics.\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me at one of the links below to discuss your specific needs and the costs associated."
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nProfessional statistical modeling and #Rstats consulting: $250/hour\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me at one of the links below to discuss your specific needs and the costs associated."
   },
   {
     "objectID": "cv/Gard CV 2024.html",
@@ -151,7 +151,7 @@
     "href": "cv.html#research",
     "title": "Narrative Curriculum Vitae",
     "section": "Research",
-    "text": "Research\nI’m a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n(include pecha)\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
+    "text": "Research\nI’m a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
   },
   {
     "objectID": "cv.html#equitable-equations-march-2020-present",
