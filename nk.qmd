@@ -4,8 +4,12 @@ title: "Normal Knowledge"
 
 (This page is under construction. Please excuse the mess.)
 
-My new YouTube channel, currently under construction, will offer complete courses on statistics and machine learning. Currently available:
+My new YouTube channel, currently under construction, will offer complete professional-grade courses on statistics and machine learning. Check out my debut offering, [Normal Knowledge College Statistics](https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg).
 
-- [Normal Knowledge College Statistics](https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg)
+{{< video https://youtu.be/pDBhmrT4ll4 >}}
 
-Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities. 
+Like Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities. 
+
+
+
+
