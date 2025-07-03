@@ -1,18 +1,96 @@
 ---
-title: "cv"
+title: "Narrative Curriculum Vitae"
 ---
 
+This is an experimental reverse-chronological narration of my career path and learning journey. Click [here](/cv/Gard-CV-2024.pdf) to download a less interesting old-school CV, but in that case you might also take a moment to read a little about the problematic nature of [professionalism](https://ssir.org/articles/entry/the_bias_of_professionalism_standards).
 
-## {{< fa briefcase >}} Professional Experience
+## Research 
 
-::: {.d-inline-flex style="align-items:baseline"}
-::: p-2
-![](logo_beige.png){width="80px"}
-:::
+I'm a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites. 
 
-::: h3
-Lake Forest College
-:::
-:::
+(include pecha)
 
-[Data Scientist]{.h5} [Jan 2022 -- Present]{.cv-date}
+In this area, I've published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, *A new metric for evaluating the conservancy of plants*, is currently under review at the Journal of Applied Ecology.
+
+## Lake Forest College [August 2019 -- Present]{.cv-date}
+
+![](assets/lfc_logo2.jpg){style="float: right; margin: 5px;" width=140}
+
+
+I joined the Lake Forest College Department of Mathematics and Computer Science in the fall of 2019 in support of their data science program, which was then experiencing explosive growth and which continues to thrive today. Initially hired at the assistant level, I have since been promoted to associate professor with tenure. 
+
+In this role, I spearhead the statistics track of the DS major, focusing on R programming and mathematical probability/statistics. Because my Ph.D is in pure mathematics, I'm also able to support students with that focus, teaching and mentoring all levels of undergraduate math.
+
+A few of the many research projects I've mentored in my time here:
+
+* _Enhancing visual accessibility in Lake Forest College's data science major_, with Tobias Ellis. Summer 2024.
+
+* _Hypoxia reversal improves antimalarial immune response_, with Kateryna Malkina. Academic year 2023-2024.
+
+* _Investigating co-occurrence in Chicagoland floristic quality assessments_, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.
+
+* _Using machine learning to detect the presence of the onchocerca parasite_, with Jovana Jovanovska. Academic year 2022-2023.
+
+* _Developing quantitative tools for floristic quality assessment_, with Alexia Myers. Summer 2022.
+
+* _Uncertainty in SIR epidemiological models_, with Kateryna Malkina. Summer 2022.
+
+* _The lion-and-man problem in the hyperbolic disk_, with Dipika Subramaniam. Academic year 2020-2021. 
+
+* _Prediction intervals for interpolants_, with Ethan Wilson. Summer 2020 Richter scholars program.
+
+Several of these projects have led to peer-reviewed publications with undergraduate collaborators. For specifics, take a look at a complete list of my [publications](pubs.qmd).
+
+## Equitable Equations [March 2020 -- Present]{.cv-date}
+
+My YouTube channel Equitable Equations began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions. 
+
+Everything was very ad hoc for me back then, but I've learned a ton since and upgraded my production values substantially (note to self: a how-to page for youtubers in education etc). These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular vid will cross a million views soon. 
+
+{{< video https://youtu.be/yZ0bV2Afkjc>}}
+
+In the spring of 2025, in part reflecting my growing understanding of the Almighty YouTube Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing *Equitable Equations* to focus more narrowly on R. *Normal Knowledge* soft-launched that May, with a more official release still expected this fall. 
+
+## Collaboration []{.cv-date}
+
+The best part of running Equitable Equations has been the opportunity to meet and work with some immensely talented and kindhearted people, particularly in the #Rstats community. Together with Dr. Greg Martin, proprietor of R Programming 101, I co-host a YouTube series called "Today I learned in R," where the two of us (and sometimes guests) open up about some of the many discoveries we're constantly making as our data science skills continue to evolve. 
+
+On my own channel, I make it a point to bring in experts to weigh in on the real-world considerations of the topics I cover. Recently, I've spoken with Meghan Harris about version control, Abigail Haddad about job hunting in data science, and AI in healthcare with Heather Mattie. I love being around people smarter than I am!
+
+## The University of the Virgin Islands [August 2014 -- May 2019]{.cv-date}
+
+![](assets/uvi_logo2.jpg){style="float: right; margin: 5px;" width=140}
+
+
+Prior to moving to Chicago, I worked as a professor of mathematics on the island of St. Croix, USVI. The University of the Virgin Islands is an HBCU and the only degree-offering institution of higher learning in the Virgin Islands. As such, it serves an astounding variety of students, from elite high schoolers to working parents with little memory of earlier math classes. I miss that place every day. 
+
+As a math professor in an island community of under 40,000 people, I didn't have the luxury of staying within the narrow specialization of my Ph.D work. I interfaced with the local high schools, worked in the ms-ed program training in-service math teachers, supported a major oceanographic grant (VI-EPSCoR), and provided statistical and mathematical support to a wide variety of projects. 
+
+Although I was already transitioning to statistics and R programming during my time at UVI, my research focus remained in differential geometry. Toward the end of my tenure there, I published my most widely-read paper, *The Wild Goose Chase Problem*, in 2018. To this day, I still occasionally engage with pursuit/evasion problems and other differential games in my research.
+
+## Ohio Wesleyan University [August 2012 -- May 2014]{.cv-date}
+
+![](assets/owu_logo.png){style="float: right; margin: 5px;" width=140}
+
+Following completion of my doctorate in mathematics from Ohio State University, I was hired as a visiting assistant professor at OWU, in part to replace their statistics prof, who was away on sabbatical. I taught stats at the freshman and sophomore levels for two years, beginning my R career (pre-tidyverse!) and beginning to realize that pure math might not be my calling after all.
+
+During that time, I organized and chaired the Midstates Conference of Undergraduate Research in Computer Science and Mathematics (MCURCSM). Papers for this conference underwent academic peer-review as part of the acceptance process, which I organized via the EasyChair management system. I also edited and published the conference proceedings.
+
+## The Ohio State University [Ph.D. mathematics, March 2012]{.cv-date}
+
+![](assets/osu_logo.png){style="float: right; margin: 5px;" width=140}
+I did my graduate work at OSU, where I completed a doctoral thesis entitled *Reverse Isoperimetric Inequalities in $R^3$*, under the supervision of Dr. Fangyang Zheng. Roughly speaking, this problem considered surfaces of minimal area for fixed volume under curvature constraints. Such a constraint can be viewed as modeling surface tension in a physical medium such as the red blood cell. 
+
+Though I tutored student athletes as a side hustle, I somehow didn't attend a single OSU football game during this time. Don't hate me if you're from Michigan, please.
+
+## Previous experience []{.cv-date}
+
+I tried on a number of different hats before starting graduate school, some relevant to my current work, some not. I reviewed books for the Columbus Dispatch and Cleveland Plain Dealer back when local newspapers were a thing. I was a part-time data analyst for a public-opinion research company. I worked nights at a Red Roof Inn (ask me about that one if you see me). And I played bass in an indie rock band for awhile. 
+
+The cliche goes that life is short, but this hasn't been my experience. Life is long, and there's time enough to be different people over time if have the desire and your circumstances allow. Those people live inside me now, all of them speaking at once inside a modestly wise, very nerdy, middle aged head. 
+
+
+
+
+
+

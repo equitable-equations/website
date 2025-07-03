@@ -1,0 +1,5 @@
+---
+title: "Curriculum Vitae"
+---
+
+Click [here](/cv/Gard-CV-2024.pdf) for my formal academic CV. If you're a human being with an actual heart, you're better off looking at my narrative CV [here](cv.qmd). Why two CV's? Because [professionalism](https://ssir.org/articles/entry/the_bias_of_professionalism_standards). 
