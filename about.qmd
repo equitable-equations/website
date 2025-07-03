@@ -1,0 +1,13 @@
+---
+title: "About this site"
+---
+
+I built this site all by myself using Quarto, but the learning process that made that possible could never have happened in isolation. Some of the many resources that helped me along the way:
+
+- The brilliant websites of Silvia Canelón, Jadey Ryan, and others, all of which have public git repositories from which I've learned, drawn inspiration, and occasionally snatched a snippet or two of code.
+
+- Charlotte Wickham's video tutorials
+
+I'm also indebted to Tiara Wiggins at Twiggs Creative for the design of my logo and the all the branding on Equitable Equations. While she wasn't involved in the design of this site, I've continued to use the color palette she built for me and to draw inspiration from the work she put in. 
+
+
