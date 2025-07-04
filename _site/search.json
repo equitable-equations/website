@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Andrew Gard, Ph.D",
     "section": "",
-    "text": "Hi everybody! I’m a professor at Lake Forest College, just outside of Chicago, USA, where I teach data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below.\nThis site is under heavy construction. Please excuse the dust and come back soon to see the finished product!"
+    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below.\nThis site is under heavy construction. Please excuse the dust and come back soon to see the finished product!"
   },
   {
     "objectID": "index.html#education",
@@ -74,7 +74,7 @@
     "href": "nk.html",
     "title": "Normal Knowledge",
     "section": "",
-    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\n\n\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
   },
   {
     "objectID": "consulting.html",
@@ -95,7 +95,7 @@
     "href": "cv.html",
     "title": "Narrative Curriculum Vitae",
     "section": "",
-    "text": "This is an experimental reverse-chronological narration of my career path and learning journey. Click here to download a less interesting old-school CV, but in that case you might also take a moment to read a little about the problematic nature of professionalism."
+    "text": "This is an experimental reverse-chronological narration of my career path and learning journey. Click here to download a less interesting old-school CV, but in that case you might also take a moment to read a little about professionalism."
   },
   {
     "objectID": "pubs.html",
@@ -144,35 +144,35 @@
     "href": "cv.html#lake-forest-college-august-2019-present",
     "title": "Narrative Curriculum Vitae",
     "section": "Lake Forest College August 2019 – Present",
-    "text": "Lake Forest College August 2019 – Present\n\nI joined the Lake Forest College Department of Mathematics and Computer Science in the fall of 2019 in support of their data science program, which was then experiencing explosive growth and which continues to thrive today. Initially hired at the assistant level, I have since been promoted to associate professor with tenure.\nIn this role, I spearhead the statistics track of the DS major, focusing on R programming and mathematical probability/statistics. Because my Ph.D is in pure mathematics, I’m also able to support students with that focus, teaching and mentoring all levels of undergraduate math.\nA few of the many research projects I’ve mentored in my time here:\n\nEnhancing visual accessibility in Lake Forest College’s data science major, with Tobias Ellis. Summer 2024.\nHypoxia reversal improves antimalarial immune response, with Kateryna Malkina. Academic year 2023-2024.\nInvestigating co-occurrence in Chicagoland floristic quality assessments, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.\nUsing machine learning to detect the presence of the onchocerca parasite, with Jovana Jovanovska. Academic year 2022-2023.\nDeveloping quantitative tools for floristic quality assessment, with Alexia Myers. Summer 2022.\nUncertainty in SIR epidemiological models, with Kateryna Malkina. Summer 2022.\nThe lion-and-man problem in the hyperbolic disk, with Dipika Subramaniam. Academic year 2020-2021.\nPrediction intervals for interpolants, with Ethan Wilson. Summer 2020 Richter scholars program.\n\nSeveral of these projects have led to peer-reviewed publications with undergraduate collaborators. For specifics, take a look at a complete list of my publications."
+    "text": "Lake Forest College August 2019 – Present\n\nI joined the Lake Forest College Department of Mathematics and Computer Science in the fall of 2019 in support of their data science program, which was then experiencing explosive growth and which continues to thrive today. Initially hired at the assistant level, I have since been promoted to associate professor with tenure.\nIn this role, I spearhead the statistics track of the DS major, focusing on R programming and mathematical probability/statistics. Because my Ph.D is in pure mathematics, I’m able to support students with that focus as well, teaching and mentoring all levels of undergraduate math.\nA few of the many research projects I’ve mentored in my time here:\n\nEnhancing visual accessibility in Lake Forest College’s data science major, with Tobias Ellis. Summer 2024.\nHypoxia reversal improves antimalarial immune response, with Kateryna Malkina. Academic year 2023-2024.\nInvestigating co-occurrence in Chicagoland floristic quality assessments, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.\nUsing machine learning to detect the presence of the onchocerca parasite, with Jovana Jovanovska. Academic year 2022-2023.\nDeveloping quantitative tools for floristic quality assessment, with Alexia Myers. Summer 2022.\nUncertainty in SIR epidemiological models, with Kateryna Malkina. Summer 2022.\nThe lion-and-man problem in the hyperbolic disk, with Dipika Subramaniam. Academic year 2020-2021.\nPrediction intervals for interpolants, with Ethan Wilson. Summer 2020 Richter scholars program.\n\nSeveral of these projects have led to peer-reviewed publications with undergraduate collaborators. For specifics, take a look at a complete list of my publications."
   },
   {
     "objectID": "cv.html#research",
     "href": "cv.html#research",
     "title": "Narrative Curriculum Vitae",
     "section": "Research",
-    "text": "Research\nI’m a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
+    "text": "Research\nI’m a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
   },
   {
     "objectID": "cv.html#equitable-equations-march-2020-present",
     "href": "cv.html#equitable-equations-march-2020-present",
     "title": "Narrative Curriculum Vitae",
     "section": "Equitable Equations March 2020 – Present",
-    "text": "Equitable Equations March 2020 – Present\nMy YouTube channel Equitable Equations began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially (note to self: a how-to page for youtubers in education etc). These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular vid will cross a million views soon.\n\nIn the spring of 2025, in part reflecting my growing understanding of the Almighty YouTube Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more narrowly on R. Normal Knowledge soft-launched that May, with a more official release still expected this fall."
+    "text": "Equitable Equations March 2020 – Present\nMy YouTube channel Equitable Equations began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular vid will likely cross a million views soon. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release still expected this fall."
   },
   {
     "objectID": "cv.html#the-university-of-the-virgin-islands-august-2014-may-2019",
     "href": "cv.html#the-university-of-the-virgin-islands-august-2014-may-2019",
     "title": "Narrative Curriculum Vitae",
     "section": "The University of the Virgin Islands August 2014 – May 2019",
-    "text": "The University of the Virgin Islands August 2014 – May 2019\n\nPrior to moving to Chicago, I worked as a professor of mathematics on the island of St. Croix, USVI. The University of the Virgin Islands is an HBCU and the only degree-offering institution of higher learning in the Virgin Islands. As such, it serves an astounding variety of students, from elite high schoolers to working parents with little memory of earlier math classes. I miss that place every day.\nAs a math professor in an island community of under 40,000 people, I didn’t have the luxury of staying within the narrow specialization of my Ph.D work. I interfaced with the local high schools, worked in the ms-ed program training in-service math teachers, supported a major oceanographic grant (VI-EPSCoR), and provided statistical and mathematical support to a wide variety of projects.\nAlthough I was already transitioning to statistics and R programming during my time at UVI, my research focus remained in differential geometry. Toward the end of my tenure there, I published my most widely-read paper, The Wild Goose Chase Problem, in 2018. To this day, I still occasionally engage with pursuit/evasion problems and other differential games in my research."
+    "text": "The University of the Virgin Islands August 2014 – May 2019\n\nPrior to moving to Chicago, I worked as a professor of mathematics on the island of St. Croix, USVI. The University of the Virgin Islands is an HBCU and the only degree-offering institution of higher learning in the Virgin Islands. As such, it serves an astounding variety of students, from elite high schoolers to working parents with little memory of earlier math classes. I miss that place every day.\nAs a math professor in an island community of under 40,000 people, I didn’t have the luxury of staying within the narrow specialization of my Ph.D work. I interfaced with the local high schools, taught in a Masters of Arts programs for in-service math teachers, supported a major oceanographic grant (VI-EPSCoR), and provided statistical and mathematical support to a wide variety of projects.\nAlthough I was already transitioning to statistics and R programming during my time at UVI, my research focus remained in differential geometry. Toward the end of my tenure there, I published my most widely-read paper, The Wild Goose Chase Problem, in 2018 in the Journal of the American Mathematical Association. To this day, I still occasionally engage with pursuit/evasion problems and other differential games in my research."
   },
   {
     "objectID": "cv.html#ohio-wesleyan-university-august-2012-may-2014",
     "href": "cv.html#ohio-wesleyan-university-august-2012-may-2014",
     "title": "Narrative Curriculum Vitae",
     "section": "Ohio Wesleyan University August 2012 – May 2014",
-    "text": "Ohio Wesleyan University August 2012 – May 2014\n\nFollowing completion of my doctorate in mathematics from Ohio State University, I was hired as a visiting assistant professor at OWU, in part to replace their statistics prof, who was away on sabbatical. I taught stats at the freshman and sophomore levels for two years, beginning my R career (pre-tidyverse!) and beginning to realize that pure math might not be my calling after all.\nDuring that time, I organized and chaired the Midstates Conference of Undergraduate Research in Computer Science and Mathematics (MCURCSM). Papers for this conference underwent academic peer-review as part of the acceptance process, which I organized via the EasyChair management system. I also edited and published the conference proceedings."
+    "text": "Ohio Wesleyan University August 2012 – May 2014\n\nFollowing completion of my doctorate in mathematics from Ohio State University, I was hired as a visiting assistant professor at OWU, in part to replace their statistics prof, who was away on sabbatical. I taught stats at the freshman and sophomore levels for two years, beginning my R career and starting to come to grips with the fact that pure math might not be my calling after all.\nDuring that time, I organized and chaired the Midstates Conference of Undergraduate Research in Computer Science and Mathematics (MCURCSM). Papers for this conference underwent academic peer-review as part of the acceptance process, which I organized via the EasyChair management system. I also edited and published the conference proceedings."
   },
   {
     "objectID": "cv.html#the-ohio-state-university-ph.d.-mathematics-march-2012",
@@ -214,7 +214,7 @@
     "href": "cv.html#previous-experience",
     "title": "Narrative Curriculum Vitae",
     "section": "Previous experience ",
-    "text": "Previous experience \nI tried on a number of different hats before starting graduate school, some relevant to my current work, some not. I reviewed books for the Columbus Dispatch and Cleveland Plain Dealer back when local newspapers were a thing. I was a part-time data analyst for a public-opinion research company. I worked nights at a Red Roof Inn (ask me about that one if you see me). And I played bass in an indie rock band for awhile.\nThe cliche goes that life is short, but this hasn’t been my experience. Life is long, and there’s time enough to be different people over time if have the desire and your circumstances allow. Those people live inside me now, all of them speaking at once inside a modestly wise, very nerdy, middle aged head."
+    "text": "Previous experience \nI tried on a number of different hats before starting graduate school, some relevant to my current work, some not. I reviewed books for the Columbus Dispatch and Cleveland Plain Dealer back when local newspapers were a thing. I was a part-time data analyst for a public-opinion research company. I sat on the board of a small preschool. I worked nights at a Red Roof Inn (ask me about that one if you see me). And I played bass in an indie rock band for awhile.\nThe cliche goes that life is short, but this hasn’t been my experience. Life is long, and there’s time enough to be different people over time if have the desire and your circumstances allow. All of those people live within me now, chattering away inside a modestly wise, very nerdy, middle aged head."
   },
   {
     "objectID": "cv.html#previous-experience-pre-osu",
@@ -247,8 +247,15 @@
   {
     "objectID": "coc.html",
     "href": "coc.html",
-    "title": "Code of conduct",
+    "title": "Code of Conduct",
     "section": "",
     "text": "Under construction."
+  },
+  {
+    "objectID": "giving.html",
+    "href": "giving.html",
+    "title": "Giving",
+    "section": "",
+    "text": "Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting Chicago Scholars, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!"
   }
 ]

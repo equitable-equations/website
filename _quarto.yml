@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Andrew Gard, Ph.D"
@@ -31,10 +32,12 @@ website:
         href: license.qmd
       - text: About this site
         href: about.qmd
-      - text: Code of conduct
+      - text: CoC
         href: coc.qmd
       - text: Accessibility
         href: accessibility.qmd
+      - text: Giving
+        href: giving.qmd
     right: "made with ︎♥️ & [Quarto](https://quarto.org)"      
         
         
