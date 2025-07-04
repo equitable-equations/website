@@ -1,0 +1,177 @@
+[
+  {
+    "objectID": "accessibility.html",
+    "href": "accessibility.html",
+    "title": "Accessibility",
+    "section": "",
+    "text": "Under construction"
+  },
+  {
+    "objectID": "cv/Gard CV 2024.html",
+    "href": "cv/Gard CV 2024.html",
+    "title": "Professional Experience",
+    "section": "",
+    "text": "Professional Experience\n\n\n# A tibble: 3 × 5\n  what                                        when         with      where why  \n  &lt;chr&gt;                                       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lis&gt;\n1 Assistant Professor of Mathematics          2019-present Lake For… Lake… &lt;chr&gt;\n2 Assistant Professor of Mathematics          2014-2019    Universi… Sain… &lt;chr&gt;\n3 Visiting Assistant Professor of Mathematics 2012-2014    Ohio Wes… Dela… &lt;chr&gt;\n\n\n\n\nEducation\n\n\n# A tibble: 3 × 5\n  what                  when  with                              where why      \n  &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt;                             &lt;chr&gt; &lt;list&gt;   \n1 Ohio State University \"\"    Doctor of Philosophy, Mathematics &lt;NA&gt;  &lt;chr [0]&gt;\n2 Ohio State University \"\"    Bachelor of Science, Mathematics  &lt;NA&gt;  &lt;chr [0]&gt;\n3 Ohio State University \"\"    Bachelor of Arts, Philosophy      &lt;NA&gt;  &lt;chr [0]&gt;\n\n\n\n\nSoftware development\n\nThe fqar package. Tools in R for downloading and analyzing floristic quality assessment data*. Published to the Central R Archive Network (CRAN) September 2022. Major update (0.5.3) April 2024. Visit the package website and install the development version at https://github.com/equitable-equations/fqar.\n\n\n\nPublications\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: February 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Completed. Expected submission to the Journal of Applied Ecology: October 2024.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the midstates conference of undergraduate research in mathematics and computer science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors\n\n\nUndergraduate Research\nProjects completed in the last five years include:\n\nEnhancing accessibility in Lake Forest College’s data science major, with Tobias Ellis. Summer 2024.\nHypoxia reversal improves antimalarial immune response, with Kateryna Malkina. Academic year 2023-2024.\nInvestigating co-occurrence in Chicagoland floristic quality assessments, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.\nMeasuring success in Formula 1 racing, with Lethu Mncube. Spring 2023.\nUsing machine learning to detect the presence of the onchocerca parasite, with Jovana Jovanovska. Academic year 2022-2023.\nDeveloping quantitative tools for floristic quality assessment, with Alexia Myers. Summer 2022\nUncertainty in SIR epidemiological models, with Kateryna Malkina. Summer 2022\nExploring the broader impacts of the COVID-19 pandemic, with Veronika Chernikov, Christopher Arzate-Benitez, and Kenza Kantour. Summer 2021\nThe lion-and-man problem in the hyperbolic disk, with Dipika Subramaniam. Academic year 2020-2021.\nPrediction intervals for interpolants, with Ethan Wilson. Summer 2020 Richter scholars program.\n\n\n\nTeaching\nOver twelve years of experience as a college professor. Exceptionally high reviews from students, peers, and supervisors. Specialization: statistics in the R programming environment. Selected recent courses:\n\nIntroduction to Statistical Programming. A project-based introduction to data science using R. Topics include data cleaning and visualization, multiple linear regression, analysis of variance, and bootstrapping.\nMathematical Probability. Discrete and continuous probability distributions, the law of large numbers, the central limit theorem, random variables, and moment-generating functions.\nIntroduction to Probability and Statistics. Comprehensive coverage of standard statistical techniques utilizing R as the primary technological tool.\n\nI am also qualified to teach a wide range of courses in advanced statistics and machine learning, including using Python.\n\n\nYouTube\nMy YouTube channel, Equitable Equations (https://www.youtube.com/c/EquitableEquations), includes over 400 tutorials in statistics, R programming, and mathematics. It currently has over 32,000 subscribers and attracts more than 1,000,000 views annually. Some highlights:\n\nLogistic regression in R (https://youtu.be/E7J3M1oYVlc), which showcases my statistical and R programming skills.\nEthical AI in Healthcare (https://youtu.be/jazrwe08BXk), a conversation with Dr. Heather Mattie of Harvard’s T.H. Chan School of Public Health.\nLearn R in 39 minutes (https://youtu.be/yZ0bV2Afkjc), my most popular video to date with over 600,000 views since publication in February, 2023.\n\n\n\nPrivate consulting\n\nDomain expert in statistics and R programming at EnterpriseDNA (https://enterprisedna.co). Courses available: Inferential statistics I, Inferential statistics II.\n\n\n\n\nService\nRecent service to the Department of Mathematics and Computer Science and the Lake Forest College community:\n\nPanelist for the Humanities Day 2024 discussion of W.E.B. Du Bois with Drs. Tracey Taylor (Art) and Courtney Pierre Joseph (History and African American Studies).\nMentor for the 2023 Public Policy Research Challenge, where my team reached the finals.\nData analyst for the Applied Data Center, spring 2023. Assisted Dr. Sean Menke (Biology) and his student researcher with statistical methods for their green rooftops project.\nOrganizer and host of the 2023 S.M.A.R.T. Colloquium. Planned, publicized, and hosted a 150-person event featuring student speakers in Statistics, Mathematics, Algorithms, and Related Things.\nMember, 2023 Computer Science Search Committee.\n\nRecent roles within the Lake Forest College shared governance structure:\n\nOffice of Faculty Development Junior Fellow (2022-present). Supports incoming tenure-track faculty members through training and mentorship. Advances the mission of the OFD through planning & attendance at events.\nPre-Health Advising Committee (2021-present). Provides support and guidance for students intending to go to graduate school in health-related fields.\nEducational Advisory Committee (2023-present). Coordinates with LFC’s education department to support and mentor aspiring math teachers, particularly at the high school level.\nLFC-RFU Steering Committee (2020-2022). Supports Lake Forest College’s partnership programs with Rosalind-Franklin University, particularly the Health Professionals Program.\nAcademic Honesty Judicial Board (2020-2022). Adjudicates claims of student misconduct in classes, including accusations of cheating on exams and plagarism of papers"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Narrative Curriculum Vitae",
+    "section": "",
+    "text": "This is an experimental reverse-chronological narration of my career path and learning journey. Click here to download a less interesting old-school CV, but in that case you might also take a moment to read a little about professionalism."
+  },
+  {
+    "objectID": "cv.html#research",
+    "href": "cv.html#research",
+    "title": "Narrative Curriculum Vitae",
+    "section": "Research",
+    "text": "Research\nI’m a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
+  },
+  {
+    "objectID": "cv.html#lake-forest-college-august-2019-present",
+    "href": "cv.html#lake-forest-college-august-2019-present",
+    "title": "Narrative Curriculum Vitae",
+    "section": "Lake Forest College August 2019 – Present",
+    "text": "Lake Forest College August 2019 – Present\n\nI joined the Lake Forest College Department of Mathematics and Computer Science in the fall of 2019 in support of their data science program, which was then experiencing explosive growth and which continues to thrive today. Initially hired at the assistant level, I have since been promoted to associate professor with tenure.\nIn this role, I spearhead the statistics track of the DS major, focusing on R programming and mathematical probability/statistics. Because my Ph.D is in pure mathematics, I’m able to support students with that focus as well, teaching and mentoring all levels of undergraduate math.\nA few of the many research projects I’ve mentored in my time here:\n\nEnhancing visual accessibility in Lake Forest College’s data science major, with Tobias Ellis. Summer 2024.\nHypoxia reversal improves antimalarial immune response, with Kateryna Malkina. Academic year 2023-2024.\nInvestigating co-occurrence in Chicagoland floristic quality assessments, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.\nUsing machine learning to detect the presence of the onchocerca parasite, with Jovana Jovanovska. Academic year 2022-2023.\nDeveloping quantitative tools for floristic quality assessment, with Alexia Myers. Summer 2022.\nUncertainty in SIR epidemiological models, with Kateryna Malkina. Summer 2022.\nThe lion-and-man problem in the hyperbolic disk, with Dipika Subramaniam. Academic year 2020-2021.\nPrediction intervals for interpolants, with Ethan Wilson. Summer 2020 Richter scholars program.\n\nSeveral of these projects have led to peer-reviewed publications with undergraduate collaborators. For specifics, take a look at a complete list of my publications."
+  },
+  {
+    "objectID": "cv.html#equitable-equations-march-2020-present",
+    "href": "cv.html#equitable-equations-march-2020-present",
+    "title": "Narrative Curriculum Vitae",
+    "section": "Equitable Equations March 2020 – Present",
+    "text": "Equitable Equations March 2020 – Present\nMy YouTube channel Equitable Equations began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular vid will likely cross a million views soon. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release still expected this fall."
+  },
+  {
+    "objectID": "cv.html#collaboration",
+    "href": "cv.html#collaboration",
+    "title": "Narrative Curriculum Vitae",
+    "section": "Collaboration ",
+    "text": "Collaboration \nThe best part of running Equitable Equations has been the opportunity to meet and work with some immensely talented and kindhearted people, particularly in the #Rstats community. Together with Dr. Greg Martin, proprietor of R Programming 101, I co-host a YouTube series called “Today I learned in R,” where the two of us (and sometimes guests) open up about some of the many discoveries we’re constantly making as our data science skills continue to evolve.\nOn my own channel, I make it a point to bring in experts to weigh in on the real-world considerations of the topics I cover. Recently, I’ve spoken with Meghan Harris about version control, Abigail Haddad about job hunting in data science, and AI in healthcare with Heather Mattie. I love being around people smarter than I am!"
+  },
+  {
+    "objectID": "cv.html#the-university-of-the-virgin-islands-august-2014-may-2019",
+    "href": "cv.html#the-university-of-the-virgin-islands-august-2014-may-2019",
+    "title": "Narrative Curriculum Vitae",
+    "section": "The University of the Virgin Islands August 2014 – May 2019",
+    "text": "The University of the Virgin Islands August 2014 – May 2019\n\nPrior to moving to Chicago, I worked as a professor of mathematics on the island of St. Croix, USVI. The University of the Virgin Islands is an HBCU and the only degree-offering institution of higher learning in the Virgin Islands. As such, it serves an astounding variety of students, from elite high schoolers to working parents with little memory of earlier math classes. I miss that place every day.\nAs a math professor in an island community of under 40,000 people, I didn’t have the luxury of staying within the narrow specialization of my Ph.D work. I interfaced with the local high schools, taught in a Masters of Arts programs for in-service math teachers, supported a major oceanographic grant (VI-EPSCoR), and provided statistical and mathematical support to a wide variety of projects.\nAlthough I was already transitioning to statistics and R programming during my time at UVI, my research focus remained in differential geometry. Toward the end of my tenure there, I published my most widely-read paper, The Wild Goose Chase Problem, in 2018 in the Journal of the American Mathematical Association. To this day, I still occasionally engage with pursuit/evasion problems and other differential games in my research."
+  },
+  {
+    "objectID": "cv.html#ohio-wesleyan-university-august-2012-may-2014",
+    "href": "cv.html#ohio-wesleyan-university-august-2012-may-2014",
+    "title": "Narrative Curriculum Vitae",
+    "section": "Ohio Wesleyan University August 2012 – May 2014",
+    "text": "Ohio Wesleyan University August 2012 – May 2014\n\nFollowing completion of my doctorate in mathematics from Ohio State University, I was hired as a visiting assistant professor at OWU, in part to replace their statistics prof, who was away on sabbatical. I taught stats at the freshman and sophomore levels for two years, beginning my R career and starting to come to grips with the fact that pure math might not be my calling after all.\nDuring that time, I organized and chaired the Midstates Conference of Undergraduate Research in Computer Science and Mathematics (MCURCSM). Papers for this conference underwent academic peer-review as part of the acceptance process, which I organized via the EasyChair management system. I also edited and published the conference proceedings."
+  },
+  {
+    "objectID": "cv.html#the-ohio-state-university-ph.d.-mathematics-march-2012",
+    "href": "cv.html#the-ohio-state-university-ph.d.-mathematics-march-2012",
+    "title": "Narrative Curriculum Vitae",
+    "section": "The Ohio State University Ph.D. mathematics, March 2012",
+    "text": "The Ohio State University Ph.D. mathematics, March 2012\n I did my graduate work at OSU, where I completed a doctoral thesis entitled Reverse Isoperimetric Inequalities in \\(R^3\\), under the supervision of Dr. Fangyang Zheng. Roughly speaking, this problem considered surfaces of minimal area for fixed volume under curvature constraints. Such a constraint can be viewed as modeling surface tension in a physical medium such as the red blood cell.\nThough I tutored student athletes as a side hustle, I somehow didn’t attend a single OSU football game during this time. Don’t hate me if you’re from Michigan, please."
+  },
+  {
+    "objectID": "cv.html#previous-experience",
+    "href": "cv.html#previous-experience",
+    "title": "Narrative Curriculum Vitae",
+    "section": "Previous experience ",
+    "text": "Previous experience \nI tried on a number of different hats before starting graduate school, some relevant to my current work, some not. I reviewed books for the Columbus Dispatch and Cleveland Plain Dealer back when local newspapers were a thing. I was a part-time data analyst for a public-opinion research company. I sat on the board of a small preschool. I worked nights at a Red Roof Inn (ask me about that one if you see me). And I played bass in an indie rock band for awhile.\nThe cliche goes that life is short, but this hasn’t been my experience. Life is long, and there’s time enough to be different people over time if have the desire and your circumstances allow. All of those people live within me now, chattering away inside a modestly wise, very nerdy, middle aged head."
+  },
+  {
+    "objectID": "giving.html",
+    "href": "giving.html",
+    "title": "Giving",
+    "section": "",
+    "text": "Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting Chicago Scholars, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!"
+  },
+  {
+    "objectID": "blog/second-post/index.html",
+    "href": "blog/second-post/index.html",
+    "title": "Second Post",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Amet cursus sit amet dictum sit amet. Eget duis at tellus at urna condimentum. Convallis aenean et tortor at risus viverra. Tincidunt ornare massa eget egestas purus viverra accumsan. Et malesuada fames ac turpis egestas. At imperdiet dui accumsan sit amet. Ut ornare lectus sit amet est placerat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Mattis enim ut tellus elementum sagittis. Dui id ornare arcu odio ut. Natoque penatibus et magnis dis. Libero justo laoreet sit amet cursus sit. Sed faucibus turpis in eu. Tempus iaculis urna id volutpat lacus laoreet.\nPhasellus vestibulum lorem sed risus. Eget felis eget nunc lobortis mattis. Sit amet aliquam id diam maecenas ultricies. Egestas maecenas pharetra convallis posuere morbi. Etiam erat velit scelerisque in dictum non consectetur a erat. Cras fermentum odio eu feugiat pretium nibh ipsum consequat. Viverra accumsan in nisl nisi scelerisque. Et netus et malesuada fames ac. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Eget lorem dolor sed viverra ipsum nunc aliquet. Ultrices dui sapien eget mi proin sed libero enim sed. Ultricies mi eget mauris pharetra et ultrices neque. Ipsum suspendisse ultrices gravida dictum. A arcu cursus vitae congue mauris rhoncus aenean vel. Gravida arcu ac tortor dignissim convallis. Nulla posuere sollicitudin aliquam ultrices."
+  },
+  {
+    "objectID": "blog/third-post/index.html",
+    "href": "blog/third-post/index.html",
+    "title": "Third Blog Post",
+    "section": "",
+    "text": "The source for any page in your website could also be a Jupyter Notebook. This one is third-post/index.ipynb.\nHere’s an example I borrowed from the Seaborn docs:\n\nimport seaborn as sns\n\nsns.set_theme(style=\"whitegrid\")\n\n# Load the diamonds dataset\ndiamonds = sns.load_dataset(\"diamonds\")\n\n# Plot the distribution of clarity ratings, conditional on carat\nsns.displot(\n    data=diamonds,\n    x=\"carat\", hue=\"cut\",\n    kind=\"kde\", height=4, aspect=1.5,\n    multiple=\"fill\", clip=(0, None),\n    palette=\"ch:rot=-.25,hue=1,light=.75\",   \n)"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "cv_formal.html",
+    "href": "cv_formal.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nProfessional statistical modeling and #Rstats consulting: $250/hour\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me at one of the links below to discuss your specific needs and the costs associated."
+  },
+  {
+    "objectID": "nk.html",
+    "href": "nk.html",
+    "title": "Normal Knowledge",
+    "section": "",
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Andrew Gard, Ph.D",
+    "section": "",
+    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below.\nThis site is under heavy construction. Please excuse the dust and come back soon to see the finished product!"
+  },
+  {
+    "objectID": "blog/first-post/index.html",
+    "href": "blog/first-post/index.html",
+    "title": "First Post",
+    "section": "",
+    "text": "Sed risus ultricies tristique nulla aliquet. Neque volutpat ac tincidunt vitae semper quis lectus nulla.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi bibendum neque. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Velit sed ullamcorper morbi tincidunt ornare massa. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Lobortis feugiat vivamus at augue eget arcu. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Mauris a diam maecenas sed enim ut sem viverra aliquet. Enim ut tellus elementum sagittis vitae et leo duis. Molestie at elementum eu facilisis sed odio morbi quis commodo. Sapien pellentesque habitant morbi tristique senectus. Quam vulputate dignissim suspendisse in est. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget.\nVelit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Tortor at auctor urna nunc id. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Aliquet nibh praesent tristique magna sit amet purus. Tristique senectus et netus et malesuada fames ac turpis. Hac habitasse platea dictumst quisque. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Iaculis at erat pellentesque adipiscing. Cras tincidunt lobortis feugiat vivamus. Nisi est sit amet facilisis magna etiam. Pharetra pharetra massa massa ultricies mi quis hendrerit. Vitae sapien pellentesque habitant morbi tristique senectus. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About this site",
+    "section": "",
+    "text": "I built this site all by myself using Quarto, but the learning process that made that possible could never have happened in isolation. Some of the many resources that helped me along the way:\n\nThe brilliant websites of Silvia Canelón, Jadey Ryan, and others, all of which have public git repositories from which I’ve learned, drawn inspiration, and occasionally snatched a snippet or two of code.\nCharlotte Wickham’s video tutorials\n\nI’m also indebted to Tiara Wiggins at Twiggs Creative for the design of my logo and the all the branding on Equitable Equations. While she wasn’t involved in the design of this site, I’ve continued to use the color palette she built for me and to draw inspiration from the work she put in."
+  },
+  {
+    "objectID": "pubs.html",
+    "href": "pubs.html",
+    "title": "Publications",
+    "section": "",
+    "text": "(This page is under construction. Please excuse the mess.)\nIn addition to teaching full-time, maintaining two YouTube channels, and consulting part-time, I publish consistently in data science and mathematics, often with undergraduate collaborators. Papers behind paywalls can always be downloaded for free from my GitHub.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: Winter, 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at The Journal of Applied Ecology.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "CC BY-NC-SA 4.0 license",
+    "section": "",
+    "text": "© 2025 Andrew Gard\nMy content is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license. Basically, you can share and adapt this content with appropriate credit and notation of any changes. You may NOT use this material for any commercial purposes without my explicit written consent.\nAny opinions expressed are my own and do not reflect those of my employers, collaborators, or affiliates."
+  },
+  {
+    "objectID": "ee.html",
+    "href": "ee.html",
+    "title": "Equitable Equations",
+    "section": "",
+    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to visit the channel. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
+  }
+]
