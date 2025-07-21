@@ -6,7 +6,7 @@ This is an experimental reverse-chronological narration of my career path and le
 
 ## Research 
 
-I'm a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites. 
+I'm a polymath researcher, interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yptZbKvTjBw?si=SzQNY39M0vga-ZMP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -42,13 +42,15 @@ Several of these projects have led to peer-reviewed publications with undergradu
 
 ## Equitable Equations [March 2020 -- Present]{.cv-date}
 
-My YouTube channel Equitable Equations began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions. 
+![](assets/logo_transparent.png){style="float: right; margin: 5px;" width=140}
 
-Everything was very ad hoc for me back then, but I've learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular vid will likely cross a million views soon. All of this is very strange to me.
+My YouTube channel, *Equitable Equations*, began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions. 
+
+Everything was very ad hoc for me back then, but I've learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. All of this is very strange to me.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yZ0bV2Afkjc?si=kJ6yF34-1ZChKtfI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-In the spring of 2025, in part reflecting my growing understanding of YouTube's Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing *Equitable Equations* to focus more specifically on R. *Normal Knowledge* soft-launched that May, with a more official release still expected this fall. 
+In the spring of 2025, in part reflecting my growing understanding of YouTube's Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing *Equitable Equations* to focus more specifically on R. [Normal Knowledge](https://www.youtube.com/@NormalKnowledgeAG) soft-launched that May, with a more official release coming soon. 
 
 ## Collaboration []{.cv-date}
 

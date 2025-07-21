@@ -7,7 +7,6 @@ website:
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   favicon: assets/logo_transparent.png
   navbar:
-    logo: assets/logo_beige.png
     background: "#5798A6"
     left:
       - text: Equitable Equations
