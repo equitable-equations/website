@@ -25,7 +25,7 @@
     "href": "cv.html#research",
     "title": "Narrative Curriculum Vitae",
     "section": "Research",
-    "text": "Research\nI’m a polymath researcher, broadly interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
+    "text": "Research\nI’m a polymath researcher, interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
   },
   {
     "objectID": "cv.html#lake-forest-college-august-2019-present",
@@ -39,7 +39,7 @@
     "href": "cv.html#equitable-equations-march-2020-present",
     "title": "Narrative Curriculum Vitae",
     "section": "Equitable Equations March 2020 – Present",
-    "text": "Equitable Equations March 2020 – Present\nMy YouTube channel Equitable Equations began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular vid will likely cross a million views soon. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release still expected this fall."
+    "text": "Equitable Equations March 2020 – Present\n\nMy YouTube channel, Equitable Equations, began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release coming soon."
   },
   {
     "objectID": "cv.html#collaboration",
@@ -116,7 +116,7 @@
     "href": "coc.html",
     "title": "Code of Conduct",
     "section": "",
-    "text": "Under construction."
+    "text": "Under construction. For now, just be cool."
   },
   {
     "objectID": "consulting.html",
@@ -137,7 +137,7 @@
     "href": "index.html",
     "title": "Andrew Gard, Ph.D",
     "section": "",
-    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below.\nThis site is under heavy construction. Please excuse the dust and come back soon to see the finished product!"
+    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links on the left\nThis site is under heavy construction. Please excuse the dust and come back soon to see the finished product!"
   },
   {
     "objectID": "blog/first-post/index.html",
