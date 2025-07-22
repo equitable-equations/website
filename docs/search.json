@@ -77,74 +77,11 @@
     "text": "Previous experience \nI tried on a number of different hats before starting graduate school, some relevant to my current work, some not. I reviewed books for the Columbus Dispatch and Cleveland Plain Dealer back when local newspapers were a thing. I was a part-time data analyst for a public-opinion research company. I sat on the board of a small preschool. I worked nights at a Red Roof Inn (ask me about that one if you see me). And I played bass in an indie rock band for awhile.\nThe cliche goes that life is short, but this hasn’t been my experience. Life is long, and there’s time enough to be different people over time if have the desire and your circumstances allow. All of those people live within me now, chattering away inside a modestly wise, very nerdy, middle aged head."
   },
   {
-    "objectID": "giving.html",
-    "href": "giving.html",
-    "title": "Giving",
+    "objectID": "pubs.html",
+    "href": "pubs.html",
+    "title": "Publications",
     "section": "",
-    "text": "Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting Chicago Scholars, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!"
-  },
-  {
-    "objectID": "blog/second-post/index.html",
-    "href": "blog/second-post/index.html",
-    "title": "Second Post",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Amet cursus sit amet dictum sit amet. Eget duis at tellus at urna condimentum. Convallis aenean et tortor at risus viverra. Tincidunt ornare massa eget egestas purus viverra accumsan. Et malesuada fames ac turpis egestas. At imperdiet dui accumsan sit amet. Ut ornare lectus sit amet est placerat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Mattis enim ut tellus elementum sagittis. Dui id ornare arcu odio ut. Natoque penatibus et magnis dis. Libero justo laoreet sit amet cursus sit. Sed faucibus turpis in eu. Tempus iaculis urna id volutpat lacus laoreet.\nPhasellus vestibulum lorem sed risus. Eget felis eget nunc lobortis mattis. Sit amet aliquam id diam maecenas ultricies. Egestas maecenas pharetra convallis posuere morbi. Etiam erat velit scelerisque in dictum non consectetur a erat. Cras fermentum odio eu feugiat pretium nibh ipsum consequat. Viverra accumsan in nisl nisi scelerisque. Et netus et malesuada fames ac. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Eget lorem dolor sed viverra ipsum nunc aliquet. Ultrices dui sapien eget mi proin sed libero enim sed. Ultricies mi eget mauris pharetra et ultrices neque. Ipsum suspendisse ultrices gravida dictum. A arcu cursus vitae congue mauris rhoncus aenean vel. Gravida arcu ac tortor dignissim convallis. Nulla posuere sollicitudin aliquam ultrices."
-  },
-  {
-    "objectID": "blog/third-post/index.html",
-    "href": "blog/third-post/index.html",
-    "title": "Third Blog Post",
-    "section": "",
-    "text": "The source for any page in your website could also be a Jupyter Notebook. This one is third-post/index.ipynb.\nHere’s an example I borrowed from the Seaborn docs:\n\nimport seaborn as sns\n\nsns.set_theme(style=\"whitegrid\")\n\n# Load the diamonds dataset\ndiamonds = sns.load_dataset(\"diamonds\")\n\n# Plot the distribution of clarity ratings, conditional on carat\nsns.displot(\n    data=diamonds,\n    x=\"carat\", hue=\"cut\",\n    kind=\"kde\", height=4, aspect=1.5,\n    multiple=\"fill\", clip=(0, None),\n    palette=\"ch:rot=-.25,hue=1,light=.75\",   \n)"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "cv_formal.html",
-    "href": "cv_formal.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "Under construction. For now, just be cool."
-  },
-  {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Consulting",
-    "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
-  },
-  {
-    "objectID": "nk.html",
-    "href": "nk.html",
-    "title": "Normal Knowledge",
-    "section": "",
-    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Andrew Gard, Ph.D",
-    "section": "",
-    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links on the lower left.\nThis site is still under construction. Please excuse the dust and come back soon to see the finished product!"
-  },
-  {
-    "objectID": "blog/first-post/index.html",
-    "href": "blog/first-post/index.html",
-    "title": "First Post",
-    "section": "",
-    "text": "Sed risus ultricies tristique nulla aliquet. Neque volutpat ac tincidunt vitae semper quis lectus nulla.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi bibendum neque. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Velit sed ullamcorper morbi tincidunt ornare massa. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Lobortis feugiat vivamus at augue eget arcu. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Mauris a diam maecenas sed enim ut sem viverra aliquet. Enim ut tellus elementum sagittis vitae et leo duis. Molestie at elementum eu facilisis sed odio morbi quis commodo. Sapien pellentesque habitant morbi tristique senectus. Quam vulputate dignissim suspendisse in est. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget.\nVelit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Tortor at auctor urna nunc id. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Aliquet nibh praesent tristique magna sit amet purus. Tristique senectus et netus et malesuada fames ac turpis. Hac habitasse platea dictumst quisque. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Iaculis at erat pellentesque adipiscing. Cras tincidunt lobortis feugiat vivamus. Nisi est sit amet facilisis magna etiam. Pharetra pharetra massa massa ultricies mi quis hendrerit. Vitae sapien pellentesque habitant morbi tristique senectus. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae."
+    "text": "In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: Winter, 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at Ecological Applications.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
   },
   {
     "objectID": "about.html",
@@ -154,11 +91,81 @@
     "text": "I built this site all by myself using Quarto, but the learning process that made that possible could never have happened in isolation. Some of the many resources that helped me along the way:\n\nThe brilliant websites of Silvia Canelón, Jadey Ryan, and others, all of which have public git repositories from which I’ve learned, drawn inspiration, and occasionally snatched a snippet or two of code.\nCharlotte Wickham’s video tutorials\n\nI’m also indebted to Tiara Wiggins at Twiggs Creative for the design of my logo and the all the branding on Equitable Equations. While she wasn’t involved in the design of this site, I’ve continued to use the color palette she built for me and to draw inspiration from the work she put in."
   },
   {
-    "objectID": "pubs.html",
-    "href": "pubs.html",
-    "title": "Publications",
+    "objectID": "blog/first-post/index.html",
+    "href": "blog/first-post/index.html",
+    "title": "First Post",
     "section": "",
-    "text": "In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: Winter, 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at Ecological Applications.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
+    "text": "Sed risus ultricies tristique nulla aliquet. Neque volutpat ac tincidunt vitae semper quis lectus nulla.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi bibendum neque. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Velit sed ullamcorper morbi tincidunt ornare massa. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Lobortis feugiat vivamus at augue eget arcu. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Mauris a diam maecenas sed enim ut sem viverra aliquet. Enim ut tellus elementum sagittis vitae et leo duis. Molestie at elementum eu facilisis sed odio morbi quis commodo. Sapien pellentesque habitant morbi tristique senectus. Quam vulputate dignissim suspendisse in est. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget.\nVelit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Tortor at auctor urna nunc id. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Aliquet nibh praesent tristique magna sit amet purus. Tristique senectus et netus et malesuada fames ac turpis. Hac habitasse platea dictumst quisque. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Iaculis at erat pellentesque adipiscing. Cras tincidunt lobortis feugiat vivamus. Nisi est sit amet facilisis magna etiam. Pharetra pharetra massa massa ultricies mi quis hendrerit. Vitae sapien pellentesque habitant morbi tristique senectus. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Andrew Gard, Ph.D",
+    "section": "",
+    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links on the lower left.\nThis site is still under construction. Please excuse the dust and come back soon to see the finished product!"
+  },
+  {
+    "objectID": "nk.html",
+    "href": "nk.html",
+    "title": "Normal Knowledge",
+    "section": "",
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
+    "objectID": "cv_formal.html",
+    "href": "cv_formal.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog/third-post/index.html",
+    "href": "blog/third-post/index.html",
+    "title": "Third Blog Post",
+    "section": "",
+    "text": "The source for any page in your website could also be a Jupyter Notebook. This one is third-post/index.ipynb.\nHere’s an example I borrowed from the Seaborn docs:\n\nimport seaborn as sns\n\nsns.set_theme(style=\"whitegrid\")\n\n# Load the diamonds dataset\ndiamonds = sns.load_dataset(\"diamonds\")\n\n# Plot the distribution of clarity ratings, conditional on carat\nsns.displot(\n    data=diamonds,\n    x=\"carat\", hue=\"cut\",\n    kind=\"kde\", height=4, aspect=1.5,\n    multiple=\"fill\", clip=(0, None),\n    palette=\"ch:rot=-.25,hue=1,light=.75\",   \n)"
+  },
+  {
+    "objectID": "blog/second-post/index.html",
+    "href": "blog/second-post/index.html",
+    "title": "Second Post",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Amet cursus sit amet dictum sit amet. Eget duis at tellus at urna condimentum. Convallis aenean et tortor at risus viverra. Tincidunt ornare massa eget egestas purus viverra accumsan. Et malesuada fames ac turpis egestas. At imperdiet dui accumsan sit amet. Ut ornare lectus sit amet est placerat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Mattis enim ut tellus elementum sagittis. Dui id ornare arcu odio ut. Natoque penatibus et magnis dis. Libero justo laoreet sit amet cursus sit. Sed faucibus turpis in eu. Tempus iaculis urna id volutpat lacus laoreet.\nPhasellus vestibulum lorem sed risus. Eget felis eget nunc lobortis mattis. Sit amet aliquam id diam maecenas ultricies. Egestas maecenas pharetra convallis posuere morbi. Etiam erat velit scelerisque in dictum non consectetur a erat. Cras fermentum odio eu feugiat pretium nibh ipsum consequat. Viverra accumsan in nisl nisi scelerisque. Et netus et malesuada fames ac. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Eget lorem dolor sed viverra ipsum nunc aliquet. Ultrices dui sapien eget mi proin sed libero enim sed. Ultricies mi eget mauris pharetra et ultrices neque. Ipsum suspendisse ultrices gravida dictum. A arcu cursus vitae congue mauris rhoncus aenean vel. Gravida arcu ac tortor dignissim convallis. Nulla posuere sollicitudin aliquam ultrices."
+  },
+  {
+    "objectID": "giving.html",
+    "href": "giving.html",
+    "title": "Giving",
+    "section": "",
+    "text": "Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting Chicago Scholars, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Pseudo-blog",
+    "section": "",
+    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nIn which I get nerdy with the {ellmer} package\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nHow to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "license.html",
@@ -172,13 +179,6 @@
     "href": "ee.html",
     "title": "Equitable Equations",
     "section": "",
-    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to visit the channel. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Pseudo-blog",
-    "section": "",
-    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nIn which I get nerdy with the {ellmer} package\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nHow to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
   }
 ]
