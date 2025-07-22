@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Andrew Gard">
+<meta name="dcterms.date" content="2025-07-07">
+<meta name="description" content="How to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude">
 
-<title>Giving – Andrew Gard, Ph.D</title>
+<title>Chatting with Claude AI in RStudio using ellmer – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/logo_transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3ae6c15d7cd5835fc071c43fa4067c61.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/logo_transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3ae6c15d7cd5835fc071c43fa4067c61.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,13 +74,13 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Giving – Andrew Gard, Ph.D">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://equitableequations.com/assets/me_contemplative_sm.jpg">
+<meta property="og:title" content="Chatting with Claude AI in RStudio using ellmer – Andrew Gard, Ph.D">
+<meta property="og:description" content="How to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-07-07/ellmer thumb.jpg">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
-<meta name="twitter:title" content="Giving – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://equitableequations.com/assets/me_contemplative_sm.jpg">
+<meta name="twitter:title" content="Chatting with Claude AI in RStudio using ellmer – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="How to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-07-07/ellmer thumb.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -88,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Andrew Gard, Ph.D</span>
     </a>
   </div>
@@ -99,15 +102,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./ee.html"> 
+    <a class="nav-link" href="../../ee.html"> 
 <span class="menu-text">Equitable Equations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./nk.html"> 
+    <a class="nav-link" href="../../nk.html"> 
 <span class="menu-text">Normal Knowledge</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./consulting.html"> 
+    <a class="nav-link" href="../../consulting.html"> 
 <span class="menu-text">Consulting</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -116,19 +119,23 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cv">    
         <li>
-    <a class="dropdown-item" href="./cv.html">
+    <a class="dropdown-item" href="../../cv.html">
  <span class="dropdown-text">Narrative</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./cv_formal.html">
+    <a class="dropdown-item" href="../../cv_formal.html">
  <span class="dropdown-text">Formal</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./pubs.html">
+    <a class="dropdown-item" href="../../pubs.html">
  <span class="dropdown-text">Publications</span></a>
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../posts.html"> 
+<span class="menu-text">Pseudo-blog</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -146,14 +153,36 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Giving</h1>
-</div>
+<h1 class="title">Chatting with Claude AI in RStudio using ellmer</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">R</div>
+    <div class="quarto-category">LLMs</div>
+    <div class="quarto-category">AI</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    How to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andrew Gard </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 7, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -163,7 +192,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting <a href="https://chicagoscholars.org/">Chicago Scholars</a>, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v1hYiuh0Q74?si=QXl2wQk5I_Hk4O3Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 
 
 
@@ -581,27 +611,27 @@ ul.task-list li input[type="checkbox"] {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./license.html">
+    <a class="nav-link" href="../../license.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../../about.html">
 <p>About this site</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./coc.html">
+    <a class="nav-link" href="../../coc.html">
 <p>CoC</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./accessibility.html">
+    <a class="nav-link" href="../../accessibility.html">
 <p>Accessibility</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link active" href="./giving.html" aria-current="page">
+    <a class="nav-link" href="../../giving.html">
 <p>Giving</p>
 </a>
   </li>  
@@ -616,5 +646,5 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

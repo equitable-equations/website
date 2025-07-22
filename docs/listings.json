@@ -2,5 +2,12 @@
   {
     "listing": "/projects/index.html",
     "items": []
+  },
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2025-07-22/index.html",
+      "/posts/2025-07-07/index.html"
+    ]
   }
 ]

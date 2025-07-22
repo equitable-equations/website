@@ -25,7 +25,7 @@
     "href": "cv.html#research",
     "title": "Narrative Curriculum Vitae",
     "section": "Research",
-    "text": "Research\nI’m a polymath researcher, interested in a wide variety of quantitative and sociological phenomena which I explore via a neverending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
+    "text": "Research\nI’m a polymath researcher, interested in a wide variety of quantitative and sociological phenomena which I explore via a never-ending stream of mentored undergraduate research projects. My primary personal focus is in the area of quantitative botany, where I design and apply tools that aid conservationists and land managers as they evaluate the health and progress of natural sites.\n\n\nIn this area, I’ve published the {fqar} R package, which I continue to maintain, and a related paper in the Journal of Open Source Software. My latest effort, A new metric for evaluating the conservancy of plants, is currently under review at the Journal of Applied Ecology."
   },
   {
     "objectID": "cv.html#lake-forest-college-august-2019-present",
@@ -173,5 +173,12 @@
     "title": "Equitable Equations",
     "section": "",
     "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to visit the channel. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Pseudo-blog",
+    "section": "",
+    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nIn which I get nerdy with the {ellmer} package\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nHow to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   }
 ]

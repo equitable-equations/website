@@ -26,6 +26,8 @@ website:
             href: cv_formal.qmd
           - text: Publications
             href: pubs.qmd
+      - text: Pseudo-blog
+        href: posts.qmd
   
   page-footer:
     border: true

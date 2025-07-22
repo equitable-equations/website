@@ -1,0 +1,10 @@
+---
+title: "Pseudo-blog"
+listing: 
+  contents: posts 
+  type: default # or `default` or `table`; each type has its own set of yaml options to include
+  sort: "date desc" # can also sort on more than one field
+  categories: true # allows you to sort posts by assigned categories 
+---
+
+Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.

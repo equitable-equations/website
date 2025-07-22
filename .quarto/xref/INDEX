@@ -55,5 +55,14 @@
   },
   "giving.qmd": {
     "giving.html": "60a4f95b"
+  },
+  "posts.qmd": {
+    "posts.html": "8918857e"
+  },
+  "posts/2025-07-22/index.qmd": {
+    "index.html": "cd735eb0"
+  },
+  "posts/2025-07-07/index.qmd": {
+    "index.html": "d8144bcf"
   }
 }

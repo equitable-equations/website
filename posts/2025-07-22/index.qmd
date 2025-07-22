@@ -1,0 +1,12 @@
+---
+title: "How to show a ggplot to an AI assistant"
+description: "In which I get nerdy with the {ellmer} package"
+author:
+  - name: Andrew Gard
+date: 07-14-2025
+categories: [R, LLMs, AI] # self-defined categories
+image: "ggplot_AI thumb.png"
+draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-mYInTbBMQ4?si=6vGHu8YvK-vithO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
