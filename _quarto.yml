@@ -4,8 +4,11 @@ project:
 
 website:
   title: "Andrew Gard, Ph.D"
+  site-url: equitableequations.com
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   favicon: assets/logo_transparent.png
+  twitter-card: true
+    image: assets/me_contemplative_sm.jpg
   navbar:
     background: "#5798A6"
     left:
@@ -21,7 +24,8 @@ website:
             href: cv.qmd
           - text: Formal
             href: cv_formal.qmd
-          
+          - text: Publications
+            href: pubs.qmd
   
   page-footer:
     border: true
