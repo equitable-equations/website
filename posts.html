@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Consulting – Andrew Gard, Ph.D</title>
+<title>Pseudo-blog – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/logo_transparent.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -68,20 +70,82 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Consulting – Andrew Gard, Ph.D">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Pseudo-blog – Andrew Gard, Ph.D">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://equitableequations.com/assets/me_contemplative_sm.jpg">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-07-22/ggplot_AI thumb.png">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
-<meta name="twitter:title" content="Consulting – Andrew Gard, Ph.D">
+<meta property="og:image:height" content="720">
+<meta property="og:image:width" content="1280">
+<meta name="twitter:title" content="Pseudo-blog – Andrew Gard, Ph.D">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://equitableequations.com/assets/me_contemplative_sm.jpg">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-07-22/ggplot_AI thumb.png">
+<meta name="twitter:image-height" content="720">
+<meta name="twitter:image-width" content="1280">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -107,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Normal Knowledge</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./consulting.html" aria-current="page"> 
+    <a class="nav-link" href="./consulting.html"> 
 <span class="menu-text">Consulting</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -130,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./posts.html"> 
+    <a class="nav-link active" href="./posts.html" aria-current="page"> 
 <span class="menu-text">Pseudo-blog</span></a>
   </li>  
 </ul>
@@ -144,13 +208,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Consulting</h1>
+<h1 class="title">Pseudo-blog</h1>
 </div>
 
 
@@ -167,18 +233,84 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I offer several forms of consulting, depending on your needs and budget.</p>
-<ul>
-<li><p>Video content for commercial enterprises (including online courses): $750+/recorded hour</p></li>
-<li><p>One-on-one Zoom tutoring: $150/hour.</p></li>
-<li><p>Professional statistical modeling and #Rstats consulting: $250/hour</p></li>
-</ul>
-<p>My areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!</p>
-<p>Consulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me <a href="mailto:equitable.equations@gmail.com">here</a> to discuss your specific needs and the costs associated.</p>
+<p>Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.</p>
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="UiUyQ0xMTXMlMkNBSQ==" data-listing-date-sort="1752469200000" data-listing-file-modified-sort="1753218599245" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<div class="thumbnail"><a href="./posts/2025-07-22/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-07-22/ggplot_AI thumb.png" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-07-22/index.html" class="no-external">How to show a ggplot to an AI assistant</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/2025-07-22/index.html" class="no-external">
+<p>In which I get nerdy with the {ellmer} package</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-07-22/index.html" class="no-external">
+<div class="listing-date">
+Jul 14, 2025
+</div>
+<div class="listing-author">
+Andrew Gard
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="UiUyQ0xMTXMlMkNBSQ==" data-listing-date-sort="1751864400000" data-listing-file-modified-sort="1753219042225" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
+<div class="thumbnail"><a href="./posts/2025-07-07/index.html" class="no-external">
+
+<img loading="lazy" src="./posts/2025-07-07/ellmer thumb.jpg" class="thumbnail-image">
+
+</a></div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-07-07/index.html" class="no-external">Chatting with Claude AI in RStudio using ellmer</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/2025-07-07/index.html" class="no-external">
+<p>How to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-07-07/index.html" class="no-external">
+<div class="listing-date">
+Jul 7, 2025
+</div>
+<div class="listing-author">
+Andrew Gard
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
