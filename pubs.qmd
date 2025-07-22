@@ -2,23 +2,21 @@
 title: "Publications"
 ---
 
-(This page is under construction. Please excuse the mess.)
-
-In addition to teaching full-time, maintaining two YouTube channels, and consulting part-time, I publish consistently in data science and mathematics, often with undergraduate collaborators. Papers behind paywalls can always be downloaded for free from my [GitHub](https://github.com/equitable-equations). 
+In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.
 
 - Gard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. *Under contract with No Starch Press*. Expected completion: Winter, 2025.
 
-- Gard, A., et. al. A new metric for measuring the conservancy of plant species\*. Under review at *The Journal of Applied Ecology*.
+- Gard, A., et. al. [A new metric for measuring the conservancy of plant species](/papers/measuring plant conservancy.pdf)\*. Under review at *Ecological Applications*.
 
--  Gard, A., Myers A., & Luwabelwa, I (2024). The *fqar* package: R tools for analyzing floristic quality assessment data\*. *Journal of Open Source Software*, 9(96), 6366, https://doi.org/10.21105/joss.06366
+-  Gard, A., Myers A., & Luwabelwa, I (2024). [The *fqar* package: R tools for analyzing floristic quality assessment data](/papers/fqar joss.pdf)\*. *Journal of Open Source Software*, 9(96), 6366, https://doi.org/10.21105/joss.06366
 
-- Gard, A., & Wilson, O. (2023). Prediction intervals for interpolants\*. *Rocky Mountain Journal of Mathematics*. Accepted Sept. 2023, DOI pending.
+- Gard, A., & Wilson, O. (2023). [Prediction intervals for interpolants](/papers/pii.pdf)\*. *Rocky Mountain Journal of Mathematics*. Accepted Sept. 2023, DOI pending.
 
-- Gard, A. (2023). Equal-speed pursuit and evasion on manifolds. *International Journal of Game Theory*, 1-14. https://doi.org/10.1007/s00182-023-00868-x
+- Gard, A. (2023). [Equal-speed pursuit and evasion on manifolds](/papers/pursuit on manifolds.pdf). *International Journal of Game Theory*, 1-14. https://doi.org/10.1007/s00182-023-00868-x
 
-- Gard, A. (2018). The wild goose chase problem. *The American Mathematical Monthly*, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785
+- Gard, A. (2018). [The wild goose chase problem](/papers/The Wild Goose Chase Problem 2018.pdf). *The American Mathematical Monthly*, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785
 
-- Ekici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. *PRIMUS*, 27. https://doi.org/10.1080/10511970.2016.1214654
+- Ekici, C., & Gard, A. (2016). [Inquiry-based learning of transcendental functions in calculus](/papers/ibl.pdf). *PRIMUS*, 27. https://doi.org/10.1080/10511970.2016.1214654
 
 - Gard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.
 
