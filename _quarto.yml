@@ -8,7 +8,7 @@ website:
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   favicon: assets/logo_transparent.png
   twitter-card: true
-    image: assets/me_contemplative_sm.jpg
+  image: assets/me_contemplative_sm.jpg
   navbar:
     background: "#5798A6"
     left:
