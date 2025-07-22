@@ -1,1 +1,1 @@
-Sitemap: https://equitableequations.com/sitemap.xml
+Sitemap: equitableequations.com/sitemap.xml
