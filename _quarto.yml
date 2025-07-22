@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Andrew Gard, Ph.D"
-  site-url: equitableequations.com
+  site-url: https://equitableequations.com/
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   favicon: assets/logo_transparent.png
   twitter-card: true
