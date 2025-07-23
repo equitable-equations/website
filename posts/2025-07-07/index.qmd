@@ -3,7 +3,7 @@ title: "Can using an LLM for coding be ethical?"
 description: "A short stream-of-consciousness piece about one particular ethical consideration."
 author:
   - name: Andrew Gard
-date: 07-14-2025
+date: 07-07-2025
 categories: [AI, LLMs] # self-defined categories
 image: "rnd1.jpg"
 draft: false 
