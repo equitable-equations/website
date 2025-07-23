@@ -6,7 +6,10 @@ author:
 date: 07-14-2025
 categories: [AI, ellmer, LLMs] # self-defined categories
 image: "ggplot_AI thumb.png"
-draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-mYInTbBMQ4?si=6vGHu8YvK-vithO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
