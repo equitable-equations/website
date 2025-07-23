@@ -91,25 +91,18 @@
     "text": "I built this site all by myself using Quarto, but the learning process that made that possible could never have happened in isolation. Some of the many resources that helped me along the way:\n\nThe brilliant websites of Silvia Canelón, Jadey Ryan, and others, all of which have public git repositories from which I’ve learned, drawn inspiration, and occasionally snatched a snippet or two of code.\nCharlotte Wickham’s video tutorials\n\nI’m also indebted to Tiara Wiggins at Twiggs Creative for the design of my logo and the all the branding on Equitable Equations. While she wasn’t involved in the design of this site, I’ve continued to use the color palette she built for me and to draw inspiration from the work she put in."
   },
   {
-    "objectID": "blog/first-post/index.html",
-    "href": "blog/first-post/index.html",
-    "title": "First Post",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "Sed risus ultricies tristique nulla aliquet. Neque volutpat ac tincidunt vitae semper quis lectus nulla.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sed faucibus turpis in eu mi bibendum neque. Ac orci phasellus egestas tellus rutrum tellus pellentesque eu. Velit sed ullamcorper morbi tincidunt ornare massa. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero. Lobortis feugiat vivamus at augue eget arcu. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Mauris a diam maecenas sed enim ut sem viverra aliquet. Enim ut tellus elementum sagittis vitae et leo duis. Molestie at elementum eu facilisis sed odio morbi quis commodo. Sapien pellentesque habitant morbi tristique senectus. Quam vulputate dignissim suspendisse in est. Nulla pellentesque dignissim enim sit amet venenatis urna cursus eget.\nVelit aliquet sagittis id consectetur purus ut faucibus pulvinar elementum. Viverra mauris in aliquam sem fringilla ut morbi tincidunt augue. Tortor at auctor urna nunc id. Sit amet consectetur adipiscing elit duis tristique sollicitudin. Aliquet nibh praesent tristique magna sit amet purus. Tristique senectus et netus et malesuada fames ac turpis. Hac habitasse platea dictumst quisque. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Ultrices tincidunt arcu non sodales neque sodales ut etiam. Iaculis at erat pellentesque adipiscing. Cras tincidunt lobortis feugiat vivamus. Nisi est sit amet facilisis magna etiam. Pharetra pharetra massa massa ultricies mi quis hendrerit. Vitae sapien pellentesque habitant morbi tristique senectus. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae."
+    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Andrew Gard, Ph.D",
+    "objectID": "cv_formal.html",
+    "href": "cv_formal.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links on the lower left."
-  },
-  {
-    "objectID": "nk.html",
-    "href": "nk.html",
-    "title": "Normal Knowledge",
-    "section": "",
-    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
+    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
   },
   {
     "objectID": "coc.html",
@@ -133,32 +126,25 @@
     "text": "Download script"
   },
   {
-    "objectID": "cv_formal.html",
-    "href": "cv_formal.html",
-    "title": "Curriculum Vitae",
+    "objectID": "posts/2025-07-07/index.html",
+    "href": "posts/2025-07-07/index.html",
+    "title": "Can using an LLM for coding be ethical?",
     "section": "",
-    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
+    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
+    "objectID": "nk.html",
+    "href": "nk.html",
+    "title": "Normal Knowledge",
     "section": "",
-    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
   },
   {
-    "objectID": "blog/third-post/index.html",
-    "href": "blog/third-post/index.html",
-    "title": "Third Blog Post",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Andrew Gard, Ph.D",
     "section": "",
-    "text": "The source for any page in your website could also be a Jupyter Notebook. This one is third-post/index.ipynb.\nHere’s an example I borrowed from the Seaborn docs:\n\nimport seaborn as sns\n\nsns.set_theme(style=\"whitegrid\")\n\n# Load the diamonds dataset\ndiamonds = sns.load_dataset(\"diamonds\")\n\n# Plot the distribution of clarity ratings, conditional on carat\nsns.displot(\n    data=diamonds,\n    x=\"carat\", hue=\"cut\",\n    kind=\"kde\", height=4, aspect=1.5,\n    multiple=\"fill\", clip=(0, None),\n    palette=\"ch:rot=-.25,hue=1,light=.75\",   \n)"
-  },
-  {
-    "objectID": "blog/second-post/index.html",
-    "href": "blog/second-post/index.html",
-    "title": "Second Post",
-    "section": "",
-    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Amet cursus sit amet dictum sit amet. Eget duis at tellus at urna condimentum. Convallis aenean et tortor at risus viverra. Tincidunt ornare massa eget egestas purus viverra accumsan. Et malesuada fames ac turpis egestas. At imperdiet dui accumsan sit amet. Ut ornare lectus sit amet est placerat. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Duis ultricies lacus sed turpis tincidunt id aliquet risus. Mattis enim ut tellus elementum sagittis. Dui id ornare arcu odio ut. Natoque penatibus et magnis dis. Libero justo laoreet sit amet cursus sit. Sed faucibus turpis in eu. Tempus iaculis urna id volutpat lacus laoreet.\nPhasellus vestibulum lorem sed risus. Eget felis eget nunc lobortis mattis. Sit amet aliquam id diam maecenas ultricies. Egestas maecenas pharetra convallis posuere morbi. Etiam erat velit scelerisque in dictum non consectetur a erat. Cras fermentum odio eu feugiat pretium nibh ipsum consequat. Viverra accumsan in nisl nisi scelerisque. Et netus et malesuada fames ac. Amet tellus cras adipiscing enim eu turpis egestas pretium aenean. Eget lorem dolor sed viverra ipsum nunc aliquet. Ultrices dui sapien eget mi proin sed libero enim sed. Ultricies mi eget mauris pharetra et ultrices neque. Ipsum suspendisse ultrices gravida dictum. A arcu cursus vitae congue mauris rhoncus aenean vel. Gravida arcu ac tortor dignissim convallis. Nulla posuere sollicitudin aliquam ultrices."
+    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links on the lower left."
   },
   {
     "objectID": "giving.html",
@@ -172,7 +158,7 @@
     "href": "posts.html",
     "title": "Pseudo-blog",
     "section": "",
-    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "license.html",
