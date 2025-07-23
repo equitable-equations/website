@@ -4,7 +4,7 @@ description: "How to register with Anthropic and establish and API key which RSt
 author:
   - name: Andrew Gard
 date: 07-07-2025
-categories: [R, LLMs, AI] # self-defined categories
+categories: [AI, ellmer, LLMs] # self-defined categories
 image: "ellmer thumb.jpg"
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---

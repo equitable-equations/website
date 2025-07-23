@@ -1,0 +1,15 @@
+---
+title: "All about facets"
+description: "There's so much more to ggplot2's faceting system than I knew. This deep-dive includes a lot of personal lessons learned."
+author:
+  - name: Andrew Gard
+date: 05-27-2025
+categories: [ggplot2] # self-defined categories
+image: "facets thumb.png"
+draft: false 
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n6P7eLG80D8?si=mtav1XM23U6JZ991" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+{{< downloadthis facets.R label="Download script" dname="facets">}}
+

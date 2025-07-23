@@ -1,10 +1,10 @@
 ---
 title: "How to show a ggplot to an AI assistant"
-description: "In which I get nerdy with the {ellmer} package"
+description: "A picture is worth a thousand words, especially when working with a chatbot."
 author:
   - name: Andrew Gard
 date: 07-14-2025
-categories: [R, LLMs, AI] # self-defined categories
+categories: [AI, ellmer, LLMs] # self-defined categories
 image: "ggplot_AI thumb.png"
 draft: false # setting this to `true` will prevent your post from appearing on your listing page until you're ready!
 ---
