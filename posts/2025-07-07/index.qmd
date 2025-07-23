@@ -1,15 +1,18 @@
 ---
-title: "Chatting with Claude AI in RStudio using ellmer"
-description: "How to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R."
+title: "Can using an LLM for coding be ethical?"
+description: "A short stream-of-consciousness piece about one particular ethical consideration."
 author:
   - name: Andrew Gard
-date: 07-07-2025
-categories: [AI, ellmer, LLMs] 
-image: "ellmer thumb.jpg"
+date: 07-14-2025
+categories: [AI, LLMs] # self-defined categories
+image: "rnd1.jpg"
 draft: false 
 comments:
   utterances:
     repo: equitable-equations/website
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/v1hYiuh0Q74?si=QXl2wQk5I_Hk4O3Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model. 
+
+<iframe width="324" height="575.1" src="https://www.youtube.com/embed/UogHVS3SjFg" title="Can using an LLM for coding be ethical? #coding #ai #llms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+

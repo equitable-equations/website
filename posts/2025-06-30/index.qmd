@@ -1,0 +1,15 @@
+---
+title: "Chatting with Claude AI in RStudio using ellmer"
+description: "How to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R."
+author:
+  - name: Andrew Gard
+date: 06-30-2025
+categories: [AI, ellmer, LLMs] 
+image: "ellmer thumb.jpg"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/v1hYiuh0Q74?si=QXl2wQk5I_Hk4O3Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
