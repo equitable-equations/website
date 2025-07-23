@@ -112,6 +112,13 @@
     "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
   },
   {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
     "objectID": "consulting.html",
     "href": "consulting.html",
     "title": "Consulting",
@@ -119,11 +126,11 @@
     "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
   },
   {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
+    "objectID": "posts/2025-05-27/index.html",
+    "href": "posts/2025-05-27/index.html",
+    "title": "All about facets",
     "section": "",
-    "text": "Under construction. For now, just be cool."
+    "text": "Download script"
   },
   {
     "objectID": "cv_formal.html",
@@ -165,7 +172,7 @@
     "href": "posts.html",
     "title": "Pseudo-blog",
     "section": "",
-    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nIn which I get nerdy with the {ellmer} package\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nR\n\nLLMs\n\nAI\n\n\n\nHow to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+    "text": "Here you can see some of my most recent vids and occasionally read some additional thoughts on the topics covered. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to register with Anthropic and establish and API key which RStudio can use to communicate with large language models like Claude\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "license.html",
