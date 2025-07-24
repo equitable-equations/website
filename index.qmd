@@ -23,7 +23,7 @@ about: # https://quarto.org/docs/websites/website-about.html
       href: https://www.youtube.com/@NormalKnowledgeAG
 ---
 
-Hi everybody! I'm Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I'm somehow also a successful YouTuber, with channels focused on R programming ([Equitable Equations](https://www.youtube.com/@EquitableEquations)) and statistics and machine learning ([Normal Knowledge](https://www.youtube.com/@NormalKnowledgeAG)). Poke around this site to learn more and connect with me using the links on the lower left.
+Hi everybody! I'm Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I'm somehow also a successful YouTuber, with channels focused on R programming ([Equitable Equations](https://www.youtube.com/@EquitableEquations)) and statistics and machine learning ([Normal Knowledge](https://www.youtube.com/@NormalKnowledgeAG)). Poke around this site to learn more and connect with me using the links below my pic.
 
 
 
