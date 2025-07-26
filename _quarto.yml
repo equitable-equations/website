@@ -52,4 +52,5 @@ format:
     theme: [cosmo, styles.scss]
     smooth-scroll: true
     link-external-newwindow: true
+    include-after-body: analytics.html
 
