@@ -1,0 +1,11 @@
+---
+title: "Future posts"
+---
+
+A space to record ideas I have for future posts.
+
+- Adapting to being tenured
+
+- Woke racism: Remmick
+
+- Why I haven't covered tidymodels yet

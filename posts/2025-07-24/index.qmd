@@ -1,0 +1,27 @@
+---
+title: "Why haven't I covered tidymodels?"
+author:
+  - name: Andrew Gard
+date: 07-24-2025
+categories: [tidymodels] 
+draft: true 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+I get this question from time to time, and with good reason. The `tidymodels` framework for data modeling is powerful and about as user-friendly as we can hope for in this space, bringing consistency and clarity to a process that can continue to feel ad-hoc well into the learning curve. Over time, it's supplanted the older favorite meta-package, `carat`, which coincidentally (note sarcasm) was written by one the tidymodels architects, Max Kuhn (check).
+
+I love tidymodels, and use it consistently for my machine learning needs. Yet when I've done vids on ML techniques, I've almost always shied away, opting to use individual packages instead. Why?
+
+The short answer is that I haven't figured out how to teach it in a YouTube-friendly way yet. Vids on Equitable Equations aim to be short, self-contained, clear expositions of individual topics. While these can (and should!) be chained together to build a comprehensive whole, it's important to me - and to the Almighty Algorithm, whom we all serve - that they stand on their own. Machine learning is hard to do this way. 
+
+One of the wonderful things about the core `tidyverse` is the degree to which is can be used to teach basic data science concepts. As we learn `ggplot2`, we 
+
+
+
+
+
+
+
+

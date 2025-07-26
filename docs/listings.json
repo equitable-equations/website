@@ -1,15 +1,16 @@
 [
   {
-    "listing": "/projects/index.html",
-    "items": []
-  },
-  {
     "listing": "/posts.html",
     "items": [
+      "/posts/2025-07-25/index.html",
       "/posts/2025-07-14/index.html",
       "/posts/2025-07-07/index.html",
       "/posts/2025-06-30/index.html",
       "/posts/2025-05-27/index.html"
     ]
+  },
+  {
+    "listing": "/projects/index.html",
+    "items": []
   }
 ]
