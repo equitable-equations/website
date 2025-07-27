@@ -9,3 +9,6 @@ If you're learning data science, you've come to the right place! My focus is R, 
 Click [here](posts.qmd) to see what I've recorded lately or [here](https://www.youtube.com/@EquitableEquations) to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/MuETD4Irwa4?si=58Fd27v6bD0DgF5l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Have technical questions about how I produce all of this? Start [here](technical.qmd).
+

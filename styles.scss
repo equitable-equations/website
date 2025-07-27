@@ -1,12 +1,11 @@
 /*-- scss:defaults --*/
 
-// Sass Variables
-// https://quarto.org/docs/output-formats/html-themes.html#sass-variables
-
 /* Colors */
 $body-bg: #E1E1D3;
 $body-color: rgb(55, 58, 60);
-$link-color: rgb(87, 152, 166);
+$link-color: #236C72;
+$code-bg: #E1E1D3;
+$code-color: #236C72;
 
 /* Fonts */
 $font-family-sans-serif: "Source Sans Pro", -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -15,3 +14,5 @@ $font-size-root: 17px;
 .cv-date {
   float: right;
 }
+
+

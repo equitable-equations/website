@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pseudo-blog – Andrew Gard, Ph.D</title>
+<title>How to YouTube: lessons I learned the hard way – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./assets/logo_transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,82 +68,20 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Pseudo-blog – Andrew Gard, Ph.D">
+<meta property="og:title" content="How to YouTube: lessons I learned the hard way – Andrew Gard, Ph.D">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://equitableequations.com/posts/2025-07-25/counting thumb.png">
+<meta property="og:image" content="https://equitableequations.com/assets/me_contemplative_sm.jpg">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
-<meta property="og:image:height" content="720">
-<meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="Pseudo-blog – Andrew Gard, Ph.D">
+<meta name="twitter:title" content="How to YouTube: lessons I learned the hard way – Andrew Gard, Ph.D">
 <meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://equitableequations.com/posts/2025-07-25/counting thumb.png">
+<meta name="twitter:image" content="https://equitableequations.com/assets/me_contemplative_sm.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="720">
-<meta name="twitter:image-width" content="1280">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -194,7 +130,7 @@ window.Quarto = {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="./posts.html"> 
 <span class="menu-text">Pseudo-blog</span></a>
   </li>  
 </ul>
@@ -208,15 +144,13 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZWxsbWVy">ellmer <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z2dwbG90Mg==">ggplot2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(3)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pseudo-blog</h1>
+<h1 class="title">How to YouTube: lessons I learned the hard way</h1>
 </div>
 
 
@@ -233,176 +167,21 @@ window.Quarto = {
 </header>
 
 
-<p>Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, about the times we live in, or whatever else might be keeping me up at night. All very informal.</p>
+<p>While all you really need to start a channel is a computer (or even just a phone), some upgrades can make a huge difference.</p>
+<ul>
+<li><p><strong>Microphone</strong>: A decent microphone is the first purchase you should make when you start to get serious about your YouTube channel (or your podcast, TikTok account, or whatever). Nothing makes a viewer click away faster than poor sound quality. I currently use a Shure MV-7, but also had great results with a Rode NT-USB mini (only about $100!). A boom arm with shock mount is a good low-cost add-on.</p></li>
+<li><p><strong>Video sizing</strong>: YouTube strongly prefers an aspect ratio of 16:9, though the screen on MacBooks (like my Air) is 16:10. In order to make everything match up, I use SwitchResX to force my Mac into the necessary resolution before recording my screen.</p></li>
+<li><p><strong>Recording and editing</strong>: I used OBS Studio (which is free) without complaints for my first two years, but Camtasia was a huge quality of life upgrade. It records my face, screen, and audio on separate tracks, then provides user-friendly tools for editing and combining the various elements. I keep recording when I get tongue-tied now, backing up only to the start of my thought and then deleting the embarrassing stuff later on, usually with a smooth fade from one clip to the other.</p></li>
+<li><p><strong>Logo and thumbnails</strong>: Anyone will tell you that quality thumbnails are absolutely essential for attracting viewers. If you’re just starting out, I recommend starting with a template like those offered by Adobe, Canva, and many others. After my channel monetized, I contracted a designer (Tiara Wiggins at Twiggs Creative) through <a href="fiverr.com">fiverr.com</a> to professionalize my channel. I strongly recommend an experienced human over AI or DIY options.</p></li>
+<li><p><strong>Intro and end screens</strong>: Canva offers free tools for animating images. I started with my logo, then wiped it in and out. With a little tinkering, you can probably do even better. I think the results are pretty good, but will ultimately bring in professional help to improve this, too.</p></li>
+<li><p><strong>Slides</strong>: I’m old school, for better and for worse. Usually my slides are made with LaTeX, which reflects my background in pure mathematics. I also occasionally use PowerPoint and Quarto. None of these are especially engaging, I’m sure, but they’re what I know and they’re at least appropriate to material that I cover.</p></li>
+<li><p><strong>Graphics</strong>: My data-oriented visualizations are made in R, usually with <code>ggplot2</code>, while more algebraic plots (like density curves) are generally done in Geogebra. All of this is free.</p></li>
+</ul>
+<p>There’s a lot more to YouTube than just hitting “record” and talking to the camera. It’s been a long learning curve for me, and I hope yours will be shorter.</p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="UHJvYmFiaWxpdHk=" data-listing-date-sort="1753419600000" data-listing-file-modified-sort="1753656993313" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
-<div class="thumbnail"><a href="./posts/2025-07-25/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-25/counting thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-25/index.html" class="no-external">Advanced counting</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-25/index.html" class="no-external">
-<p>Can I brag about this title for a sec?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-25/index.html" class="no-external">
-<div class="listing-date">
-Jul 25, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="QUklMkNlbGxtZXIlMkNMTE1z" data-listing-date-sort="1752469200000" data-listing-file-modified-sort="1753289364019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<div class="thumbnail"><a href="./posts/2025-07-14/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-14/ggplot_AI thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-14/index.html" class="no-external">How to show a ggplot to an AI assistant</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-14/index.html" class="no-external">
-<p>A picture is worth a thousand words, especially when working with a chatbot.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-14/index.html" class="no-external">
-<div class="listing-date">
-Jul 14, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="QUklMkNMTE1z" data-listing-date-sort="1751864400000" data-listing-file-modified-sort="1753291178995" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
-<div class="thumbnail"><a href="./posts/2025-07-07/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-07/rnd1.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-07/index.html" class="no-external">Can using an LLM for coding be ethical?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-07/index.html" class="no-external">
-<p>A short stream-of-consciousness piece about one particular ethical consideration.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-07/index.html" class="no-external">
-<div class="listing-date">
-Jul 7, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="QUklMkNlbGxtZXIlMkNMTE1z" data-listing-date-sort="1751259600000" data-listing-file-modified-sort="1753290098970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<div class="thumbnail"><a href="./posts/2025-06-30/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-06-30/ellmer thumb.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-06-30/index.html" class="no-external">Chatting with Claude AI in RStudio using ellmer</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-06-30/index.html" class="no-external">
-<p>How to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-06-30/index.html" class="no-external">
-<div class="listing-date">
-Jun 30, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Z2dwbG90Mg==" data-listing-date-sort="1748322000000" data-listing-file-modified-sort="1753289341267" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
-<div class="thumbnail"><a href="./posts/2025-05-27/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-05-27/facets thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-05-27/index.html" class="no-external">All about facets</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-05-27/index.html" class="no-external">
-<p>There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-05-27/index.html" class="no-external">
-<div class="listing-date">
-May 27, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <!-- 100% privacy-first analytics -->
 <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 

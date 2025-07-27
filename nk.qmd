@@ -9,6 +9,8 @@ Like Equitable Equations, this channel is 100% free with proceeds from ads and t
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pDBhmrT4ll4?si=y3K_knX9xR85rliQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+Have technical questions about how I produce all of this? Start [here](technical.qmd).
+
 
 
 
