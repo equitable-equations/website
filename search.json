@@ -11,7 +11,7 @@
     "href": "ee.html",
     "title": "Equitable Equations",
     "section": "",
-    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities."
+    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
   },
   {
     "objectID": "license.html",
@@ -42,46 +42,11 @@
     "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statistics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below my very serious pic."
   },
   {
-    "objectID": "nk.html",
-    "href": "nk.html",
-    "title": "Normal Knowledge",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities."
-  },
-  {
-    "objectID": "posts/2025-07-07/index.html",
-    "href": "posts/2025-07-07/index.html",
-    "title": "Can using an LLM for coding be ethical?",
-    "section": "",
-    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
-  },
-  {
-    "objectID": "posts/2025-05-27/index.html",
-    "href": "posts/2025-05-27/index.html",
-    "title": "All about facets",
-    "section": "",
-    "text": "Download script"
-  },
-  {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Consulting",
-    "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "Under construction. For now, just be cool."
-  },
-  {
-    "objectID": "posts/2025-07-25/index.html",
-    "href": "posts/2025-07-25/index.html",
-    "title": "Advanced counting",
-    "section": "",
-    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that’s pretty cool too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can.\nThe vid isn’t officially released yet, but you can watch it here if you like:"
+    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "cv_formal.html",
@@ -91,11 +56,53 @@
     "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
+    "objectID": "posts/2025-07-25/index.html",
+    "href": "posts/2025-07-25/index.html",
+    "title": "Advanced counting",
     "section": "",
-    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can.\nThe vid isn’t officially released yet, but you can watch it here if you like:"
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+  },
+  {
+    "objectID": "posts/2025-05-27/index.html",
+    "href": "posts/2025-05-27/index.html",
+    "title": "All about facets",
+    "section": "",
+    "text": "Download script"
+  },
+  {
+    "objectID": "posts/2025-07-07/index.html",
+    "href": "posts/2025-07-07/index.html",
+    "title": "Can using an LLM for coding be ethical?",
+    "section": "",
+    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
+  },
+  {
+    "objectID": "nk.html",
+    "href": "nk.html",
+    "title": "Normal Knowledge",
+    "section": "",
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+  },
+  {
+    "objectID": "technical.html",
+    "href": "technical.html",
+    "title": "How to YouTube: lessons I learned the hard way",
+    "section": "",
+    "text": "While all you really need to start a channel is a computer (or even just a phone), some upgrades can make a huge difference.\n\nMicrophone: A decent microphone is the first purchase you should make when you start to get serious about your YouTube channel (or your podcast, TikTok account, or whatever). Nothing makes a viewer click away faster than poor sound quality. I currently use a Shure MV-7, but also had great results with a Rode NT-USB mini (only about $100!). A boom arm with shock mount is a good low-cost add-on.\nVideo sizing: YouTube strongly prefers an aspect ratio of 16:9, though the screen on MacBooks (like my Air) is 16:10. In order to make everything match up, I use SwitchResX to force my Mac into the necessary resolution before recording my screen.\nRecording and editing: I used OBS Studio (which is free) without complaints for my first two years, but Camtasia was a huge quality of life upgrade. It records my face, screen, and audio on separate tracks, then provides user-friendly tools for editing and combining the various elements. I keep recording when I get tongue-tied now, backing up only to the start of my thought and then deleting the embarrassing stuff later on, usually with a smooth fade from one clip to the other.\nLogo and thumbnails: Anyone will tell you that quality thumbnails are absolutely essential for attracting viewers. If you’re just starting out, I recommend starting with a template like those offered by Adobe, Canva, and many others. After my channel monetized, I contracted a designer (Tiara Wiggins at Twiggs Creative) through fiverr.com to professionalize my channel. I strongly recommend an experienced human over AI or DIY options.\nIntro and end screens: Canva offers free tools for animating images. I started with my logo, then wiped it in and out. With a little tinkering, you can probably do even better. I think the results are pretty good, but will ultimately bring in professional help to improve this, too.\nSlides: I’m old school, for better and for worse. Usually my slides are made with LaTeX, which reflects my background in pure mathematics. I also occasionally use PowerPoint and Quarto. None of these are especially engaging, I’m sure, but they’re what I know and they’re at least appropriate to material that I cover.\nGraphics: My data-oriented visualizations are made in R, usually with ggplot2, while more algebraic plots (like density curves) are generally done in Geogebra. All of this is free.\n\nThere’s a lot more to YouTube than just hitting “record” and talking to the camera. It’s been a long learning curve for me, and I hope yours will be shorter."
   },
   {
     "objectID": "about.html",
