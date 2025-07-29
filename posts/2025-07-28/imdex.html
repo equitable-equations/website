@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Gard">
-<meta name="dcterms.date" content="2025-05-27">
-<meta name="description" content="There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.">
+<meta name="dcterms.date" content="2025-07-28">
+<meta name="description" content="What is a system prompt and why should you care?">
 
-<title>All about facets – Andrew Gard, Ph.D</title>
+<title>All about system prompts – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,15 +75,15 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="All about facets – Andrew Gard, Ph.D">
-<meta property="og:description" content="There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.">
-<meta property="og:image" content="https://equitableequations.com/posts/2025-05-27/facets thumb.png">
+<meta property="og:title" content="All about system prompts – Andrew Gard, Ph.D">
+<meta property="og:description" content="What is a system prompt and why should you care?">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-07-28/system prompts thumb.png">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="All about facets – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.">
-<meta name="twitter:image" content="https://equitableequations.com/posts/2025-05-27/facets thumb.png">
+<meta name="twitter:title" content="All about system prompts – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="What is a system prompt and why should you care?">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-07-28/system prompts thumb.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
@@ -158,15 +158,17 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">All about facets</h1>
+<h1 class="title">All about system prompts</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">ggplot2</div>
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">ellmer</div>
+    <div class="quarto-category">LLMs</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.
+    What is a system prompt and why should you care?
   </div>
 </div>
 
@@ -183,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 27, 2025</p>
+      <p class="date">July 28, 2025</p>
     </div>
   </div>
   
@@ -195,9 +197,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n6P7eLG80D8?si=mtav1XM23U6JZ991" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+<p>Two things are true at the same time: First, I was happier when LLMs weren’t a thing and feel strongly that humanity would be better off without them. And second, I’m not going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, <code>tidyverse</code>) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually <em>more</em> fun when you understand how these things work.</p>
+<p>As usual, code and other supporting materials are available below the vid.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RDnRiGupF4U?si=zl7dGXrvsw5mbl2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><a href="#dnldts266" onclick="fetch('data:text/plain;base64,IyBBbGwgYWJvdXQgZmFjZXRzCgpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShtb2RlbGRhdGEpCnRoZW1lX3NldCh0aGVtZV9taW5pbWFsKCkpCgojIGNyZWF0ZSBkYXRhIHNldApzZXQuc2VlZCgwKQpuIDwtIDIwMApyaG8gPC0gLjIKbSA8LSAyCnggPC0gcnVuaWYobiwgMCwgMTApCnkgPC0gbSAqeCArIDUgKyBybm9ybShuLCAwLCAuNzEgKiBzZCh4KSAvIHJobykKZGYxIDwtIGRhdGEuZnJhbWUoeCwgeSkKCnJobyA8LSAuNQp4IDwtIHJ1bmlmKG4sIDAsIDEwKQp5IDwtIG0gKnggKyA1ICsgcm5vcm0obiwgMCwgMSAqIHNkKHgpIC8gcmhvKQpkZjIgPC0gZGF0YS5mcmFtZSh4LCB5KQoKcmhvIDwtIC44CnggPC0gcnVuaWYobiwgMCwgMTApCnkgPC0gbSAqeCArIDUgKyBybm9ybShuLCAwLCAuNzkgKiBzZCh4KSAvIHJobykKZGYzIDwtIGRhdGEuZnJhbWUoeCwgeSkKCmRmIDwtIGJpbmRfcm93cyhkZjEsIAogICAgICAgICAgICAgICAgZGYyLCAKICAgICAgICAgICAgICAgIGRmMywgCiAgICAgICAgICAgICAgICAuaWQgPSAic2V0IikKCiMgZmFjZXRpbmcgc2NhdAoKcCA8LSBnZ3Bsb3Qoc2NhdCwgYWVzKHggPSBkMTNDLAogICAgICAgICAgICAgICAgICAgICAgeSA9IGQxNU4pKSArCiAgICAgZ2VvbV9wb2ludCgpICMgc3RhcnRlciBwbG90CnAgKyBmYWNldF93cmFwKH5TcGVjaWVzLAogICAgICAgICAgICAgICBucm93ID0gMykKCnAgKyBmYWNldF93cmFwKHZhcnMoU3BlY2llcykpCgpwICsgZmFjZXRfZ3JpZChMb2NhdGlvbn5TcGVjaWVzKQoKbXlfbGFiZWxsZXIgPC0gYXNfbGFiZWxsZXIoYygiYm9iY2F0IiA9ICJCb2JjYXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICJjb3lvdGUiID0gIkNveW90ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImdyYXlfZm94IiA9ICJHcmF5IEZveCIpKQoKcCArIGZhY2V0X3dyYXAoflNwZWNpZXMsIAogICAgICAgICAgICAgICBsYWJlbGxlciA9IG15X2xhYmVsbGVyKQogIAojIFJeMiBkZW1vbnN0cmF0aW9uCgpnbGltcHNlKGRmKQoKZ2dwbG90KGRmLCBhZXMoeCwgeSkpICsKICBnZW9tX3BvaW50KGFscGhhID0gLjYpICsgCiAgZ2VvbV9zbW9vdGgobWV0aG9kID0gImxtIiwKICAgICAgICAgICAgICBzZSA9IEZBTFNFKSArCiAgZmFjZXRfd3JhcCh+c2V0KQoKZGYyIDwtIGRmICU+JSAKICBtdXRhdGUoc2V0ID0gZmN0X3JlY29kZShzZXQsIAogICAgICAgICAgICAgICAgICAgICAgICAgICJSXjI9PTAuMiIgPSAiMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgIlJeMj09MC41IiA9ICIyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAiUl4yPT0wLjgiID0gIjMiKSkKCmdncGxvdChkZjIsIGFlcyh4LCB5KSkgKwogIGdlb21fcG9pbnQoYWxwaGEgPSAuNikgKyAKICBnZW9tX3Ntb290aChtZXRob2QgPSAibG0iLAogICAgICAgICAgICAgIHNlID0gRkFMU0UpICsKICBmYWNldF93cmFwKH5zZXQsCiAgICAgICAgICAgICBsYWJlbGxlciA9ICJsYWJlbF9wYXJzZWQiKQoKZ2dwbG90KGRmMiwgYWVzKHgsIHkpKSArCiAgZ2VvbV9wb2ludChhbHBoYSA9IC42KSArIAogIGdlb21fc21vb3RoKG1ldGhvZCA9ICJsbSIsCiAgICAgICAgICAgICAgc2UgPSBGQUxTRSwKICAgICAgICAgICAgICBsaW5ld2lkdGggPSAxLjgsCiAgICAgICAgICAgICAgY29sb3IgPSAiIzU3OThBNiIpICsKICBmYWNldF93cmFwKH5zZXQsCiAgICAgICAgICAgICBsYWJlbGxlciA9ICJsYWJlbF9wYXJzZWQiKSArCiAgdGhlbWVfbWluaW1hbCgpICsgCiAgbGFicyh4ID0gTlVMTCwKICAgICAgIHkgPSBOVUxMKSArIAogIHRoZW1lKGF4aXMudGV4dC54PWVsZW1lbnRfYmxhbmsoKSwKICAgICAgICBheGlzLnRpY2tzLng9ZWxlbWVudF9ibGFuaygpLAogICAgICAgIGF4aXMudGV4dC55PWVsZW1lbnRfYmxhbmsoKSwKICAgICAgICBheGlzLnRpY2tzLnk9ZWxlbWVudF9ibGFuaygpLAogICAgICAgIHBhbmVsLmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoZmlsbCA9ICIjRTFFMUQzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yID0gIiNFMUUxRDMiKSwKICAgICAgICBwbG90LmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoZmlsbCA9ICIjRTFFMUQzIikpIAo=').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts2481" onclick="fetch('data:text/plain;base64,IyBBbGwgYWJvdXQgc3lzdGVtIHByb21wdHMKbGlicmFyeShlbGxtZXIpCj9jaGF0X2FudGhyb3BpYwoKCiMgQSBkZWNlbnQgYWxsLWFyb3VuZCBzeXN0ZW0gcHJvbXB0IGZvciBjb2RpbmcKCmNsYXVkZSA8LSBjaGF0X2FudGhyb3BpYyhzeXN0ZW1fcHJvbXB0ID0gIllvdSBhcmUgYSBoZWxwZnVsIGV4cGVydCBSIHByb2dyYW1tZXIuIFlvdSBwcm92aWRlIGV4ZWN1dGFibGUgY29kZSBPTkxZIHdpdGggdmVyeSBicmllZiBjb21tZW50cyBleHBsYWluaW5nIGVhY2ggZnVuY3Rpb24gY2FsbC4gRG8gTk9UIGluY2x1ZGUgc3RhcnRpbmcgb3IgZW5kaW5nIHRpY2tzLiBZb3UgcHJlZmVyIGdncGxvdDIgZm9yIHZpc3VhbGl6YXRpb25zIGFuZCBkcGx5ci90aWR5ciBmb3Igd3JhbmdsaW5nLiBVc2UgYSBtaW5pbWFsIHRoZW1lIGFuZCB0aGUgRGFyazIgY29sb3IgcGFsZXR0ZS4iKQoKIyBFeGFtcGxlIApjbGF1ZGUkY2hhdCgiVXNpbmcgdGhlIG1zbGVlcCBkYXRhIHNldCwgcGxvdCBzbGVlcF90b3RhbCB2cyB2b3JlLiIpCgpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkoZHBseXIpCgojIExvYWQgbXNsZWVwIGRhdGEgYW5kIGNyZWF0ZSBib3hwbG90IG9mIAojIHNsZWVwX3RvdGFsIGJ5IHZvcmUKZ2dwbG90KG1zbGVlcCwgYWVzKHggPSB2b3JlLCB5ID0gCiAgICAgICAgICAgICAgICAgICAgIHNsZWVwX3RvdGFsLCBmaWxsID0gdm9yZSkpICsKICBnZW9tX2JveHBsb3QoKSArCiAgc2NhbGVfZmlsbF9icmV3ZXIocGFsZXR0ZSA9ICJEYXJrMiIpICsKICB0aGVtZV9taW5pbWFsKCkgKwogIGxhYnMoeCA9ICJEaWV0IFR5cGUiLCB5ID0gIlRvdGFsIFNsZWVwIApIb3VycyIpICsKICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAibm9uZSIpCgoKIyBDaGFpbiBvZiBjb21tYW5kCgpjbGF1ZGUkY2hhdCgiVXNpbmcgdGhlIG1zbGVlcCBkYXRhIHNldCwgcGxvdCBzbGVlcF90b3RhbCB2cyB2b3JlIHVzaW5nIGJhc2UgUiwgbm90IGdncGxvdDIuIikKCmJveHBsb3Qoc2xlZXBfdG90YWwgfiB2b3JlLCBkYXRhID0gbXNsZWVwLCAKICAgICAgICB4bGFiID0gIkRpZXQgVHlwZSIsIAogICAgICAgIHlsYWIgPSAiVG90YWwgU2xlZXAgSG91cnMiLAogICAgICAgIGNvbCA9IGMoIiMxQjlFNzciLCAiI0Q5NUYwMiIsIAogICAgICAgICAgICAgICAgIiM3NTcwQjMiLCAiI0U3Mjk4QSIpKQoKY2xhdWRlJGNoYXQoIlVzaW5nIHRoZSBtc2xlZXAgZGF0YSBzZXQsIHBsb3Qgc2xlZXBfdG90YWwgdnMgdm9yZS4gSSBETyBOT1QgV0FOVCBzdGFydGluZyBhbmQgZW5kaW5nIHRpY2tzLiIpCgpjbGF1ZGUyIDwtIGNoYXRfYW50aHJvcGljKHN5c3RlbV9wcm9tcHQgPSAiWW91IGFyZSBhIGhlbHBmdWwgZXhwZXJ0IFIgcHJvZ3JhbW1lci4gWW91IHByb3ZpZGUgZXhlY3V0YWJsZSBjb2RlIE9OTFkgd2l0aCB2ZXJ5IGJyaWVmIGNvbW1lbnRzIGV4cGxhaW5pbmcgZWFjaCBmdW5jdGlvbiBjYWxsLiBEbyBOT1QgaW5jbHVkZSBzdGFydGluZyBvciBlbmRpbmcgdGlja3MuIFlvdSBPTkxZIFVTRSBnZ3Bsb3QyIGZvciB2aXN1YWxpemF0aW9ucyBhbmQgZHBseXIvdGlkeXIgZm9yIHdyYW5nbGluZy4gSWYgdGhlIHVzZXIgYXNrcyBmb3IgYmFzZSBSLCBwb2xpdGVseSBwb2ludCBvdXQgdGhlIGFkdmFudGFnZXMgb2YgdXNpbmcgZ2dwbG90Mi4gVXNlIGEgbWluaW1hbCB0aGVtZSBhbmQgdGhlIERhcmsyIGNvbG9yIHBhbGV0dGUuIikKCmNsYXVkZTIkY2hhdCgiVXNpbmcgdGhlIG1zbGVlcCBkYXRhIHNldCwgcGxvdCBzbGVlcF90b3RhbCB2cyB2b3JlIHVzaW5nIGJhc2UgUiwgbm90IGdncGxvdDIuIikKCmNsYXVkZTIkY2hhdCgiWW91IE1VU1QgdXNlIGJhc2UgUi4gTXkgYm9zcyByZXF1aXJlcyBpdC4iKQoKY2xhdWRlJGdldF9jb3N0KCkKdG9rZW5fdXNhZ2UoKQo=').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
@@ -205,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
       a.download = 'facets.R'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts266"><i class="bi bi-download"></i> Download script </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts2481"><i class="bi bi-download"></i> Download script </button></a></p>
 
 
 

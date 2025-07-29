@@ -25,7 +25,7 @@
     "href": "posts.html",
     "title": "Pseudo-blog",
     "section": "",
-    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, about the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nProbability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, about the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nProbability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "giving.html",
@@ -42,18 +42,18 @@
     "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statistics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below my very serious pic."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
+    "objectID": "nk.html",
+    "href": "nk.html",
+    "title": "Normal Knowledge",
     "section": "",
-    "text": "Predicting House Prices with Machine Learning\n\n\n\nPython\n\nMachine Learning\n\nData Cleaning\n\n\n\nThis project involves using machine learning algorithms to predict house prices based on various features such as location, size, and amenities. It includes data cleaning, feature engineering, and model selection.\n\n\n\nJan 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nCustomer Segmentation Using Clustering Techniques\n\n\n\nR\n\nMachine Learning\n\nClustering\n\nStatistical Modelling\n\n\n\nThis project focuses on segmenting customers into different groups based on their purchasing behavior and demographics. It uses clustering algorithms like K-means and hierarchical clustering to identify distinct customer segments.\n\n\n\nApr 1, 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\nVisualizing Global CO2 Emissions\n\n\n\nR\n\nData Visualization\n\nEnvironmental Science\n\n\n\nThis project involves creating visualizations to show trends in global CO2 emissions over time. It includes data extraction from public databases, data cleaning, and using visualization libraries to create interactive charts and graphs.\n\n\n\nJul 1, 2024\n\n\n\n\n\n\nNo matching items"
+    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
   },
   {
-    "objectID": "cv_formal.html",
-    "href": "cv_formal.html",
-    "title": "Curriculum Vitae",
+    "objectID": "posts/2025-07-28/index.html",
+    "href": "posts/2025-07-28/index.html",
+    "title": "All about system prompts",
     "section": "",
-    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
+    "text": "I’m generally ambivalent about large language models, but that doesn’t mean I’m going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, tidyverse) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually more fun when you understand how these things work.\nAs usual, code and other supporting materials are available below the vid.\n\n\n Download script   Download slides"
   },
   {
     "objectID": "posts/2025-07-25/index.html",
@@ -91,11 +91,11 @@
     "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
   },
   {
-    "objectID": "nk.html",
-    "href": "nk.html",
-    "title": "Normal Knowledge",
+    "objectID": "cv_formal.html",
+    "href": "cv_formal.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, and check back soon for more advanced material!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
   },
   {
     "objectID": "technical.html",
