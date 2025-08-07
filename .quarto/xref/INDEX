@@ -88,5 +88,11 @@
   },
   "technical.qmd": {
     "technical.html": "3a9df721"
+  },
+  "posts/2025-07-28/imdex.qmd": {
+    "imdex.html": "e8d7778d"
+  },
+  "posts/2025-07-28/index.qmd": {
+    "index.html": "caf3ed9a"
   }
 }

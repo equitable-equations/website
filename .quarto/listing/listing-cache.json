@@ -1,8 +1,5 @@
 {
   "listingMap": {
-    "projects/index.qmd": [
-      "projects.yml"
-    ],
     "posts.qmd": [
       "posts"
     ]
