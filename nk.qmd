@@ -2,7 +2,7 @@
 title: "Normal Knowledge"
 ---
 
-![](assets/nk_logo.png){style="float: right; margin: 5px;" width=140}
+![](assets/logo_new_transparent.png){style="float: right; margin: 5px;" width=180}
 My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, [NK College Statistics](https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg), and check back soon for more advanced material!
 
 Like Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities. 
