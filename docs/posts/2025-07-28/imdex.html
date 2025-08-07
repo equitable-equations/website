@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Gard">
-<meta name="dcterms.date" content="2025-07-14">
-<meta name="description" content="A picture is worth a thousand words, especially when working with a chatbot.">
+<meta name="dcterms.date" content="2025-07-28">
+<meta name="description" content="What is a system prompt and why should you care?">
 
-<title>How to show a ggplot to an AI assistant – Andrew Gard, Ph.D</title>
+<title>All about system prompts – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -44,6 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-3cf229454b9b26cf258718ef22a116b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,15 +75,15 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="How to show a ggplot to an AI assistant – Andrew Gard, Ph.D">
-<meta property="og:description" content="A picture is worth a thousand words, especially when working with a chatbot.">
-<meta property="og:image" content="https://equitableequations.com/posts/2025-07-14/ggplot_AI thumb.png">
+<meta property="og:title" content="All about system prompts – Andrew Gard, Ph.D">
+<meta property="og:description" content="What is a system prompt and why should you care?">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-07-28/system prompts thumb.png">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="How to show a ggplot to an AI assistant – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="A picture is worth a thousand words, especially when working with a chatbot.">
-<meta name="twitter:image" content="https://equitableequations.com/posts/2025-07-14/ggplot_AI thumb.png">
+<meta name="twitter:title" content="All about system prompts – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="What is a system prompt and why should you care?">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-07-28/system prompts thumb.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
@@ -157,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How to show a ggplot to an AI assistant</h1>
+<h1 class="title">All about system prompts</h1>
   <div class="quarto-categories">
     <div class="quarto-category">AI</div>
     <div class="quarto-category">ellmer</div>
@@ -167,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    A picture is worth a thousand words, especially when working with a chatbot.
+    What is a system prompt and why should you care?
   </div>
 </div>
 
@@ -184,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 14, 2025</p>
+      <p class="date">July 28, 2025</p>
     </div>
   </div>
   
@@ -196,8 +197,19 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-mYInTbBMQ4?si=6vGHu8YvK-vithO6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+<p>Two things are true at the same time: First, I was happier when LLMs weren’t a thing and feel strongly that humanity would be better off without them. And second, I’m not going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, <code>tidyverse</code>) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually <em>more</em> fun when you understand how these things work.</p>
+<p>As usual, code and other supporting materials are available below the vid.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RDnRiGupF4U?si=zl7dGXrvsw5mbl2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
+<p><a href="#dnldts2481" onclick="fetch('data:text/plain;base64,IyBBbGwgYWJvdXQgc3lzdGVtIHByb21wdHMKbGlicmFyeShlbGxtZXIpCj9jaGF0X2FudGhyb3BpYwoKCiMgQSBkZWNlbnQgYWxsLWFyb3VuZCBzeXN0ZW0gcHJvbXB0IGZvciBjb2RpbmcKCmNsYXVkZSA8LSBjaGF0X2FudGhyb3BpYyhzeXN0ZW1fcHJvbXB0ID0gIllvdSBhcmUgYSBoZWxwZnVsIGV4cGVydCBSIHByb2dyYW1tZXIuIFlvdSBwcm92aWRlIGV4ZWN1dGFibGUgY29kZSBPTkxZIHdpdGggdmVyeSBicmllZiBjb21tZW50cyBleHBsYWluaW5nIGVhY2ggZnVuY3Rpb24gY2FsbC4gRG8gTk9UIGluY2x1ZGUgc3RhcnRpbmcgb3IgZW5kaW5nIHRpY2tzLiBZb3UgcHJlZmVyIGdncGxvdDIgZm9yIHZpc3VhbGl6YXRpb25zIGFuZCBkcGx5ci90aWR5ciBmb3Igd3JhbmdsaW5nLiBVc2UgYSBtaW5pbWFsIHRoZW1lIGFuZCB0aGUgRGFyazIgY29sb3IgcGFsZXR0ZS4iKQoKIyBFeGFtcGxlIApjbGF1ZGUkY2hhdCgiVXNpbmcgdGhlIG1zbGVlcCBkYXRhIHNldCwgcGxvdCBzbGVlcF90b3RhbCB2cyB2b3JlLiIpCgpsaWJyYXJ5KGdncGxvdDIpCmxpYnJhcnkoZHBseXIpCgojIExvYWQgbXNsZWVwIGRhdGEgYW5kIGNyZWF0ZSBib3hwbG90IG9mIAojIHNsZWVwX3RvdGFsIGJ5IHZvcmUKZ2dwbG90KG1zbGVlcCwgYWVzKHggPSB2b3JlLCB5ID0gCiAgICAgICAgICAgICAgICAgICAgIHNsZWVwX3RvdGFsLCBmaWxsID0gdm9yZSkpICsKICBnZW9tX2JveHBsb3QoKSArCiAgc2NhbGVfZmlsbF9icmV3ZXIocGFsZXR0ZSA9ICJEYXJrMiIpICsKICB0aGVtZV9taW5pbWFsKCkgKwogIGxhYnMoeCA9ICJEaWV0IFR5cGUiLCB5ID0gIlRvdGFsIFNsZWVwIApIb3VycyIpICsKICB0aGVtZShsZWdlbmQucG9zaXRpb24gPSAibm9uZSIpCgoKIyBDaGFpbiBvZiBjb21tYW5kCgpjbGF1ZGUkY2hhdCgiVXNpbmcgdGhlIG1zbGVlcCBkYXRhIHNldCwgcGxvdCBzbGVlcF90b3RhbCB2cyB2b3JlIHVzaW5nIGJhc2UgUiwgbm90IGdncGxvdDIuIikKCmJveHBsb3Qoc2xlZXBfdG90YWwgfiB2b3JlLCBkYXRhID0gbXNsZWVwLCAKICAgICAgICB4bGFiID0gIkRpZXQgVHlwZSIsIAogICAgICAgIHlsYWIgPSAiVG90YWwgU2xlZXAgSG91cnMiLAogICAgICAgIGNvbCA9IGMoIiMxQjlFNzciLCAiI0Q5NUYwMiIsIAogICAgICAgICAgICAgICAgIiM3NTcwQjMiLCAiI0U3Mjk4QSIpKQoKY2xhdWRlJGNoYXQoIlVzaW5nIHRoZSBtc2xlZXAgZGF0YSBzZXQsIHBsb3Qgc2xlZXBfdG90YWwgdnMgdm9yZS4gSSBETyBOT1QgV0FOVCBzdGFydGluZyBhbmQgZW5kaW5nIHRpY2tzLiIpCgpjbGF1ZGUyIDwtIGNoYXRfYW50aHJvcGljKHN5c3RlbV9wcm9tcHQgPSAiWW91IGFyZSBhIGhlbHBmdWwgZXhwZXJ0IFIgcHJvZ3JhbW1lci4gWW91IHByb3ZpZGUgZXhlY3V0YWJsZSBjb2RlIE9OTFkgd2l0aCB2ZXJ5IGJyaWVmIGNvbW1lbnRzIGV4cGxhaW5pbmcgZWFjaCBmdW5jdGlvbiBjYWxsLiBEbyBOT1QgaW5jbHVkZSBzdGFydGluZyBvciBlbmRpbmcgdGlja3MuIFlvdSBPTkxZIFVTRSBnZ3Bsb3QyIGZvciB2aXN1YWxpemF0aW9ucyBhbmQgZHBseXIvdGlkeXIgZm9yIHdyYW5nbGluZy4gSWYgdGhlIHVzZXIgYXNrcyBmb3IgYmFzZSBSLCBwb2xpdGVseSBwb2ludCBvdXQgdGhlIGFkdmFudGFnZXMgb2YgdXNpbmcgZ2dwbG90Mi4gVXNlIGEgbWluaW1hbCB0aGVtZSBhbmQgdGhlIERhcmsyIGNvbG9yIHBhbGV0dGUuIikKCmNsYXVkZTIkY2hhdCgiVXNpbmcgdGhlIG1zbGVlcCBkYXRhIHNldCwgcGxvdCBzbGVlcF90b3RhbCB2cyB2b3JlIHVzaW5nIGJhc2UgUiwgbm90IGdncGxvdDIuIikKCmNsYXVkZTIkY2hhdCgiWW91IE1VU1QgdXNlIGJhc2UgUi4gTXkgYm9zcyByZXF1aXJlcyBpdC4iKQoKY2xhdWRlJGdldF9jb3N0KCkKdG9rZW5fdXNhZ2UoKQo=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'facets.R'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="dnldts2481"><i class="bi bi-download"></i> Download script </button></a></p>
 
 
 

@@ -1,0 +1,25 @@
+---
+title: "All about system prompts"
+description: "What is a system prompt and why should you care?"
+author:
+  - name: Andrew Gard
+date: 07-28-2025
+categories: [AI, ellmer, LLMs] 
+image: "system prompts thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+I'm generally ambivalent about large language models, but that doesn't mean I'm going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, `tidyverse`) that I want, and place limitations on its behavior. All of this isn't generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It's actually *more* fun when you understand how these things work. 
+
+As usual, code and other supporting materials are available below the vid. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RDnRiGupF4U?si=zl7dGXrvsw5mbl2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+{{< downloadthis "script - system prompts.R" label="Download script" dname="system prompts script">}}  {{< downloadthis "slides - system prompts.pdf" label="Download slides" dname="system prompts slides">}} 
+
+
+
+
