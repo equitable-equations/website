@@ -3,7 +3,7 @@ title: "Normal Knowledge"
 ---
 
 ![](assets/logo_new_transparent.png){style="float: right; margin: 5px;" width=180}
-My new YouTube channel, currently under construction, will offer professional-grade complete courses on statistics and machine learning. Check out my debut offering, [NK College Statistics](https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg), and check back soon for more advanced material!
+My new YouTube channel offers complete courses on statistics and machine learning. Check out my debut offering, [NK College Statistics](https://www.youtube.com/playlist?list=PLqA7RLX4UP3ivlA7dd7osTYESwGaSNRhg), completed just in time for the 2025-2026 academic year, and the follow-up, [NK Probability](https://www.youtube.com/playlist?list=PLqA7RLX4UP3g7pb_7TytFbOGyvsGhcfTA), a thorough introduction to random variables that just happens to align with the actuarial P exam. Next up: NK Machine Learning!
 
 Like Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities. 
 
