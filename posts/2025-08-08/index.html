@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Andrew Gard">
+<meta name="dcterms.date" content="2025-08-08">
+<meta name="description" content="Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.">
 
-<title>Pseudo-blog – Andrew Gard, Ph.D</title>
+<title>Teaching an AI to webscrape using the ellmer package – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./assets/logo_transparent.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3cf229454b9b26cf258718ef22a116b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/logo_transparent.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-3cf229454b9b26cf258718ef22a116b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,89 +72,31 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <style>html{ scroll-behavior: smooth; }</style>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta property="og:title" content="Pseudo-blog – Andrew Gard, Ph.D">
-<meta property="og:description" content="">
+<meta property="og:title" content="Teaching an AI to webscrape using the ellmer package – Andrew Gard, Ph.D">
+<meta property="og:description" content="Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.">
 <meta property="og:image" content="https://equitableequations.com/posts/2025-08-08/ellmer tools thumb.png">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="Pseudo-blog – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Teaching an AI to webscrape using the ellmer package – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.">
 <meta name="twitter:image" content="https://equitableequations.com/posts/2025-08-08/ellmer tools thumb.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Andrew Gard, Ph.D</span>
     </a>
   </div>
@@ -163,15 +107,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./ee.html"> 
+    <a class="nav-link" href="../../ee.html"> 
 <span class="menu-text">Equitable Equations</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./nk.html"> 
+    <a class="nav-link" href="../../nk.html"> 
 <span class="menu-text">Normal Knowledge</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./consulting.html"> 
+    <a class="nav-link" href="../../consulting.html"> 
 <span class="menu-text">Consulting</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -180,21 +124,21 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-cv">    
         <li>
-    <a class="dropdown-item" href="./cv.html">
+    <a class="dropdown-item" href="../../cv.html">
  <span class="dropdown-text">Narrative</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./cv_formal.html">
+    <a class="dropdown-item" href="../../cv_formal.html">
  <span class="dropdown-text">Formal</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./pubs.html">
+    <a class="dropdown-item" href="../../pubs.html">
  <span class="dropdown-text">Publications</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../../posts.html"> 
 <span class="menu-text">Pseudo-blog</span></a>
   </li>  
 </ul>
@@ -208,22 +152,42 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(5)</span></div><div class="category" data-category="ZWxsbWVy">ellmer <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Z2dwbG90Mg==">ggplot2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(5)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Pseudo-blog</h1>
-</div>
+<h1 class="title">Teaching an AI to webscrape using the ellmer package</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">ellmer</div>
+    <div class="quarto-category">LLMs</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Andrew Gard </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 8, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -233,244 +197,21 @@ window.Quarto = {
 </header>
 
 
-<p>Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, about the times we live in, or whatever else might be keeping me up at night. All very informal.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UPtMr8eOr5U?si=stSeGMamAUtaRC3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><a href="#dnldts54004" onclick="fetch('data:text/plain;base64,IyB0b29sIGNhbGxpbmcgd2l0aCBDbGF1ZGUKCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGVsbG1lcikKbGlicmFyeShydmVzdCkKCnRvcF9tb3ZpZSA8LSBmdW5jdGlvbigpewogIHVybCA8LSAiaHR0cHM6Ly93d3cuYm94b2ZmaWNlbW9qby5jb20vZGFpbHkvMjAyNS8/dmlldz15ZWFyIgogIHRvcF9tb3ZpZV9kZiA8LSByZWFkX2h0bWwodXJsKSAlPiUgCiAgICBodG1sX3RhYmxlKCkgJT4lIAogICAgcGx1Y2soMSkgJT4lIAogICAgc2xpY2VfaGVhZChuID0gMSkKICB0b3BfbW92aWVfZGYKfQoKdG9wX21vdmllKCkKCnRvcF9tb3ZpZV9uZXdlc3QgPC0gdG9vbCgKICAuZnVuID0gdG9wX21vdmllLAogIC5uYW1lID0gInRvcF9tb3ZpZSIsCiAgLmRlc2NyaXB0aW9uID0gIlJldHVybnMgdGhlIG1vc3QgcmVjZW50bHkgcmVjb3JkZWQgdG9wIG1vdmllIG9mIHRoZSBkYXkgYXMgbGlzdGVkIG9uIGJveG9mZmljZW1vam8uY29tLiIKICApCgpjaGF0IDwtIGNoYXRfYW50aHJvcGljKHN5c3RlbV9wcm9tcHQgPSAKICAgICAgICAgICAgICAgICAgICAgICAgICJ5b3UgYXJlIGEgdGVyc2UgUiBhc3Npc3RhbnQiKQoKY2hhdCRyZWdpc3Rlcl90b29sKHRvcF9tb3ZpZV9uZXdlc3QpCgpjaGF0JGNoYXQoIndoYXQgaXMgdGhlIG1vc3QgcmVjZW50IHRvcCBtb3ZpZT8iKQoKY2hhdCRjaGF0KCJ3aGF0IHdhcyB0aGUgdG9wIG1vdmllIG9uIGNocmlzdG1hcyBvZiAyMDIyPyIpCgoKdG9wX21vdmllc195ZWFyIDwtIGZ1bmN0aW9uKHllYXIpewogIHVybCA8LSBwYXN0ZTAoImh0dHBzOi8vd3d3LmJveG9mZmljZW1vam8uY29tL2RhaWx5LyIsIHllYXIpCiAgdG9wX21vdmllX2RmIDwtIHJlYWRfaHRtbCh1cmwpICU+JSAKICAgIGh0bWxfdGFibGUoKSAlPiUgCiAgICBwbHVjaygxKSAlPiUgCiAgICBqYW5pdG9yOjpjbGVhbl9uYW1lcygpCiAgdG9wX21vdmllX2RmCn0KCmRmIDwtIHRvcF9tb3ZpZXNfeWVhcigyMDIzKQpnbGltcHNlKGRmKQoKdG9wX21vdmllc195ZWFyIDwtIHRvb2woCiAgLmZ1biA9IHRvcF9tb3ZpZXNfeWVhciwKICAubmFtZSA9ICJ0b3BfbW92aWVzX3llYXIiLAogIC5kZXNjcmlwdGlvbiA9ICJSZXR1cm5zIHRoZSB0b3AtZ3Jvc3NpbmcgbW92aWVzIGJ5IGRheSBmb3IgdGhlIHNwZWNpZmllZCB5ZWFyLiBEYXRhIGZyb20gYm94b2ZmaWNlbW9qby5jb20uIiwKICB5ZWFyID0gdHlwZV9pbnRlZ2VyKCJ0aGUgeWVhciBvZiB0aGUgZGF0ZSByZXF1ZXN0ZWQiKQopCgpjaGF0JHJlZ2lzdGVyX3Rvb2wodG9wX21vdmllc195ZWFyKQoKY2hhdCRjaGF0KCJ3aGF0IHdhcyB0aGUgdG9wIG1vdmllIG9uIGNocmlzdG1hcyBvZiAyMDIyPyIpCgpjaGF0JGNoYXQoImhvdyBsb25nIHdhcyBpdCB0aGUgdG9wLWdyb3NzaW5nIG1vdmllPyIpCgpjaGF0JGNoYXQoImFsc28gbG9vayBhdCAyMDIzIikKCmNoYXQkY2hhdCgiZ2l2ZSBSIGNvZGUgdG8gY3JlYXRlIGEgc2luZ2xlIGRhdGEgc2V0IHNob3dpbmcgdGhpcyBtb3ZpZSdzIHBlcmZvcm1hbmNlIikKCmNoYXQkY2hhdCgidGhlIGNvZGUgc2hvdWxkIGRvd25sb2FkIHRoZSBkYXRhIGFuZCBjb21iaW5lIHRoZSBzZXRzLCBub3QgY3JlYXRlIHRoZSBkYXRhIGZyb20gc2NyYXRjaCIpCgpjaGF0JGdldF9jb3N0KCkKCg==').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'ellmer tools script.R'; a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+        });"><button class="btn btn-default downloadthis  " id="dnldts54004"><i class="bi bi-download"></i> Download script </button></a></p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="QUklMkNlbGxtZXIlMkNMTE1z" data-listing-date-sort="1754629200000" data-listing-file-modified-sort="1754678371568" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="27">
-<div class="thumbnail"><a href="./posts/2025-08-08/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-08-08/ellmer tools thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-08-08/index.html" class="no-external">Teaching an AI to webscrape using the ellmer package</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-08-08/index.html" class="no-external">
-<p>Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-08-08/index.html" class="no-external">
-<div class="listing-date">
-Aug 8, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="QUklMkNlbGxtZXIlMkNMTE1z" data-listing-date-sort="1753678800000" data-listing-file-modified-sort="1753757519504" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="133">
-<div class="thumbnail"><a href="./posts/2025-07-28/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-28/system prompts thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-28/index.html" class="no-external">All about system prompts</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-28/index.html" class="no-external">
-<p>What is a system prompt and why should you care?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-28/index.html" class="no-external">
-<div class="listing-date">
-Jul 28, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="UHJvYmFiaWxpdHk=" data-listing-date-sort="1753419600000" data-listing-file-modified-sort="1753656993313" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="109">
-<div class="thumbnail"><a href="./posts/2025-07-25/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-25/counting thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-25/index.html" class="no-external">Advanced counting</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-25/index.html" class="no-external">
-<p>Can I brag about this title for a sec?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-25/index.html" class="no-external">
-<div class="listing-date">
-Jul 25, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="QUklMkNlbGxtZXIlMkNMTE1z" data-listing-date-sort="1752469200000" data-listing-file-modified-sort="1753289364019" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<div class="thumbnail"><a href="./posts/2025-07-14/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-14/ggplot_AI thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-14/index.html" class="no-external">How to show a ggplot to an AI assistant</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-14/index.html" class="no-external">
-<p>A picture is worth a thousand words, especially when working with a chatbot.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-14/index.html" class="no-external">
-<div class="listing-date">
-Jul 14, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="QUklMkNMTE1z" data-listing-date-sort="1751864400000" data-listing-file-modified-sort="1753291178995" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
-<div class="thumbnail"><a href="./posts/2025-07-07/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-07-07/rnd1.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-07-07/index.html" class="no-external">Can using an LLM for coding be ethical?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-07-07/index.html" class="no-external">
-<p>A short stream-of-consciousness piece about one particular ethical consideration.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-07-07/index.html" class="no-external">
-<div class="listing-date">
-Jul 7, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="QUklMkNlbGxtZXIlMkNMTE1z" data-listing-date-sort="1751259600000" data-listing-file-modified-sort="1753290098970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-<div class="thumbnail"><a href="./posts/2025-06-30/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-06-30/ellmer thumb.jpg" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-06-30/index.html" class="no-external">Chatting with Claude AI in RStudio using ellmer</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-06-30/index.html" class="no-external">
-<p>How to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-06-30/index.html" class="no-external">
-<div class="listing-date">
-Jun 30, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Z2dwbG90Mg==" data-listing-date-sort="1748322000000" data-listing-file-modified-sort="1753289341267" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="22">
-<div class="thumbnail"><a href="./posts/2025-05-27/index.html" class="no-external">
-
-<img loading="lazy" src="./posts/2025-05-27/facets thumb.png" class="thumbnail-image">
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/2025-05-27/index.html" class="no-external">All about facets</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/2025-05-27/index.html" class="no-external">
-<p>There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/2025-05-27/index.html" class="no-external">
-<div class="listing-date">
-May 27, 2025
-</div>
-<div class="listing-author">
-Andrew Gard
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <!-- 100% privacy-first analytics -->
 <script async="" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 
@@ -879,6 +620,8 @@ Andrew Gard
     }
   });
   </script>
+<script src="https://utteranc.es/client.js" repo="equitable-equations/website" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -888,27 +631,27 @@ Andrew Gard
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./license.html">
+    <a class="nav-link" href="../../license.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="../../about.html">
 <p>About this site</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./coc.html">
+    <a class="nav-link" href="../../coc.html">
 <p>CoC</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./accessibility.html">
+    <a class="nav-link" href="../../accessibility.html">
 <p>Accessibility</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./giving.html">
+    <a class="nav-link" href="../../giving.html">
 <p>Giving</p>
 </a>
   </li>  
@@ -923,5 +666,5 @@ Andrew Gard
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
