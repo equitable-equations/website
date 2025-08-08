@@ -1,0 +1,21 @@
+---
+title: "Teaching an AI to webscrape using the ellmer package"
+description: "Giving Claude access to specific R functions is a powerful technique. Let's get into the details of how it works."
+author:
+  - name: Andrew Gard
+date: 08-08-2025
+categories: [AI, ellmer, LLMs] 
+image: "ellmer tools thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UPtMr8eOr5U?si=stSeGMamAUtaRC3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+{{< downloadthis "ellmer tools.R" label="Download script" dname="ellmer tools script">}}  
+
+
+
+
