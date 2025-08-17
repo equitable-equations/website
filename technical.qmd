@@ -10,7 +10,7 @@ While all you really need to start a channel is a computer (or even just a phone
 
 - **Recording and editing**: I used OBS Studio (which is free) without complaints for my first two years, but Camtasia was a huge quality of life upgrade. It records my face, screen, and audio on separate tracks, then provides user-friendly tools for editing and combining the various elements. I keep recording when I get tongue-tied now, backing up only to the start of my thought and then deleting the embarrassing stuff later on, usually with a smooth fade from one clip to the other.
 
-- **Logo and thumbnails**: Anyone will tell you that quality thumbnails are absolutely essential for attracting viewers. If you're just starting out, I recommend starting with a template like those offered by Adobe, Canva, and many others. After my channel monetized, I contracted a designer (Tiara Wiggins at Twiggs Creative) through [fiverr.com](fiverr.com) to professionalize my channel. I strongly recommend an experienced human over AI or DIY options. 
+- **Logo and thumbnails**: Anyone will tell you that quality thumbnails are absolutely essential for attracting viewers. If you're just starting out, I recommend starting with a template like those offered by Adobe, Canva, and many others. After my channel monetized, I contracted a designer (Tiara Wiggins at Twiggs Creative) to professionalize my channel. I strongly recommend an experienced human over AI or DIY options. 
 
 - **Intro and end screens**: Canva offers free tools for animating images. I started with my logo, then wiped it in and out. With a little tinkering, you can probably do even better. I think the results are pretty good, but will ultimately bring in professional help to improve this, too. 
 
@@ -18,6 +18,6 @@ While all you really need to start a channel is a computer (or even just a phone
 
 - **Graphics**: My data-oriented visualizations are made in R, usually with `ggplot2`, while more algebraic plots (like density curves) are generally done in Geogebra. All of this is free. 
 
-There's a lot more to YouTube than just hitting "record" and talking to the camera. It's been a long learning curve for me, and I hope yours will be shorter. 
+There's a lot more to YouTube than just hitting "record" and talking to the camera. It's been a long learning curve for me, and I hope yours will be shorter. Feel free to message me on LinkedIn if you have questions!
 
 

@@ -14,7 +14,4 @@ comments:
 
 The phrase "advanced counting" is bringing me an unreasonable amount of joy today. No, I don't just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, [Normal Knowledge](https://www.youtube.com/@NormalKnowledgeAG), features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I'm finding joy wherever I can.
 
-The vid isn't officially released yet, but you can watch it here if you like:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BMQ7rj_en1w?si=vex7fGwcZVWBlB_P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/btbbLTO4DbM?si=88DHo_-EZ0aj4qI9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
