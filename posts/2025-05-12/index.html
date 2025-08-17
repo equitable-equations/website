@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Gard">
-<meta name="dcterms.date" content="2025-05-27">
-<meta name="description" content="There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.">
+<meta name="dcterms.date" content="2025-05-12">
+<meta name="description" content="Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?">
 
-<title>All about facets – Andrew Gard, Ph.D</title>
+<title>Hollywood age gaps and the Bechdel test – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,15 +75,15 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="All about facets – Andrew Gard, Ph.D">
-<meta property="og:description" content="There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.">
-<meta property="og:image" content="https://equitableequations.com/posts/2025-05-27/facets thumb.png">
+<meta property="og:title" content="Hollywood age gaps and the Bechdel test – Andrew Gard, Ph.D">
+<meta property="og:description" content="Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-05-12/bechdel_thumb.png">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="All about facets – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.">
-<meta name="twitter:image" content="https://equitableequations.com/posts/2025-05-27/facets thumb.png">
+<meta name="twitter:title" content="Hollywood age gaps and the Bechdel test – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-05-12/bechdel_thumb.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
@@ -158,15 +158,15 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">All about facets</h1>
+<h1 class="title">Hollywood age gaps and the Bechdel test</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">ggplot2</div>
+    <div class="quarto-category">data analysis</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.
+    Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?
   </div>
 </div>
 
@@ -183,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 27, 2025</p>
+      <p class="date">May 12, 2025</p>
     </div>
   </div>
   
@@ -195,17 +195,18 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n6P7eLG80D8?si=mtav1XM23U6JZ991" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+<p>In this vid, I answer a question proposed in a 2023 <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-02-14/readme.md">TidyTuesday challenge</a>. It sounds plausible, but is it actually the case?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mMoXJ-_UnYE?si=542nGmPIe9buhEwl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><a href="#dnldts32511" onclick="fetch('data:text/plain;base64,IyBBbGwgYWJvdXQgZmFjZXRzCgpsaWJyYXJ5KHRpZHl2ZXJzZSkKbGlicmFyeShtb2RlbGRhdGEpCnRoZW1lX3NldCh0aGVtZV9taW5pbWFsKCkpCgojIGNyZWF0ZSBkYXRhIHNldApzZXQuc2VlZCgwKQpuIDwtIDIwMApyaG8gPC0gLjIKbSA8LSAyCnggPC0gcnVuaWYobiwgMCwgMTApCnkgPC0gbSAqeCArIDUgKyBybm9ybShuLCAwLCAuNzEgKiBzZCh4KSAvIHJobykKZGYxIDwtIGRhdGEuZnJhbWUoeCwgeSkKCnJobyA8LSAuNQp4IDwtIHJ1bmlmKG4sIDAsIDEwKQp5IDwtIG0gKnggKyA1ICsgcm5vcm0obiwgMCwgMSAqIHNkKHgpIC8gcmhvKQpkZjIgPC0gZGF0YS5mcmFtZSh4LCB5KQoKcmhvIDwtIC44CnggPC0gcnVuaWYobiwgMCwgMTApCnkgPC0gbSAqeCArIDUgKyBybm9ybShuLCAwLCAuNzkgKiBzZCh4KSAvIHJobykKZGYzIDwtIGRhdGEuZnJhbWUoeCwgeSkKCmRmIDwtIGJpbmRfcm93cyhkZjEsIAogICAgICAgICAgICAgICAgZGYyLCAKICAgICAgICAgICAgICAgIGRmMywgCiAgICAgICAgICAgICAgICAuaWQgPSAic2V0IikKCiMgZmFjZXRpbmcgc2NhdAoKcCA8LSBnZ3Bsb3Qoc2NhdCwgYWVzKHggPSBkMTNDLAogICAgICAgICAgICAgICAgICAgICAgeSA9IGQxNU4pKSArCiAgICAgZ2VvbV9wb2ludCgpICMgc3RhcnRlciBwbG90CnAgKyBmYWNldF93cmFwKH5TcGVjaWVzLAogICAgICAgICAgICAgICBucm93ID0gMykKCnAgKyBmYWNldF93cmFwKHZhcnMoU3BlY2llcykpCgpwICsgZmFjZXRfZ3JpZChMb2NhdGlvbn5TcGVjaWVzKQoKbXlfbGFiZWxsZXIgPC0gYXNfbGFiZWxsZXIoYygiYm9iY2F0IiA9ICJCb2JjYXQiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICJjb3lvdGUiID0gIkNveW90ZSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgImdyYXlfZm94IiA9ICJHcmF5IEZveCIpKQoKcCArIGZhY2V0X3dyYXAoflNwZWNpZXMsIAogICAgICAgICAgICAgICBsYWJlbGxlciA9IG15X2xhYmVsbGVyKQogIAojIFJeMiBkZW1vbnN0cmF0aW9uCgpnbGltcHNlKGRmKQoKZ2dwbG90KGRmLCBhZXMoeCwgeSkpICsKICBnZW9tX3BvaW50KGFscGhhID0gLjYpICsgCiAgZ2VvbV9zbW9vdGgobWV0aG9kID0gImxtIiwKICAgICAgICAgICAgICBzZSA9IEZBTFNFKSArCiAgZmFjZXRfd3JhcCh+c2V0KQoKZGYyIDwtIGRmICU+JSAKICBtdXRhdGUoc2V0ID0gZmN0X3JlY29kZShzZXQsIAogICAgICAgICAgICAgICAgICAgICAgICAgICJSXjI9PTAuMiIgPSAiMSIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgIlJeMj09MC41IiA9ICIyIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAiUl4yPT0wLjgiID0gIjMiKSkKCmdncGxvdChkZjIsIGFlcyh4LCB5KSkgKwogIGdlb21fcG9pbnQoYWxwaGEgPSAuNikgKyAKICBnZW9tX3Ntb290aChtZXRob2QgPSAibG0iLAogICAgICAgICAgICAgIHNlID0gRkFMU0UpICsKICBmYWNldF93cmFwKH5zZXQsCiAgICAgICAgICAgICBsYWJlbGxlciA9ICJsYWJlbF9wYXJzZWQiKQoKZ2dwbG90KGRmMiwgYWVzKHgsIHkpKSArCiAgZ2VvbV9wb2ludChhbHBoYSA9IC42KSArIAogIGdlb21fc21vb3RoKG1ldGhvZCA9ICJsbSIsCiAgICAgICAgICAgICAgc2UgPSBGQUxTRSwKICAgICAgICAgICAgICBsaW5ld2lkdGggPSAxLjgsCiAgICAgICAgICAgICAgY29sb3IgPSAiIzU3OThBNiIpICsKICBmYWNldF93cmFwKH5zZXQsCiAgICAgICAgICAgICBsYWJlbGxlciA9ICJsYWJlbF9wYXJzZWQiKSArCiAgdGhlbWVfbWluaW1hbCgpICsgCiAgbGFicyh4ID0gTlVMTCwKICAgICAgIHkgPSBOVUxMKSArIAogIHRoZW1lKGF4aXMudGV4dC54PWVsZW1lbnRfYmxhbmsoKSwKICAgICAgICBheGlzLnRpY2tzLng9ZWxlbWVudF9ibGFuaygpLAogICAgICAgIGF4aXMudGV4dC55PWVsZW1lbnRfYmxhbmsoKSwKICAgICAgICBheGlzLnRpY2tzLnk9ZWxlbWVudF9ibGFuaygpLAogICAgICAgIHBhbmVsLmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoZmlsbCA9ICIjRTFFMUQzIiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yID0gIiNFMUUxRDMiKSwKICAgICAgICBwbG90LmJhY2tncm91bmQgPSBlbGVtZW50X3JlY3QoZmlsbCA9ICIjRTFFMUQzIikpIAo=').then(res => res.blob()).then(blob => {
+<p><a href="#dnldts46189" onclick="fetch('data:text/plain;base64,IyBRdWVzdGlvbjogaXMgdGhlcmUgYSBjb3JyZWxhdGlvbiBiZXR3ZWVuIGFnZQojIGdhcHMgYW5kIEJlY2hkZWwgcmF0aW5ncz8KIyBGb3IgdGhpcyBwdXJwb3NlOiBnYXAgPSBtYW4ncyBhZ2UgLSB3b21hbidzIGFnZQoKIyBTZXR1cAoKbGlicmFyeSh0aWR5dmVyc2UpCnRoZW1lX3NldCh0aGVtZV9taW5pbWFsKCkpCgphZ2VfZ2FwcyA8LSByZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Jmb3JkYXRhc2NpZW5jZS90aWR5dHVlc2RheS9tYWluL2RhdGEvMjAyMy8yMDIzLTAyLTE0L2FnZV9nYXBzLmNzdicpCmJlY2hkZWwgPC0gcmVhZF9jc3YoJ2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9yZm9yZGF0YXNjaWVuY2UvdGlkeXR1ZXNkYXkvbWFpbi9kYXRhLzIwMjEvMjAyMS0wMy0wOS9yYXdfYmVjaGRlbC5jc3YnKQoKIyBPcmllbnRhdGlvbgoKVmlldyhiZWNoZGVsKQpnZ3Bsb3QoYmVjaGRlbCwgCiAgICAgICBhZXMoeCA9IHJhdGluZykpICsgCiAgZ2VvbV9iYXIoKQoKVmlldyhhZ2VfZ2FwcykKZ2dwbG90KGFnZV9nYXBzLCAKICAgICAgIGFlcyh4ID0gYWdlX2RpZmZlcmVuY2UpKSArIAogIGdlb21faGlzdG9ncmFtKCkKCiMgRGF0YSBwcmVwCgphZ2VfZ2FwcyA8LSBhZ2VfZ2FwcyAlPiUgCiAgbXV0YXRlKG1hbl9vbGRlciA9IGNhc2Vfd2hlbigKICAgIGNoYXJhY3Rlcl8xX2dlbmRlciA9PSAibWFuIiAmIGNoYXJhY3Rlcl8yX2dlbmRlciA9PSAid29tYW4iIH4gCiAgICAgIGFjdG9yXzFfYWdlIC0gYWN0b3JfMl9hZ2UsCiAgICBjaGFyYWN0ZXJfMl9nZW5kZXIgPT0gIm1hbiIgJiBjaGFyYWN0ZXJfMV9nZW5kZXIgPT0gIndvbWFuIiB+IAogICAgICBhY3Rvcl8yX2FnZSAtIGFjdG9yXzFfYWdlCiAgKSkKCmdncGxvdChhZ2VfZ2FwcywgCiAgICAgICBhZXMoeCA9IG1hbl9vbGRlcikpICsgCiAgZ2VvbV9oaXN0b2dyYW0oKSAKbWVhbihhZ2VfZ2FwcyRtYW5fb2xkZXIsCiAgICAgbmEucm0gPSBUUlVFKQoKIyBKb2luIHRoZSBkYXRhCgptb3ZpZXMgPC0gYWdlX2dhcHMgJT4lIAogIGxlZnRfam9pbihiZWNoZGVsLCAKICAgICAgICAgICAgYnkgPSBjKCJtb3ZpZV9uYW1lIiA9ICJ0aXRsZSIsCiAgICAgICAgICAgICAgICAgICAicmVsZWFzZV95ZWFyIiA9ICJ5ZWFyIikpIAphZ2VfZ2FwcyRtb3ZpZV9uYW1lWzgxMF0KCiMgMjAxNyBXb25kZXIgd29tYW4gaGFzIDMgYmVjaGRlbCByYXRpbmdzPz8KCmJlY2hkZWwgJT4lIAogIGZpbHRlcih0aXRsZSA9PSAiV29uZGVyIFdvbWFuIikKCm1vdmllcyA8LSBtb3ZpZXMgJT4lIAogIGZpbHRlcighKGlkICVpbiUgYyg5MjkzLDkyOTQpKSkKCiMgQXJlIHRoZXJlIG90aGVycz8KCmJlY2hkZWwgJT4lIAogIGNvdW50KHRpdGxlLCAKICAgICAgICB5ZWFyKSAlPiUgCiAgZmlsdGVyKG4gPiAxKSAKCiMgVmlzdWFsaXphdGlvbjogYWdlIGdhcCBhbmQgYmVjaGRlbCByYXRpbmcKCm1vdmllcyA8LSBtb3ZpZXMgJT4lIAogIG11dGF0ZShyYXRpbmdfY2F0ID0gYXMuZmFjdG9yKHJhdGluZykpICU+JSAKICBkcm9wX25hKG1hbl9vbGRlciwKICAgICAgICAgIHJhdGluZykKCmdncGxvdChtb3ZpZXMsIGFlcyh4ID0gcmF0aW5nX2NhdCwgCiAgICAgICAgICAgICAgICAgICB5ID0gbWFuX29sZGVyKSkgKyAKICBnZW9tX2JveHBsb3Qob3V0bGllci5zaGFwZSA9IE5BKSArCiAgZ2VvbV9qaXR0ZXIoYWxwaGEgPSAuMikgKyAKICBzY2FsZV94X2Rpc2NyZXRlKGxhYmVscyA9IGMoIkZhaWwiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIk5vIGNvbnZlcnNhdGlvbiIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiT25seSBhYm91dCBtZW4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiUGFzcyIpKSArCiAgbGFicyh4ID0gIkJlY2hkZWwgdGVzdCByZXN1bHQiLAogICAgICAgeSA9ICJNYWxlIGFnZSBnYXAiLAogICAgICAgdGl0bGUgPSAiU29tZXRoaW5nIHRvIHRhbGsgYWJvdXQiKQoKIyBDb3JyZWxhdGlvbgoKY29yKG1vdmllcyRtYW5fb2xkZXIsCiAgICBtb3ZpZXMkcmF0aW5nKQoKY29yKG1vdmllcyRtYW5fb2xkZXIsCiAgICBtb3ZpZXMkcmF0aW5nLAogICAgbWV0aG9kID0gInNwZWFybWFuIikKCiMgVGVzdGluZyAKCm1vZGVsIDwtIGxtKG1hbl9vbGRlciB+IHJhdGluZ19jYXQsIAogICAgICAgICAgICBkYXRhID0gbW92aWVzKQpzdW1tYXJ5KG1vZGVsKQoKCg==').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
       a.href = downloadURL;
-      a.download = 'facets.R'; a.click();
+      a.download = 'age gaps script.R'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts32511"><i class="bi bi-download"></i> Download script </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts46189"><i class="bi bi-download"></i> Download script </button></a></p>
 
 
 
