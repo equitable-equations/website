@@ -1,0 +1,20 @@
+---
+title: "Writing prompts using interpolate()"
+description: "I just discovered `interpolate()`, which is similar but not identical to `glue::glue()`."
+author:
+  - name: Andrew Gard
+date: 09-02-2025
+categories: [AI, ellmer, LLMs] 
+image: "interpolate thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+This week, I'm writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn't particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about `interpolate()`, in particular.
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/KrIkDPBg9Zk?si=xemfivqMi38eMHyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+  {{< downloadthis "interpolate.R" label="Download script" dname="interpolate_script">}}  
+

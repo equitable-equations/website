@@ -4,7 +4,7 @@ description: "Can I brag about this title for a sec?"
 author:
   - name: Andrew Gard
 date: 07-25-2025
-categories: [Probability] # self-defined categories
+categories: [probability] # self-defined categories
 image: "counting thumb.png"
 draft: false 
 comments:

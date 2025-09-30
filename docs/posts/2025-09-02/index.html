@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Andrew Gard">
-<meta name="dcterms.date" content="2025-08-08">
-<meta name="description" content="Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.">
+<meta name="dcterms.date" content="2025-09-02">
+<meta name="description" content="I just discovered interpolate(), which is similar but not identical to glue::glue().">
 
-<title>Teaching an AI to webscrape using the ellmer package – Andrew Gard, Ph.D</title>
+<title>Writing prompts using interpolate() – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,15 +75,15 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Teaching an AI to webscrape using the ellmer package – Andrew Gard, Ph.D">
-<meta property="og:description" content="Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.">
-<meta property="og:image" content="https://equitableequations.com/posts/2025-08-08/ellmer tools thumb.png">
+<meta property="og:title" content="Writing prompts using interpolate() – Andrew Gard, Ph.D">
+<meta property="og:description" content="I just discovered interpolate(), which is similar but not identical to glue::glue().">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-09-02/interpolate thumb.png">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
 <meta property="og:image:height" content="720">
 <meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="Teaching an AI to webscrape using the ellmer package – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.">
-<meta name="twitter:image" content="https://equitableequations.com/posts/2025-08-08/ellmer tools thumb.png">
+<meta name="twitter:title" content="Writing prompts using interpolate() – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="I just discovered interpolate(), which is similar but not identical to glue::glue().">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-09-02/interpolate thumb.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image-height" content="720">
 <meta name="twitter:image-width" content="1280">
@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Teaching an AI to webscrape using the ellmer package</h1>
+<h1 class="title">Writing prompts using interpolate()</h1>
   <div class="quarto-categories">
     <div class="quarto-category">AI</div>
     <div class="quarto-category">ellmer</div>
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.
+    I just discovered <code>interpolate()</code>, which is similar but not identical to <code>glue::glue()</code>.
   </div>
 </div>
 
@@ -185,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 8, 2025</p>
+      <p class="date">September 2, 2025</p>
     </div>
   </div>
   
@@ -197,17 +197,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UPtMr8eOr5U?si=stSeGMamAUtaRC3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="#dnldts7813" onclick="fetch('data:text/plain;base64,IyB0b29sIGNhbGxpbmcgd2l0aCBDbGF1ZGUKCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KGVsbG1lcikKbGlicmFyeShydmVzdCkKCnRvcF9tb3ZpZSA8LSBmdW5jdGlvbigpewogIHVybCA8LSAiaHR0cHM6Ly93d3cuYm94b2ZmaWNlbW9qby5jb20vZGFpbHkvMjAyNS8/dmlldz15ZWFyIgogIHRvcF9tb3ZpZV9kZiA8LSByZWFkX2h0bWwodXJsKSAlPiUgCiAgICBodG1sX3RhYmxlKCkgJT4lIAogICAgcGx1Y2soMSkgJT4lIAogICAgc2xpY2VfaGVhZChuID0gMSkKICB0b3BfbW92aWVfZGYKfQoKdG9wX21vdmllKCkKCnRvcF9tb3ZpZV9uZXdlc3QgPC0gdG9vbCgKICAuZnVuID0gdG9wX21vdmllLAogIC5uYW1lID0gInRvcF9tb3ZpZSIsCiAgLmRlc2NyaXB0aW9uID0gIlJldHVybnMgdGhlIG1vc3QgcmVjZW50bHkgcmVjb3JkZWQgdG9wIG1vdmllIG9mIHRoZSBkYXkgYXMgbGlzdGVkIG9uIGJveG9mZmljZW1vam8uY29tLiIKICApCgpjaGF0IDwtIGNoYXRfYW50aHJvcGljKHN5c3RlbV9wcm9tcHQgPSAKICAgICAgICAgICAgICAgICAgICAgICAgICJ5b3UgYXJlIGEgdGVyc2UgUiBhc3Npc3RhbnQiKQoKY2hhdCRyZWdpc3Rlcl90b29sKHRvcF9tb3ZpZV9uZXdlc3QpCgpjaGF0JGNoYXQoIndoYXQgaXMgdGhlIG1vc3QgcmVjZW50IHRvcCBtb3ZpZT8iKQoKY2hhdCRjaGF0KCJ3aGF0IHdhcyB0aGUgdG9wIG1vdmllIG9uIGNocmlzdG1hcyBvZiAyMDIyPyIpCgoKdG9wX21vdmllc195ZWFyIDwtIGZ1bmN0aW9uKHllYXIpewogIHVybCA8LSBwYXN0ZTAoImh0dHBzOi8vd3d3LmJveG9mZmljZW1vam8uY29tL2RhaWx5LyIsIHllYXIpCiAgdG9wX21vdmllX2RmIDwtIHJlYWRfaHRtbCh1cmwpICU+JSAKICAgIGh0bWxfdGFibGUoKSAlPiUgCiAgICBwbHVjaygxKSAlPiUgCiAgICBqYW5pdG9yOjpjbGVhbl9uYW1lcygpCiAgdG9wX21vdmllX2RmCn0KCmRmIDwtIHRvcF9tb3ZpZXNfeWVhcigyMDIzKQpnbGltcHNlKGRmKQoKdG9wX21vdmllc195ZWFyIDwtIHRvb2woCiAgLmZ1biA9IHRvcF9tb3ZpZXNfeWVhciwKICAubmFtZSA9ICJ0b3BfbW92aWVzX3llYXIiLAogIC5kZXNjcmlwdGlvbiA9ICJSZXR1cm5zIHRoZSB0b3AtZ3Jvc3NpbmcgbW92aWVzIGJ5IGRheSBmb3IgdGhlIHNwZWNpZmllZCB5ZWFyLiBEYXRhIGZyb20gYm94b2ZmaWNlbW9qby5jb20uIiwKICB5ZWFyID0gdHlwZV9pbnRlZ2VyKCJ0aGUgeWVhciBvZiB0aGUgZGF0ZSByZXF1ZXN0ZWQiKQopCgpjaGF0JHJlZ2lzdGVyX3Rvb2wodG9wX21vdmllc195ZWFyKQoKY2hhdCRjaGF0KCJ3aGF0IHdhcyB0aGUgdG9wIG1vdmllIG9uIGNocmlzdG1hcyBvZiAyMDIyPyIpCgpjaGF0JGNoYXQoImhvdyBsb25nIHdhcyBpdCB0aGUgdG9wLWdyb3NzaW5nIG1vdmllPyIpCgpjaGF0JGNoYXQoImFsc28gbG9vayBhdCAyMDIzIikKCmNoYXQkY2hhdCgiZ2l2ZSBSIGNvZGUgdG8gY3JlYXRlIGEgc2luZ2xlIGRhdGEgc2V0IHNob3dpbmcgdGhpcyBtb3ZpZSdzIHBlcmZvcm1hbmNlIikKCmNoYXQkY2hhdCgidGhlIGNvZGUgc2hvdWxkIGRvd25sb2FkIHRoZSBkYXRhIGFuZCBjb21iaW5lIHRoZSBzZXRzLCBub3QgY3JlYXRlIHRoZSBkYXRhIGZyb20gc2NyYXRjaCIpCgpjaGF0JGdldF9jb3N0KCkKCg==').then(res => res.blob()).then(blob => {
+<p>This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about <code>interpolate()</code>, in particular.</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/KrIkDPBg9Zk?si=xemfivqMi38eMHyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></p>
+<p><a href="#dnldts36852" onclick="fetch('data:text/plain;base64,bGlicmFyeShlbGxtZXIpCj9pbnRlcnBvbGF0ZQoKIyBTaW1wbGUgcHJvbXB0aW5nIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgpjaGF0IDwtIGNoYXRfb3BlbmFpKCJZb3UgYXJlIGEgZnJpZW5kbHkgYnV0IHRlcnNlIAogICAgICAgICAgICAgICAgc3RhdGlzdGljcyBtZW50b3IuIEdpdmUgYW5zd2VycyBhdAogICAgICAgICAgICAgICAgYW4gYWR2YW5jZWQgdW5kZXJncmFkdWF0ZSBsZXZlbC4iLAogICAgICAgICAgICAgICAgICAgIG1vZGVsID0gImdwdC01LW5hbm8iKQoKcHJvbXB0IDwtICJCcmllZmx5IGV4cGxhaW4gdGhlIGNlbnRyYWwgbGltaXQgdGhlb3JlbS4iCmNoYXQkY2hhdChwcm9tcHQpCgoKIyBJbnRlcnBvbGF0aW9uIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgpwcm9tcHRfb3BlbiA8LSAiQnJpZWZseSBleHBsYWluIHt7IHRvcGljIH19LiIKaW50ZXJwb2xhdGUocHJvbXB0X29wZW4sIAogICAgICAgICAgICB0b3BpYyA9ICJ0aGUgY2VudHJhbCBsaW1pdCB0aGVvcmVtIikKCnByb21wdF9vcGVuX2cgPC0gIkJyaWVmbHkgZXhwbGFpbiB7dG9waWN9LiIKZ2x1ZTo6Z2x1ZShwcm9tcHRfb3Blbl9nLCAKICAgICAgICAgICB0b3BpYyA9ICJ0aGUgY2VudHJhbCBsaW1pdCB0aGVvcmVtIikKCm15X3RvcGljcyA8LSBjKCJ0aGUgY2VudHJhbCBsaW1pdCB0aGVvcmVtIiwKICAgICAgICAgICAgICAgIm1heGltdW0gbGlrZWxpaG9vZCBlc3RpbWF0aW9uIikKaW50ZXJwb2xhdGUocHJvbXB0X29wZW4sIAogICAgICAgICAgICB0b3BpYyA9IG15X3RvcGljcykKCgojIEZ1bmN0aW9ucyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCnN0YXRzX2hlbHAgPC0gZnVuY3Rpb24odG9waWMpewogIGNoYXQgPC0gCiAgICBjaGF0X29wZW5haSgiWW91IGFyZSBhIGZyaWVuZGx5IGJ1dCB0ZXJzZSAKICAgICAgICAgICAgICAgIHN0YXRpc3RpY3MgbWVudG9yLiBHaXZlIGFuc3dlcnMgYXQKICAgICAgICAgICAgICAgIGFuIGFkdmFuY2VkIHVuZGVyZ3JhZHVhdGUgbGV2ZWwuIiwKICAgICAgICAgICAgICAgIG1vZGVsID0gImdwdC01LW5hbm8iKSAKICBjaGF0JGNoYXQoaW50ZXJwb2xhdGUoIkJyaWVmbHkgZXhwbGFpbiAKICAgICAgICAgICAgICAgICAgICAgICAge3sgdG9waWMgfX0uIiksCiAgICAgICAgICAgIGVjaG8gPSAibm9uZSIpCiAgfQoKc3RhdHNfaGVscCgiY2VudHJhbCBsaW1pdCB0aGVvcmVtIikKCmxhcHBseShteV90b3BpY3MsIHN0YXRzX2hlbHApCg==').then(res => res.blob()).then(blob => {
       const downloadURL = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
       document.body.appendChild(a);
       a.href = downloadURL;
-      a.download = 'ellmer tools script.R'; a.click();
+      a.download = 'interpolate_script.R'; a.click();
       window.URL.revokeObjectURL(downloadURL);
       document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts7813"><i class="bi bi-download"></i> Download script </button></a></p>
+        });"><button class="btn btn-default downloadthis  " id="dnldts36852"><i class="bi bi-download"></i> Download script </button></a></p>
 
 
 

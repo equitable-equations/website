@@ -1,0 +1,21 @@
+---
+title: "How to set up RStudio for success"
+description: "Here are a few of the most important things I have my students do as soon as they open RStudio for the first time."
+author:
+  - name: Andrew Gard
+date: 09-30-2025
+categories: [RStudio] 
+image: "setup thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:  
+
+- Put the console pane on the right
+- Set .RData to automatically clear after every session
+- Work inside of a project
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5rF5Ek-OvCE?si=7k6REYEj1BKOUbhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

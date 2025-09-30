@@ -1,0 +1,18 @@
+---
+title: "Discrete probability calculations in R"
+description: "R has built-in functions for all the major discrete probability distributions, including the binomial, geometric, and Poisson. I'll show you how to compute probabilities, find quantiles, and generate random values from any of these."
+author:
+  - name: Andrew Gard
+date: 09-15-2025
+categories: [probability] 
+image: "probs in R thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  {{< downloadthis "prob calcs in R.pdf" label="Download slides" dname="prob calcs in R">}}  
+

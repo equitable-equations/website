@@ -3,7 +3,7 @@ title: "Teaching an AI to webscrape using the ellmer package"
 description: "Giving Claude access to specific R functions is a powerful technique. Let's get into the details of how it works."
 author:
   - name: Andrew Gard
-date: 08-08-2025
+date: 08-11-2025
 categories: [AI, ellmer, LLMs] 
 image: "ellmer tools thumb.png"
 draft: false 
