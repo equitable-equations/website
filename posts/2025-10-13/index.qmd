@@ -1,0 +1,22 @@
+---
+title: "Getting started with R"
+description: Looking to get started with R? I've got you covered.
+author:
+  - name: Andrew Gard
+date: 10-13-2025
+categories: [RStudio] 
+image: "getting_started_thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+I've decided to start updating my introductory-level content, much of which was recorded early in the 2020 pandemic. When completed, I expect to have a complete course in data science with R, roughly paralleling what you might find in a sophomore-level university course for students with some statistical knowledge but not necessarily and programming experience. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ftb7u_JuJwg?si=dON-HYvqMeF0Ped6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  {{< downloadthis "amy.csv" label="Download amy.csv" dname="amy">}}
+  
+  
+  
