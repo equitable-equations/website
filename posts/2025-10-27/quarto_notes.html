@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Andrew Gard">
-<meta name="dcterms.date" content="2025-05-12">
-<meta name="description" content="Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?">
 
-<title>Hollywood age gaps and the Bechdel test – Andrew Gard, Ph.D</title>
+<title>Getting started with Quarto – Andrew Gard, Ph.D</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -44,7 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-3cf229454b9b26cf258718ef22a116b8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/quarto-contrib/downloadthis-1.9.1/downloadthis.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -75,18 +106,14 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Hollywood age gaps and the Bechdel test – Andrew Gard, Ph.D">
-<meta property="og:description" content="Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?">
-<meta property="og:image" content="https://equitableequations.com/posts/2025-05-12/bechdel_thumb.png">
+<meta property="og:title" content="Getting started with Quarto – Andrew Gard, Ph.D">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://equitableequations.com/posts/2025-10-27/assets/me_contemplative_sm.jpg">
 <meta property="og:site_name" content="Andrew Gard, Ph.D">
-<meta property="og:image:height" content="720">
-<meta property="og:image:width" content="1280">
-<meta name="twitter:title" content="Hollywood age gaps and the Bechdel test – Andrew Gard, Ph.D">
-<meta name="twitter:description" content="Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?">
-<meta name="twitter:image" content="https://equitableequations.com/posts/2025-05-12/bechdel_thumb.png">
+<meta name="twitter:title" content="Getting started with Quarto – Andrew Gard, Ph.D">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://equitableequations.com/posts/2025-10-27/assets/me_contemplative_sm.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="720">
-<meta name="twitter:image-width" content="1280">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -158,34 +185,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Hollywood age gaps and the Bechdel test</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">data analysis</div>
-  </div>
-  </div>
-
-<div>
-  <div class="description">
-    Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?
-  </div>
+<h1 class="title">Getting started with Quarto</h1>
 </div>
+
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Andrew Gard </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">May 12, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -195,20 +202,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In this vid, I answer a question proposed in a 2023 <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-02-14/readme.md">TidyTuesday challenge</a>. It sounds plausible, but is it actually the case?</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mMoXJ-_UnYE?si=542nGmPIe9buhEwl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><a href="#dnldts35172" onclick="fetch('data:text/plain;base64,IyBRdWVzdGlvbjogaXMgdGhlcmUgYSBjb3JyZWxhdGlvbiBiZXR3ZWVuIGFnZQojIGdhcHMgYW5kIEJlY2hkZWwgcmF0aW5ncz8KIyBGb3IgdGhpcyBwdXJwb3NlOiBnYXAgPSBtYW4ncyBhZ2UgLSB3b21hbidzIGFnZQoKIyBTZXR1cAoKbGlicmFyeSh0aWR5dmVyc2UpCnRoZW1lX3NldCh0aGVtZV9taW5pbWFsKCkpCgphZ2VfZ2FwcyA8LSByZWFkX2NzdignaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Jmb3JkYXRhc2NpZW5jZS90aWR5dHVlc2RheS9tYWluL2RhdGEvMjAyMy8yMDIzLTAyLTE0L2FnZV9nYXBzLmNzdicpCmJlY2hkZWwgPC0gcmVhZF9jc3YoJ2h0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9yZm9yZGF0YXNjaWVuY2UvdGlkeXR1ZXNkYXkvbWFpbi9kYXRhLzIwMjEvMjAyMS0wMy0wOS9yYXdfYmVjaGRlbC5jc3YnKQoKIyBPcmllbnRhdGlvbgoKVmlldyhiZWNoZGVsKQpnZ3Bsb3QoYmVjaGRlbCwgCiAgICAgICBhZXMoeCA9IHJhdGluZykpICsgCiAgZ2VvbV9iYXIoKQoKVmlldyhhZ2VfZ2FwcykKZ2dwbG90KGFnZV9nYXBzLCAKICAgICAgIGFlcyh4ID0gYWdlX2RpZmZlcmVuY2UpKSArIAogIGdlb21faGlzdG9ncmFtKCkKCiMgRGF0YSBwcmVwCgphZ2VfZ2FwcyA8LSBhZ2VfZ2FwcyAlPiUgCiAgbXV0YXRlKG1hbl9vbGRlciA9IGNhc2Vfd2hlbigKICAgIGNoYXJhY3Rlcl8xX2dlbmRlciA9PSAibWFuIiAmIGNoYXJhY3Rlcl8yX2dlbmRlciA9PSAid29tYW4iIH4gCiAgICAgIGFjdG9yXzFfYWdlIC0gYWN0b3JfMl9hZ2UsCiAgICBjaGFyYWN0ZXJfMl9nZW5kZXIgPT0gIm1hbiIgJiBjaGFyYWN0ZXJfMV9nZW5kZXIgPT0gIndvbWFuIiB+IAogICAgICBhY3Rvcl8yX2FnZSAtIGFjdG9yXzFfYWdlCiAgKSkKCmdncGxvdChhZ2VfZ2FwcywgCiAgICAgICBhZXMoeCA9IG1hbl9vbGRlcikpICsgCiAgZ2VvbV9oaXN0b2dyYW0oKSAKbWVhbihhZ2VfZ2FwcyRtYW5fb2xkZXIsCiAgICAgbmEucm0gPSBUUlVFKQoKIyBKb2luIHRoZSBkYXRhCgptb3ZpZXMgPC0gYWdlX2dhcHMgJT4lIAogIGxlZnRfam9pbihiZWNoZGVsLCAKICAgICAgICAgICAgYnkgPSBjKCJtb3ZpZV9uYW1lIiA9ICJ0aXRsZSIsCiAgICAgICAgICAgICAgICAgICAicmVsZWFzZV95ZWFyIiA9ICJ5ZWFyIikpIAphZ2VfZ2FwcyRtb3ZpZV9uYW1lWzgxMF0KCiMgMjAxNyBXb25kZXIgd29tYW4gaGFzIDMgYmVjaGRlbCByYXRpbmdzPz8KCmJlY2hkZWwgJT4lIAogIGZpbHRlcih0aXRsZSA9PSAiV29uZGVyIFdvbWFuIikKCm1vdmllcyA8LSBtb3ZpZXMgJT4lIAogIGZpbHRlcighKGlkICVpbiUgYyg5MjkzLDkyOTQpKSkKCiMgQXJlIHRoZXJlIG90aGVycz8KCmJlY2hkZWwgJT4lIAogIGNvdW50KHRpdGxlLCAKICAgICAgICB5ZWFyKSAlPiUgCiAgZmlsdGVyKG4gPiAxKSAKCiMgVmlzdWFsaXphdGlvbjogYWdlIGdhcCBhbmQgYmVjaGRlbCByYXRpbmcKCm1vdmllcyA8LSBtb3ZpZXMgJT4lIAogIG11dGF0ZShyYXRpbmdfY2F0ID0gYXMuZmFjdG9yKHJhdGluZykpICU+JSAKICBkcm9wX25hKG1hbl9vbGRlciwKICAgICAgICAgIHJhdGluZykKCmdncGxvdChtb3ZpZXMsIGFlcyh4ID0gcmF0aW5nX2NhdCwgCiAgICAgICAgICAgICAgICAgICB5ID0gbWFuX29sZGVyKSkgKyAKICBnZW9tX2JveHBsb3Qob3V0bGllci5zaGFwZSA9IE5BKSArCiAgZ2VvbV9qaXR0ZXIoYWxwaGEgPSAuMikgKyAKICBzY2FsZV94X2Rpc2NyZXRlKGxhYmVscyA9IGMoIkZhaWwiLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIk5vIGNvbnZlcnNhdGlvbiIsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiT25seSBhYm91dCBtZW4iLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAiUGFzcyIpKSArCiAgbGFicyh4ID0gIkJlY2hkZWwgdGVzdCByZXN1bHQiLAogICAgICAgeSA9ICJNYWxlIGFnZSBnYXAiLAogICAgICAgdGl0bGUgPSAiU29tZXRoaW5nIHRvIHRhbGsgYWJvdXQiKQoKIyBDb3JyZWxhdGlvbgoKY29yKG1vdmllcyRtYW5fb2xkZXIsCiAgICBtb3ZpZXMkcmF0aW5nKQoKY29yKG1vdmllcyRtYW5fb2xkZXIsCiAgICBtb3ZpZXMkcmF0aW5nLAogICAgbWV0aG9kID0gInNwZWFybWFuIikKCiMgVGVzdGluZyAKCm1vZGVsIDwtIGxtKG1hbl9vbGRlciB+IHJhdGluZ19jYXQsIAogICAgICAgICAgICBkYXRhID0gbW92aWVzKQpzdW1tYXJ5KG1vZGVsKQoKCg==').then(res => res.blob()).then(blob => {
-      const downloadURL = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      document.body.appendChild(a);
-      a.href = downloadURL;
-      a.download = 'age gaps script.R'; a.click();
-      window.URL.revokeObjectURL(downloadURL);
-      document.body.removeChild(a);
-        });"><button class="btn btn-default downloadthis  " id="dnldts35172"><i class="bi bi-download"></i> Download script </button></a></p>
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>. Hi everybody!</p>
+</section>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
+<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>You can add options to executable code like this</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+<p>We can make our own code chunks with the green “c” button:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>erykah <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"erykah.xlsx"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(erykah)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 105
+Columns: 39
+$ artist_name                  &lt;chr&gt; "Erykah Badu", "Erykah Badu", "Erykah Bad…
+$ artist_id                    &lt;chr&gt; "7IfculRW2WXyzNQ8djX8WX", "7IfculRW2WXyzN…
+$ album_id                     &lt;chr&gt; "2gc9WOWqVRrGUENUjozcpY", "2gc9WOWqVRrGUE…
+$ album_type                   &lt;chr&gt; "album", "album", "album", "album", "albu…
+$ album_images                 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ album_release_date           &lt;dttm&gt; 2015-11-27, 2015-11-27, 2015-11-27, 2015…
+$ album_release_year           &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015,…
+$ album_release_date_precision &lt;chr&gt; "day", "day", "day", "day", "day", "day",…
+$ danceability                 &lt;dbl&gt; 0.511, 0.000, 0.828, 0.850, 0.651, 0.529,…
+$ energy                       &lt;dbl&gt; 0.190, 0.307, 0.678, 0.449, 0.446, 0.496,…
+$ key                          &lt;dbl&gt; 1, 6, 1, 0, 10, 8, 10, 11, 1, 10, 11, 9, …
+$ loudness                     &lt;dbl&gt; -10.823, -9.690, -7.326, -6.437, -10.255,…
+$ mode                         &lt;dbl&gt; 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1,…
+$ speechiness                  &lt;dbl&gt; 0.0321, 0.0000, 0.0385, 0.0444, 0.1300, 0…
+$ acousticness                 &lt;dbl&gt; 0.84600, 0.88000, 0.38900, 0.18800, 0.882…
+$ instrumentalness             &lt;dbl&gt; 8.09e-01, 1.96e-03, 2.03e-01, 2.18e-03, 2…
+$ liveness                     &lt;dbl&gt; 0.0915, 0.1980, 0.1290, 0.0965, 0.1210, 0…
+$ valence                      &lt;dbl&gt; 0.0882, 0.0000, 0.5690, 0.6030, 0.5400, 0…
+$ tempo                        &lt;dbl&gt; 113.161, 0.000, 135.011, 91.962, 183.744,…
+$ track_id                     &lt;chr&gt; "1rddN3DZehbcQnFJt1OJgj", "5GsT7Z8h4PL3TP…
+$ analysis_url                 &lt;chr&gt; "https://api.spotify.com/v1/audio-analysi…
+$ time_signature               &lt;dbl&gt; 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3,…
+$ artists                      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ available_markets            &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ disc_number                  &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ duration_ms                  &lt;dbl&gt; 214304, 35449, 388030, 208719, 73458, 191…
+$ explicit                     &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+$ track_href                   &lt;chr&gt; "https://api.spotify.com/v1/tracks/1rddN3…
+$ is_local                     &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE,…
+$ track_name                   &lt;chr&gt; "Caint Use My Phone (Suite)", "Hi", "Cel …
+$ track_preview_url            &lt;chr&gt; "NA", "NA", "NA", "NA", "NA", "NA", "NA",…
+$ track_number                 &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1, 2, …
+$ type                         &lt;chr&gt; "track", "track", "track", "track", "trac…
+$ track_uri                    &lt;chr&gt; "spotify:track:1rddN3DZehbcQnFJt1OJgj", "…
+$ external_urls.spotify        &lt;chr&gt; "https://open.spotify.com/track/1rddN3DZe…
+$ album_name                   &lt;chr&gt; "But You Caint Use My Phone (Mixtape)", "…
+$ key_name                     &lt;chr&gt; "C#", "F#", "C#", "C", "A#", "G#", "A#", …
+$ mode_name                    &lt;chr&gt; "major", "minor", "minor", "major", "mino…
+$ key_mode                     &lt;chr&gt; "C# major", "F# minor", "C# minor", "C ma…</code></pre>
+</div>
+</div>
+<p>A few Quarto best-practices:</p>
+<ul>
+<li><p>don’t include interactive commands like <code>View</code> and <code>install.packages</code> into quarto docs.</p></li>
+<li><p>Always make your docs self-contained.</p></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <!-- 100% privacy-first analytics -->
@@ -619,8 +702,6 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
-<script src="https://utteranc.es/client.js" repo="equitable-equations/website" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
-</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
