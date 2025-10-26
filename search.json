@@ -74,7 +74,7 @@
     "href": "posts/2025-10-27/index.html",
     "title": "What is Quarto?",
     "section": "",
-    "text": "Quarto let’s you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
+    "text": "Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
   },
   {
     "objectID": "posts/2025-05-27/index.html",
