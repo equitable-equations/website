@@ -1,0 +1,23 @@
+---
+title: "What is Quarto?"
+description: I introduce Quarto at the very start of my courses on R. Here's why.
+author:
+  - name: Andrew Gard
+date: 10-27-2025
+categories: [Quarto] 
+image: "quarto thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+
+---
+
+Quarto lets you write and save code while also adding text, images, and other content to contextualize what you're doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w5vBoaN6t-M?si=1HmMNFWiIRoBpCnW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  {{< downloadthis "erykah.xlsx" label="Download erykah.xlsx" dname="erykah">}}
+  {{< downloadthis "_internal/quarto_notes.qmd" label="Download notes" dname="quarto_notes">}}  
+  
+  

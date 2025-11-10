@@ -1,0 +1,23 @@
+---
+title: "Content to support my course *Data Science with R*"
+description: This is the place to find data sets and other supporting documents for my YouTube course, *Data Science with R*, at least until I build something more permanent.
+author:
+  - name: Andrew Gard
+date: 11-10-2025
+categories: [dplyr, data wrangling] 
+image: "data manipulation thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+
+---
+
+Looking for data and other documents supporting that YouTube video you saw of mine? You've come to the right place.
+
+- Data manipulation with R:
+
+  {{< downloadthis "_internal/data manipulation with R.html" label="Download html notes" dname="html_notes">}}
+  {{< downloadthis "_internal/data manipulation with R.qmd" label="Download quarto notes" dname="quarto_notes">}}  
+  
+  

@@ -115,5 +115,17 @@
   },
   "posts/2025-10-13/index.qmd": {
     "index.html": "3d935ca3"
+  },
+  "posts/2025-10-27/index.qmd": {
+    "index.html": "757505e4"
+  },
+  "posts/2025-10-27/getting started with quarto.qmd": {
+    "getting started with quarto.html": "69c57857"
+  },
+  "posts/2025-10-27/quarto_notes.qmd": {
+    "quarto_notes.html": "e96fa717"
+  },
+  "posts/2025-11-10/index.qmd": {
+    "index.html": "1deded28"
   }
 }
