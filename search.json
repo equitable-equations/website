@@ -1,185 +1,31 @@
 [
   {
-    "objectID": "future posts.html",
-    "href": "future posts.html",
-    "title": "Future posts",
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
     "section": "",
-    "text": "A space to record ideas I have for future posts.\n\nAdapting to being tenured\nWoke racism: Remmick\nWhy I haven’t covered tidymodels yet"
+    "text": "Here you can find data sets referenced in some of my vids. I’ve done my best to cite sources in cases where I’m not the creator. Note: Built-in and packaged R data sets are not included here.\n\nScooby-Doo: information about every episode of the long-running American TV show through February, 2021. Modified slightly from the version found on Kaggle.\n Download scooby.xlsx \nErykah Badu Spotify data for every track by neo-soul singer Erykah Badu. Obtained using the spotifyr package before Spotify closed their public API in the fall of 2024.\n Download erykah.xlsx"
   },
   {
-    "objectID": "ee.html",
-    "href": "ee.html",
-    "title": "Equitable Equations",
+    "objectID": "accessibility.html",
+    "href": "accessibility.html",
+    "title": "Accessibility",
     "section": "",
-    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+    "text": "Under construction"
   },
   {
-    "objectID": "license.html",
-    "href": "license.html",
-    "title": "CC BY-NC-SA 4.0 license",
+    "objectID": "cv/Gard CV 2024.html",
+    "href": "cv/Gard CV 2024.html",
+    "title": "Professional Experience",
     "section": "",
-    "text": "© 2025 Andrew Gard\nMy content is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license. Basically, you can share and adapt this content with appropriate credit and notation of any changes. You may NOT use this material for any commercial purposes without my explicit written consent.\nAny opinions expressed are my own and do not reflect those of my employers, collaborators, or affiliates."
-  },
-  {
-    "objectID": "posts.html",
-    "href": "posts.html",
-    "title": "Pseudo-blog",
-    "section": "",
-    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nContent to support my course Data Science with R\n\n\n\ndplyr\n\ndata wrangling\n\n\n\nThis is the place to find data sets and other supporting documents for my YouTube course, Data Science with R, at least until I build something more permanent.\n\n\n\n\n\nNov 10, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is Quarto?\n\n\n\nQuarto\n\n\n\nI introduce Quarto at the very start of my courses on R. Here’s why.\n\n\n\n\n\nOct 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with R\n\n\n\nRStudio\n\n\n\nLooking to get started with R? I’ve got you covered.\n\n\n\n\n\nOct 13, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up RStudio for success\n\n\n\nRStudio\n\n\n\nHere are a few of the most important things I have my students do as soon as they open RStudio for the first time.\n\n\n\n\n\nSep 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nDiscrete probability calculations in R\n\n\n\nprobability\n\n\n\nR has built-in functions for all the major discrete probability distributions, including the binomial, geometric, and Poisson. I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.\n\n\n\n\n\nSep 15, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWriting prompts using interpolate()\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nI just discovered interpolate(), which is similar but not identical to glue::glue().\n\n\n\n\n\nSep 2, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nTeaching an AI to webscrape using the ellmer package\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nGiving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.\n\n\n\n\n\nAug 11, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nprobability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHollywood age gaps and the Bechdel test\n\n\n\ndata analysis\n\n\n\nDo age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?\n\n\n\n\n\nMay 12, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "giving.html",
-    "href": "giving.html",
-    "title": "Giving",
-    "section": "",
-    "text": "Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting Chicago Scholars, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Andrew Gard, Ph.D",
-    "section": "",
-    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statistics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below my very serious pic."
-  },
-  {
-    "objectID": "nk.html",
-    "href": "nk.html",
-    "title": "Normal Knowledge",
-    "section": "",
-    "text": "My new YouTube channel offers complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, completed just in time for the 2025-2026 academic year, and the follow-up, NK Probability, a thorough introduction to random variables that just happens to align with the actuarial P exam. Next up: NK Machine Learning!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
-  },
-  {
-    "objectID": "posts/2025-08-11/index.html",
-    "href": "posts/2025-08-11/index.html",
-    "title": "Teaching an AI to webscrape using the ellmer package",
-    "section": "",
-    "text": "Download script"
-  },
-  {
-    "objectID": "posts/2025-05-12/index.html",
-    "href": "posts/2025-05-12/index.html",
-    "title": "Hollywood age gaps and the Bechdel test",
-    "section": "",
-    "text": "In this vid, I answer a question proposed in a 2023 TidyTuesday challenge. It sounds plausible, but is it actually the case?\n\n\n Download script"
-  },
-  {
-    "objectID": "posts/2025-07-28/index.html",
-    "href": "posts/2025-07-28/index.html",
-    "title": "All about system prompts",
-    "section": "",
-    "text": "I’m generally ambivalent about large language models, but that doesn’t mean I’m going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, tidyverse) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually more fun when you understand how these things work.\nAs usual, code and other supporting materials are available below the vid.\n\n\n Download script   Download slides"
-  },
-  {
-    "objectID": "posts/2025-10-27/index.html",
-    "href": "posts/2025-10-27/index.html",
-    "title": "What is Quarto?",
-    "section": "",
-    "text": "Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
-  },
-  {
-    "objectID": "posts/2025-05-27/index.html",
-    "href": "posts/2025-05-27/index.html",
-    "title": "All about facets",
-    "section": "",
-    "text": "Download script"
-  },
-  {
-    "objectID": "posts/2025-11-10/index.html",
-    "href": "posts/2025-11-10/index.html",
-    "title": "Content to support my course Data Science with R",
-    "section": "",
-    "text": "Looking for data and other documents supporting that YouTube video you saw of mine? You’ve come to the right place.\n\nData manipulation with R:\n Download html notes   Download quarto notes"
-  },
-  {
-    "objectID": "posts/2025-07-25/index.html",
-    "href": "posts/2025-07-25/index.html",
-    "title": "Advanced counting",
-    "section": "",
-    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "Under construction. For now, just be cool."
-  },
-  {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Consulting",
-    "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
-  },
-  {
-    "objectID": "posts/2025-09-30/index.html",
-    "href": "posts/2025-09-30/index.html",
-    "title": "How to set up RStudio for success",
-    "section": "",
-    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
-  },
-  {
-    "objectID": "posts/2025-09-15/index.html",
-    "href": "posts/2025-09-15/index.html",
-    "title": "Discrete probability calculations in R",
-    "section": "",
-    "text": "Download slides"
-  },
-  {
-    "objectID": "posts/2025-07-07/index.html",
-    "href": "posts/2025-07-07/index.html",
-    "title": "Can using an LLM for coding be ethical?",
-    "section": "",
-    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
-  },
-  {
-    "objectID": "posts/2025-09-02/index.html",
-    "href": "posts/2025-09-02/index.html",
-    "title": "Writing prompts using interpolate()",
-    "section": "",
-    "text": "This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about interpolate(), in particular.\n\n Download script"
-  },
-  {
-    "objectID": "posts/2025-10-13/index.html",
-    "href": "posts/2025-10-13/index.html",
-    "title": "Getting started with R",
-    "section": "",
-    "text": "I’ve decided to start updating my introductory-level content, much of which was recorded early in the 2020 pandemic. When completed, I expect to have a complete course in data science with R, roughly paralleling what you might find in a sophomore-level university course for students with some statistical knowledge but not necessarily and programming experience.\n\n\n Download amy.csv"
-  },
-  {
-    "objectID": "cv_formal.html",
-    "href": "cv_formal.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
-  },
-  {
-    "objectID": "technical.html",
-    "href": "technical.html",
-    "title": "How to YouTube: lessons I learned the hard way",
-    "section": "",
-    "text": "While all you really need to start a channel is a computer (or even just a phone), some upgrades can make a huge difference.\n\nMicrophone: A decent microphone is the first purchase you should make when you start to get serious about your YouTube channel (or your podcast, TikTok account, or whatever). Nothing makes a viewer click away faster than poor sound quality. I currently use a Shure MV-7, but also had great results with a Rode NT-USB mini (only about $100!). A boom arm with shock mount is a good low-cost add-on.\nVideo sizing: YouTube strongly prefers an aspect ratio of 16:9, though the screen on MacBooks (like my Air) is 16:10. In order to make everything match up, I use SwitchResX to force my Mac into the necessary resolution before recording my screen.\nRecording and editing: I used OBS Studio (which is free) without complaints for my first two years, but Camtasia was a huge quality of life upgrade. It records my face, screen, and audio on separate tracks, then provides user-friendly tools for editing and combining the various elements. I keep recording when I get tongue-tied now, backing up only to the start of my thought and then deleting the embarrassing stuff later on, usually with a smooth fade from one clip to the other.\nLogo and thumbnails: Anyone will tell you that quality thumbnails are absolutely essential for attracting viewers. If you’re just starting out, I recommend starting with a template like those offered by Adobe, Canva, and many others. After my channel monetized, I contracted a designer (Tiara Wiggins at Twiggs Creative) to professionalize my channel. I strongly recommend an experienced human over AI or DIY options.\nIntro and end screens: Canva offers free tools for animating images. I started with my logo, then wiped it in and out. With a little tinkering, you can probably do even better. I think the results are pretty good, but will ultimately bring in professional help to improve this, too.\nSlides: I’m old school, for better and for worse. Usually my slides are made with LaTeX, which reflects my background in pure mathematics. I also occasionally use PowerPoint and Quarto. None of these are especially engaging, I’m sure, but they’re what I know and they’re at least appropriate to material that I cover.\nGraphics: My data-oriented visualizations are made in R, usually with ggplot2, while more algebraic plots (like density curves) are generally done in Geogebra. All of this is free.\n\nThere’s a lot more to YouTube than just hitting “record” and talking to the camera. It’s been a long learning curve for me, and I hope yours will be shorter. Feel free to message me on LinkedIn if you have questions!"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About this site",
-    "section": "",
-    "text": "I built this site all by myself using Quarto, but the learning process that made that possible could never have happened in isolation. Some of the many resources that helped me along the way:\n\nThe brilliant websites of Silvia Canelón, Jadey Ryan, and others, all of which have public git repositories from which I’ve learned, drawn inspiration, and occasionally snatched a snippet or two of code.\nCharlotte Wickham’s video tutorials\n\nI’m also indebted to Tiara Wiggins at Twiggs Creative for the design of my logo and the all the branding on Equitable Equations. While she wasn’t involved in the design of this site, I’ve continued to use the color palette she built for me and to draw inspiration from the work she put in."
-  },
-  {
-    "objectID": "pubs.html",
-    "href": "pubs.html",
-    "title": "Publications",
-    "section": "",
-    "text": "In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: Winter, 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at Ecological Applications.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
+    "text": "Professional Experience\n\n\n# A tibble: 3 × 5\n  what                                        when         with      where why  \n  &lt;chr&gt;                                       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lis&gt;\n1 Assistant Professor of Mathematics          2019-present Lake For… Lake… &lt;chr&gt;\n2 Assistant Professor of Mathematics          2014-2019    Universi… Sain… &lt;chr&gt;\n3 Visiting Assistant Professor of Mathematics 2012-2014    Ohio Wes… Dela… &lt;chr&gt;\n\n\n\n\nEducation\n\n\n# A tibble: 3 × 5\n  what                  when  with                              where why      \n  &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt;                             &lt;chr&gt; &lt;list&gt;   \n1 Ohio State University \"\"    Doctor of Philosophy, Mathematics &lt;NA&gt;  &lt;chr [0]&gt;\n2 Ohio State University \"\"    Bachelor of Science, Mathematics  &lt;NA&gt;  &lt;chr [0]&gt;\n3 Ohio State University \"\"    Bachelor of Arts, Philosophy      &lt;NA&gt;  &lt;chr [0]&gt;\n\n\n\n\nSoftware development\n\nThe fqar package. Tools in R for downloading and analyzing floristic quality assessment data*. Published to the Central R Archive Network (CRAN) September 2022. Major update (0.5.3) April 2024. Visit the package website and install the development version at https://github.com/equitable-equations/fqar.\n\n\n\nPublications\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: February 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Completed. Expected submission to the Journal of Applied Ecology: October 2024.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the midstates conference of undergraduate research in mathematics and computer science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors\n\n\nUndergraduate Research\nProjects completed in the last five years include:\n\nEnhancing accessibility in Lake Forest College’s data science major, with Tobias Ellis. Summer 2024.\nHypoxia reversal improves antimalarial immune response, with Kateryna Malkina. Academic year 2023-2024.\nInvestigating co-occurrence in Chicagoland floristic quality assessments, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.\nMeasuring success in Formula 1 racing, with Lethu Mncube. Spring 2023.\nUsing machine learning to detect the presence of the onchocerca parasite, with Jovana Jovanovska. Academic year 2022-2023.\nDeveloping quantitative tools for floristic quality assessment, with Alexia Myers. Summer 2022\nUncertainty in SIR epidemiological models, with Kateryna Malkina. Summer 2022\nExploring the broader impacts of the COVID-19 pandemic, with Veronika Chernikov, Christopher Arzate-Benitez, and Kenza Kantour. Summer 2021\nThe lion-and-man problem in the hyperbolic disk, with Dipika Subramaniam. Academic year 2020-2021.\nPrediction intervals for interpolants, with Ethan Wilson. Summer 2020 Richter scholars program.\n\n\n\nTeaching\nOver twelve years of experience as a college professor. Exceptionally high reviews from students, peers, and supervisors. Specialization: statistics in the R programming environment. Selected recent courses:\n\nIntroduction to Statistical Programming. A project-based introduction to data science using R. Topics include data cleaning and visualization, multiple linear regression, analysis of variance, and bootstrapping.\nMathematical Probability. Discrete and continuous probability distributions, the law of large numbers, the central limit theorem, random variables, and moment-generating functions.\nIntroduction to Probability and Statistics. Comprehensive coverage of standard statistical techniques utilizing R as the primary technological tool.\n\nI am also qualified to teach a wide range of courses in advanced statistics and machine learning, including using Python.\n\n\nYouTube\nMy YouTube channel, Equitable Equations (https://www.youtube.com/c/EquitableEquations), includes over 400 tutorials in statistics, R programming, and mathematics. It currently has over 32,000 subscribers and attracts more than 1,000,000 views annually. Some highlights:\n\nLogistic regression in R (https://youtu.be/E7J3M1oYVlc), which showcases my statistical and R programming skills.\nEthical AI in Healthcare (https://youtu.be/jazrwe08BXk), a conversation with Dr. Heather Mattie of Harvard’s T.H. Chan School of Public Health.\nLearn R in 39 minutes (https://youtu.be/yZ0bV2Afkjc), my most popular video to date with over 600,000 views since publication in February, 2023.\n\n\n\nPrivate consulting\n\nDomain expert in statistics and R programming at EnterpriseDNA (https://enterprisedna.co). Courses available: Inferential statistics I, Inferential statistics II.\n\n\n\n\nService\nRecent service to the Department of Mathematics and Computer Science and the Lake Forest College community:\n\nPanelist for the Humanities Day 2024 discussion of W.E.B. Du Bois with Drs. Tracey Taylor (Art) and Courtney Pierre Joseph (History and African American Studies).\nMentor for the 2023 Public Policy Research Challenge, where my team reached the finals.\nData analyst for the Applied Data Center, spring 2023. Assisted Dr. Sean Menke (Biology) and his student researcher with statistical methods for their green rooftops project.\nOrganizer and host of the 2023 S.M.A.R.T. Colloquium. Planned, publicized, and hosted a 150-person event featuring student speakers in Statistics, Mathematics, Algorithms, and Related Things.\nMember, 2023 Computer Science Search Committee.\n\nRecent roles within the Lake Forest College shared governance structure:\n\nOffice of Faculty Development Junior Fellow (2022-present). Supports incoming tenure-track faculty members through training and mentorship. Advances the mission of the OFD through planning & attendance at events.\nPre-Health Advising Committee (2021-present). Provides support and guidance for students intending to go to graduate school in health-related fields.\nEducational Advisory Committee (2023-present). Coordinates with LFC’s education department to support and mentor aspiring math teachers, particularly at the high school level.\nLFC-RFU Steering Committee (2020-2022). Supports Lake Forest College’s partnership programs with Rosalind-Franklin University, particularly the Health Professionals Program.\nAcademic Honesty Judicial Board (2020-2022). Adjudicates claims of student misconduct in classes, including accusations of cheating on exams and plagarism of papers"
   },
   {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "Narrative Curriculum Vitae",
     "section": "",
-    "text": "This is an experimental reverse-chronological narration of my career path and learning journey. Click here to download a less interesting old-school CV, but in that case you might also take a moment to read a little about professionalism."
+    "text": "This is a reverse-chronological narration of my career path and learning journey. Click here to download a less interesting old-school CV, but if you do, please also take a moment to read a little about professionalism."
   },
   {
     "objectID": "cv.html#research",
@@ -238,17 +84,185 @@
     "text": "Previous experience \nI tried on a number of different hats before starting graduate school, some relevant to my current work, some not. I reviewed books for the Columbus Dispatch and Cleveland Plain Dealer back when local newspapers were a thing. I was a part-time data analyst for a public-opinion research company. I sat on the board of a small preschool. I worked nights at a Red Roof Inn (ask me about that one if you see me). And I played bass in an indie rock band for awhile.\nThe cliche goes that life is short, but this hasn’t been my experience. Life is long, and there’s time enough to be different people over time if have the desire and your circumstances allow. All of those people live within me now, chattering away inside a modestly wise, very nerdy, middle aged head."
   },
   {
-    "objectID": "cv/Gard CV 2024.html",
-    "href": "cv/Gard CV 2024.html",
-    "title": "Professional Experience",
+    "objectID": "pubs.html",
+    "href": "pubs.html",
+    "title": "Publications",
     "section": "",
-    "text": "Professional Experience\n\n\n# A tibble: 3 × 5\n  what                                        when         with      where why  \n  &lt;chr&gt;                                       &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;lis&gt;\n1 Assistant Professor of Mathematics          2019-present Lake For… Lake… &lt;chr&gt;\n2 Assistant Professor of Mathematics          2014-2019    Universi… Sain… &lt;chr&gt;\n3 Visiting Assistant Professor of Mathematics 2012-2014    Ohio Wes… Dela… &lt;chr&gt;\n\n\n\n\nEducation\n\n\n# A tibble: 3 × 5\n  what                  when  with                              where why      \n  &lt;chr&gt;                 &lt;chr&gt; &lt;chr&gt;                             &lt;chr&gt; &lt;list&gt;   \n1 Ohio State University \"\"    Doctor of Philosophy, Mathematics &lt;NA&gt;  &lt;chr [0]&gt;\n2 Ohio State University \"\"    Bachelor of Science, Mathematics  &lt;NA&gt;  &lt;chr [0]&gt;\n3 Ohio State University \"\"    Bachelor of Arts, Philosophy      &lt;NA&gt;  &lt;chr [0]&gt;\n\n\n\n\nSoftware development\n\nThe fqar package. Tools in R for downloading and analyzing floristic quality assessment data*. Published to the Central R Archive Network (CRAN) September 2022. Major update (0.5.3) April 2024. Visit the package website and install the development version at https://github.com/equitable-equations/fqar.\n\n\n\nPublications\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: February 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Completed. Expected submission to the Journal of Applied Ecology: October 2024.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the midstates conference of undergraduate research in mathematics and computer science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors\n\n\nUndergraduate Research\nProjects completed in the last five years include:\n\nEnhancing accessibility in Lake Forest College’s data science major, with Tobias Ellis. Summer 2024.\nHypoxia reversal improves antimalarial immune response, with Kateryna Malkina. Academic year 2023-2024.\nInvestigating co-occurrence in Chicagoland floristic quality assessments, with Irene Lulabelwa and Ryan Sorrells. Summer 2023 James Rocco fellowship.\nMeasuring success in Formula 1 racing, with Lethu Mncube. Spring 2023.\nUsing machine learning to detect the presence of the onchocerca parasite, with Jovana Jovanovska. Academic year 2022-2023.\nDeveloping quantitative tools for floristic quality assessment, with Alexia Myers. Summer 2022\nUncertainty in SIR epidemiological models, with Kateryna Malkina. Summer 2022\nExploring the broader impacts of the COVID-19 pandemic, with Veronika Chernikov, Christopher Arzate-Benitez, and Kenza Kantour. Summer 2021\nThe lion-and-man problem in the hyperbolic disk, with Dipika Subramaniam. Academic year 2020-2021.\nPrediction intervals for interpolants, with Ethan Wilson. Summer 2020 Richter scholars program.\n\n\n\nTeaching\nOver twelve years of experience as a college professor. Exceptionally high reviews from students, peers, and supervisors. Specialization: statistics in the R programming environment. Selected recent courses:\n\nIntroduction to Statistical Programming. A project-based introduction to data science using R. Topics include data cleaning and visualization, multiple linear regression, analysis of variance, and bootstrapping.\nMathematical Probability. Discrete and continuous probability distributions, the law of large numbers, the central limit theorem, random variables, and moment-generating functions.\nIntroduction to Probability and Statistics. Comprehensive coverage of standard statistical techniques utilizing R as the primary technological tool.\n\nI am also qualified to teach a wide range of courses in advanced statistics and machine learning, including using Python.\n\n\nYouTube\nMy YouTube channel, Equitable Equations (https://www.youtube.com/c/EquitableEquations), includes over 400 tutorials in statistics, R programming, and mathematics. It currently has over 32,000 subscribers and attracts more than 1,000,000 views annually. Some highlights:\n\nLogistic regression in R (https://youtu.be/E7J3M1oYVlc), which showcases my statistical and R programming skills.\nEthical AI in Healthcare (https://youtu.be/jazrwe08BXk), a conversation with Dr. Heather Mattie of Harvard’s T.H. Chan School of Public Health.\nLearn R in 39 minutes (https://youtu.be/yZ0bV2Afkjc), my most popular video to date with over 600,000 views since publication in February, 2023.\n\n\n\nPrivate consulting\n\nDomain expert in statistics and R programming at EnterpriseDNA (https://enterprisedna.co). Courses available: Inferential statistics I, Inferential statistics II.\n\n\n\n\nService\nRecent service to the Department of Mathematics and Computer Science and the Lake Forest College community:\n\nPanelist for the Humanities Day 2024 discussion of W.E.B. Du Bois with Drs. Tracey Taylor (Art) and Courtney Pierre Joseph (History and African American Studies).\nMentor for the 2023 Public Policy Research Challenge, where my team reached the finals.\nData analyst for the Applied Data Center, spring 2023. Assisted Dr. Sean Menke (Biology) and his student researcher with statistical methods for their green rooftops project.\nOrganizer and host of the 2023 S.M.A.R.T. Colloquium. Planned, publicized, and hosted a 150-person event featuring student speakers in Statistics, Mathematics, Algorithms, and Related Things.\nMember, 2023 Computer Science Search Committee.\n\nRecent roles within the Lake Forest College shared governance structure:\n\nOffice of Faculty Development Junior Fellow (2022-present). Supports incoming tenure-track faculty members through training and mentorship. Advances the mission of the OFD through planning & attendance at events.\nPre-Health Advising Committee (2021-present). Provides support and guidance for students intending to go to graduate school in health-related fields.\nEducational Advisory Committee (2023-present). Coordinates with LFC’s education department to support and mentor aspiring math teachers, particularly at the high school level.\nLFC-RFU Steering Committee (2020-2022). Supports Lake Forest College’s partnership programs with Rosalind-Franklin University, particularly the Health Professionals Program.\nAcademic Honesty Judicial Board (2020-2022). Adjudicates claims of student misconduct in classes, including accusations of cheating on exams and plagarism of papers"
+    "text": "In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: Winter, 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at Ecological Applications.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
   },
   {
-    "objectID": "accessibility.html",
-    "href": "accessibility.html",
-    "title": "Accessibility",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About this site",
     "section": "",
-    "text": "Under construction"
+    "text": "I built this site all by myself using Quarto, but the learning process that made that possible could never have happened in isolation. Some of the many resources that helped me along the way:\n\nThe brilliant websites of Silvia Canelón, Jadey Ryan, and others, all of which have public git repositories from which I’ve learned, drawn inspiration, and occasionally snatched a snippet or two of code.\nCharlotte Wickham’s video tutorials\n\nI’m also indebted to Tiara Wiggins at Twiggs Creative for the design of my logo and the all the branding on Equitable Equations. While she wasn’t involved in the design of this site, I’ve continued to use the color palette she built for me and to draw inspiration from the work she put in."
+  },
+  {
+    "objectID": "technical.html",
+    "href": "technical.html",
+    "title": "How to YouTube: lessons I learned the hard way",
+    "section": "",
+    "text": "While all you really need to start a channel is a computer (or even just a phone), some upgrades can make a huge difference.\n\nMicrophone: A decent microphone is the first purchase you should make when you start to get serious about your YouTube channel (or your podcast, TikTok account, or whatever). Nothing makes a viewer click away faster than poor sound quality. I currently use a Shure MV-7, but also had great results with a Rode NT-USB mini (only about $100!). A boom arm with shock mount is a good low-cost add-on.\nVideo sizing: YouTube strongly prefers an aspect ratio of 16:9, though the screen on MacBooks (like my Air) is 16:10. In order to make everything match up, I use SwitchResX to force my Mac into the necessary resolution before recording my screen.\nRecording and editing: I used OBS Studio (which is free) without complaints for my first two years, but Camtasia was a huge quality of life upgrade. It records my face, screen, and audio on separate tracks, then provides user-friendly tools for editing and combining the various elements. I keep recording when I get tongue-tied now, backing up only to the start of my thought and then deleting the embarrassing stuff later on, usually with a smooth fade from one clip to the other.\nLogo and thumbnails: Anyone will tell you that quality thumbnails are absolutely essential for attracting viewers. If you’re just starting out, I recommend starting with a template like those offered by Adobe, Canva, and many others. After my channel monetized, I contracted a designer (Tiara Wiggins at Twiggs Creative) to professionalize my channel. I strongly recommend an experienced human over AI or DIY options.\nIntro and end screens: Canva offers free tools for animating images. I started with my logo, then wiped it in and out. With a little tinkering, you can probably do even better. I think the results are pretty good, but will ultimately bring in professional help to improve this, too.\nSlides: I’m old school, for better and for worse. Usually my slides are made with LaTeX, which reflects my background in pure mathematics. I also occasionally use PowerPoint and Quarto. None of these are especially engaging, I’m sure, but they’re what I know and they’re at least appropriate to material that I cover.\nGraphics: My data-oriented visualizations are made in R, usually with ggplot2, while more algebraic plots (like density curves) are generally done in Geogebra. All of this is free.\n\nThere’s a lot more to YouTube than just hitting “record” and talking to the camera. It’s been a long learning curve for me, and I hope yours will be shorter. Feel free to message me on LinkedIn if you have questions!"
+  },
+  {
+    "objectID": "cv_formal.html",
+    "href": "cv_formal.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Click here for my formal academic CV. If you’re a human being with an actual heart, you’re better off looking at my narrative CV here. Why two CV’s? Because professionalism."
+  },
+  {
+    "objectID": "posts/2025-10-13/index.html",
+    "href": "posts/2025-10-13/index.html",
+    "title": "Getting started with R",
+    "section": "",
+    "text": "I’ve decided to start updating my introductory-level content, much of which was recorded early in the 2020 pandemic. When completed, I expect to have a complete course in data science with R, roughly paralleling what you might find in a sophomore-level university course for students with some statistical knowledge but not necessarily and programming experience.\n\n\n Download amy.csv"
+  },
+  {
+    "objectID": "posts/2025-09-02/index.html",
+    "href": "posts/2025-09-02/index.html",
+    "title": "Writing prompts using interpolate()",
+    "section": "",
+    "text": "This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about interpolate(), in particular.\n\n Download script"
+  },
+  {
+    "objectID": "posts/2025-07-07/index.html",
+    "href": "posts/2025-07-07/index.html",
+    "title": "Can using an LLM for coding be ethical?",
+    "section": "",
+    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
+  },
+  {
+    "objectID": "posts/2025-10-27/index.html",
+    "href": "posts/2025-10-27/index.html",
+    "title": "What is Quarto?",
+    "section": "",
+    "text": "Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
+  },
+  {
+    "objectID": "posts/2025-05-27/index.html",
+    "href": "posts/2025-05-27/index.html",
+    "title": "All about facets",
+    "section": "",
+    "text": "Download script"
+  },
+  {
+    "objectID": "posts/2025-11-10/index.html",
+    "href": "posts/2025-11-10/index.html",
+    "title": "Content to support my course, Data Science with R",
+    "section": "",
+    "text": "Looking for data and other documents supporting that YouTube video you saw of mine? You’ve come to the right place.\n\nData manipulation with R:\n Download html notes   Download quarto notes"
+  },
+  {
+    "objectID": "posts/2025-07-25/index.html",
+    "href": "posts/2025-07-25/index.html",
+    "title": "Advanced counting",
+    "section": "",
+    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+  },
+  {
+    "objectID": "posts/2025-09-30/index.html",
+    "href": "posts/2025-09-30/index.html",
+    "title": "How to set up RStudio for success",
+    "section": "",
+    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
+  },
+  {
+    "objectID": "posts/2025-09-15/index.html",
+    "href": "posts/2025-09-15/index.html",
+    "title": "Discrete probability calculations in R",
+    "section": "",
+    "text": "Download slides"
+  },
+  {
+    "objectID": "posts/2026-01-05/index.html",
+    "href": "posts/2026-01-05/index.html",
+    "title": "Understanding the grammar of graphics",
+    "section": "",
+    "text": "The world of data visualization has been revolutionized in recent years with the introduction of the grammar of graphics and its implementation in R, the ggplot2 package. While other plotting systems set aside a different function for each sort of visualization (histogram, scatterplot, and so on), the grammar of graphics takes the view that the most fundamental characteristics of a plot are the variables it includes and the roles they play (x-axis, y-axis, color, etc). The specific brand of plot is secondary and can be specified later.\nTo create a visualization, we need to specify three things:\n\nwhat data is being used.\nhow the variables are mapped onto the plot (in this case, onto the x- and y-axes).\nwhich geometry should be used to represent the data (scatter plot, line graph, or something else entirely).\n\nDesign considerations like axis labels, color palette, and font, can be specified separately after the fact\nNotice how all of these elements appear, in order, in the following code chunk.\n\nlibrary(tidyverse)\n\nggplot(penguins, \n       aes(x = bill_len, y = body_mass)) + \n  geom_point() +\n  labs(x = \"Bill length (mm)\",\n       y = \"Body mass (g)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n Download slides   Download practice plots"
+  },
+  {
+    "objectID": "posts/2025-07-28/index.html",
+    "href": "posts/2025-07-28/index.html",
+    "title": "All about system prompts",
+    "section": "",
+    "text": "I’m generally ambivalent about large language models, but that doesn’t mean I’m going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, tidyverse) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually more fun when you understand how these things work.\nAs usual, code and other supporting materials are available below the vid.\n\n\n Download script   Download slides"
+  },
+  {
+    "objectID": "posts/2025-05-12/index.html",
+    "href": "posts/2025-05-12/index.html",
+    "title": "Hollywood age gaps and the Bechdel test",
+    "section": "",
+    "text": "In this vid, I answer a question proposed in a 2023 TidyTuesday challenge. It sounds plausible, but is it actually the case?\n\n\n Download script"
+  },
+  {
+    "objectID": "posts/2025-08-11/index.html",
+    "href": "posts/2025-08-11/index.html",
+    "title": "Teaching an AI to webscrape using the ellmer package",
+    "section": "",
+    "text": "Download script"
+  },
+  {
+    "objectID": "nk.html",
+    "href": "nk.html",
+    "title": "Normal Knowledge",
+    "section": "",
+    "text": "My new YouTube channel offers complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, completed just in time for the 2025-2026 academic year, and the follow-up, NK Probability, a thorough introduction to random variables that just happens to align with the actuarial P exam. Next up: NK Machine Learning!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Andrew Gard, Ph.D",
+    "section": "",
+    "text": "Hi everybody! I’m Andrew Gard, professor of mathematics at Lake Forest College, just outside of Chicago, USA, where I teach statistics and data science and do all sort of cool research, particularly in quantitative botany. I’m somehow also a successful YouTuber, with channels focused on R programming (Equitable Equations) and statistics and machine learning (Normal Knowledge). Poke around this site to learn more and connect with me using the links below my very serious pic."
+  },
+  {
+    "objectID": "giving.html",
+    "href": "giving.html",
+    "title": "Giving",
+    "section": "",
+    "text": "Ad revenue from my channels will always benefits equity-based community organizations. Currently I’m supporting Chicago Scholars, which provides support for aspiring first-generation college students in Chicago, USA. Join me if you can!"
+  },
+  {
+    "objectID": "posts.html",
+    "href": "posts.html",
+    "title": "Pseudo-blog",
+    "section": "",
+    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding the grammar of graphics\n\n\n\ngrammar of graphics\n\nggplot\n\n\n\nHow can we efficiently and clearly describe any data visualization, particularly when coding?\n\n\n\n\n\nJan 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nContent to support my course, Data Science with R\n\n\n\ndplyr\n\ndata wrangling\n\n\n\nThis is the place to find data sets and other supporting documents for my YouTube course, Data Science with R, at least until I build something more permanent.\n\n\n\n\n\nNov 10, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is Quarto?\n\n\n\nQuarto\n\n\n\nI introduce Quarto at the very start of my courses on R. Here’s why.\n\n\n\n\n\nOct 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with R\n\n\n\nRStudio\n\n\n\nLooking to get started with R? I’ve got you covered.\n\n\n\n\n\nOct 13, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up RStudio for success\n\n\n\nRStudio\n\n\n\nHere are a few of the most important things I have my students do as soon as they open RStudio for the first time.\n\n\n\n\n\nSep 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nDiscrete probability calculations in R\n\n\n\nprobability\n\n\n\nR has built-in functions for all the major discrete probability distributions, including the binomial, geometric, and Poisson. I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.\n\n\n\n\n\nSep 15, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWriting prompts using interpolate()\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nI just discovered interpolate(), which is similar but not identical to glue::glue().\n\n\n\n\n\nSep 2, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nTeaching an AI to webscrape using the ellmer package\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nGiving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.\n\n\n\n\n\nAug 11, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nprobability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHollywood age gaps and the Bechdel test\n\n\n\ndata analysis\n\n\n\nDo age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?\n\n\n\n\n\nMay 12, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "license.html",
+    "href": "license.html",
+    "title": "CC BY-NC-SA 4.0 license",
+    "section": "",
+    "text": "© 2025 Andrew Gard\nMy content is released under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA) license. Basically, you can share and adapt this content with appropriate credit and notation of any changes. You may NOT use this material for any commercial purposes without my explicit written consent.\nAny opinions expressed are my own and do not reflect those of my employers, collaborators, or affiliates."
+  },
+  {
+    "objectID": "ee.html",
+    "href": "ee.html",
+    "title": "Equitable Equations",
+    "section": "",
+    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+  },
+  {
+    "objectID": "future posts.html",
+    "href": "future posts.html",
+    "title": "Future posts",
+    "section": "",
+    "text": "A space to record ideas I have for future posts.\n\nAdapting to being tenured\nWoke racism: Remmick\nWhy I haven’t covered tidymodels yet"
   }
 ]
