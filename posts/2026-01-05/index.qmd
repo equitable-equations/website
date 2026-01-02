@@ -4,7 +4,7 @@ description: How can we efficiently and clearly describe any data visualization,
 author:
   - name: Andrew Gard
 date: 2026-01-05
-categories: [grammar of graphics, ggplot] 
+categories: [grammar of graphics, ggplot2] 
 image: "gog thumb.png"
 draft: false 
 comments:
