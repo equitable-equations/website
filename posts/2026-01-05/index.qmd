@@ -1,0 +1,58 @@
+---
+title: "Understanding the grammar of graphics"
+description: How can we efficiently and clearly describe any data visualization, particularly when coding?
+author:
+  - name: Andrew Gard
+date: 2026-01-05
+categories: [grammar of graphics, ggplot] 
+image: "gog thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JkdBxGQySmM?si=QA2BtCBTXLHtYhy6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+The world of data visualization has been revolutionized in recent years
+with the introduction of the grammar of graphics and its
+implementation in R, the `ggplot2` package. While other plotting systems
+set aside a different function for each sort of visualization
+(histogram, scatterplot, and so on), the grammar of graphics takes the
+view that the most fundamental characteristics of a plot are the
+variables it includes and the roles they play (x-axis, y-axis, color,
+etc). The specific brand of plot is secondary and can be specified
+later.
+
+To create a visualization, we need to specify three things:
+
+1.  what [**data**]{.underline} is being used.
+
+2.  how the variables are [**mapped**]{.underline} onto the plot (in
+    this case, onto the x- and y-axes).
+
+3.  which [**geometry**]{.underline} should be used to represent the
+    data (scatter plot, line graph, or something else entirely).
+
+Design considerations like axis labels, color palette, and font, can be specified separately after the fact
+
+Notice how all of these elements appear, in order, in the following code chunk.
+
+```{r}
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+ggplot(penguins, 
+       aes(x = bill_len, y = body_mass)) + 
+  geom_point() +
+  labs(x = "Bill length (mm)",
+       y = "Body mass (g)") +
+  theme_minimal()
+```
+
+  {{< downloadthis "GoG.pdf" label="Download slides" dname="grammar of graphics">}}
+  {{< downloadthis "GoG practice slides.html" label="Download practice plots" dname="grammar of graphics practice">}}  
+  
+  

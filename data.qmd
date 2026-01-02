@@ -1,0 +1,13 @@
+---
+title: "Data"
+---
+
+Here you can find data sets referenced in some of my vids. I've done my best to cite sources in cases where I'm not the creator. Note: Built-in and packaged R data sets are *not* included here.
+
+- **Scooby-Doo**: information about every episode of the long-running American TV show through February, 2021. Modified slightly from the version found on [Kaggle](https://www.kaggle.com/datasets/williamschooleman/scoobydoo-complete).  
+{{< downloadthis "docs/data/scooby.xlsx" label="Download scooby.xlsx" dname="scooby.xlsx">}}
+
+- **Erykah Badu** Spotify data for every track by neo-soul singer Erykah Badu. Obtained using the [`spotifyr` package](https://github.com/charlie86/spotifyr)  before Spotify closed their public API in the fall of 2024.  
+{{< downloadthis "docs/data/erykah.xlsx" label="Download erykah.xlsx" dname="erykah.xlsx">}}
+
+

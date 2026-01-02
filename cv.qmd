@@ -2,7 +2,7 @@
 title: "Narrative Curriculum Vitae"
 ---
 
-This is an experimental reverse-chronological narration of my career path and learning journey. Click [here](/cv/Gard-CV-2024.pdf) to download a less interesting old-school CV, but in that case you might also take a moment to read a little about [professionalism](https://ssir.org/articles/entry/the_bias_of_professionalism_standards).
+This is a reverse-chronological narration of my career path and learning journey. Click [here](/cv/Gard-CV-2024.pdf) to download a less interesting old-school CV, but if you do, please also take a moment to read a little about [professionalism](https://ssir.org/articles/entry/the_bias_of_professionalism_standards).
 
 ## Research 
 

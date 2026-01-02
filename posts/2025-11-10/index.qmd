@@ -1,5 +1,5 @@
 ---
-title: "Content to support my course *Data Science with R*"
+title: "Content to support my course, *Data Science with R*"
 description: This is the place to find data sets and other supporting documents for my YouTube course, *Data Science with R*, at least until I build something more permanent.
 author:
   - name: Andrew Gard

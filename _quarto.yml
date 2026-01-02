@@ -14,7 +14,11 @@ website:
     background: "#5798A6"
     left:
       - text: Equitable Equations
-        href: ee.qmd
+        menu:
+          - text: About
+            href: ee.qmd
+          - text: Data sets
+            href: data.qmd
       - text: Normal Knowledge
         href: nk.qmd
       - text: Consulting
