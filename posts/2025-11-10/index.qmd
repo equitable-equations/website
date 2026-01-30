@@ -19,5 +19,14 @@ Looking for data and other documents supporting that YouTube video you saw of mi
 
   {{< downloadthis "_internal/data manipulation with R.html" label="Download html notes" dname="html_notes">}}
   {{< downloadthis "_internal/data manipulation with R.qmd" label="Download quarto notes" dname="quarto_notes">}}  
-  
+
+- Getting started with ggplot:
+
+  {{< downloadthis "_internal/Getting started with ggplot2.html" label="Download html notes" dname="html_notes">}}
+  {{< downloadthis "_internal/Getting started with ggplot2.qmd" label="Download quarto notes" dname="quarto_notes">}}  
+
+- Single-variable plots with ggplot:
+
+  {{< downloadthis "_internal/single variable plots in R.html" label="Download html notes" dname="html_notes">}}
+  {{< downloadthis "_internal/single variable plots in R.qmd" label="Download quarto notes" dname="quarto_notes">}}  
   
