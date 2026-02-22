@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://equitableequations.com/posts/2025-11-10/index.html</loc>
-    <lastmod>2026-01-30T17:53:36.931Z</lastmod>
+    <lastmod>2026-02-22T16:42:18.436Z</lastmod>
   </url>
   <url>
     <loc>https://equitableequations.com/posts/2025-07-25/index.html</loc>
@@ -127,5 +127,9 @@
   <url>
     <loc>https://equitableequations.com/future posts.html</loc>
     <lastmod>2025-07-24T16:33:12.056Z</lastmod>
+  </url>
+  <url>
+    <loc>https://equitableequations.com/posts/2025-11-10/Quantitative vs categorical plots with ggplot2.html</loc>
+    <lastmod>2026-02-22T16:40:34.614Z</lastmod>
   </url>
 </urlset>

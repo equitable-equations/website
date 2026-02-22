@@ -133,5 +133,8 @@
   },
   "posts/2026-01-05/index.qmd": {
     "index.html": "ca03154c"
+  },
+  "posts/2025-11-10/Quantitative vs categorical plots with ggplot2.qmd": {
+    "Quantitative vs categorical plots with ggplot2.html": "159bf12c"
   }
 }
