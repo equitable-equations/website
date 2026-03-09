@@ -1,6 +1,6 @@
 ---
 title: "Content to support my course, *Data Science with R*"
-description: This is the place to find data sets and other supporting documents for my YouTube course, *Data Science with R*, at least until I build something more permanent.
+description: This is the place to find data sets and other supporting documents for my YouTube course, *Data Science with R*, at least until I can build something more permanent.
 author:
   - name: Andrew Gard
 date: 11-10-2025
@@ -29,8 +29,13 @@ Looking for data and other documents supporting that YouTube video you saw of mi
   {{< downloadthis "_internal/single variable plots in R.html" label="Download html notes" dname="html_notes">}}
   {{< downloadthis "_internal/single variable plots in R.qmd" label="Download quarto notes" dname="quarto_notes">}}
   
-- Quantitative vs Categorical plots with ggplot2:  
+- Quantitative vs categorical plots with ggplot2:  
 
   {{< downloadthis "_internal/Quantitative vs categorical plots with ggplot2.html" label="Download html notes" dname="html_notes">}}
   {{< downloadthis "_internal/Quantitative vs categorical plots with ggplot2.qmd" label="Download quarto notes" dname="quarto_notes">}}
+  
+- Introducing the pipe:
+  
+  {{< downloadthis "_internal/Introducing the pipe.html" label="Download html notes" dname="html_notes">}}
+  {{< downloadthis "_internal/Introducing the pipe.qmd" label="Download quarto notes" dname="quarto_notes">}}  
   
