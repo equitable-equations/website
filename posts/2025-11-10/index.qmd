@@ -4,7 +4,7 @@ description: This is the place to find data sets and other supporting documents 
 author:
   - name: Andrew Gard
 date: 11-10-2025
-categories: [dplyr, data wrangling] 
+categories: [dplyr, ggplot2] 
 image: "data manipulation thumb.png"
 draft: false 
 comments:
