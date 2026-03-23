@@ -36,6 +36,11 @@ Looking for data and other documents supporting that YouTube video you saw of mi
   
 - Introducing the pipe:
   
+  {{< downloadthis "_internal/Grouped summaries.html" label="Download html notes" dname="html_notes">}}
+  {{< downloadthis "_internal/Grouped summaries.qmd" label="Download quarto notes" dname="quarto_notes">}}  
+  
+- Grouped summaries in R:
+
   {{< downloadthis "_internal/Introducing the pipe.html" label="Download html notes" dname="html_notes">}}
   {{< downloadthis "_internal/Introducing the pipe.qmd" label="Download quarto notes" dname="quarto_notes">}}  
   
