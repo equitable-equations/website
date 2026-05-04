@@ -49,6 +49,9 @@ Looking for data and other documents supporting that YouTube video you saw of mi
   {{< downloadthis "_internal/Grouped filters and mutates.html" label="Download html notes" dname="html_notes">}}
   {{< downloadthis "_internal/Grouped filters and mutates.qmd" label="Download quarto notes" dname="quarto_notes">}}  
   
-  
+- Tidying data with `pivot_longer`:
+
+  {{< downloadthis "_internal/pivot_longer.html" label="Download html notes" dname="html_notes">}}
+  {{< downloadthis "_internal/pivot_longer.qmd" label="Download quarto notes" dname="quarto_notes">}}  
   
   
