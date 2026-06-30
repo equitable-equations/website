@@ -64,4 +64,9 @@ Looking for data and other documents supporting that YouTube video you saw of mi
   {{< downloadthis "_internal/mutating joins.html" label="Download html notes" dname="mutating_joins_notes">}}
   {{< downloadthis "_internal/mutating joins.qmd" label="Download quarto notes" dname="mutating_joins_notes">}} 
 
+- Filtering joins
+
+  {{< downloadthis "_internal/filtering joins.html" label="Download html notes" dname="filtering_joins_notes">}}
+  {{< downloadthis "_internal/filtering joins.qmd" label="Download quarto notes" dname="filtering_joins_notes">}}
+
 
