@@ -69,4 +69,9 @@ Looking for data and other documents supporting that YouTube video you saw of mi
   {{< downloadthis "_internal/filtering joins.html" label="Download html notes" dname="filtering_joins_notes">}}
   {{< downloadthis "_internal/filtering joins.qmd" label="Download quarto notes" dname="filtering_joins_notes">}}
 
+- Working with dates and times
+
+  {{< downloadthis "_internal/optical.csv" label="Download optical.csv" dname="optical">}}
+  {{< downloadthis "_internal/dates and times.html" label="Download html notes" dname="dttm_notes">}}
+  {{< downloadthis "_internal/dates and times.qmd" label="Download quarto notes" dname="dttm_notes">}}
 
