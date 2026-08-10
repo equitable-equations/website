@@ -4,15 +4,15 @@ description: This is the place to find data sets and other supporting documents 
 author:
   - name: Andrew Gard
 date: 11-10-2025
-categories: [dplyr, ggplot2] 
-image: "data manipulation thumb.png"
+categories: [dplyr, ggplot2, tidyr] 
+image: "dsr thumb.png"
 draft: false 
 comments:
   utterances:
     repo: equitable-equations/website
 ---
 
-Looking for data and other documents supporting that YouTube video you saw of mine? You've come to the right place.
+![](dsr thumb.png){width=50% fig-align="center"}
 
 - Data manipulation with R:
 
@@ -75,3 +75,7 @@ Looking for data and other documents supporting that YouTube video you saw of mi
   {{< downloadthis "_internal/dates and times.html" label="Download html notes" dname="dttm_notes">}}
   {{< downloadthis "_internal/dates and times.qmd" label="Download quarto notes" dname="dttm_notes">}}
 
+- Working with strings
+
+  {{< downloadthis "_internal/Working with strings.html" label="Download html notes" dname="strings_notes">}}
+  {{< downloadthis "_internal/Working with strings.qmd" label="Download quarto notes" dname="strings_notes">}}
