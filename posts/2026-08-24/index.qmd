@@ -1,0 +1,18 @@
+---
+title: "Regular expressions for R users"
+description: "Matching strings in R is easy until you need to use special characters or match complicated patterns."
+author:
+  - name: Andrew Gard
+date: 2026-08-24
+categories: [regex, stringr] 
+image: "regex thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+  {{< downloadthis "_internal/regular expressions.qmd" label="Download Quarto" dname="regex">}}
+  {{< downloadthis "_internal/regular expressions.html" label="Download html" dname="regex">}}  
+  
+  
