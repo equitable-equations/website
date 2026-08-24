@@ -172,7 +172,7 @@
     "href": "posts/2026-08-24/index.html#position-and-relative-position",
     "title": "Regular expressions for R users",
     "section": "Position and relative position",
-    "text": "Position and relative position\nTo specify that a substring comes at the beginning of a string, use ^. To specify that it comes at the end, use $.\n\nstr_subset(fruit, \"^re\")\n\n[1] \"redcurrant\"\n\nstr_subset(fruit, \"er$\") # note order\n\n[1] \"bell pepper\"  \"chili pepper\" \"cucumber\"    \n\n\nA dot indicates that substrings are separated by an arbitrary character.\n\nstr_extract(sentences, \"s.o\")\n\n [1] \"smo\" NA    NA    NA    \"s o\" NA    NA    NA    \"s o\" \"sto\""
+    "text": "Position and relative position\nTo specify that a substring comes at the beginning of a string, use “^”. To specify that it comes at the end, use “$”.\n\nstr_subset(fruit, \"^re\")\n\n[1] \"redcurrant\"\n\nstr_subset(fruit, \"er$\") # note order\n\n[1] \"bell pepper\"  \"chili pepper\" \"cucumber\"    \n\n\nAs mentioned above, a dot indicates that substrings are separated by an arbitrary character.\n\nstr_extract(sentences, \"s.o\")\n\n [1] \"smo\" NA    NA    NA    \"s o\" NA    NA    NA    \"s o\" \"sto\""
   },
   {
     "objectID": "posts/2026-08-24/index.html#character-sets",
