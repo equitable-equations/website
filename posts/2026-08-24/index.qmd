@@ -1,6 +1,6 @@
 ---
 title: "Regular expressions for R users"
-description: "Matching strings in R is easy until you need to use special characters or match complicated patterns."
+description: "Regular expressions let you search and manipulate strings based on patterns rather than just literal matches. This is often straightforward, but when it's not, watch out!"
 author:
   - name: Andrew Gard
 date: 2026-08-24
@@ -11,6 +11,152 @@ comments:
   utterances:
     repo: equitable-equations/website
 ---
+
+Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you'll need to use **regular expressions**, or regex.
+
+Throughout this post, I'll make use three `stringr` functions: `str_subset`, `str_detect`, and `str_extract`, and a few elements of the `sentences` vector.
+
+```{r}
+library(stringr)
+
+sentences <- sentences[1:10]
+sentences
+
+str_subset(sentences, "of") # keep only elements with a match
+str_detect(sentences, "of") # TRUE when an element matches, FALSE otherwise
+str_extract(sentences, "of") # pull out matching substrings
+```
+
+## Special characters
+
+The following characters (all of which are explained below) have special meanings and can't be searched literally. 
+
+```{r}
+#| eval: false
+
+. \ | ( ) [ { ^ $ * + ? 
+```
+    
+For instance, a dot matches with *any* character, which explains the following output.
+
+```{r}
+str_extract(sentences, ".")
+```
+
+In order to match these metacharacters, precede them with two slashes, like this:
+
+```{r}
+str_extract(sentences, "\\.")
+```
+
+## Position and relative position
+
+To specify that a substring comes at the beginning of a string, use `^`. To specify that it comes at the end, use `$`.
+
+```{r}
+str_subset(fruit, "^re")
+str_subset(fruit, "er$") # note order
+```
+
+A dot indicates that substrings are separated by an arbitrary character.
+
+```{r}
+str_extract(sentences, "s.o")
+```
+
+## Character sets
+
+Use brackets to allow multiple options for the character to be matched.
+
+```{r}
+str_subset(sentences, "[oe]n")
+str_extract(sentences, "[oe]n")
+```
+
+Ranges of letters and numbers are allowed.
+
+```{r}
+str_subset(sentences, "[a-j]o")
+str_extract(sentences, "[a-j]o")
+```
+
+Inside of brackets, "^" represents negation.
+
+```{r}
+str_extract(sentences, "[^a-j]o")
+```
+
+## Character classes
+
+It's also possible to specify classes of characters. "\\d" matches any digit and "\\w" matches and word character (a-z, A-Z, 0-9, and underscore), while "\\D" and "\\W" will match anything *except* digits and word characters, respectively. Many other classes are available. Enter `?regex` for a full list. 
+
+## The role of "\\" in Quarto
+
+If you write "\\d" in a Quarto document, it won't render properly. This is because Quarto interprets the slash as an escape character. To actually render this string, use "\\\\d" instead. 
+
+Similarly, to render a slash, use \\\\.
+
+## Matching whitespace
+
+Use `\\s` for space, `\\t` for tab, and `\\n` for a new line. 
+
+```{r}
+str_subset(sentences, "e\\sb")
+```
+
+## Repetition
+
+Use curly braces to indicate how many times in a row a character must appear.
+
+```{r}
+str_subset(sentences, "e{2}")
+```
+
+Use "+" to indicate at least one occurrence, possibly more. 
+
+```{r}
+str_subset(sentences, "she+t")
+```
+
+To indicate a character is optional, use "?". For instance, the next command detects both "the" and "often".
+
+```{r}
+str_extract(sentences, "th?e")
+```
+
+Finally, "*" indicates an optional character that may occur more than once.
+
+```{r}
+str_extract(sentences, "she*")
+```
+
+Notice that these symbols come *after* the characters they refer to, unlike "\\" which comes before.
+
+## Combining substrings with `|`
+
+Use the pipe to indicate an "or" statement. Expressions on either side are grouped by default.
+
+```{r}
+str_subset(sentences, "chicken|hog")
+```
+
+You can still group using parentheses, though. 
+
+```{r}
+str_subset(sentences, "(chicken|hog)s")
+```
+
+## Want more?
+
+If something here isn't clear, there's a good chance you'll find an explanation in my vid on the subject:
+
+
+
+
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wy0cEKYeaF8?si=RktCufxzNGzK8UEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   {{< downloadthis "_internal/regular expressions.qmd" label="Download Quarto" dname="regex">}}
   {{< downloadthis "_internal/regular expressions.html" label="Download html" dname="regex">}}  

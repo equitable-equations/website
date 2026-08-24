@@ -116,7 +116,7 @@ Notice that these symbols come *after* the characters they refer to, unlike "\" 
 
 ## Combining regex with `|`
 
-Use the pipe to indicate an "or" statement. Expressions of either side are grouped by default.
+Use the pipe to indicate an "or" statement. Expressions on either side are grouped by default.
 
 ```{r}
 str_subset(sentences, "chicken|hog")
