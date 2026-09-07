@@ -140,18 +140,39 @@
     "text": "Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
   },
   {
-    "objectID": "posts/2025-05-27/index.html",
-    "href": "posts/2025-05-27/index.html",
-    "title": "All about facets",
+    "objectID": "posts/2025-09-15/index.html",
+    "href": "posts/2025-09-15/index.html",
+    "title": "Discrete probability calculations in R",
     "section": "",
-    "text": "Download script"
+    "text": "Download slides"
   },
   {
-    "objectID": "posts/2025-11-10/index.html",
-    "href": "posts/2025-11-10/index.html",
-    "title": "Content to support my course, Data Science with R",
+    "objectID": "posts/2025-09-30/index.html",
+    "href": "posts/2025-09-30/index.html",
+    "title": "How to set up RStudio for success",
     "section": "",
-    "text": "Data manipulation with R:\n Download html notes   Download quarto notes \nGetting started with ggplot:\n Download html notes   Download quarto notes \nSingle-variable plots with ggplot2:\n Download html notes   Download quarto notes \nQuantitative vs categorical plots with ggplot2:\n Download html notes   Download quarto notes \nIntroducing the pipe:\n Download html notes   Download quarto notes \nGrouped summaries in R:\n Download html notes   Download quarto notes \nGrouped filters and mutates\n Download html notes   Download quarto notes \nTidying data with pivot_longer:\n Download html notes   Download quarto notes \nTidying data with pivot_wider:\n Download html notes   Download quarto notes \nMutating joins:\n Download html notes   Download quarto notes \nFiltering joins\n Download html notes   Download quarto notes \nWorking with dates and times\n Download optical.csv   Download html notes   Download quarto notes \nWorking with strings\n Download html notes   Download quarto notes"
+    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
+  },
+  {
+    "objectID": "posts/2025-07-25/index.html",
+    "href": "posts/2025-07-25/index.html",
+    "title": "Advanced counting",
+    "section": "",
+    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
   },
   {
     "objectID": "posts/2026-08-24/index.html",
@@ -224,39 +245,67 @@
     "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download Quarto   Download html"
   },
   {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Consulting",
+    "objectID": "posts/2025-11-10/index.html",
+    "href": "posts/2025-11-10/index.html",
+    "title": "Content to support my course, Data Science with R",
     "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+    "text": "Data manipulation with R:\n Download html notes   Download quarto notes \nGetting started with ggplot:\n Download html notes   Download quarto notes \nSingle-variable plots with ggplot2:\n Download html notes   Download quarto notes \nQuantitative vs categorical plots with ggplot2:\n Download html notes   Download quarto notes \nIntroducing the pipe:\n Download html notes   Download quarto notes \nGrouped summaries in R:\n Download html notes   Download quarto notes \nGrouped filters and mutates\n Download html notes   Download quarto notes \nTidying data with pivot_longer:\n Download html notes   Download quarto notes \nTidying data with pivot_wider:\n Download html notes   Download quarto notes \nMutating joins:\n Download html notes   Download quarto notes \nFiltering joins\n Download html notes   Download quarto notes \nWorking with dates and times\n Download optical.csv   Download html notes   Download quarto notes \nWorking with strings\n Download html notes   Download quarto notes \nWorking with factors\n Download scooby.xlsx   Download html notes   Download quarto notes"
   },
   {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
+    "objectID": "posts/2025-05-27/index.html",
+    "href": "posts/2025-05-27/index.html",
+    "title": "All about facets",
     "section": "",
-    "text": "Under construction. For now, just be cool."
+    "text": "Download script"
   },
   {
-    "objectID": "posts/2025-07-25/index.html",
-    "href": "posts/2025-07-25/index.html",
-    "title": "Advanced counting",
+    "objectID": "posts/2026-09-07/index.html",
+    "href": "posts/2026-09-07/index.html",
+    "title": "Working with factors in R",
     "section": "",
-    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
+    "text": "Categorical variables (or factors as they are referred to when working in R) are variables that assign observations to specific groups. This post will cover some of the most common problems you may encounter while trying to visualize or model such variables.\nThroughout, I’ll refer to the scooby data set, originally sourced from kaggle but modified slightly for use in my vids and posts. A download link can be found at the end of this post.\nlibrary(tidyverse)\ntheme_set(theme_minimal())\n\nlibrary(readxl)\nscooby &lt;- read_excel(\"_internal/scooby.xlsx\") \n\nscooby_sm &lt;- scooby |&gt; \n  filter(format == \"TV Series\") |&gt;  \n  select(title,  \n         date_aired,\n         imdb,\n         motive)"
   },
   {
-    "objectID": "posts/2025-09-30/index.html",
-    "href": "posts/2025-09-30/index.html",
-    "title": "How to set up RStudio for success",
-    "section": "",
-    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
+    "objectID": "posts/2026-09-07/index.html#factor-character-and-other-vector-types",
+    "href": "posts/2026-09-07/index.html#factor-character-and-other-vector-types",
+    "title": "Working with factors in R",
+    "section": "Factor, character, and other vector types",
+    "text": "Factor, character, and other vector types\nAs a general rule, tidyverse functions treat character vectors as factors. For instance, we can apply dplyr::count to scooby$motive, even though the latter just consists of strings.\n\nglimpse(scooby_sm)\n\nRows: 374\nColumns: 4\n$ title      &lt;chr&gt; \"What a Night for a Knight\", \"A Clue for Scooby Doo\", \"Hass…\n$ date_aired &lt;dttm&gt; 1969-09-13, 1969-09-20, 1969-09-27, 1969-10-04, 1969-10-11…\n$ imdb       &lt;dbl&gt; 8.1, 8.1, 8.0, 7.8, 7.5, 8.4, 7.6, 8.2, 8.1, 8.0, 8.5, 8.2,…\n$ motive     &lt;chr&gt; \"Theft\", \"Theft\", \"Treasure\", \"Natural Resource\", \"Competit…\n\nscooby_sm |&gt; \n  count(motive)\n\n# A tibble: 17 × 2\n   motive               n\n   &lt;chr&gt;            &lt;int&gt;\n 1 Abduction            3\n 2 Assistance           2\n 3 Competition        130\n 4 Conquer             33\n 5 Counterfeit          6\n 6 Entertainment        3\n 7 Extortion            3\n 8 Imagination          1\n 9 Inheritance          6\n10 Natural Resource    19\n11 Preservation        10\n12 Safety               2\n13 Simulation           2\n14 Smuggling           19\n15 Theft               93\n16 Treasure            40\n17 &lt;NA&gt;                 2\n\n\nUse as.factor() to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like cars$am (automatic/manual transmission), since functions like ggplot will otherwise attempt to treat them as continuous variables. For instance, we can’t get directly get a side-by-side boxplot of mpg vs am.\n\nglimpse(mtcars)\n\nRows: 32\nColumns: 11\n$ mpg  &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8,…\n$ cyl  &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 8,…\n$ disp &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, 16…\n$ hp   &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 180…\n$ drat &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.92,…\n$ wt   &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.…\n$ qsec &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, 18…\n$ vs   &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0,…\n$ am   &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0,…\n$ gear &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3,…\n$ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, 2,…\n\nggplot(mtcars, aes(x = am, \n                   y = mpg)) + \n  geom_boxplot() # not what we want\n\nWarning: Orientation is not uniquely specified when both the x and y aesthetics are\ncontinuous. Picking default orientation 'x'.\n\n\nWarning: Continuous x aesthetic\nℹ did you forget `aes(group = ...)`?\n\n\n\n\n\n\n\n\n\nWhile it’s fine to follow the recommendation given in this warning message, it may be better to just convert am as a factor once and for all:\n\nmtcars2 &lt;- mtcars |&gt; \n  mutate(am = as.factor(am)) \n\nggplot(mtcars2, aes(x = am, \n                    y = mpg)) + \n  geom_boxplot()"
   },
   {
-    "objectID": "posts/2025-09-15/index.html",
-    "href": "posts/2025-09-15/index.html",
-    "title": "Discrete probability calculations in R",
-    "section": "",
-    "text": "Download slides"
+    "objectID": "posts/2026-09-07/index.html#relabeling-factors",
+    "href": "posts/2026-09-07/index.html#relabeling-factors",
+    "title": "Working with factors in R",
+    "section": "Relabeling factors",
+    "text": "Relabeling factors\nThere are many options for changing the text used to label factor levels, but fct_recode() is a solid choice.\n\nmtcars2 &lt;- mtcars2 |&gt; \n  mutate(am = fct_recode(am, \n                         \"automatic\" = \"0\",\n                         \"manual\" = \"1\"))\nmtcars2 |&gt; \n  count(am)\n\n         am  n\n1 automatic 19\n2    manual 13\n\n\nNotice the syntax, “new_name” = “old_name”, which is common in tidyverse R.\nWhen you have a large number of different factor levels, it may be helpful to lump the less common ones into an “other” category. For instance, the next chunk combines all categories with fewer than 20 occurrences.\n\nscooby_sm2 &lt;- scooby_sm |&gt; \n  mutate(motive = fct_lump_min(motive,\n                               min = 20)) \nscooby_sm2 |&gt; \n  count(motive) |&gt; \n  arrange(-n)\n\n# A tibble: 6 × 2\n  motive          n\n  &lt;fct&gt;       &lt;int&gt;\n1 Competition   130\n2 Theft          93\n3 Other          76\n4 Treasure       40\n5 Conquer        33\n6 &lt;NA&gt;            2\n\n\nAlso check out fct_lump_n() to specify the number of levels retained, fct_lump_prop() to lump low-percentage levels, and fct_lump_lowfreq() to try to force the new “Other” level to have lowest frequency."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#rearranging-levels",
+    "href": "posts/2026-09-07/index.html#rearranging-levels",
+    "title": "Working with factors in R",
+    "section": "Rearranging levels",
+    "text": "Rearranging levels\nSometimes the order of factor levels matters, for instance in a bar chart. The default odering is alphanumeric.\n\nggplot(scooby_sm2, \n       aes(x = motive)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nUse fct_relevel() to shift levels to the front. For instance, the next code chunk places the motives Treasure and Theft before Compitition and others.\n\nscooby_sm3 &lt;- scooby_sm2 |&gt; \n  mutate(motive = fct_relevel(motive,\n                              \"Treasure\",\n                              \"Theft\")) \n\nggplot(scooby_sm3, \n       aes(x = motive)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nOften, you just want to put the most common factor levels first. Use fct_infreq() to accomplish this.\n\nggplot(scooby_sm2, aes(x = fct_infreq(motive))) + \n  geom_bar()\n\n\n\n\n\n\n\n\nYou can also reverse the order of the factor levels with fct_rev."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#reordering-levels-using-a-second-variable",
+    "href": "posts/2026-09-07/index.html#reordering-levels-using-a-second-variable",
+    "title": "Working with factors in R",
+    "section": "Reordering levels using a second variable",
+    "text": "Reordering levels using a second variable\nFor some plots, it can be natural to order a categorical variable using a numeric one. For instance, in the next plot, it would be preferable to show the various motives in increasing order of imdb ratings.\n\nggplot(scooby_sm3, aes(x = motive,\n                       y = imdb)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\nUse fct_reorder to accomplish this.\n\nscooby_sm4 &lt;- scooby_sm3 |&gt; \n  mutate(motive = fct_reorder(motive,\n                              imdb))\n\nggplot(scooby_sm4, aes(x = motive,\n                       y = imdb)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\nBy default, fct_reorder sorts using the median. You can specify a different function (like mean) by adding a .fun argument."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#ordered-factors",
+    "href": "posts/2026-09-07/index.html#ordered-factors",
+    "title": "Working with factors in R",
+    "section": "Ordered factors",
+    "text": "Ordered factors\nOccasionally you may encounter ordered factors, ones of class ord. For the most part, you can treat these like regular factors.\n\nglimpse(diamonds)\n\nRows: 53,940\nColumns: 10\n$ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.…\n$ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, Ver…\n$ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I,…\n$ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, …\n$ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64…\n$ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58…\n$ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 34…\n$ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.…\n$ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.…\n$ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.…\n\ndiamonds |&gt; \n  count(cut) # several ordered factors\n\n# A tibble: 5 × 2\n  cut           n\n  &lt;ord&gt;     &lt;int&gt;\n1 Fair       1610\n2 Good       4906\n3 Very Good 12082\n4 Premium   13791\n5 Ideal     21551\n\n\nSpecifying that a factor is ordered (for instance using ordered) can occasionally matter in modeling applications and certain forms of statistical inference. Other than that, the most visible difference with ordered factors in R is how they’re displayed by ggplot.\n\nggplot(diamonds, aes(x = cut,\n                     fill = cut)) + \n  geom_bar(show.legend = FALSE)\n\n\n\n\n\n\n\n\nBy default, ordered factors are colored using the viridis palette, which is has a distinct order to it."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#want-more",
+    "href": "posts/2026-09-07/index.html#want-more",
+    "title": "Working with factors in R",
+    "section": "Want more?",
+    "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download scooby.xlsx   Download Quarto   Download html"
   },
   {
     "objectID": "posts/2026-01-05/index.html",
@@ -312,7 +361,7 @@
     "href": "posts.html",
     "title": "Pseudo-blog",
     "section": "",
-    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions for R users\n\n\n\nregex\n\nstringr\n\n\n\nRegular expressions let you search and manipulate strings based on patterns rather than just literal matches. This is often straightforward, but when it’s not, watch out!\n\n\n\n\n\nAug 24, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding the grammar of graphics\n\n\n\ngrammar of graphics\n\nggplot2\n\n\n\nHow can we efficiently and clearly describe any data visualization, particularly when coding?\n\n\n\n\n\nJan 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nContent to support my course, Data Science with R\n\n\n\ndplyr\n\nggplot2\n\ntidyr\n\n\n\nThis is the place to find data sets and other supporting documents for my YouTube course, Data Science with R, at least until I can build something more permanent.\n\n\n\n\n\nNov 10, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is Quarto?\n\n\n\nQuarto\n\n\n\nI introduce Quarto at the very start of my courses on R. Here’s why.\n\n\n\n\n\nOct 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with R\n\n\n\nRStudio\n\n\n\nLooking to get started with R? I’ve got you covered.\n\n\n\n\n\nOct 13, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up RStudio for success\n\n\n\nRStudio\n\n\n\nHere are a few of the most important things I have my students do as soon as they open RStudio for the first time.\n\n\n\n\n\nSep 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nDiscrete probability calculations in R\n\n\n\nprobability\n\n\n\nR has built-in functions for all the major discrete probability distributions, including the binomial, geometric, and Poisson. I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.\n\n\n\n\n\nSep 15, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWriting prompts using interpolate()\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nI just discovered interpolate(), which is similar but not identical to glue::glue().\n\n\n\n\n\nSep 2, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nTeaching an AI to webscrape using the ellmer package\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nGiving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.\n\n\n\n\n\nAug 11, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nprobability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHollywood age gaps and the Bechdel test\n\n\n\ndata analysis\n\n\n\nDo age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?\n\n\n\n\n\nMay 12, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with factors in R\n\n\n\nforcats\n\n\n\nNeed to change the ordering of a categorical variable? Update its labels? Create an ‘other’ category? You’ve come to the right place.\n\n\n\n\n\nSep 7, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions for R users\n\n\n\nregex\n\nstringr\n\n\n\nRegular expressions let you search and manipulate strings based on patterns rather than just literal matches. This is often straightforward, but when it’s not, watch out!\n\n\n\n\n\nAug 24, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding the grammar of graphics\n\n\n\ngrammar of graphics\n\nggplot2\n\n\n\nHow can we efficiently and clearly describe any data visualization, particularly when coding?\n\n\n\n\n\nJan 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nContent to support my course, Data Science with R\n\n\n\ndplyr\n\nggplot2\n\ntidyr\n\n\n\nThis is the place to find data sets and other supporting documents for my YouTube course, Data Science with R, at least until I can build something more permanent.\n\n\n\n\n\nNov 10, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is Quarto?\n\n\n\nQuarto\n\n\n\nI introduce Quarto at the very start of my courses on R. Here’s why.\n\n\n\n\n\nOct 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with R\n\n\n\nRStudio\n\n\n\nLooking to get started with R? I’ve got you covered.\n\n\n\n\n\nOct 13, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up RStudio for success\n\n\n\nRStudio\n\n\n\nHere are a few of the most important things I have my students do as soon as they open RStudio for the first time.\n\n\n\n\n\nSep 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nDiscrete probability calculations in R\n\n\n\nprobability\n\n\n\nR has built-in functions for all the major discrete probability distributions, including the binomial, geometric, and Poisson. I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.\n\n\n\n\n\nSep 15, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWriting prompts using interpolate()\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nI just discovered interpolate(), which is similar but not identical to glue::glue().\n\n\n\n\n\nSep 2, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nTeaching an AI to webscrape using the ellmer package\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nGiving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.\n\n\n\n\n\nAug 11, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nprobability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHollywood age gaps and the Bechdel test\n\n\n\ndata analysis\n\n\n\nDo age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?\n\n\n\n\n\nMay 12, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "license.html",
