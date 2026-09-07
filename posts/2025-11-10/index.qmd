@@ -79,3 +79,13 @@ comments:
 
   {{< downloadthis "_internal/Working with strings.html" label="Download html notes" dname="strings_notes">}}
   {{< downloadthis "_internal/Working with strings.qmd" label="Download quarto notes" dname="strings_notes">}}
+  
+- Working with factors
+
+  {{< downloadthis "_internal/scooby.xlsx" label="Download scooby.xlsx" dname="scooby">}}
+  {{< downloadthis "_internal/factors.html" label="Download html notes" dname="factors_notes">}}
+  {{< downloadthis "_internal/factors.qmd" label="Download quarto notes" dname="factors_notes">}}
+  
+  
+  
+  

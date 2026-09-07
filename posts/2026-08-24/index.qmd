@@ -51,14 +51,14 @@ str_extract(sentences, "\\.")
 
 ## Position and relative position
 
-To specify that a substring comes at the beginning of a string, use `^`. To specify that it comes at the end, use `$`.
+To specify that a substring comes at the beginning of a string, use "^". To specify that it comes at the end, use "$".
 
 ```{r}
 str_subset(fruit, "^re")
 str_subset(fruit, "er$") # note order
 ```
 
-A dot indicates that substrings are separated by an arbitrary character.
+As mentioned above, a dot indicates that substrings are separated by an arbitrary character.
 
 ```{r}
 str_extract(sentences, "s.o")
