@@ -145,5 +145,17 @@
   },
   "posts/2026-09-07/index.qmd": {
     "index.html": "e2698b17"
+  },
+  "posts/2026-09-21/index.qmd": {
+    "index.html": "b296aed2"
+  },
+  "posts/2026-09-21/all about tidymodels.qmd": {
+    "all about tidymodels.html": "3f8627ff"
+  },
+  "posts/2025-09-22/index.qmd": {
+    "index.html": "bfb84093"
+  },
+  "posts/index.qmd": {
+    "index.html": "6c86558e"
   }
 }

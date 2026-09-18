@@ -1,10 +1,10 @@
 ---
 title: "Discrete probability calculations in R"
-description: "R has built-in functions for all the major discrete probability distributions, including the binomial, geometric, and Poisson. I'll show you how to compute probabilities, find quantiles, and generate random values from any of these."
+description: "R has built-in functions for all major discrete probability distributions, including the binomial, geometric, negative binomial, hypergeometric, and Poisson. In this post, I'll show you how to compute probabilities, find quantiles, and generate random values from any of these."
 author:
   - name: Andrew Gard
 date: 09-15-2025
-categories: [probability] 
+categories: [Probability, Long form] 
 image: "probs in R thumb.png"
 draft: false 
 comments:
@@ -12,7 +12,107 @@ comments:
     repo: equitable-equations/website
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+In R, functions that perform probabilities calculations follow a consistent structure:
 
-  {{< downloadthis "prob calcs in R.pdf" label="Download slides" dname="prob calcs in R">}}  
+- Probability mass functions (pmfs) start with the letter "d". Use such a function to compute $P(X = x_0)$ for any $x_0$ of interest.
 
+- Cumulative distribution functions (cdfs) start with the letter "p". Use such a function to compute $P(X \le x_0)$.
+
+- Inverse cdfs start with the letter "q". For a given probability $p$, they determine the least $x_0$ such that $P(X \le x_0) \ge p$.
+
+- Functions to generate random values start with the letter "r". 
+
+The rest of the function name is a shortened version of the distribution name:
+
+| Distribution      | Probability  | Cumulative | Inverse   | Random    |
+|-------------------|--------------|------------|-----------|-----------|
+| Bin$(n, p)$       | dbinom()     | pbinom()   | qbinom()  | rbinom()  |
+| Geom$(p)$         | dgeom()      | pgeom()    | qgeom()   | rgeom()   |
+| NB$(r, p)$        | dnbinom()    | pnbinom()  | qnbinom() | rnbinom() |
+| Hyp$(N_1, N_2, n)$| dhyper()     | phyper()     | qhyper()    | rhyper()    |
+| Pois$(\lambda)$   | dpois()      | ppois()    | qpois()   | rpois()   |
+
+In case some of these distributions aren't familiar to you:
+
+- The **binomial distribution** models the total number of success in $n$ Bernouilli trials (identical and independent trials, each with only two possibly outcomes). The probability of success in each trial is $p$.
+
+- The **geometric distribution** models the number of failures in a sequence of Bernouilli trials prior to the first success.
+
+- The **negative binomial distribution** models the number of failures in a sequence of Bernouilli trials prior to the $r^{th}$ success.
+
+- The **hypergeometric distribution** models the number of successes in a sample of size $n$ when selection is done without replacement from a pool that includes $N_1$ successes and $N_2$ failures.
+
+For instance, imagine a student guessing randomly on a 12-question quiz where each question has 4 possible answers. The probability that they get exactly 3 questions right is computed using `dbinom()`.
+
+```{r} 
+dbinom(3, 12, .25)
+``` 
+
+Similarly, the probability that they get *at most* 3 questions right is given by 
+
+```{r} 
+pbinom(3, 12, .25)
+``` 
+
+If you need the probability that they get *at least* 3 questions right, add a `lower.tail` argument, like so:
+
+```{r}
+pbinom(3, 12, .25, lower.tail = FALSE)
+```
+
+`qbinom()` reverses the logic of `pbinom()`, finding the number of successes with a specified cumulative probability. Said differently, `qbinom()` identifies *percentiles*. For instance, we might wonder how many questions the child would have to get right to do at least as well as 80% of randomly-guessing quiz takers.
+
+```{r}
+qbinom(.80, 12, .25)
+```
+
+Notice how the arguments of these functions follow a common pattern: first the value/percentile of interest, then the parameters, which come in a consistent order. This pattern continues to hold for `rbinom()`, which generates a specified number of random values 
+
+```{r}
+set.seed(0) # For reproducibility
+
+rbinom(10, 12, .25)
+```
+
+All of R's probability functions are *vectorized*, meaning that they can perform multiple calculations at once. For instance, the next line computes the probability of obtaining exactly $x$ Butterfingers when randomly grabbing 5 candy bars from a bowl with 8 Butterfingers and 10 Snickers. Note that $x \in \{0, 1, 2, \cdots, 5\}$.
+
+```{r}
+dhyper(0:5, 8, 10, 5)
+```
+
+As you'd expect, these probabilities all add up to one.
+
+Some caution is needed when working with the geometric and negative binomial distributions, both of which consider the number of failures occurring before a fixed number of successes. Some textbooks and computational tools define these distributions in terms on the total number of *trials* needed rather than the total number of *failures*, so some translation may be needed. Fortunately, 
+
+$$\text{trials}\ =\ \text{failures} + \text{successes},$$
+so the two formulations differ only in the addition or subtraction of the parameter $r$. 
+
+**Example.** A basketball player makes 85% of their free throws. If they shoot until they make 5 shots, what is the probability that 7 shots are needed?
+
+**Solution.** Making 5 out of 7 shots requires exactly 2 misses, so the probability is
+
+```{r}
+dnbinom(2, 5, .85)
+```
+
+You might consider trying the next problem on your own before reading my solution.
+
+**Example.** Every day, a new author has a 10% chance of selling a copy of their ebook. Assume that purchases are independent of one another and that there are never multiple sales in a single day.
+
+(a) Find the probability that the first purchase occurs on the 10$^{th}$ day.
+
+(b) Find the probability that the second purchase occurs during the second week (days 8-14).
+
+**Solution.** Let $X$ be the number of days that pass before the first purchase and let $Y$ be the number of purchase-less days before the second. Then $X$ has a geometric distribution and $Y$ has a negative binomial distribution. In each case, $p=.10$. 
+
+(a) If 10 trials are needed for a single success, then 9 failures must have occurred, so we compute $P(X = 9) =$ `dgeom(9, .10)` = `{r} dgeom(9, .10)`
+
+(b) If between 8 and 14 days are needed for 2 sales, then between 6 and 12 days must have occurred without sales. $P(6 \le Y \le 12) =$ `pnbinom(12, 2, .10) - pnbinom(5, 2, .10)` = `{r} pnbinom(12, 2, .10) - pnbinom(5, 2, .10)`
+
+Prefer to have this all clearly explained in a short vid? I've got you covered:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+
+{{< downloadthis "prob calcs in R.pdf" label="Download slides" dname="prob calcs in R">}}
