@@ -1193,7 +1193,7 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="final-thought">Final thought</h2>
 <p>If you were expecting that learning <code>tidymodels</code> would be like learning <code>tidyverse</code>, you’re probably disappointed right about now. While you can practice <code>dplyr</code> without touching <code>ggplot2</code>, you can’t meaningfully do this with the individual <code>tidymodels</code> packages. This isn’t a design flaw in <code>tidymodels</code> but rather a fundamental challenge of the machine learning process, which is interconnected and complex by its very nature.</p>
 <p>Overall, <code>tidymodels</code> is as about as simple as it can be while still doing what it does. Be patient with yourself, take multiple passes at the content, and you’ll get there sooner than you think.</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts41675"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts41028"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts10519"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts39824"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
@@ -1432,7 +1432,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>Prefer to have this all clearly explained in a short vid? I’ve got you covered:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts56274"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts2483"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
