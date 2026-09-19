@@ -1193,7 +1193,7 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="final-thought">Final thought</h2>
 <p>If you were expecting that learning <code>tidymodels</code> would be like learning <code>tidyverse</code>, you’re probably disappointed right about now. While you can practice <code>dplyr</code> without touching <code>ggplot2</code>, you can’t meaningfully do this with the individual <code>tidymodels</code> packages. This isn’t a design flaw in <code>tidymodels</code> but rather a fundamental challenge of the machine learning process, which is interconnected and complex by its very nature.</p>
 <p>Overall, <code>tidymodels</code> is as about as simple as it can be while still doing what it does. Be patient with yourself, take multiple passes at the content, and you’ll get there sooner than you think.</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts56524"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts3930"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts48674"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts36084"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
@@ -1222,34 +1222,38 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
 
 
 <p>Categorical variables (or <em>factors</em> as they are referred to when working in R) are variables that assign observations to specific groups. This post will cover some of the most common problems you may encounter while trying to visualize or model such variables.</p>
-<p>Throughout, I’ll refer to the <code>scooby</code> data set, originally sourced from <a href="https://www.kaggle.com/datasets/thedevastator/the-unsolved-mysteries-of-scooby-doo">kaggle</a> but modified slightly for use in my vids and posts. A download link can be found at the end of this post.</p>
+<p>Throughout, I’ll refer to the <code>scooby</code> data set, originally sourced from <a href="https://www.kaggle.com/datasets/thedevastator/the-unsolved-mysteries-of-scooby-doo">kaggle</a> but modified slightly for use in my vids and in this post. A download link can be found at the end of this tutorial.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load and prep data</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(tidyverse)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_set</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">theme_minimal</span>())</span>
-<span id="cb1-3"></span>
-<span id="cb1-4"><span class="fu" style="color: #4758AB;
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(readxl)</span>
-<span id="cb1-5">scooby <span class="ot" style="color: #003B4F;
+<span id="cb1-7">scooby <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">read_excel</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"_internal/scooby.xlsx"</span>) </span>
-<span id="cb1-6"></span>
-<span id="cb1-7">scooby_sm <span class="ot" style="color: #003B4F;
+<span id="cb1-8"></span>
+<span id="cb1-9">scooby_sm <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> scooby <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
-<span id="cb1-8">  <span class="fu" style="color: #4758AB;
+<span id="cb1-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">filter</span>(format <span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1258,12 +1262,12 @@ background-color: null;
 font-style: inherit;">"TV Series"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span>  </span>
-<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">select</span>(title,  </span>
-<span id="cb1-10">         date_aired,</span>
-<span id="cb1-11">         imdb,</span>
-<span id="cb1-12">         motive) </span></code></pre></div>
+<span id="cb1-12">         date_aired,</span>
+<span id="cb1-13">         imdb,</span>
+<span id="cb1-14">         motive) </span></code></pre></div>
 </div>
 <section id="factor-character-and-other-vector-types" class="level2">
 <h2 class="anchored" data-anchor-id="factor-character-and-other-vector-types">Factor, character, and other vector types</h2>
@@ -1309,7 +1313,7 @@ font-style: inherit;">count</span>(motive)</span></code></pre></div>
 17 &lt;NA&gt;                 2</code></pre>
 </div>
 </div>
-<p>Use <code>as.factor()</code> to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like <code>cars$am</code> (automatic/manual transmission), since functions like <code>ggplot</code> will otherwise attempt to treat them as continuous variables. For instance, we can’t get directly get a side-by-side boxplot of <code>mpg</code> vs <code>am</code>.</p>
+<p>Use <code>as.factor()</code> to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like <code>am</code> (automatic/manual transmission) in the built-in <code>mtcars</code> set, since functions like <code>ggplot</code> will otherwise attempt to treat them as continuous variables. For instance, we can’t get directly get a side-by-side boxplot of <code>mpg</code> vs <code>am</code>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1362,7 +1366,7 @@ continuous. Picking default orientation 'x'.</code></pre>
 </div>
 </div>
 </div>
-<p>While it’s fine to follow the recommendation given in this warning message, it may be better to just convert <code>am</code> as a factor once and for all:</p>
+<p>While it’s fine to follow the recommendation given in this warning message, it may be better to just convert <code>am</code> to a factor once and for all:</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">mtcars2 <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -1727,13 +1731,14 @@ font-style: inherit;">FALSE</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nkjy6UFKJsc?si=7OCFQeMoxzYjsK_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts11908"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts57215"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts42737"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts43599"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts30461"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts35523"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
 
  ]]></description>
   <category>forcats</category>
+  <category>Long form</category>
   <guid>https://equitableequations.com/posts/2026-09-07/</guid>
   <pubDate>Mon, 07 Sep 2026 05:00:00 GMT</pubDate>
   <media:content url="https://equitableequations.com/posts/2026-09-07/factors thumb.png" medium="image" type="image/png" height="81" width="144"/>
@@ -1747,8 +1752,8 @@ font-style: inherit;">FALSE</span>)</span></code></pre></div>
 
 
 
-<p>Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you’ll need to use <strong>regular expressions</strong>, or regex.</p>
-<p>Throughout this post, I’ll make use three <code>stringr</code> functions: <code>str_subset</code>, <code>str_detect</code>, and <code>str_extract</code>, and a few elements of the <code>sentences</code> vector.</p>
+<p>Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you’ll need to use <em>regular expressions</em> (<em>regex</em> for short).</p>
+<p>Throughout this post, I’ll make use three <code>stringr</code> functions: <code>str_subset</code>, <code>str_detect</code>, and <code>str_extract</code>, and a subset of the <code>sentences</code> vector.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1837,7 +1842,7 @@ font-style: inherit;">"."</span>)</span></code></pre></div>
 <pre><code> [1] "T" "G" "I" "T" "R" "T" "T" "T" "F" "A"</code></pre>
 </div>
 </div>
-<p>In order to match these metacharacters, precede them with two slashes, like this:</p>
+<p>In order to match these metacharacters, precede them with two slashes, like so:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -2054,7 +2059,7 @@ font-style: inherit;">"(chicken|hog)s"</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wy0cEKYeaF8?si=RktCufxzNGzK8UEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts18985"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts43315"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts27638"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts47179"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
@@ -2062,6 +2067,7 @@ font-style: inherit;">"(chicken|hog)s"</span>)</span></code></pre></div>
  ]]></description>
   <category>regex</category>
   <category>stringr</category>
+  <category>Long form</category>
   <guid>https://equitableequations.com/posts/2026-08-24/</guid>
   <pubDate>Mon, 24 Aug 2026 05:00:00 GMT</pubDate>
   <media:content url="https://equitableequations.com/posts/2026-08-24/regex thumb.png" medium="image" type="image/png" height="81" width="144"/>
@@ -2133,7 +2139,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
-<p><button class="btn btn-default downloadthis  " id="dnldts15321"><i class="bi bi-download"></i> Download slides </button> <button class="btn btn-default downloadthis  " id="dnldts36711"><i class="bi bi-download"></i> Download practice plots </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts1247"><i class="bi bi-download"></i> Download slides </button> <button class="btn btn-default downloadthis  " id="dnldts9525"><i class="bi bi-download"></i> Download practice plots </button></p>
 
 
 
@@ -2160,33 +2166,33 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 </div>
 <ul>
 <li><p>Data manipulation with R:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts20411"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts25214"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts41262"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts33791"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Getting started with ggplot:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts11556"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts46964"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts23132"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts4891"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Single-variable plots with ggplot2:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts25909"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts42243"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts1905"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts17085"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Quantitative vs categorical plots with ggplot2:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts41924"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts9241"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts10081"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts62608"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Introducing the pipe:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts19672"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts53807"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts27329"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts60287"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Grouped summaries in R:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts39"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts16103"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts5623"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts57663"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Grouped filters and mutates</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts18125"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts28462"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts56268"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts37884"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Tidying data with <code>pivot_longer</code>:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts39839"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts1235"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts44804"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts1143"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Tidying data with <code>pivot_wider</code>:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts19130"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts38457"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts22337"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts43441"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Mutating joins:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts54176"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts63463"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts9489"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts45206"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Filtering joins</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts39553"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts64251"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts52529"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts28841"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with dates and times</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts19179"><i class="bi bi-download"></i> Download optical.csv </button> <button class="btn btn-default downloadthis  " id="dnldts48212"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3036"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts1286"><i class="bi bi-download"></i> Download optical.csv </button> <button class="btn btn-default downloadthis  " id="dnldts26721"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts49145"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with strings</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts52630"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts56400"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts30046"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts19753"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with factors</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts63604"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts58238"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts23914"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts46005"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts23533"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts63636"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 </ul>
 
 
@@ -2211,7 +2217,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 <p>Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w5vBoaN6t-M?si=1HmMNFWiIRoBpCnW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts57871"><i class="bi bi-download"></i> Download erykah.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts42840"><i class="bi bi-download"></i> Download notes </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts20595"><i class="bi bi-download"></i> Download erykah.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts44508"><i class="bi bi-download"></i> Download notes </button></p>
 
 
 
@@ -2233,7 +2239,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 <p>I’ve decided to start updating my introductory-level content, much of which was recorded early in the 2020 pandemic. When completed, I expect to have a complete course in data science with R, roughly paralleling what you might find in a sophomore-level university course for students with some statistical knowledge but not necessarily and programming experience.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ftb7u_JuJwg?si=dON-HYvqMeF0Ped6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts40803"><i class="bi bi-download"></i> Download amy.csv </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts22568"><i class="bi bi-download"></i> Download amy.csv </button></p>
 
 
 
@@ -2514,7 +2520,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>Prefer to have this all clearly explained in a short vid? I’ve got you covered:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts44247"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts42885"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
@@ -2536,7 +2542,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <p>This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about <code>interpolate()</code>, in particular.</p>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/KrIkDPBg9Zk?si=xemfivqMi38eMHyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></p>
-<p><button class="btn btn-default downloadthis  " id="dnldts17790"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts26278"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -2559,7 +2565,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UPtMr8eOr5U?si=stSeGMamAUtaRC3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts40803"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts22568"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -2584,7 +2590,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>As usual, code and other supporting materials are available below the vid.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RDnRiGupF4U?si=zl7dGXrvsw5mbl2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts42150"><i class="bi bi-download"></i> Download script </button> <button class="btn btn-default downloadthis  " id="dnldts13513"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts34120"><i class="bi bi-download"></i> Download script </button> <button class="btn btn-default downloadthis  " id="dnldts5859"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
@@ -2694,7 +2700,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n6P7eLG80D8?si=mtav1XM23U6JZ991" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts1787"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts10483"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -2716,7 +2722,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>In this vid, I answer a question proposed in a 2023 <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-02-14/readme.md">TidyTuesday challenge</a>. It sounds plausible, but is it actually the case?</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mMoXJ-_UnYE?si=542nGmPIe9buhEwl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts40803"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts26278"><i class="bi bi-download"></i> Download script </button></p>
 
 
 

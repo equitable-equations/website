@@ -80,9 +80,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -145,7 +145,7 @@ window.Quarto = {
 <meta name="twitter:image-width" content="1280">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -211,7 +211,7 @@ window.Quarto = {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="./posts.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./posts_Long form.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -226,7 +226,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(19)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(6)</span></div><div class="category" data-category="RGF0YSUyMGFuYWx5c2lz">Data analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZHBseXI=">dplyr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZWxsbWVy">ellmer <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Zm9yY2F0cw==">forcats <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Z2dwbG90Mg==">ggplot2 <span class="quarto-category-count">(3)</span></div><div class="category" data-category="R3JhbW1hciUyMG9mJTIwZ3JhcGhpY3M=">Grammar of graphics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(6)</span></div><div class="category" data-category="TG9uZyUyMGZvcm0=">Long form <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TWFjaGluZSUyMGxlYXJuaW5n">Machine learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvYmFiaWxpdHk=">Probability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UXVhcnRv">Quarto <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVnZXg=">regex <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UlN0dWRpbw==">RStudio <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3RyaW5ncg==">stringr <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dGlkeW1vZGVscw==">tidymodels <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dGlkeXI=">tidyr <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -266,6 +268,15 @@ window.Quarto = {
 <h3 class="no-anchor listing-title">
 <a href="./posts/2026-09-21/index.html" class="no-external">How to <code>tidymodels</code></a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('TWFjaGluZSUyMGxlYXJuaW5n'); return false;">Machine learning</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dGlkeW1vZGVscw=='); return false;">tidymodels</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TG9uZyUyMGZvcm0='); return false;">Long form</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2026-09-21/index.html" class="no-external">
 <p>Pull up your socks! It’s time to tackle machine learning in R.</p>
 </a></div>
@@ -281,7 +292,7 @@ Andrew Gard
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="Zm9yY2F0cw==" data-listing-date-sort="1788757200000" data-listing-file-modified-sort="1788817441906" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1075">
+<div class="quarto-post image-right" data-index="1" data-categories="Zm9yY2F0cyUyQ0xvbmclMjBmb3Jt" data-listing-date-sort="1788757200000" data-listing-file-modified-sort="1789788160360" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1088">
 <div class="thumbnail"><a href="./posts/2026-09-07/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2026-09-07/factors thumb.png" class="thumbnail-image">
@@ -291,6 +302,13 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2026-09-07/index.html" class="no-external">Working with factors in R</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Zm9yY2F0cw=='); return false;">forcats</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TG9uZyUyMGZvcm0='); return false;">Long form</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2026-09-07/index.html" class="no-external">
 <p>Need to change the ordering of a categorical variable? Update its labels? Create an ‘other’ category? You’ve come to the right place.</p>
 </a></div>
@@ -306,7 +324,7 @@ Andrew Gard
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="cmVnZXglMkNzdHJpbmdy" data-listing-date-sort="1787547600000" data-listing-file-modified-sort="1787587889619" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="493">
+<div class="quarto-post image-right" data-index="2" data-categories="cmVnZXglMkNzdHJpbmdyJTJDTG9uZyUyMGZvcm0=" data-listing-date-sort="1787547600000" data-listing-file-modified-sort="1789788379644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="493">
 <div class="thumbnail"><a href="./posts/2026-08-24/index.html" class="no-external">
 
 <img loading="lazy" src="./posts/2026-08-24/regex thumb.png" class="thumbnail-image">
@@ -316,6 +334,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2026-08-24/index.html" class="no-external">Regular expressions for R users</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmVnZXg='); return false;">regex</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RyaW5ncg=='); return false;">stringr</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TG9uZyUyMGZvcm0='); return false;">Long form</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2026-08-24/index.html" class="no-external">
 <p>Regular expressions let you search and manipulate strings based on patterns rather than just literal matches. This is often straightforward, but when it’s not, watch out!</p>
 </a></div>
@@ -341,6 +368,13 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2026-01-05/index.html" class="no-external">Understanding the grammar of graphics</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('R3JhbW1hciUyMG9mJTIwZ3JhcGhpY3M='); return false;">Grammar of graphics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2026-01-05/index.html" class="no-external">
 <p>How can we efficiently and clearly describe any data visualization, particularly when coding?</p>
 </a></div>
@@ -366,6 +400,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-11-10/index.html" class="no-external">Content to support my course, <em>Data Science with R</em></a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZHBseXI='); return false;">dplyr</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dGlkeXI='); return false;">tidyr</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-11-10/index.html" class="no-external">
 <p>This is the place to find data sets and other supporting documents for my YouTube course, <em>Data Science with R</em>, at least until I can build something more permanent.</p>
 </a></div>
@@ -391,6 +434,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-10-27/index.html" class="no-external">What is Quarto?</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UXVhcnRv'); return false;">Quarto</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-10-27/index.html" class="no-external">
 <p>I introduce Quarto at the very start of my courses on R. Here’s why.</p>
 </a></div>
@@ -416,6 +464,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-10-13/index.html" class="no-external">Getting started with R</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UlN0dWRpbw=='); return false;">RStudio</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-10-13/index.html" class="no-external">
 <p>Looking to get started with R? I’ve got you covered.</p>
 </a></div>
@@ -441,6 +494,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-09-30/index.html" class="no-external">How to set up RStudio for success</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UlN0dWRpbw=='); return false;">RStudio</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-09-30/index.html" class="no-external">
 <p>Here are a few of the most important things I have my students do as soon as they open RStudio for the first time.</p>
 </a></div>
@@ -466,6 +524,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-09-22/index.html" class="no-external">Why haven’t I covered <code>tidymodels</code>?</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('dGlkeW1vZGVscw=='); return false;">tidymodels</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-09-22/index.html" class="no-external">
 <p>I get this question from time to time, and with good reason. Here’s the reason, along with thoughts on when I’ll finally take up the challenge.</p>
 </a></div>
@@ -491,6 +554,13 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-09-15/index.html" class="no-external">Discrete probability calculations in R</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TG9uZyUyMGZvcm0='); return false;">Long form</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-09-15/index.html" class="no-external">
 <p>R has built-in functions for all major discrete probability distributions, including the binomial, geometric, negative binomial, hypergeometric, and Poisson. In this post, I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.</p>
 </a></div>
@@ -516,6 +586,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-09-02/index.html" class="no-external">Writing prompts using interpolate()</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-09-02/index.html" class="no-external">
 <p>I just discovered <code>interpolate()</code>, which is similar but not identical to <code>glue::glue()</code>.</p>
 </a></div>
@@ -541,6 +620,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-08-11/index.html" class="no-external">Teaching an AI to webscrape using the ellmer package</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-08-11/index.html" class="no-external">
 <p>Giving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.</p>
 </a></div>
@@ -566,6 +654,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-07-28/index.html" class="no-external">All about system prompts</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-07-28/index.html" class="no-external">
 <p>What is a system prompt and why should you care?</p>
 </a></div>
@@ -591,6 +688,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-07-25/index.html" class="no-external">Advanced counting</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvYmFiaWxpdHk='); return false;">Probability</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-07-25/index.html" class="no-external">
 <p>Can I brag about this title for a sec?</p>
 </a></div>
@@ -616,6 +718,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-07-14/index.html" class="no-external">How to show a ggplot to an AI assistant</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-07-14/index.html" class="no-external">
 <p>A picture is worth a thousand words, especially when working with a chatbot.</p>
 </a></div>
@@ -641,6 +752,13 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-07-07/index.html" class="no-external">Can using an LLM for coding be ethical?</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-07-07/index.html" class="no-external">
 <p>A short stream-of-consciousness piece about one particular ethical consideration.</p>
 </a></div>
@@ -666,6 +784,15 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-06-30/index.html" class="no-external">Chatting with Claude AI in RStudio using ellmer</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWxsbWVy'); return false;">ellmer</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-06-30/index.html" class="no-external">
 <p>How to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.</p>
 </a></div>
@@ -691,6 +818,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-05-27/index.html" class="no-external">All about facets</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z2dwbG90Mg=='); return false;">ggplot2</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-05-27/index.html" class="no-external">
 <p>There’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.</p>
 </a></div>
@@ -716,6 +848,11 @@ Andrew Gard
 <h3 class="no-anchor listing-title">
 <a href="./posts/2025-05-12/index.html" class="no-external">Hollywood age gaps and the Bechdel test</a>
 </h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMGFuYWx5c2lz'); return false;">Data analysis</div>
+
+</div>
 <div class="delink listing-description"><a href="./posts/2025-05-12/index.html" class="no-external">
 <p>Do age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?</p>
 </a></div>
