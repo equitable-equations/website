@@ -1,10 +1,13 @@
 project:
   type: website
+  resources:
+    - logo_transparent.png
   output-dir: docs
 
 website:
   title: "Andrew Gard, Ph.D"
-  site-url: https://equitableequations.com/
+  site-url: "https://equitableequations.com/"
+  description: "Statistics and machine learning for everyone!"
   open-graph: true # https://quarto.org/docs/websites/website-tools.html#open-graph
   favicon: assets/logo_transparent.png
   twitter-card: 
@@ -31,8 +34,12 @@ website:
             href: cv_formal.qmd
           - text: Publications
             href: pubs.qmd
-      - text: Pseudo-blog
+      - text: Not a blog
         href: posts.qmd
+    right:
+      - icon: rss
+        href: posts-Longform.xml
+
   
   page-footer:
     border: true

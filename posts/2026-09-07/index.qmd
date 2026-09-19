@@ -4,7 +4,7 @@ description: "Need to change the ordering of a categorical variable? Update its 
 author:
   - name: Andrew Gard
 date: 2026-09-07
-categories: [forcats] 
+categories: [forcats, Longform] 
 image: "factors thumb.png"
 draft: false 
 comments:
@@ -14,10 +14,12 @@ comments:
 
 Categorical variables (or *factors* as they are referred to when working in R) are variables that assign observations to specific groups. This post will cover some of the most common problems you may encounter while trying to visualize or model such variables. 
 
-Throughout, I'll refer to the `scooby` data set, originally sourced from [kaggle](https://www.kaggle.com/datasets/thedevastator/the-unsolved-mysteries-of-scooby-doo) but modified slightly for use in my vids and posts. A download link can be found at the end of this post.
+Throughout, I'll refer to the `scooby` data set, originally sourced from [kaggle](https://www.kaggle.com/datasets/thedevastator/the-unsolved-mysteries-of-scooby-doo) but modified slightly for use in my vids and in this post. A download link can be found at the end of this tutorial.
 
 ```{r}
 #| message: false
+
+# Load and prep data
 
 library(tidyverse)
 theme_set(theme_minimal())
@@ -44,7 +46,7 @@ scooby_sm |>
   count(motive)
 ```
 
-Use `as.factor()` to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like `cars$am` (automatic/manual transmission), since functions like `ggplot` will otherwise attempt to treat them as continuous variables. For instance, we can't get directly get a side-by-side boxplot of `mpg` vs `am`.
+Use `as.factor()` to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like `am` (automatic/manual transmission) in the built-in `mtcars` set, since functions like `ggplot` will otherwise attempt to treat them as continuous variables. For instance, we can't get directly get a side-by-side boxplot of `mpg` vs `am`.
 
 ```{r}
 #| out-width: 60%
@@ -57,7 +59,7 @@ ggplot(mtcars, aes(x = am,
   geom_boxplot() # not what we want
 ```
 
-While it's fine to follow the recommendation given in this warning message, it may be better to just convert `am` as a factor once and for all:
+While it's fine to follow the recommendation given in this warning message, it may be better to just convert `am` to a factor once and for all:
 
 ```{r}
 #| out-width: 60%

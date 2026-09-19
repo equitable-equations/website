@@ -4,7 +4,7 @@ description: "R has built-in functions for all major discrete probability distri
 author:
   - name: Andrew Gard
 date: 09-15-2025
-categories: [Probability, Long form] 
+categories: [Probability, Longform] 
 image: "probs in R thumb.png"
 draft: false 
 comments:

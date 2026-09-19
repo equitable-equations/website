@@ -4,9 +4,9 @@ description: "Pull up your socks! It's time to tackle machine learning in R."
 author:
   - name: Andrew Gard
 date: 2026-09-21
-categories: [Machine learning, tidymodels, Long form] 
+categories: [Machine learning, tidymodels, Longform] 
 image: "tidymodels_thumb2.png"
-draft: false 
+draft: true 
 comments:
   utterances:
     repo: equitable-equations/website

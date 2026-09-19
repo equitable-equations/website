@@ -3,6 +3,7 @@ title: "Why haven't I covered `tidymodels`?"
 author:
   - name: Andrew Gard
 date: 09-22-2025
+description: "I get this question from time to time, and with good reason. Here's the reason, along with thoughts on when I'll finally take up the challenge."
 categories: [tidymodels] 
 draft: false 
 comments:
@@ -10,7 +11,9 @@ comments:
     repo: equitable-equations/website
 ---
 
-I get this question from time to time, and with good reason. The `tidymodels` framework for machine learning is powerful and about as user-friendly as we can hope for in that space, bringing consistency and clarity to a process that can continue to feel ad-hoc well into the learning curve. Over time, it's supplanted the older favorite meta-package, `carat`, which coincidentally (note sarcasm) was written by one the primary `tidymodels` architects, Max Kuhn.
+
+
+The `tidymodels` framework for machine learning is powerful and about as user-friendly as we can hope for in that space, bringing consistency and clarity to a process that can continue to feel ad-hoc well into the learning curve. Over time, it's supplanted the older favorite meta-package, `carat`, which coincidentally (note sarcasm) was written by one the primary `tidymodels` architects, Max Kuhn.
 
 I love `tidymodels` and use it consistently for my machine learning needs. Yet when I've done vids on ML techniques, I've almost always shied away, opting to use individual packages instead. Why?
 

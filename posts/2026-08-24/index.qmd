@@ -4,7 +4,7 @@ description: "Regular expressions let you search and manipulate strings based on
 author:
   - name: Andrew Gard
 date: 2026-08-24
-categories: [regex, stringr] 
+categories: [regex, stringr, Longform] 
 image: "regex thumb.png"
 draft: false 
 comments:
@@ -12,9 +12,9 @@ comments:
     repo: equitable-equations/website
 ---
 
-Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you'll need to use **regular expressions**, or regex.
+Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you'll need to use *regular expressions* (*regex* for short).
 
-Throughout this post, I'll make use three `stringr` functions: `str_subset`, `str_detect`, and `str_extract`, and a few elements of the `sentences` vector.
+Throughout this post, I'll make use three `stringr` functions: `str_subset`, `str_detect`, and `str_extract`, and a subset of the `sentences` vector.
 
 ```{r}
 library(stringr)
@@ -43,7 +43,7 @@ For instance, a dot matches with *any* character, which explains the following o
 str_extract(sentences, ".")
 ```
 
-In order to match these metacharacters, precede them with two slashes, like this:
+In order to match these metacharacters, precede them with two slashes, like so:
 
 ```{r}
 str_extract(sentences, "\\.")

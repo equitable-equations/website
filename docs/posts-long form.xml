@@ -8,7 +8,7 @@
 <title>Andrew Gard, Ph.D</title>
 <link>https://equitableequations.com/posts.html#category=Long%20form</link>
 <atom:link href="https://equitableequations.com/posts-long form.xml" rel="self" type="application/rss+xml"/>
-<description></description>
+<description>Statistics and machine learning for everyone!</description>
 <image>
 <url>https://equitableequations.com/assets/me_contemplative_sm.jpg</url>
 <title>Andrew Gard, Ph.D</title>
@@ -1193,7 +1193,7 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="final-thought">Final thought</h2>
 <p>If you were expecting that learning <code>tidymodels</code> would be like learning <code>tidyverse</code>, you’re probably disappointed right about now. While you can practice <code>dplyr</code> without touching <code>ggplot2</code>, you can’t meaningfully do this with the individual <code>tidymodels</code> packages. This isn’t a design flaw in <code>tidymodels</code> but rather a fundamental challenge of the machine learning process, which is interconnected and complex by its very nature.</p>
 <p>Overall, <code>tidymodels</code> is as about as simple as it can be while still doing what it does. Be patient with yourself, take multiple passes at the content, and you’ll get there sooner than you think.</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts28491"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts25564"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts25188"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts6566"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
@@ -1211,6 +1211,866 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
   <guid>https://equitableequations.com/posts/2026-09-21/</guid>
   <pubDate>Mon, 21 Sep 2026 05:00:00 GMT</pubDate>
   <media:content url="https://equitableequations.com/posts/2026-09-21/tidymodels_thumb2.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Working with factors in R</title>
+  <dc:creator>Andrew Gard</dc:creator>
+  <link>https://equitableequations.com/posts/2026-09-07/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Categorical variables (or <em>factors</em> as they are referred to when working in R) are variables that assign observations to specific groups. This post will cover some of the most common problems you may encounter while trying to visualize or model such variables.</p>
+<p>Throughout, I’ll refer to the <code>scooby</code> data set, originally sourced from <a href="https://www.kaggle.com/datasets/thedevastator/the-unsolved-mysteries-of-scooby-doo">kaggle</a> but modified slightly for use in my vids and in this post. A download link can be found at the end of this tutorial.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load and prep data</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_set</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>())</span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(readxl)</span>
+<span id="cb1-7">scooby <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_excel</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"_internal/scooby.xlsx"</span>) </span>
+<span id="cb1-8"></span>
+<span id="cb1-9">scooby_sm <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> scooby <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(format <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"TV Series"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span>  </span>
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(title,  </span>
+<span id="cb1-12">         date_aired,</span>
+<span id="cb1-13">         imdb,</span>
+<span id="cb1-14">         motive) </span></code></pre></div>
+</div>
+<section id="factor-character-and-other-vector-types" class="level2">
+<h2 class="anchored" data-anchor-id="factor-character-and-other-vector-types">Factor, character, and other vector types</h2>
+<p>As a general rule, <code>tidyverse</code> functions treat character vectors as factors. For instance, we can apply <code>dplyr::count</code> to <code>scooby$motive</code>, even though the latter just consists of strings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">glimpse</span>(scooby_sm)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 374
+Columns: 4
+$ title      &lt;chr&gt; "What a Night for a Knight", "A Clue for Scooby Doo", "Hass…
+$ date_aired &lt;dttm&gt; 1969-09-13, 1969-09-20, 1969-09-27, 1969-10-04, 1969-10-11…
+$ imdb       &lt;dbl&gt; 8.1, 8.1, 8.0, 7.8, 7.5, 8.4, 7.6, 8.2, 8.1, 8.0, 8.5, 8.2,…
+$ motive     &lt;chr&gt; "Theft", "Theft", "Treasure", "Natural Resource", "Competit…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">scooby_sm <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">count</span>(motive)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 17 × 2
+   motive               n
+   &lt;chr&gt;            &lt;int&gt;
+ 1 Abduction            3
+ 2 Assistance           2
+ 3 Competition        130
+ 4 Conquer             33
+ 5 Counterfeit          6
+ 6 Entertainment        3
+ 7 Extortion            3
+ 8 Imagination          1
+ 9 Inheritance          6
+10 Natural Resource    19
+11 Preservation        10
+12 Safety               2
+13 Simulation           2
+14 Smuggling           19
+15 Theft               93
+16 Treasure            40
+17 &lt;NA&gt;                 2</code></pre>
+</div>
+</div>
+<p>Use <code>as.factor()</code> to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like <code>am</code> (automatic/manual transmission) in the built-in <code>mtcars</code> set, since functions like <code>ggplot</code> will otherwise attempt to treat them as continuous variables. For instance, we can’t get directly get a side-by-side boxplot of <code>mpg</code> vs <code>am</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">glimpse</span>(mtcars)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 32
+Columns: 11
+$ mpg  &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8,…
+$ cyl  &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 8,…
+$ disp &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, 16…
+$ hp   &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 180…
+$ drat &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.92,…
+$ wt   &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.…
+$ qsec &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, 18…
+$ vs   &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0,…
+$ am   &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0,…
+$ gear &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3,…
+$ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, 2,…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(mtcars, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> am, </span>
+<span id="cb8-2">                   <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> mpg)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb8-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_boxplot</span>() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># not what we want</span></span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Orientation is not uniquely specified when both the x and y aesthetics are
+continuous. Picking default orientation 'x'.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Continuous x aesthetic
+ℹ did you forget `aes(group = ...)`?</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>While it’s fine to follow the recommendation given in this warning message, it may be better to just convert <code>am</code> to a factor once and for all:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">mtcars2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> mtcars <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb11-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">am =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.factor</span>(am)) </span>
+<span id="cb11-3"></span>
+<span id="cb11-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(mtcars2, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> am, </span>
+<span id="cb11-5">                    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> mpg)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb11-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_boxplot</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="relabeling-factors" class="level2">
+<h2 class="anchored" data-anchor-id="relabeling-factors">Relabeling factors</h2>
+<p>There are many options for changing the text used to label factor levels, but <code>fct_recode()</code> is a solid choice.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">mtcars2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> mtcars2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb12-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">am =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fct_recode</span>(am, </span>
+<span id="cb12-3">                         <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"automatic"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"0"</span>,</span>
+<span id="cb12-4">                         <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"manual"</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"1"</span>))</span>
+<span id="cb12-5">mtcars2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb12-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">count</span>(am)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         am  n
+1 automatic 19
+2    manual 13</code></pre>
+</div>
+</div>
+<p>Notice the syntax, “new_name” = “old_name”, which is common in <code>tidyverse</code> R.</p>
+<p>When you have a large number of different factor levels, it may be helpful to lump the less common ones into an “other” category. For instance, the next chunk combines all categories with fewer than 20 occurrences.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">scooby_sm2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> scooby_sm <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">motive =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fct_lump_min</span>(motive,</span>
+<span id="cb14-3">                               <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">min =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)) </span>
+<span id="cb14-4">scooby_sm2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">count</span>(motive) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">arrange</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>n)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  motive          n
+  &lt;fct&gt;       &lt;int&gt;
+1 Competition   130
+2 Theft          93
+3 Other          76
+4 Treasure       40
+5 Conquer        33
+6 &lt;NA&gt;            2</code></pre>
+</div>
+</div>
+<p>Also check out <code>fct_lump_n()</code> to specify the number of levels retained, <code>fct_lump_prop()</code> to lump low-percentage levels, and <code>fct_lump_lowfreq()</code> to try to force the new “Other” level to have lowest frequency.</p>
+</section>
+<section id="rearranging-levels" class="level2">
+<h2 class="anchored" data-anchor-id="rearranging-levels">Rearranging levels</h2>
+<p>Sometimes the order of factor levels matters, for instance in a bar chart. The default odering is alphanumeric.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(scooby_sm2, </span>
+<span id="cb16-2">       <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> motive)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb16-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Use <code>fct_relevel()</code> to shift levels to the front. For instance, the next code chunk places the motives <code>Treasure</code> and <code>Theft</code> before <code>Compitition</code> and others.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1">scooby_sm3 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> scooby_sm2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb17-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">motive =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fct_relevel</span>(motive,</span>
+<span id="cb17-3">                              <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Treasure"</span>,</span>
+<span id="cb17-4">                              <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Theft"</span>)) </span>
+<span id="cb17-5"></span>
+<span id="cb17-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(scooby_sm3, </span>
+<span id="cb17-7">       <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> motive)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb17-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Often, you just want to put the most common factor levels first. Use <code>fct_infreq()</code> to accomplish this.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(scooby_sm2, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fct_infreq</span>(motive))) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb18-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can also reverse the order of the factor levels with <code>fct_rev</code>.</p>
+</section>
+<section id="reordering-levels-using-a-second-variable" class="level2">
+<h2 class="anchored" data-anchor-id="reordering-levels-using-a-second-variable">Reordering levels using a second variable</h2>
+<p>For some plots, it can be natural to order a categorical variable using a numeric one. For instance, in the next plot, it would be preferable to show the various motives in increasing order of imdb ratings.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(scooby_sm3, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> motive,</span>
+<span id="cb19-2">                       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> imdb)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb19-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_boxplot</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Use <code>fct_reorder</code> to accomplish this.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1">scooby_sm4 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> scooby_sm3 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb20-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">motive =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fct_reorder</span>(motive,</span>
+<span id="cb20-3">                              imdb))</span>
+<span id="cb20-4"></span>
+<span id="cb20-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(scooby_sm4, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> motive,</span>
+<span id="cb20-6">                       <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> imdb)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb20-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_boxplot</span>()</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By default, <code>fct_reorder</code> sorts using the median. You can specify a different function (like mean) by adding a <code>.fun</code> argument.</p>
+</section>
+<section id="ordered-factors" class="level2">
+<h2 class="anchored" data-anchor-id="ordered-factors">Ordered factors</h2>
+<p>Occasionally you may encounter ordered factors, ones of class <code>ord</code>. For the most part, you can treat these like regular factors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">glimpse</span>(diamonds)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 53,940
+Columns: 10
+$ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.…
+$ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, Ver…
+$ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I,…
+$ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, …
+$ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64…
+$ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58…
+$ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 34…
+$ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.…
+$ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.…
+$ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1">diamonds <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb23-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">count</span>(cut) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># several ordered factors</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  cut           n
+  &lt;ord&gt;     &lt;int&gt;
+1 Fair       1610
+2 Good       4906
+3 Very Good 12082
+4 Premium   13791
+5 Ideal     21551</code></pre>
+</div>
+</div>
+<p>Specifying that a factor is ordered (for instance using <code>ordered</code>) can occasionally matter in modeling applications and certain forms of statistical inference. Other than that, the most visible difference with ordered factors in R is how they’re displayed by <code>ggplot</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(diamonds, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> cut,</span>
+<span id="cb25-2">                     <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> cut)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb25-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_bar</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show.legend =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-09-07/index_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>By default, ordered factors are colored using the <code>viridis</code> palette, which is has a distinct order to it.</p>
+</section>
+<section id="want-more" class="level2">
+<h2 class="anchored" data-anchor-id="want-more">Want more?</h2>
+<p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Nkjy6UFKJsc?si=7OCFQeMoxzYjsK_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><button class="btn btn-default downloadthis  " id="dnldts61991"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts5991"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts5480"><i class="bi bi-download"></i> Download html </button></p>
+
+
+</section>
+
+ ]]></description>
+  <category>forcats</category>
+  <category>Long form</category>
+  <guid>https://equitableequations.com/posts/2026-09-07/</guid>
+  <pubDate>Mon, 07 Sep 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://equitableequations.com/posts/2026-09-07/factors thumb.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Regular expressions for R users</title>
+  <dc:creator>Andrew Gard</dc:creator>
+  <link>https://equitableequations.com/posts/2026-08-24/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you’ll need to use <em>regular expressions</em> (<em>regex</em> for short).</p>
+<p>Throughout this post, I’ll make use three <code>stringr</code> functions: <code>str_subset</code>, <code>str_detect</code>, and <code>str_extract</code>, and a subset of the <code>sentences</code> vector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(stringr)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">sentences <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> sentences[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>]</span>
+<span id="cb1-4">sentences</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "The birch canoe slid on the smooth planks." 
+ [2] "Glue the sheet to the dark blue background."
+ [3] "It's easy to tell the depth of a well."     
+ [4] "These days a chicken leg is a rare dish."   
+ [5] "Rice is often served in round bowls."       
+ [6] "The juice of lemons makes fine punch."      
+ [7] "The box was thrown beside the parked truck."
+ [8] "The hogs were fed chopped corn and garbage."
+ [9] "Four hours of steady work faced us."        
+[10] "A large size in stockings is hard to sell." </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"of"</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># keep only elements with a match</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "It's easy to tell the depth of a well."
+[2] "Rice is often served in round bowls."  
+[3] "The juice of lemons makes fine punch." 
+[4] "Four hours of steady work faced us."   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_detect</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"of"</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># TRUE when an element matches, FALSE otherwise</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"of"</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># pull out matching substrings</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA   NA   "of" NA   "of" "of" NA   NA   "of" NA  </code></pre>
+</div>
+</div>
+<section id="special-characters" class="level2">
+<h2 class="anchored" data-anchor-id="special-characters">Special characters</h2>
+<p>The following characters (all of which are explained below) have special meanings and can’t be searched literally.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">. \ <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|</span> ( ) [ { <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span> <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">$</span> <span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">*</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> ? </span></code></pre></div>
+</div>
+<p>For instance, a dot matches with <em>any</em> character, which explains the following output.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"."</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "T" "G" "I" "T" "R" "T" "T" "T" "F" "A"</code></pre>
+</div>
+</div>
+<p>In order to match these metacharacters, precede them with two slashes, like so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">."</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "." "." "." "." "." "." "." "." "." "."</code></pre>
+</div>
+</div>
+</section>
+<section id="position-and-relative-position" class="level2">
+<h2 class="anchored" data-anchor-id="position-and-relative-position">Position and relative position</h2>
+<p>To specify that a substring comes at the beginning of a string, use “^”. To specify that it comes at the end, use “$”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(fruit, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"^re"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "redcurrant"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(fruit, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"er$"</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># note order</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "bell pepper"  "chili pepper" "cucumber"    </code></pre>
+</div>
+</div>
+<p>As mentioned above, a dot indicates that substrings are separated by an arbitrary character.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"s.o"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "smo" NA    NA    NA    "s o" NA    NA    NA    "s o" "sto"</code></pre>
+</div>
+</div>
+</section>
+<section id="character-sets" class="level2">
+<h2 class="anchored" data-anchor-id="character-sets">Character sets</h2>
+<p>Use brackets to allow multiple options for the character to be matched.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[oe]n"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The birch canoe slid on the smooth planks."
+[2] "These days a chicken leg is a rare dish."  
+[3] "Rice is often served in round bowls."      
+[4] "The juice of lemons makes fine punch."     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[oe]n"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "on" NA   NA   "en" "en" "on" NA   NA   NA   NA  </code></pre>
+</div>
+</div>
+<p>Ranges of letters and numbers are allowed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[a-j]o"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Rice is often served in round bowls."       
+[2] "The box was thrown beside the parked truck."
+[3] "The hogs were fed chopped corn and garbage."
+[4] "Four hours of steady work faced us."        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[a-j]o"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA   NA   NA   NA   "bo" NA   "bo" "ho" "ho" NA  </code></pre>
+</div>
+</div>
+<p>Inside of brackets, “^” represents negation.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"[^a-j]o"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "no" "to" "to" NA   " o" " o" "ro" NA   "Fo" "to"</code></pre>
+</div>
+</div>
+</section>
+<section id="character-classes" class="level2">
+<h2 class="anchored" data-anchor-id="character-classes">Character classes</h2>
+<p>It’s also possible to specify classes of characters. “\d” matches any digit and “\w” matches and word character (a-z, A-Z, 0-9, and underscore), while “\D” and “\W” will match anything <em>except</em> digits and word characters, respectively. Many other classes are available. Enter <code>?regex</code> for a full list.</p>
+</section>
+<section id="the-role-of-in-quarto" class="level2">
+<h2 class="anchored" data-anchor-id="the-role-of-in-quarto">The role of “\” in Quarto</h2>
+<p>If you write “\d” in a Quarto document, it won’t render properly. This is because Quarto interprets the slash as an escape character. To actually render this string, use “\\d” instead.</p>
+<p>Similarly, to render a slash, use \\.</p>
+</section>
+<section id="matching-whitespace" class="level2">
+<h2 class="anchored" data-anchor-id="matching-whitespace">Matching whitespace</h2>
+<p>Use <code>\\s</code> for space, <code>\\t</code> for tab, and <code>\\n</code> for a new line.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"e</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\\</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">sb"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The birch canoe slid on the smooth planks." 
+[2] "Glue the sheet to the dark blue background."
+[3] "The box was thrown beside the parked truck."</code></pre>
+</div>
+</div>
+</section>
+<section id="repetition" class="level2">
+<h2 class="anchored" data-anchor-id="repetition">Repetition</h2>
+<p>Use curly braces to indicate how many times in a row a character must appear.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"e{2}"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Glue the sheet to the dark blue background."</code></pre>
+</div>
+</div>
+<p>Use “+” to indicate at least one occurrence, possibly more.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"she+t"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Glue the sheet to the dark blue background."</code></pre>
+</div>
+</div>
+<p>To indicate a character is optional, use “?”. For instance, the next command detects both “the” and “often”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"th?e"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "the" "the" "te"  NA    "te"  NA    "the" NA    "te"  NA   </code></pre>
+</div>
+</div>
+<p>Finally, “*” indicates an optional character that may occur more than once.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_extract</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"she*"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] NA     "shee" NA     "sh"   NA     NA     NA     NA     NA     NA    </code></pre>
+</div>
+</div>
+<p>Notice that these symbols come <em>after</em> the characters they refer to, unlike “\” which comes before.</p>
+</section>
+<section id="combining-substrings-with" class="level2">
+<h2 class="anchored" data-anchor-id="combining-substrings-with">Combining substrings with <code>|</code></h2>
+<p>Use the pipe to indicate an “or” statement. Expressions on either side are grouped by default.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"chicken|hog"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "These days a chicken leg is a rare dish."   
+[2] "The hogs were fed chopped corn and garbage."</code></pre>
+</div>
+</div>
+<p>You can still group using parentheses, though.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_subset</span>(sentences, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"(chicken|hog)s"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "The hogs were fed chopped corn and garbage."</code></pre>
+</div>
+</div>
+</section>
+<section id="want-more" class="level2">
+<h2 class="anchored" data-anchor-id="want-more">Want more?</h2>
+<p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wy0cEKYeaF8?si=RktCufxzNGzK8UEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><button class="btn btn-default downloadthis  " id="dnldts3372"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts5978"><i class="bi bi-download"></i> Download html </button></p>
+
+
+</section>
+
+ ]]></description>
+  <category>regex</category>
+  <category>stringr</category>
+  <category>Long form</category>
+  <guid>https://equitableequations.com/posts/2026-08-24/</guid>
+  <pubDate>Mon, 24 Aug 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://equitableequations.com/posts/2026-08-24/regex thumb.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>Discrete probability calculations in R</title>
@@ -1432,7 +2292,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>Prefer to have this all clearly explained in a short vid? I’ve got you covered:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts29706"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts32190"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
