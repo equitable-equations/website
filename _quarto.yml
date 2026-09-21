@@ -38,7 +38,7 @@ website:
         href: posts.qmd
     right:
       - icon: rss
-        href: posts-R-bloggers.xml
+        href: posts-r-bloggers.xml
 
   
   page-footer:
