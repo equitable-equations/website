@@ -4,7 +4,7 @@ listing:
   contents: posts
   categories: true
   feed:  
-    categories: [Longform]
+    categories: [R-bloggers]
   type: default 
   sort: "date desc" 
   image-placeholder: "assets/logo_transparent.png"

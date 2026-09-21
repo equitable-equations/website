@@ -4,7 +4,7 @@ description: "R has built-in functions for all major discrete probability distri
 author:
   - name: Andrew Gard
 date: 09-15-2025
-categories: [Probability, Longform] 
+categories: [Probability, R-bloggers] 
 image: "probs in R thumb.png"
 draft: false 
 comments:
@@ -112,7 +112,9 @@ You might consider trying the next problem on your own before reading my solutio
 Prefer to have this all clearly explained in a short vid? I've got you covered:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-
 </iframe>
 
 {{< downloadthis "prob calcs in R.pdf" label="Download slides" dname="prob calcs in R">}}
+
+
+This post will be cross-listed on [R-bloggers](https://www.r-bloggers.com/), a site that I totally recommend.

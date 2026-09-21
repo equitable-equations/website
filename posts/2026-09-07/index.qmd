@@ -4,7 +4,7 @@ description: "Need to change the ordering of a categorical variable? Update its 
 author:
   - name: Andrew Gard
 date: 2026-09-07
-categories: [forcats, Longform] 
+categories: [forcats, R-bloggers] 
 image: "factors thumb.png"
 draft: false 
 comments:
@@ -204,13 +204,9 @@ If something here isn't clear, there's a good chance you'll find an explanation 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nkjy6UFKJsc?si=7OCFQeMoxzYjsK_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-
-
-
-
-
   {{< downloadthis "_internal/scooby.xlsx" label="Download scooby.xlsx" dname="scooby">}} 
   {{< downloadthis "_internal/factors.qmd" label="Download Quarto" dname="regex">}}
   {{< downloadthis "_internal/factors.html" label="Download html" dname="regex">}}  
   
   
+This post will be cross-listed on [R-bloggers](https://www.r-bloggers.com/), a site that I totally recommend.

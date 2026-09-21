@@ -4,7 +4,7 @@ description: "Regular expressions let you search and manipulate strings based on
 author:
   - name: Andrew Gard
 date: 2026-08-24
-categories: [regex, stringr, Longform] 
+categories: [regex, stringr, R-bloggers] 
 image: "regex thumb.png"
 draft: false 
 comments:
@@ -162,3 +162,4 @@ If something here isn't clear, there's a good chance you'll find an explanation 
   {{< downloadthis "_internal/regular expressions.html" label="Download html" dname="regex">}}  
   
   
+This post will be cross-listed on [R-bloggers](https://www.r-bloggers.com/), a site that I totally recommend.
