@@ -1,0 +1,21 @@
+---
+title: "Cross validation"
+description: "Cross validation is a method for estimating the future performance of a model without relying on a separate holdout set. It's often used in machine learning for the tuning of hyperparameters."
+author:
+  - name: Andrew Gard
+date: 2026-10-05
+categories: [Machine learning] 
+image: "cross validation thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U1LxW3DWn1M?si=itcYKAcIrBIkMQ0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+  {{< downloadthis "cross validation.pdf" label="Download slides" dname="all_about_tidymodels">}}
+ 
+  
+  
