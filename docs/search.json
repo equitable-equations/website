@@ -46,14 +46,14 @@
     "href": "cv.html#equitable-equations-march-2020-present",
     "title": "Narrative Curriculum Vitae",
     "section": "Equitable Equations March 2020 – Present",
-    "text": "Equitable Equations March 2020 – Present\n\nI started my YouTube channel, Equitable Equations, in March of 2020, when the COVID-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 50,000 subscribers. My most popular video, ridiculously titled Learn R in 39 minutes, had around 1.3 million views as of October 1, 2026. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release coming soon."
+    "text": "Equitable Equations March 2020 – Present\n\nI started my YouTube channel, Equitable Equations, in March of 2020, when the COVID-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 50,000 subscribers. My most popular video, ridiculously titled Learn R in 39 minutes, has around 1.3 million views as of October 1, 2026. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release coming soon."
   },
   {
     "objectID": "cv.html#collaboration",
     "href": "cv.html#collaboration",
     "title": "Narrative Curriculum Vitae",
     "section": "Collaboration ",
-    "text": "Collaboration \nThe best part of running Equitable Equations has been the opportunity to meet and work with some immensely talented and kindhearted people, particularly in the #Rstats community. Together with Dr. Greg Martin, proprietor of R Programming 101, I co-host a YouTube series called “Today I learned in R,” where the two of us (and sometimes guests) open up about some of the many discoveries we’re constantly making as our data science skills continue to evolve.\nOn my own channel, I make it a point to bring in experts to weigh in on the real-world considerations of the topics I cover. Recently, I’ve spoken with Meghan Harris about version control, Abigail Haddad about job hunting in data science, Heather Mattie about ethical AI in healthcare. I love being around people smarter than I am!"
+    "text": "Collaboration \nThe best part of running Equitable Equations has been the opportunity to meet and work with some immensely talented and kindhearted people, particularly in the #Rstats community. Together with Dr. Greg Martin, proprietor of R Programming 101, I co-host a YouTube series called “Today I learned in R,” where the two of us (and sometimes guests) open up about some of the many discoveries we’re constantly making as our data science skills continue to evolve.\nOn my own channel, I make it a point to bring in experts to weigh in on the real-world considerations of the topics I cover. Recently, I’ve spoken with Meghan Harris about version control, Abigail Haddad about job hunting in data science, and Heather Mattie about ethical AI in healthcare. I love being around people smarter than I am!"
   },
   {
     "objectID": "cv.html#the-university-of-the-virgin-islands-august-2014-may-2019",
@@ -210,6 +210,34 @@
     "text": "Data manipulation with R:\n Download html notes   Download quarto notes \nGetting started with ggplot:\n Download html notes   Download quarto notes \nSingle-variable plots with ggplot2:\n Download html notes   Download quarto notes \nQuantitative vs categorical plots with ggplot2:\n Download html notes   Download quarto notes \nIntroducing the pipe:\n Download html notes   Download quarto notes \nGrouped summaries in R:\n Download html notes   Download quarto notes \nGrouped filters and mutates\n Download html notes   Download quarto notes \nTidying data with pivot_longer:\n Download html notes   Download quarto notes \nTidying data with pivot_wider:\n Download html notes   Download quarto notes \nMutating joins:\n Download html notes   Download quarto notes \nFiltering joins\n Download html notes   Download quarto notes \nWorking with dates and times\n Download optical.csv   Download html notes   Download quarto notes \nWorking with strings\n Download html notes   Download quarto notes \nWorking with factors\n Download scooby.xlsx   Download html notes   Download quarto notes"
   },
   {
+    "objectID": "posts/2025-09-30/index.html",
+    "href": "posts/2025-09-30/index.html",
+    "title": "How to set up RStudio for success",
+    "section": "",
+    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nOriginal video content for commercial enterprises (including online courses): $600+/recorded hour\nOne-on-one Zoom tutoring: $150/hour\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
+    "objectID": "posts/2025-07-25/index.html",
+    "href": "posts/2025-07-25/index.html",
+    "title": "Advanced counting",
+    "section": "",
+    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
+  },
+  {
     "objectID": "posts/2026-08-24/index.html",
     "href": "posts/2026-08-24/index.html",
     "title": "Regular expressions for R users",
@@ -278,34 +306,6 @@
     "title": "Regular expressions for R users",
     "section": "Want more?",
     "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download Quarto   Download html \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
-  },
-  {
-    "objectID": "posts/2025-07-25/index.html",
-    "href": "posts/2025-07-25/index.html",
-    "title": "Advanced counting",
-    "section": "",
-    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "Under construction. For now, just be cool."
-  },
-  {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Consulting",
-    "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nOriginal video content for commercial enterprises (including online courses): $600+/recorded hour\nOne-on-one Zoom tutoring: $150/hour\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
-  },
-  {
-    "objectID": "posts/2025-09-30/index.html",
-    "href": "posts/2025-09-30/index.html",
-    "title": "How to set up RStudio for success",
-    "section": "",
-    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
   },
   {
     "objectID": "posts/2025-09-15/index.html",

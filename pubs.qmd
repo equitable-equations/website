@@ -4,7 +4,7 @@ title: "Publications"
 
 In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.
 
-- Gard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. *Under contract with No Starch Press*. Expected completion: Winter, 2025.
+- Gard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. *Under revision with No Starch Press*. 
 
 - Gard, A., et. al. [A new metric for measuring the conservancy of plant species](/papers/measuring plant conservancy.pdf)\*. Under review at *Ecological Applications*.
 
