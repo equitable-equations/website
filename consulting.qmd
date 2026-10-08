@@ -4,9 +4,9 @@ title: "Consulting"
 
 I offer several forms of consulting, depending on your needs and budget.
 
-- Video content for commercial enterprises (including online courses): $750+/recorded hour
+- Original video content for commercial enterprises (including online courses): $600+/recorded hour
 
-- One-on-one Zoom tutoring: $150/hour.
+- One-on-one Zoom tutoring: $150/hour
 
 - Professional statistical modeling and #Rstats consulting: $250/hour
 

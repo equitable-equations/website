@@ -46,7 +46,7 @@
     "href": "cv.html#equitable-equations-march-2020-present",
     "title": "Narrative Curriculum Vitae",
     "section": "Equitable Equations March 2020 – Present",
-    "text": "Equitable Equations March 2020 – Present\n\nMy YouTube channel, Equitable Equations, began in the late winter of 2020, when the covid-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 40,000 subscribers. My most popular video, ridiculously titled Learn R in 39 minutes, has nearly a million views. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release coming soon."
+    "text": "Equitable Equations March 2020 – Present\n\nI started my YouTube channel, Equitable Equations, in March of 2020, when the COVID-19 pandemic forced professors and teachers around the world to move their courses online. Rather than lecturing live via Zoom to students in crises, I made the decision to create bite-sized, modular lessons that could be re-used across semesters and even institutions.\nEverything was very ad hoc for me back then, but I’ve learned a ton since and upgraded my production values substantially. These days, Equitable Equations specializes in #Rstats and closely-related topics in machine learning and computer science and boasts well over 50,000 subscribers. My most popular video, ridiculously titled Learn R in 39 minutes, had around 1.3 million views as of October 1, 2026. All of this is very strange to me.\n\n\nIn the spring of 2025, in part reflecting my growing understanding of YouTube’s Almighty Algorithm, I made the decision to begin a second channel which would offer full courses in statistics and machine learning, allowing Equitable Equations to focus more specifically on R. Normal Knowledge soft-launched that May, with a more official release coming soon."
   },
   {
     "objectID": "cv.html#collaboration",
@@ -298,7 +298,7 @@
     "href": "consulting.html",
     "title": "Consulting",
     "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nVideo content for commercial enterprises (including online courses): $750+/recorded hour\nOne-on-one Zoom tutoring: $150/hour.\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nOriginal video content for commercial enterprises (including online courses): $600+/recorded hour\nOne-on-one Zoom tutoring: $150/hour\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
   },
   {
     "objectID": "posts/2025-09-30/index.html",
@@ -424,7 +424,7 @@
     "href": "nk.html",
     "title": "Normal Knowledge",
     "section": "",
-    "text": "My new YouTube channel offers complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics, completed just in time for the 2025-2026 academic year, and the follow-up, NK Probability, a thorough introduction to random variables that just happens to align with the actuarial P exam. Next up: NK Machine Learning!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+    "text": "My newest YouTube channel offers complete courses on statistics and machine learning. Check out my debut offering, NK College Statistics and the follow-up, NK Probability, a thorough introduction to random variables that just happens to align with the actuarial P exam. Next up: NK Machine Learning!\nLike Equitable Equations, this channel is 100% free with proceeds from ads and tips (thanks in advance!) benefitting the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
   },
   {
     "objectID": "index.html",
@@ -459,7 +459,7 @@
     "href": "ee.html",
     "title": "Equitable Equations",
     "section": "",
-    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nClick here to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
+    "text": "If you’re learning data science, you’ve come to the right place! My focus is R, but I’ve also got lots of useful content in related areas, including machine learning, version control with git and GitHub, AI for programmers, communications with Quarto, and collaboration in data science broadly. Don’t sleep on this last one, which may be the most important of all!\nCheck out my not-a-blog to see what I’ve recorded lately or here to visit the channel on YouTube. Always free, but proceeds from ads and tips (thanks in advance!) benefit the cool charities.\n\n\nHave technical questions about how I produce all of this? Start here."
   },
   {
     "objectID": "future posts.html",

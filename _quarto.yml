@@ -22,6 +22,8 @@ website:
             href: ee.qmd
           - text: Data sets
             href: data.qmd
+          - text: Technical
+            href: technical.qmd
       - text: Normal Knowledge
         href: nk.qmd
       - text: Consulting
