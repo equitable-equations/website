@@ -52,7 +52,7 @@ my_lasso <- linear_reg(
   ) 
 ```
 
-Since there are no missing values in these sets and the variables are all numeric, little preprocessing needs to be done with this data. The following recipe (which standardizes all predictors and removes ones with zero-variance) is added for consistency and clarity.
+Since there are no missing values in these sets and the variables are all numeric, little preprocessing needs to be done with this data. The following recipe (which standardizes all predictors and removes any with zero-variance) is added for consistency and clarity.
 
 ```{r}
 my_rec <- recipe(solubility ~., data = sol_train) |> 
@@ -72,7 +72,7 @@ As a reminder, `tidymodels` separates model specification (accomplished here wit
 We determine the best choice for the penalty $\lambda$ using cross validation.
 
 ```{r}
-# create 10-fold split
+# create 5 separate 10-fold splits
 folds <- vfold_cv(
   sol_train,
   v = 10,
@@ -89,23 +89,23 @@ tune_results <- tune_grid(
 rmse_path <- collect_metrics(tune_results) |> 
   filter(.metric == "rmse")
 
-ggplot(rmse_path, aes(x = penalty, 
-                      y = mean)) + 
+ggplot(rmse_path, aes(x = penalty, y = mean)) + 
   geom_point() + 
   geom_line()+
   scale_x_log10(labels = scales::label_log()) +
-  labs(x = "Penalty", 
-       y = "Test error") +
+  labs(x = "Penalty", y = "Test error") +
   theme_ee()
 ```
 
 We can zoom in on the apparent minimum by specifying a data frame of penalty values for `tune_grid()` to work with. This can also be done using functions from the `dials` package, but for me this is usually more trouble than it's worth.
 
 ```{r}
+# specify values (log scale)
 my_grid <- data.frame(
   penalty = 10^seq(-4, -1, length.out = 20)
   )
 
+# repeat tuning and plotting
 tune_results <- tune_grid(
   my_wf, 
   folds, 
@@ -115,13 +115,11 @@ tune_results <- tune_grid(
 rmse_path <- collect_metrics(tune_results) |> 
   filter(.metric == "rmse")
 
-ggplot(rmse_path, aes(x = penalty,
-                      y = mean)) + 
+ggplot(rmse_path, aes(x = penalty, y = mean)) + 
   geom_point() + 
   geom_line() +
   scale_x_log10(labels = scales::label_log()) +
-  labs(x = "Penalty",
-       y = "Test error") +
+  labs(x = "Penalty", y = "Test error") +
   theme_ee()
 ```
 
@@ -131,7 +129,7 @@ Use `show_best()` to obtain a data frame of the best-performing hyperparameter v
 show_best(tune_results, metric = "rmse")
 ```
 
-Once we're satisfied that we've found a good hyperparameter value, we can finalize our workflow. 
+Once we're satisfied that we've found a good hyperparameter value, we can insert it into our model with `finalize_workflow()`.
 
 ```{r}
 # manual specification (less common)
@@ -145,7 +143,7 @@ my_wf_final <- my_wf |> finalize_workflow(best_lambda)
 my_wf_final
 ```
 
-A workflow is just a set of instructions. To incorporate the training data and create an algorithm for making predictions, use `fit()`. To obtain model coefficients in a tibble, use `broom::tidy()`.
+A workflow is a set of instructions for building a model from data, not the model itself. To incorporate the training data and create an algorithm for making predictions, use `fit()`. To obtain model coefficients in a tibble, use `broom::tidy()`.
 
 ```{r}
 #| message: false
@@ -156,7 +154,7 @@ my_wf_fit <- my_wf_final |>
 tidy(my_wf_fit)
 ```
 
-While `predict()` works perfectly well for applying a fitted model to new data, I often prefer another `broom` function: `augment()`. This returns a data frame that includes all relevant variables as well as the predicted values.
+While `predict()` works perfectly well for applying a fitted model to new data, I often prefer another `broom` function: `augment()`. This returns a data frame that includes all relevant explanatory variables as well as the predicted values.
 
 ```{r}
 # predictions only
@@ -175,7 +173,7 @@ rmse(sol_test_aug,
      estimate = .pred)
 ```
 
-On average, predictions made using this model miss true solubility by about .7 units.
+On average, predictions made using this model miss true `solubility` by about .7 units.
 
 ## Bonus: plotting coefficient trajectories
 
@@ -199,7 +197,7 @@ lasso_fit <-
   fit(data = sol_train)
 ```
 
-The output of `fit()` is an updated workflow object. In order to get model coefficients for each penalty value specified in `lambda_vals`, we use `extract_fit_engine` followed by `tidy()`.
+The output of `fit()` is an updated workflow object. In order to get model coefficients for each penalty value specified in `lambda_vals`, we use `extract_fit_engine()` followed by `tidy()`.
 
 ```{r}
 glmnet_object <- lasso_fit |> 
