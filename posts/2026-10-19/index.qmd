@@ -4,7 +4,7 @@ description: TDB
 author:
   - name: Andrew Gard
 date: 2026-10-19
-categories: [Machine learning, tidymodels] 
+categories: [Machine learning, tidymodels, R-bloggers] 
 image: "lasso in r thumb.png"
 draft: true 
 comments:
