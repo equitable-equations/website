@@ -88,7 +88,7 @@
     "href": "pubs.html",
     "title": "Publications",
     "section": "",
-    "text": "In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under contract with No Starch Press. Expected completion: Winter, 2025.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at Ecological Applications.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
+    "text": "In addition to teaching, consulting, and maintaining two YouTube channels, I publish consistently in data science and mathematics, often with undergraduate collaborators. Click titles to download.\n\nGard, A, & Martin, G. Practical data analysis with R: a handbook for the working professional. Under revision with No Starch Press.\nGard, A., et. al. A new metric for measuring the conservancy of plant species*. Under review at Ecological Applications.\nGard, A., Myers A., & Luwabelwa, I (2024). The fqar package: R tools for analyzing floristic quality assessment data*. Journal of Open Source Software, 9(96), 6366, https://doi.org/10.21105/joss.06366\nGard, A., & Wilson, O. (2023). Prediction intervals for interpolants*. Rocky Mountain Journal of Mathematics. Accepted Sept. 2023, DOI pending.\nGard, A. (2023). Equal-speed pursuit and evasion on manifolds. International Journal of Game Theory, 1-14. https://doi.org/10.1007/s00182-023-00868-x\nGard, A. (2018). The wild goose chase problem. The American Mathematical Monthly, 125(7), 602–611. https://doi.org/10.1080/ 00029890.2018.1465785\nEkici, C., & Gard, A. (2016). Inquiry-based learning of transcendental functions in calculus. PRIMUS, 27. https://doi.org/10.1080/10511970.2016.1214654\nGard, A. (2013). Procedings of the Midstates Conference of Undergraduate Research in Mathematics and Computer Science (editor). Ohio Wesleyan University.\nGard, A. (2012). Reverse isoperimetric inequalities in \\(\\mathbb{R}^3\\) [PhD thesis, Ohio State University]. http://rave.ohiolink.edu/etdc/view?acc_num=osu1330528578\n\n*Includes undergraduate co-authors"
   },
   {
     "objectID": "about.html",
@@ -124,216 +124,6 @@
     "title": "Writing prompts using interpolate()",
     "section": "",
     "text": "This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about interpolate(), in particular.\n\n Download script"
-  },
-  {
-    "objectID": "posts/2025-07-28/index.html",
-    "href": "posts/2025-07-28/index.html",
-    "title": "All about system prompts",
-    "section": "",
-    "text": "I’m generally ambivalent about large language models, but that doesn’t mean I’m going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, tidyverse) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually more fun when you understand how these things work.\nAs usual, code and other supporting materials are available below the vid.\n\n\n Download script   Download slides"
-  },
-  {
-    "objectID": "posts/2026-01-05/index.html",
-    "href": "posts/2026-01-05/index.html",
-    "title": "Understanding the grammar of graphics",
-    "section": "",
-    "text": "The world of data visualization has been revolutionized in recent years with the introduction of the grammar of graphics and its implementation in R, the ggplot2 package. While other plotting systems set aside a different function for each sort of visualization (histogram, scatterplot, and so on), the grammar of graphics takes the view that the most fundamental characteristics of a plot are the variables it includes and the roles they play (x-axis, y-axis, color, etc). The specific brand of plot is secondary and can be specified later.\nTo create a visualization, we need to specify three things:\n\nwhat data is being used.\nhow the variables are mapped onto the plot (in this case, onto the x- and y-axes).\nwhich geometry should be used to represent the data (scatter plot, line graph, or something else entirely).\n\nDesign considerations like axis labels, color palette, and font, can be specified separately after the fact\nNotice how all of these elements appear, in order, in the following code chunk.\n\nlibrary(tidyverse)\n\nggplot(penguins, \n       aes(x = bill_len, y = body_mass)) + \n  geom_point() +\n  labs(x = \"Bill length (mm)\",\n       y = \"Body mass (g)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n Download slides   Download practice plots"
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html",
-    "href": "posts/2026-09-07/index.html",
-    "title": "Working with factors in R",
-    "section": "",
-    "text": "Categorical variables (or factors as they are referred to when working in R) are variables that assign observations to specific groups. This post will cover some of the most common problems you may encounter while trying to visualize or model such variables.\nThroughout, I’ll refer to the scooby data set, originally sourced from kaggle but modified slightly for use in my vids and in this post. A download link can be found at the end of this tutorial.\n# Load and prep data\n\nlibrary(tidyverse)\ntheme_set(theme_minimal())\n\nlibrary(readxl)\nscooby &lt;- read_excel(\"_internal/scooby.xlsx\") \n\nscooby_sm &lt;- scooby |&gt; \n  filter(format == \"TV Series\") |&gt;  \n  select(title,  \n         date_aired,\n         imdb,\n         motive)"
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html#factor-character-and-other-vector-types",
-    "href": "posts/2026-09-07/index.html#factor-character-and-other-vector-types",
-    "title": "Working with factors in R",
-    "section": "Factor, character, and other vector types",
-    "text": "Factor, character, and other vector types\nAs a general rule, tidyverse functions treat character vectors as factors. For instance, we can apply dplyr::count to scooby$motive, even though the latter just consists of strings.\n\nglimpse(scooby_sm)\n\nRows: 374\nColumns: 4\n$ title      &lt;chr&gt; \"What a Night for a Knight\", \"A Clue for Scooby Doo\", \"Hass…\n$ date_aired &lt;dttm&gt; 1969-09-13, 1969-09-20, 1969-09-27, 1969-10-04, 1969-10-11…\n$ imdb       &lt;dbl&gt; 8.1, 8.1, 8.0, 7.8, 7.5, 8.4, 7.6, 8.2, 8.1, 8.0, 8.5, 8.2,…\n$ motive     &lt;chr&gt; \"Theft\", \"Theft\", \"Treasure\", \"Natural Resource\", \"Competit…\n\nscooby_sm |&gt; \n  count(motive)\n\n# A tibble: 17 × 2\n   motive               n\n   &lt;chr&gt;            &lt;int&gt;\n 1 Abduction            3\n 2 Assistance           2\n 3 Competition        130\n 4 Conquer             33\n 5 Counterfeit          6\n 6 Entertainment        3\n 7 Extortion            3\n 8 Imagination          1\n 9 Inheritance          6\n10 Natural Resource    19\n11 Preservation        10\n12 Safety               2\n13 Simulation           2\n14 Smuggling           19\n15 Theft               93\n16 Treasure            40\n17 &lt;NA&gt;                 2\n\n\nUse as.factor() to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like am (automatic/manual transmission) in the built-in mtcars set, since functions like ggplot will otherwise attempt to treat them as continuous variables. For instance, we can’t get directly get a side-by-side boxplot of mpg vs am.\n\nglimpse(mtcars)\n\nRows: 32\nColumns: 11\n$ mpg  &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8,…\n$ cyl  &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 8,…\n$ disp &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, 16…\n$ hp   &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 180…\n$ drat &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.92,…\n$ wt   &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.…\n$ qsec &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, 18…\n$ vs   &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0,…\n$ am   &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0,…\n$ gear &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3,…\n$ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, 2,…\n\nggplot(mtcars, aes(x = am, \n                   y = mpg)) + \n  geom_boxplot() # not what we want\n\nWarning: Orientation is not uniquely specified when both the x and y aesthetics are\ncontinuous. Picking default orientation 'x'.\n\n\nWarning: Continuous x aesthetic\nℹ did you forget `aes(group = ...)`?\n\n\n\n\n\n\n\n\n\nWhile it’s fine to follow the recommendation given in this warning message, it may be better to just convert am to a factor once and for all:\n\nmtcars2 &lt;- mtcars |&gt; \n  mutate(am = as.factor(am)) \n\nggplot(mtcars2, aes(x = am, \n                    y = mpg)) + \n  geom_boxplot()"
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html#relabeling-factors",
-    "href": "posts/2026-09-07/index.html#relabeling-factors",
-    "title": "Working with factors in R",
-    "section": "Relabeling factors",
-    "text": "Relabeling factors\nThere are many options for changing the text used to label factor levels, but fct_recode() is a solid choice.\n\nmtcars2 &lt;- mtcars2 |&gt; \n  mutate(am = fct_recode(am, \n                         \"automatic\" = \"0\",\n                         \"manual\" = \"1\"))\nmtcars2 |&gt; \n  count(am)\n\n         am  n\n1 automatic 19\n2    manual 13\n\n\nNotice the syntax, “new_name” = “old_name”, which is common in tidyverse R.\nWhen you have a large number of different factor levels, it may be helpful to lump the less common ones into an “other” category. For instance, the next chunk combines all categories with fewer than 20 occurrences.\n\nscooby_sm2 &lt;- scooby_sm |&gt; \n  mutate(motive = fct_lump_min(motive,\n                               min = 20)) \nscooby_sm2 |&gt; \n  count(motive) |&gt; \n  arrange(-n)\n\n# A tibble: 6 × 2\n  motive          n\n  &lt;fct&gt;       &lt;int&gt;\n1 Competition   130\n2 Theft          93\n3 Other          76\n4 Treasure       40\n5 Conquer        33\n6 &lt;NA&gt;            2\n\n\nAlso check out fct_lump_n() to specify the number of levels retained, fct_lump_prop() to lump low-percentage levels, and fct_lump_lowfreq() to try to force the new “Other” level to have lowest frequency."
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html#rearranging-levels",
-    "href": "posts/2026-09-07/index.html#rearranging-levels",
-    "title": "Working with factors in R",
-    "section": "Rearranging levels",
-    "text": "Rearranging levels\nSometimes the order of factor levels matters, for instance in a bar chart. The default odering is alphanumeric.\n\nggplot(scooby_sm2, \n       aes(x = motive)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nUse fct_relevel() to shift levels to the front. For instance, the next code chunk places the motives Treasure and Theft before Compitition and others.\n\nscooby_sm3 &lt;- scooby_sm2 |&gt; \n  mutate(motive = fct_relevel(motive,\n                              \"Treasure\",\n                              \"Theft\")) \n\nggplot(scooby_sm3, \n       aes(x = motive)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nOften, you just want to put the most common factor levels first. Use fct_infreq() to accomplish this.\n\nggplot(scooby_sm2, aes(x = fct_infreq(motive))) + \n  geom_bar()\n\n\n\n\n\n\n\n\nYou can also reverse the order of the factor levels with fct_rev."
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html#reordering-levels-using-a-second-variable",
-    "href": "posts/2026-09-07/index.html#reordering-levels-using-a-second-variable",
-    "title": "Working with factors in R",
-    "section": "Reordering levels using a second variable",
-    "text": "Reordering levels using a second variable\nFor some plots, it can be natural to order a categorical variable using a numeric one. For instance, in the next plot, it would be preferable to show the various motives in increasing order of imdb ratings.\n\nggplot(scooby_sm3, aes(x = motive,\n                       y = imdb)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\nUse fct_reorder to accomplish this.\n\nscooby_sm4 &lt;- scooby_sm3 |&gt; \n  mutate(motive = fct_reorder(motive,\n                              imdb))\n\nggplot(scooby_sm4, aes(x = motive,\n                       y = imdb)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\nBy default, fct_reorder sorts using the median. You can specify a different function (like mean) by adding a .fun argument."
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html#ordered-factors",
-    "href": "posts/2026-09-07/index.html#ordered-factors",
-    "title": "Working with factors in R",
-    "section": "Ordered factors",
-    "text": "Ordered factors\nOccasionally you may encounter ordered factors, ones of class ord. For the most part, you can treat these like regular factors.\n\nglimpse(diamonds)\n\nRows: 53,940\nColumns: 10\n$ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.…\n$ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, Ver…\n$ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I,…\n$ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, …\n$ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64…\n$ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58…\n$ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 34…\n$ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.…\n$ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.…\n$ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.…\n\ndiamonds |&gt; \n  count(cut) # several ordered factors\n\n# A tibble: 5 × 2\n  cut           n\n  &lt;ord&gt;     &lt;int&gt;\n1 Fair       1610\n2 Good       4906\n3 Very Good 12082\n4 Premium   13791\n5 Ideal     21551\n\n\nSpecifying that a factor is ordered (for instance using ordered) can occasionally matter in modeling applications and certain forms of statistical inference. Other than that, the most visible difference with ordered factors in R is how they’re displayed by ggplot.\n\nggplot(diamonds, aes(x = cut,\n                     fill = cut)) + \n  geom_bar(show.legend = FALSE)\n\n\n\n\n\n\n\n\nBy default, ordered factors are colored using the viridis palette, which is has a distinct order to it."
-  },
-  {
-    "objectID": "posts/2026-09-07/index.html#want-more",
-    "href": "posts/2026-09-07/index.html#want-more",
-    "title": "Working with factors in R",
-    "section": "Want more?",
-    "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download scooby.xlsx   Download Quarto   Download html \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
-  },
-  {
-    "objectID": "posts/2026-10-05/index.html",
-    "href": "posts/2026-10-05/index.html",
-    "title": "Cross validation",
-    "section": "",
-    "text": "Download slides"
-  },
-  {
-    "objectID": "posts/2025-05-27/index.html",
-    "href": "posts/2025-05-27/index.html",
-    "title": "All about facets",
-    "section": "",
-    "text": "Download script"
-  },
-  {
-    "objectID": "posts/2025-11-10/index.html",
-    "href": "posts/2025-11-10/index.html",
-    "title": "Content to support my course, Data Science with R",
-    "section": "",
-    "text": "Data manipulation with R:\n Download html notes   Download quarto notes \nGetting started with ggplot:\n Download html notes   Download quarto notes \nSingle-variable plots with ggplot2:\n Download html notes   Download quarto notes \nQuantitative vs categorical plots with ggplot2:\n Download html notes   Download quarto notes \nIntroducing the pipe:\n Download html notes   Download quarto notes \nGrouped summaries in R:\n Download html notes   Download quarto notes \nGrouped filters and mutates\n Download html notes   Download quarto notes \nTidying data with pivot_longer:\n Download html notes   Download quarto notes \nTidying data with pivot_wider:\n Download html notes   Download quarto notes \nMutating joins:\n Download html notes   Download quarto notes \nFiltering joins\n Download html notes   Download quarto notes \nWorking with dates and times\n Download optical.csv   Download html notes   Download quarto notes \nWorking with strings\n Download html notes   Download quarto notes \nWorking with factors\n Download scooby.xlsx   Download html notes   Download quarto notes"
-  },
-  {
-    "objectID": "posts/2025-09-30/index.html",
-    "href": "posts/2025-09-30/index.html",
-    "title": "How to set up RStudio for success",
-    "section": "",
-    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
-  },
-  {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Consulting",
-    "section": "",
-    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nOriginal video content for commercial enterprises (including online courses): $600+/recorded hour\nOne-on-one Zoom tutoring: $150/hour\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
-  },
-  {
-    "objectID": "coc.html",
-    "href": "coc.html",
-    "title": "Code of Conduct",
-    "section": "",
-    "text": "Under construction. For now, just be cool."
-  },
-  {
-    "objectID": "posts/2025-07-25/index.html",
-    "href": "posts/2025-07-25/index.html",
-    "title": "Advanced counting",
-    "section": "",
-    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html",
-    "href": "posts/2026-08-24/index.html",
-    "title": "Regular expressions for R users",
-    "section": "",
-    "text": "Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you’ll need to use regular expressions (regex for short).\nThroughout this post, I’ll make use three stringr functions: str_subset, str_detect, and str_extract, and a subset of the sentences vector.\nlibrary(stringr)\n\nsentences &lt;- sentences[1:10]\nsentences\n\n [1] \"The birch canoe slid on the smooth planks.\" \n [2] \"Glue the sheet to the dark blue background.\"\n [3] \"It's easy to tell the depth of a well.\"     \n [4] \"These days a chicken leg is a rare dish.\"   \n [5] \"Rice is often served in round bowls.\"       \n [6] \"The juice of lemons makes fine punch.\"      \n [7] \"The box was thrown beside the parked truck.\"\n [8] \"The hogs were fed chopped corn and garbage.\"\n [9] \"Four hours of steady work faced us.\"        \n[10] \"A large size in stockings is hard to sell.\" \n\nstr_subset(sentences, \"of\") # keep only elements with a match\n\n[1] \"It's easy to tell the depth of a well.\"\n[2] \"Rice is often served in round bowls.\"  \n[3] \"The juice of lemons makes fine punch.\" \n[4] \"Four hours of steady work faced us.\"   \n\nstr_detect(sentences, \"of\") # TRUE when an element matches, FALSE otherwise\n\n [1] FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE\n\nstr_extract(sentences, \"of\") # pull out matching substrings\n\n [1] NA   NA   \"of\" NA   \"of\" \"of\" NA   NA   \"of\" NA"
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#special-characters",
-    "href": "posts/2026-08-24/index.html#special-characters",
-    "title": "Regular expressions for R users",
-    "section": "Special characters",
-    "text": "Special characters\nThe following characters (all of which are explained below) have special meanings and can’t be searched literally.\n\n. \\ | ( ) [ { ^ $ * + ? \n\nFor instance, a dot matches with any character, which explains the following output.\n\nstr_extract(sentences, \".\")\n\n [1] \"T\" \"G\" \"I\" \"T\" \"R\" \"T\" \"T\" \"T\" \"F\" \"A\"\n\n\nIn order to match these metacharacters, precede them with two slashes, like so:\n\nstr_extract(sentences, \"\\\\.\")\n\n [1] \".\" \".\" \".\" \".\" \".\" \".\" \".\" \".\" \".\" \".\""
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#position-and-relative-position",
-    "href": "posts/2026-08-24/index.html#position-and-relative-position",
-    "title": "Regular expressions for R users",
-    "section": "Position and relative position",
-    "text": "Position and relative position\nTo specify that a substring comes at the beginning of a string, use “^”. To specify that it comes at the end, use “$”.\n\nstr_subset(fruit, \"^re\")\n\n[1] \"redcurrant\"\n\nstr_subset(fruit, \"er$\") # note order\n\n[1] \"bell pepper\"  \"chili pepper\" \"cucumber\"    \n\n\nAs mentioned above, a dot indicates that substrings are separated by an arbitrary character.\n\nstr_extract(sentences, \"s.o\")\n\n [1] \"smo\" NA    NA    NA    \"s o\" NA    NA    NA    \"s o\" \"sto\""
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#character-sets",
-    "href": "posts/2026-08-24/index.html#character-sets",
-    "title": "Regular expressions for R users",
-    "section": "Character sets",
-    "text": "Character sets\nUse brackets to allow multiple options for the character to be matched.\n\nstr_subset(sentences, \"[oe]n\")\n\n[1] \"The birch canoe slid on the smooth planks.\"\n[2] \"These days a chicken leg is a rare dish.\"  \n[3] \"Rice is often served in round bowls.\"      \n[4] \"The juice of lemons makes fine punch.\"     \n\nstr_extract(sentences, \"[oe]n\")\n\n [1] \"on\" NA   NA   \"en\" \"en\" \"on\" NA   NA   NA   NA  \n\n\nRanges of letters and numbers are allowed.\n\nstr_subset(sentences, \"[a-j]o\")\n\n[1] \"Rice is often served in round bowls.\"       \n[2] \"The box was thrown beside the parked truck.\"\n[3] \"The hogs were fed chopped corn and garbage.\"\n[4] \"Four hours of steady work faced us.\"        \n\nstr_extract(sentences, \"[a-j]o\")\n\n [1] NA   NA   NA   NA   \"bo\" NA   \"bo\" \"ho\" \"ho\" NA  \n\n\nInside of brackets, “^” represents negation.\n\nstr_extract(sentences, \"[^a-j]o\")\n\n [1] \"no\" \"to\" \"to\" NA   \" o\" \" o\" \"ro\" NA   \"Fo\" \"to\""
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#character-classes",
-    "href": "posts/2026-08-24/index.html#character-classes",
-    "title": "Regular expressions for R users",
-    "section": "Character classes",
-    "text": "Character classes\nIt’s also possible to specify classes of characters. “\\d” matches any digit and “\\w” matches and word character (a-z, A-Z, 0-9, and underscore), while “\\D” and “\\W” will match anything except digits and word characters, respectively. Many other classes are available. Enter ?regex for a full list."
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#the-role-of-in-quarto",
-    "href": "posts/2026-08-24/index.html#the-role-of-in-quarto",
-    "title": "Regular expressions for R users",
-    "section": "The role of “\\” in Quarto",
-    "text": "The role of “\\” in Quarto\nIf you write “\\d” in a Quarto document, it won’t render properly. This is because Quarto interprets the slash as an escape character. To actually render this string, use “\\\\d” instead.\nSimilarly, to render a slash, use \\\\."
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#matching-whitespace",
-    "href": "posts/2026-08-24/index.html#matching-whitespace",
-    "title": "Regular expressions for R users",
-    "section": "Matching whitespace",
-    "text": "Matching whitespace\nUse \\\\s for space, \\\\t for tab, and \\\\n for a new line.\n\nstr_subset(sentences, \"e\\\\sb\")\n\n[1] \"The birch canoe slid on the smooth planks.\" \n[2] \"Glue the sheet to the dark blue background.\"\n[3] \"The box was thrown beside the parked truck.\""
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#repetition",
-    "href": "posts/2026-08-24/index.html#repetition",
-    "title": "Regular expressions for R users",
-    "section": "Repetition",
-    "text": "Repetition\nUse curly braces to indicate how many times in a row a character must appear.\n\nstr_subset(sentences, \"e{2}\")\n\n[1] \"Glue the sheet to the dark blue background.\"\n\n\nUse “+” to indicate at least one occurrence, possibly more.\n\nstr_subset(sentences, \"she+t\")\n\n[1] \"Glue the sheet to the dark blue background.\"\n\n\nTo indicate a character is optional, use “?”. For instance, the next command detects both “the” and “often”.\n\nstr_extract(sentences, \"th?e\")\n\n [1] \"the\" \"the\" \"te\"  NA    \"te\"  NA    \"the\" NA    \"te\"  NA   \n\n\nFinally, “*” indicates an optional character that may occur more than once.\n\nstr_extract(sentences, \"she*\")\n\n [1] NA     \"shee\" NA     \"sh\"   NA     NA     NA     NA     NA     NA    \n\n\nNotice that these symbols come after the characters they refer to, unlike “\\” which comes before."
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#combining-substrings-with",
-    "href": "posts/2026-08-24/index.html#combining-substrings-with",
-    "title": "Regular expressions for R users",
-    "section": "Combining substrings with |",
-    "text": "Combining substrings with |\nUse the pipe to indicate an “or” statement. Expressions on either side are grouped by default.\n\nstr_subset(sentences, \"chicken|hog\")\n\n[1] \"These days a chicken leg is a rare dish.\"   \n[2] \"The hogs were fed chopped corn and garbage.\"\n\n\nYou can still group using parentheses, though.\n\nstr_subset(sentences, \"(chicken|hog)s\")\n\n[1] \"The hogs were fed chopped corn and garbage.\""
-  },
-  {
-    "objectID": "posts/2026-08-24/index.html#want-more",
-    "href": "posts/2026-08-24/index.html#want-more",
-    "title": "Regular expressions for R users",
-    "section": "Want more?",
-    "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download Quarto   Download html \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
-  },
-  {
-    "objectID": "posts/2025-09-15/index.html",
-    "href": "posts/2025-09-15/index.html",
-    "title": "Discrete probability calculations in R",
-    "section": "",
-    "text": "In R, functions that perform probabilities calculations follow a consistent structure:\n\nProbability mass functions (pmfs) start with the letter “d”. Use such a function to compute \\(P(X = x_0)\\) for any \\(x_0\\) of interest.\nCumulative distribution functions (cdfs) start with the letter “p”. Use such a function to compute \\(P(X \\le x_0)\\).\nInverse cdfs start with the letter “q”. For a given probability \\(p\\), they determine the least \\(x_0\\) such that \\(P(X \\le x_0) \\ge p\\).\nFunctions to generate random values start with the letter “r”.\n\nThe rest of the function name is a shortened version of the distribution name:\n\n\n\n\n\n\n\n\n\n\nDistribution\nProbability\nCumulative\nInverse\nRandom\n\n\n\n\nBin\\((n, p)\\)\ndbinom()\npbinom()\nqbinom()\nrbinom()\n\n\nGeom\\((p)\\)\ndgeom()\npgeom()\nqgeom()\nrgeom()\n\n\nNB\\((r, p)\\)\ndnbinom()\npnbinom()\nqnbinom()\nrnbinom()\n\n\nHyp\\((N_1, N_2, n)\\)\ndhyper()\nphyper()\nqhyper()\nrhyper()\n\n\nPois\\((\\lambda)\\)\ndpois()\nppois()\nqpois()\nrpois()\n\n\n\nIn case some of these distributions aren’t familiar to you:\n\nThe binomial distribution models the total number of success in \\(n\\) Bernouilli trials (identical and independent trials, each with only two possibly outcomes). The probability of success in each trial is \\(p\\).\nThe geometric distribution models the number of failures in a sequence of Bernouilli trials prior to the first success.\nThe negative binomial distribution models the number of failures in a sequence of Bernouilli trials prior to the \\(r^{th}\\) success.\nThe hypergeometric distribution models the number of successes in a sample of size \\(n\\) when selection is done without replacement from a pool that includes \\(N_1\\) successes and \\(N_2\\) failures.\n\nFor instance, imagine a student guessing randomly on a 12-question quiz where each question has 4 possible answers. The probability that they get exactly 3 questions right is computed using dbinom().\n\ndbinom(3, 12, .25)\n\n[1] 0.2581036\n\n\nSimilarly, the probability that they get at most 3 questions right is given by\n\npbinom(3, 12, .25)\n\n[1] 0.6487786\n\n\nIf you need the probability that they get at least 3 questions right, add a lower.tail argument, like so:\n\npbinom(3, 12, .25, lower.tail = FALSE)\n\n[1] 0.3512214\n\n\nqbinom() reverses the logic of pbinom(), finding the number of successes with a specified cumulative probability. Said differently, qbinom() identifies percentiles. For instance, we might wonder how many questions the child would have to get right to do at least as well as 80% of randomly-guessing quiz takers.\n\nqbinom(.80, 12, .25)\n\n[1] 4\n\n\nNotice how the arguments of these functions follow a common pattern: first the value/percentile of interest, then the parameters, which come in a consistent order. This pattern continues to hold for rbinom(), which generates a specified number of random values\n\nset.seed(0) # For reproducibility\n\nrbinom(10, 12, .25)\n\n [1] 5 2 2 3 5 2 5 5 4 3\n\n\nAll of R’s probability functions are vectorized, meaning that they can perform multiple calculations at once. For instance, the next line computes the probability of obtaining exactly \\(x\\) Butterfingers when randomly grabbing 5 candy bars from a bowl with 8 Butterfingers and 10 Snickers. Note that \\(x \\in \\{0, 1, 2, \\cdots, 5\\}\\).\n\ndhyper(0:5, 8, 10, 5)\n\n[1] 0.029411765 0.196078431 0.392156863 0.294117647 0.081699346 0.006535948\n\n\nAs you’d expect, these probabilities all add up to one.\nSome caution is needed when working with the geometric and negative binomial distributions, both of which consider the number of failures occurring before a fixed number of successes. Some textbooks and computational tools define these distributions in terms on the total number of trials needed rather than the total number of failures, so some translation may be needed. Fortunately,\n\\[\\text{trials}\\ =\\ \\text{failures} + \\text{successes},\\] so the two formulations differ only in the addition or subtraction of the parameter \\(r\\).\nExample. A basketball player makes 85% of their free throws. If they shoot until they make 5 shots, what is the probability that 7 shots are needed?\nSolution. Making 5 out of 7 shots requires exactly 2 misses, so the probability is\n\ndnbinom(2, 5, .85)\n\n[1] 0.1497505\n\n\nYou might consider trying the next problem on your own before reading my solution.\nExample. Every day, a new author has a 10% chance of selling a copy of their ebook. Assume that purchases are independent of one another and that there are never multiple sales in a single day.\n\nFind the probability that the first purchase occurs on the 10\\(^{th}\\) day.\nFind the probability that the second purchase occurs during the second week (days 8-14).\n\nSolution. Let \\(X\\) be the number of days that pass before the first purchase and let \\(Y\\) be the number of purchase-less days before the second. Then \\(X\\) has a geometric distribution and \\(Y\\) has a negative binomial distribution. In each case, \\(p=.10\\).\n\nIf 10 trials are needed for a single success, then 9 failures must have occurred, so we compute \\(P(X = 9) =\\) dgeom(9, .10) = 0.038742\nIf between 8 and 14 days are needed for 2 sales, then between 6 and 12 days must have occurred without sales. \\(P(6 \\le Y \\le 12) =\\) pnbinom(12, 2, .10) - pnbinom(5, 2, .10) = 0.2656765\n\nPrefer to have this all clearly explained in a short vid? I’ve got you covered:\n\n\n Download slides \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
-  },
-  {
-    "objectID": "posts/2025-09-22/index.html",
-    "href": "posts/2025-09-22/index.html",
-    "title": "Why haven’t I covered tidymodels?",
-    "section": "",
-    "text": "The tidymodels framework for machine learning is powerful and about as user-friendly as we can hope for in that space, bringing consistency and clarity to a process that can continue to feel ad-hoc well into the learning curve. Over time, it’s supplanted the older favorite meta-package, carat, which coincidentally (note sarcasm) was written by one the primary tidymodels architects, Max Kuhn.\nI love tidymodels and use it consistently for my machine learning needs. Yet when I’ve done vids on ML techniques, I’ve almost always shied away, opting to use individual packages instead. Why?\nThe short answer is that I haven’t figured out how to teach it in a YouTube-friendly way yet. Vids on Equitable Equations aim to be short, self-contained, clear expositions of individual topics. While these can (and should!) be chained together to build a comprehensive whole, it’s important to me - and to the Almighty Algorithm, whom we all serve - that they stand on their own. Machine learning is hard to do this way.\nOne of the wonderful things about the core tidyverse is the degree to which it teaches basic data science concepts. When we learn ggplot2, we learn the grammar of graphics. When we learn tidyr, we learn about tidy data and pivoting. As we move deeper into the era of automated coding, this structure for gaining conceptual knowledge is invaluable.\nBut tidymodels is different. It’s a higher-order system designed to unify a large number of related tasks, some of which have very little meaning outside of a machine learning workflow.\nIf you’re sitting down to study logistic regression for the first time, for instance, tidymodels will simultaneously want you to consider a data split, preprocessing steps, and performance metrics, to start. This is wonderful and important, ultimately, but puts a huge burden on the learner, not to mention the YouTuber.\nOver time, I’ve covered many components of the ML process in my vids, keeping them as separate and simple as possible. This has often come at the expense of data science best practices, for instance when I build models without first splitting data and conclude without computing performance metrics on an independent set. I’ve always felt that logistic regression (to name one technique) is hard enough to learn on its own without simultaneously tackling cross-validation (to name another). It hasn’t been a perfect choice, but it’s the one I’ve made, and I think my reasons are valid.\nSo, the TL/DR is that tidymodels is a pedagogical challenge. I’ve spent a lot of time wrestling with it, and though I’m not done yet, I hope to be soon. With any luck, you can expect a tidymodels series some time in the fall of 2026."
-  },
-  {
-    "objectID": "posts/2025-10-27/index.html",
-    "href": "posts/2025-10-27/index.html",
-    "title": "What is Quarto?",
-    "section": "",
-    "text": "Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
-  },
-  {
-    "objectID": "posts/2025-07-07/index.html",
-    "href": "posts/2025-07-07/index.html",
-    "title": "Can using an LLM for coding be ethical?",
-    "section": "",
-    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
   },
   {
     "objectID": "posts/2026-09-21/index.html",
@@ -406,6 +196,223 @@
     "text": "Final thought\nIf you were expecting that learning tidymodels would be like learning tidyverse, you’re probably disappointed right about now. While you can practice dplyr without touching ggplot2, you can’t meaningfully do this with the individual tidymodels packages. This isn’t a design flaw in tidymodels but rather a fundamental challenge of the machine learning process, which is interconnected and complex by its very nature.\nOverall, tidymodels is as about as simple as it can be while still doing what it does. Be patient with yourself, take multiple passes at the content, and you’ll get there sooner than you think.\nWant to hear me explain all of this? Here’s the vid corresponding to this post:\n\n\n Download Quarto   Download html"
   },
   {
+    "objectID": "posts/2025-07-07/index.html",
+    "href": "posts/2025-07-07/index.html",
+    "title": "Can using an LLM for coding be ethical?",
+    "section": "",
+    "text": "Arguably, coding assistance is the most ethical (least unethical?) way to use a large language model."
+  },
+  {
+    "objectID": "posts/2025-10-27/index.html",
+    "href": "posts/2025-10-27/index.html",
+    "title": "What is Quarto?",
+    "section": "",
+    "text": "Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.\n\n\n Download erykah.xlsx   Download notes"
+  },
+  {
+    "objectID": "posts/2025-09-22/index.html",
+    "href": "posts/2025-09-22/index.html",
+    "title": "Why haven’t I covered tidymodels?",
+    "section": "",
+    "text": "The tidymodels framework for machine learning is powerful and about as user-friendly as we can hope for in that space, bringing consistency and clarity to a process that can continue to feel ad-hoc well into the learning curve. Over time, it’s supplanted the older favorite meta-package, carat, which coincidentally (note sarcasm) was written by one the primary tidymodels architects, Max Kuhn.\nI love tidymodels and use it consistently for my machine learning needs. Yet when I’ve done vids on ML techniques, I’ve almost always shied away, opting to use individual packages instead. Why?\nThe short answer is that I haven’t figured out how to teach it in a YouTube-friendly way yet. Vids on Equitable Equations aim to be short, self-contained, clear expositions of individual topics. While these can (and should!) be chained together to build a comprehensive whole, it’s important to me - and to the Almighty Algorithm, whom we all serve - that they stand on their own. Machine learning is hard to do this way.\nOne of the wonderful things about the core tidyverse is the degree to which it teaches basic data science concepts. When we learn ggplot2, we learn the grammar of graphics. When we learn tidyr, we learn about tidy data and pivoting. As we move deeper into the era of automated coding, this structure for gaining conceptual knowledge is invaluable.\nBut tidymodels is different. It’s a higher-order system designed to unify a large number of related tasks, some of which have very little meaning outside of a machine learning workflow.\nIf you’re sitting down to study logistic regression for the first time, for instance, tidymodels will simultaneously want you to consider a data split, preprocessing steps, and performance metrics, to start. This is wonderful and important, ultimately, but puts a huge burden on the learner, not to mention the YouTuber.\nOver time, I’ve covered many components of the ML process in my vids, keeping them as separate and simple as possible. This has often come at the expense of data science best practices, for instance when I build models without first splitting data and conclude without computing performance metrics on an independent set. I’ve always felt that logistic regression (to name one technique) is hard enough to learn on its own without simultaneously tackling cross-validation (to name another). It hasn’t been a perfect choice, but it’s the one I’ve made, and I think my reasons are valid.\nSo, the TL/DR is that tidymodels is a pedagogical challenge. I’ve spent a lot of time wrestling with it, and though I’m not done yet, I hope to be soon. With any luck, you can expect a tidymodels series some time in the fall of 2026."
+  },
+  {
+    "objectID": "posts/2025-09-15/index.html",
+    "href": "posts/2025-09-15/index.html",
+    "title": "Discrete probability calculations in R",
+    "section": "",
+    "text": "In R, functions that perform probabilities calculations follow a consistent structure:\n\nProbability mass functions (pmfs) start with the letter “d”. Use such a function to compute \\(P(X = x_0)\\) for any \\(x_0\\) of interest.\nCumulative distribution functions (cdfs) start with the letter “p”. Use such a function to compute \\(P(X \\le x_0)\\).\nInverse cdfs start with the letter “q”. For a given probability \\(p\\), they determine the least \\(x_0\\) such that \\(P(X \\le x_0) \\ge p\\).\nFunctions to generate random values start with the letter “r”.\n\nThe rest of the function name is a shortened version of the distribution name:\n\n\n\n\n\n\n\n\n\n\nDistribution\nProbability\nCumulative\nInverse\nRandom\n\n\n\n\nBin\\((n, p)\\)\ndbinom()\npbinom()\nqbinom()\nrbinom()\n\n\nGeom\\((p)\\)\ndgeom()\npgeom()\nqgeom()\nrgeom()\n\n\nNB\\((r, p)\\)\ndnbinom()\npnbinom()\nqnbinom()\nrnbinom()\n\n\nHyp\\((N_1, N_2, n)\\)\ndhyper()\nphyper()\nqhyper()\nrhyper()\n\n\nPois\\((\\lambda)\\)\ndpois()\nppois()\nqpois()\nrpois()\n\n\n\nIn case some of these distributions aren’t familiar to you:\n\nThe binomial distribution models the total number of success in \\(n\\) Bernouilli trials (identical and independent trials, each with only two possibly outcomes). The probability of success in each trial is \\(p\\).\nThe geometric distribution models the number of failures in a sequence of Bernouilli trials prior to the first success.\nThe negative binomial distribution models the number of failures in a sequence of Bernouilli trials prior to the \\(r^{th}\\) success.\nThe hypergeometric distribution models the number of successes in a sample of size \\(n\\) when selection is done without replacement from a pool that includes \\(N_1\\) successes and \\(N_2\\) failures.\n\nFor instance, imagine a student guessing randomly on a 12-question quiz where each question has 4 possible answers. The probability that they get exactly 3 questions right is computed using dbinom().\n\ndbinom(3, 12, .25)\n\n[1] 0.2581036\n\n\nSimilarly, the probability that they get at most 3 questions right is given by\n\npbinom(3, 12, .25)\n\n[1] 0.6487786\n\n\nIf you need the probability that they get at least 3 questions right, add a lower.tail argument, like so:\n\npbinom(3, 12, .25, lower.tail = FALSE)\n\n[1] 0.3512214\n\n\nqbinom() reverses the logic of pbinom(), finding the number of successes with a specified cumulative probability. Said differently, qbinom() identifies percentiles. For instance, we might wonder how many questions the child would have to get right to do at least as well as 80% of randomly-guessing quiz takers.\n\nqbinom(.80, 12, .25)\n\n[1] 4\n\n\nNotice how the arguments of these functions follow a common pattern: first the value/percentile of interest, then the parameters, which come in a consistent order. This pattern continues to hold for rbinom(), which generates a specified number of random values\n\nset.seed(0) # For reproducibility\n\nrbinom(10, 12, .25)\n\n [1] 5 2 2 3 5 2 5 5 4 3\n\n\nAll of R’s probability functions are vectorized, meaning that they can perform multiple calculations at once. For instance, the next line computes the probability of obtaining exactly \\(x\\) Butterfingers when randomly grabbing 5 candy bars from a bowl with 8 Butterfingers and 10 Snickers. Note that \\(x \\in \\{0, 1, 2, \\cdots, 5\\}\\).\n\ndhyper(0:5, 8, 10, 5)\n\n[1] 0.029411765 0.196078431 0.392156863 0.294117647 0.081699346 0.006535948\n\n\nAs you’d expect, these probabilities all add up to one.\nSome caution is needed when working with the geometric and negative binomial distributions, both of which consider the number of failures occurring before a fixed number of successes. Some textbooks and computational tools define these distributions in terms on the total number of trials needed rather than the total number of failures, so some translation may be needed. Fortunately,\n\\[\\text{trials}\\ =\\ \\text{failures} + \\text{successes},\\] so the two formulations differ only in the addition or subtraction of the parameter \\(r\\).\nExample. A basketball player makes 85% of their free throws. If they shoot until they make 5 shots, what is the probability that 7 shots are needed?\nSolution. Making 5 out of 7 shots requires exactly 2 misses, so the probability is\n\ndnbinom(2, 5, .85)\n\n[1] 0.1497505\n\n\nYou might consider trying the next problem on your own before reading my solution.\nExample. Every day, a new author has a 10% chance of selling a copy of their ebook. Assume that purchases are independent of one another and that there are never multiple sales in a single day.\n\nFind the probability that the first purchase occurs on the 10\\(^{th}\\) day.\nFind the probability that the second purchase occurs during the second week (days 8-14).\n\nSolution. Let \\(X\\) be the number of days that pass before the first purchase and let \\(Y\\) be the number of purchase-less days before the second. Then \\(X\\) has a geometric distribution and \\(Y\\) has a negative binomial distribution. In each case, \\(p=.10\\).\n\nIf 10 trials are needed for a single success, then 9 failures must have occurred, so we compute \\(P(X = 9) =\\) dgeom(9, .10) = 0.038742\nIf between 8 and 14 days are needed for 2 sales, then between 6 and 12 days must have occurred without sales. \\(P(6 \\le Y \\le 12) =\\) pnbinom(12, 2, .10) - pnbinom(5, 2, .10) = 0.2656765\n\nPrefer to have this all clearly explained in a short vid? I’ve got you covered:\n\n\n Download slides \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html",
+    "href": "posts/2026-08-24/index.html",
+    "title": "Regular expressions for R users",
+    "section": "",
+    "text": "Searching and manipulating strings (those things that make up character vectors) is easy as long as you only need to match specific sequences of letters and numbers. To match patterns rather than specific substrings or to search symbols, you’ll need to use regular expressions (regex for short).\nThroughout this post, I’ll make use three stringr functions: str_subset, str_detect, and str_extract, and a subset of the sentences vector.\nlibrary(stringr)\n\nsentences &lt;- sentences[1:10]\nsentences\n\n [1] \"The birch canoe slid on the smooth planks.\" \n [2] \"Glue the sheet to the dark blue background.\"\n [3] \"It's easy to tell the depth of a well.\"     \n [4] \"These days a chicken leg is a rare dish.\"   \n [5] \"Rice is often served in round bowls.\"       \n [6] \"The juice of lemons makes fine punch.\"      \n [7] \"The box was thrown beside the parked truck.\"\n [8] \"The hogs were fed chopped corn and garbage.\"\n [9] \"Four hours of steady work faced us.\"        \n[10] \"A large size in stockings is hard to sell.\" \n\nstr_subset(sentences, \"of\") # keep only elements with a match\n\n[1] \"It's easy to tell the depth of a well.\"\n[2] \"Rice is often served in round bowls.\"  \n[3] \"The juice of lemons makes fine punch.\" \n[4] \"Four hours of steady work faced us.\"   \n\nstr_detect(sentences, \"of\") # TRUE when an element matches, FALSE otherwise\n\n [1] FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE FALSE  TRUE FALSE\n\nstr_extract(sentences, \"of\") # pull out matching substrings\n\n [1] NA   NA   \"of\" NA   \"of\" \"of\" NA   NA   \"of\" NA"
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#special-characters",
+    "href": "posts/2026-08-24/index.html#special-characters",
+    "title": "Regular expressions for R users",
+    "section": "Special characters",
+    "text": "Special characters\nThe following characters (all of which are explained below) have special meanings and can’t be searched literally.\n\n. \\ | ( ) [ { ^ $ * + ? \n\nFor instance, a dot matches with any character, which explains the following output.\n\nstr_extract(sentences, \".\")\n\n [1] \"T\" \"G\" \"I\" \"T\" \"R\" \"T\" \"T\" \"T\" \"F\" \"A\"\n\n\nIn order to match these metacharacters, precede them with two slashes, like so:\n\nstr_extract(sentences, \"\\\\.\")\n\n [1] \".\" \".\" \".\" \".\" \".\" \".\" \".\" \".\" \".\" \".\""
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#position-and-relative-position",
+    "href": "posts/2026-08-24/index.html#position-and-relative-position",
+    "title": "Regular expressions for R users",
+    "section": "Position and relative position",
+    "text": "Position and relative position\nTo specify that a substring comes at the beginning of a string, use “^”. To specify that it comes at the end, use “$”.\n\nstr_subset(fruit, \"^re\")\n\n[1] \"redcurrant\"\n\nstr_subset(fruit, \"er$\") # note order\n\n[1] \"bell pepper\"  \"chili pepper\" \"cucumber\"    \n\n\nAs mentioned above, a dot indicates that substrings are separated by an arbitrary character.\n\nstr_extract(sentences, \"s.o\")\n\n [1] \"smo\" NA    NA    NA    \"s o\" NA    NA    NA    \"s o\" \"sto\""
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#character-sets",
+    "href": "posts/2026-08-24/index.html#character-sets",
+    "title": "Regular expressions for R users",
+    "section": "Character sets",
+    "text": "Character sets\nUse brackets to allow multiple options for the character to be matched.\n\nstr_subset(sentences, \"[oe]n\")\n\n[1] \"The birch canoe slid on the smooth planks.\"\n[2] \"These days a chicken leg is a rare dish.\"  \n[3] \"Rice is often served in round bowls.\"      \n[4] \"The juice of lemons makes fine punch.\"     \n\nstr_extract(sentences, \"[oe]n\")\n\n [1] \"on\" NA   NA   \"en\" \"en\" \"on\" NA   NA   NA   NA  \n\n\nRanges of letters and numbers are allowed.\n\nstr_subset(sentences, \"[a-j]o\")\n\n[1] \"Rice is often served in round bowls.\"       \n[2] \"The box was thrown beside the parked truck.\"\n[3] \"The hogs were fed chopped corn and garbage.\"\n[4] \"Four hours of steady work faced us.\"        \n\nstr_extract(sentences, \"[a-j]o\")\n\n [1] NA   NA   NA   NA   \"bo\" NA   \"bo\" \"ho\" \"ho\" NA  \n\n\nInside of brackets, “^” represents negation.\n\nstr_extract(sentences, \"[^a-j]o\")\n\n [1] \"no\" \"to\" \"to\" NA   \" o\" \" o\" \"ro\" NA   \"Fo\" \"to\""
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#character-classes",
+    "href": "posts/2026-08-24/index.html#character-classes",
+    "title": "Regular expressions for R users",
+    "section": "Character classes",
+    "text": "Character classes\nIt’s also possible to specify classes of characters. “\\d” matches any digit and “\\w” matches and word character (a-z, A-Z, 0-9, and underscore), while “\\D” and “\\W” will match anything except digits and word characters, respectively. Many other classes are available. Enter ?regex for a full list."
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#the-role-of-in-quarto",
+    "href": "posts/2026-08-24/index.html#the-role-of-in-quarto",
+    "title": "Regular expressions for R users",
+    "section": "The role of “\\” in Quarto",
+    "text": "The role of “\\” in Quarto\nIf you write “\\d” in a Quarto document, it won’t render properly. This is because Quarto interprets the slash as an escape character. To actually render this string, use “\\\\d” instead.\nSimilarly, to render a slash, use \\\\."
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#matching-whitespace",
+    "href": "posts/2026-08-24/index.html#matching-whitespace",
+    "title": "Regular expressions for R users",
+    "section": "Matching whitespace",
+    "text": "Matching whitespace\nUse \\\\s for space, \\\\t for tab, and \\\\n for a new line.\n\nstr_subset(sentences, \"e\\\\sb\")\n\n[1] \"The birch canoe slid on the smooth planks.\" \n[2] \"Glue the sheet to the dark blue background.\"\n[3] \"The box was thrown beside the parked truck.\""
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#repetition",
+    "href": "posts/2026-08-24/index.html#repetition",
+    "title": "Regular expressions for R users",
+    "section": "Repetition",
+    "text": "Repetition\nUse curly braces to indicate how many times in a row a character must appear.\n\nstr_subset(sentences, \"e{2}\")\n\n[1] \"Glue the sheet to the dark blue background.\"\n\n\nUse “+” to indicate at least one occurrence, possibly more.\n\nstr_subset(sentences, \"she+t\")\n\n[1] \"Glue the sheet to the dark blue background.\"\n\n\nTo indicate a character is optional, use “?”. For instance, the next command detects both “the” and “often”.\n\nstr_extract(sentences, \"th?e\")\n\n [1] \"the\" \"the\" \"te\"  NA    \"te\"  NA    \"the\" NA    \"te\"  NA   \n\n\nFinally, “*” indicates an optional character that may occur more than once.\n\nstr_extract(sentences, \"she*\")\n\n [1] NA     \"shee\" NA     \"sh\"   NA     NA     NA     NA     NA     NA    \n\n\nNotice that these symbols come after the characters they refer to, unlike “\\” which comes before."
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#combining-substrings-with",
+    "href": "posts/2026-08-24/index.html#combining-substrings-with",
+    "title": "Regular expressions for R users",
+    "section": "Combining substrings with |",
+    "text": "Combining substrings with |\nUse the pipe to indicate an “or” statement. Expressions on either side are grouped by default.\n\nstr_subset(sentences, \"chicken|hog\")\n\n[1] \"These days a chicken leg is a rare dish.\"   \n[2] \"The hogs were fed chopped corn and garbage.\"\n\n\nYou can still group using parentheses, though.\n\nstr_subset(sentences, \"(chicken|hog)s\")\n\n[1] \"The hogs were fed chopped corn and garbage.\""
+  },
+  {
+    "objectID": "posts/2026-08-24/index.html#want-more",
+    "href": "posts/2026-08-24/index.html#want-more",
+    "title": "Regular expressions for R users",
+    "section": "Want more?",
+    "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download Quarto   Download html \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
+  },
+  {
+    "objectID": "posts/2025-07-25/index.html",
+    "href": "posts/2025-07-25/index.html",
+    "title": "Advanced counting",
+    "section": "",
+    "text": "The phrase “advanced counting” is bringing me an unreasonable amount of joy today. No, I don’t just mean listing really big whole numbers (though actually that could be pretty cool, too). The newest upload to my stats-focused channel, Normal Knowledge, features 4 challenging enumeration problems, including this nugget: how many distinct rolls of 12 dice are possible when the order of the rolls doesn’t matter? Listen, the world is in a state, and I’m finding joy wherever I can."
+  },
+  {
+    "objectID": "coc.html",
+    "href": "coc.html",
+    "title": "Code of Conduct",
+    "section": "",
+    "text": "Under construction. For now, just be cool."
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Consulting",
+    "section": "",
+    "text": "I offer several forms of consulting, depending on your needs and budget.\n\nOriginal video content for commercial enterprises (including online courses): $600+/recorded hour\nOne-on-one Zoom tutoring: $150/hour\nProfessional statistical modeling and #Rstats consulting: $250/hour\n\nMy areas of expertise include R programming, statistical modeling, machine learning, and human-first data science. The above rates don’t include extras such as quizzes for online courses. I’m usually unable to help with domain-specific packages such as those used in genomics - sorry!\nConsulting work varies widely from project to project, so the above rates should be taken as guidelines only. Contact me here to discuss your specific needs and the costs associated."
+  },
+  {
+    "objectID": "posts/2025-09-30/index.html",
+    "href": "posts/2025-09-30/index.html",
+    "title": "How to set up RStudio for success",
+    "section": "",
+    "text": "By making a few changes to the RStuio IDE the first time you open it, you can both improve your quality of life and enforce some important data science best practices right from the start. My three most important recommendations:\n\nPut the console pane on the right\nSet .RData to automatically clear after every session\nWork inside of a project"
+  },
+  {
+    "objectID": "posts/2025-11-10/index.html",
+    "href": "posts/2025-11-10/index.html",
+    "title": "Content to support my course, Data Science with R",
+    "section": "",
+    "text": "Data manipulation with R:\n Download html notes   Download quarto notes \nGetting started with ggplot:\n Download html notes   Download quarto notes \nSingle-variable plots with ggplot2:\n Download html notes   Download quarto notes \nQuantitative vs categorical plots with ggplot2:\n Download html notes   Download quarto notes \nIntroducing the pipe:\n Download html notes   Download quarto notes \nGrouped summaries in R:\n Download html notes   Download quarto notes \nGrouped filters and mutates\n Download html notes   Download quarto notes \nTidying data with pivot_longer:\n Download html notes   Download quarto notes \nTidying data with pivot_wider:\n Download html notes   Download quarto notes \nMutating joins:\n Download html notes   Download quarto notes \nFiltering joins\n Download html notes   Download quarto notes \nWorking with dates and times\n Download optical.csv   Download html notes   Download quarto notes \nWorking with strings\n Download html notes   Download quarto notes \nWorking with factors\n Download scooby.xlsx   Download html notes   Download quarto notes"
+  },
+  {
+    "objectID": "posts/2025-05-27/index.html",
+    "href": "posts/2025-05-27/index.html",
+    "title": "All about facets",
+    "section": "",
+    "text": "Download script"
+  },
+  {
+    "objectID": "posts/2026-10-05/index.html",
+    "href": "posts/2026-10-05/index.html",
+    "title": "Cross validation",
+    "section": "",
+    "text": "Download slides"
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html",
+    "href": "posts/2026-09-07/index.html",
+    "title": "Working with factors in R",
+    "section": "",
+    "text": "Categorical variables (or factors as they are referred to when working in R) are variables that assign observations to specific groups. This post will cover some of the most common problems you may encounter while trying to visualize or model such variables.\nThroughout, I’ll refer to the scooby data set, originally sourced from kaggle but modified slightly for use in my vids and in this post. A download link can be found at the end of this tutorial.\n# Load and prep data\n\nlibrary(tidyverse)\ntheme_set(theme_minimal())\n\nlibrary(readxl)\nscooby &lt;- read_excel(\"_internal/scooby.xlsx\") \n\nscooby_sm &lt;- scooby |&gt; \n  filter(format == \"TV Series\") |&gt;  \n  select(title,  \n         date_aired,\n         imdb,\n         motive)"
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#factor-character-and-other-vector-types",
+    "href": "posts/2026-09-07/index.html#factor-character-and-other-vector-types",
+    "title": "Working with factors in R",
+    "section": "Factor, character, and other vector types",
+    "text": "Factor, character, and other vector types\nAs a general rule, tidyverse functions treat character vectors as factors. For instance, we can apply dplyr::count to scooby$motive, even though the latter just consists of strings.\n\nglimpse(scooby_sm)\n\nRows: 374\nColumns: 4\n$ title      &lt;chr&gt; \"What a Night for a Knight\", \"A Clue for Scooby Doo\", \"Hass…\n$ date_aired &lt;dttm&gt; 1969-09-13, 1969-09-20, 1969-09-27, 1969-10-04, 1969-10-11…\n$ imdb       &lt;dbl&gt; 8.1, 8.1, 8.0, 7.8, 7.5, 8.4, 7.6, 8.2, 8.1, 8.0, 8.5, 8.2,…\n$ motive     &lt;chr&gt; \"Theft\", \"Theft\", \"Treasure\", \"Natural Resource\", \"Competit…\n\nscooby_sm |&gt; \n  count(motive)\n\n# A tibble: 17 × 2\n   motive               n\n   &lt;chr&gt;            &lt;int&gt;\n 1 Abduction            3\n 2 Assistance           2\n 3 Competition        130\n 4 Conquer             33\n 5 Counterfeit          6\n 6 Entertainment        3\n 7 Extortion            3\n 8 Imagination          1\n 9 Inheritance          6\n10 Natural Resource    19\n11 Preservation        10\n12 Safety               2\n13 Simulation           2\n14 Smuggling           19\n15 Theft               93\n16 Treasure            40\n17 &lt;NA&gt;                 2\n\n\nUse as.factor() to explicitly coerce variables to factors. This is particularly useful when category levels are numeric, like am (automatic/manual transmission) in the built-in mtcars set, since functions like ggplot will otherwise attempt to treat them as continuous variables. For instance, we can’t get directly get a side-by-side boxplot of mpg vs am.\n\nglimpse(mtcars)\n\nRows: 32\nColumns: 11\n$ mpg  &lt;dbl&gt; 21.0, 21.0, 22.8, 21.4, 18.7, 18.1, 14.3, 24.4, 22.8, 19.2, 17.8,…\n$ cyl  &lt;dbl&gt; 6, 6, 4, 6, 8, 6, 8, 4, 4, 6, 6, 8, 8, 8, 8, 8, 8, 4, 4, 4, 4, 8,…\n$ disp &lt;dbl&gt; 160.0, 160.0, 108.0, 258.0, 360.0, 225.0, 360.0, 146.7, 140.8, 16…\n$ hp   &lt;dbl&gt; 110, 110, 93, 110, 175, 105, 245, 62, 95, 123, 123, 180, 180, 180…\n$ drat &lt;dbl&gt; 3.90, 3.90, 3.85, 3.08, 3.15, 2.76, 3.21, 3.69, 3.92, 3.92, 3.92,…\n$ wt   &lt;dbl&gt; 2.620, 2.875, 2.320, 3.215, 3.440, 3.460, 3.570, 3.190, 3.150, 3.…\n$ qsec &lt;dbl&gt; 16.46, 17.02, 18.61, 19.44, 17.02, 20.22, 15.84, 20.00, 22.90, 18…\n$ vs   &lt;dbl&gt; 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0,…\n$ am   &lt;dbl&gt; 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0,…\n$ gear &lt;dbl&gt; 4, 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 4, 4, 4, 3, 3,…\n$ carb &lt;dbl&gt; 4, 4, 1, 1, 2, 1, 4, 2, 2, 4, 4, 3, 3, 3, 4, 4, 4, 1, 2, 1, 1, 2,…\n\nggplot(mtcars, aes(x = am, \n                   y = mpg)) + \n  geom_boxplot() # not what we want\n\nWarning: Orientation is not uniquely specified when both the x and y aesthetics are\ncontinuous. Picking default orientation 'x'.\n\n\nWarning: Continuous x aesthetic\nℹ did you forget `aes(group = ...)`?\n\n\n\n\n\n\n\n\n\nWhile it’s fine to follow the recommendation given in this warning message, it may be better to just convert am to a factor once and for all:\n\nmtcars2 &lt;- mtcars |&gt; \n  mutate(am = as.factor(am)) \n\nggplot(mtcars2, aes(x = am, \n                    y = mpg)) + \n  geom_boxplot()"
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#relabeling-factors",
+    "href": "posts/2026-09-07/index.html#relabeling-factors",
+    "title": "Working with factors in R",
+    "section": "Relabeling factors",
+    "text": "Relabeling factors\nThere are many options for changing the text used to label factor levels, but fct_recode() is a solid choice.\n\nmtcars2 &lt;- mtcars2 |&gt; \n  mutate(am = fct_recode(am, \n                         \"automatic\" = \"0\",\n                         \"manual\" = \"1\"))\nmtcars2 |&gt; \n  count(am)\n\n         am  n\n1 automatic 19\n2    manual 13\n\n\nNotice the syntax, “new_name” = “old_name”, which is common in tidyverse R.\nWhen you have a large number of different factor levels, it may be helpful to lump the less common ones into an “other” category. For instance, the next chunk combines all categories with fewer than 20 occurrences.\n\nscooby_sm2 &lt;- scooby_sm |&gt; \n  mutate(motive = fct_lump_min(motive,\n                               min = 20)) \nscooby_sm2 |&gt; \n  count(motive) |&gt; \n  arrange(-n)\n\n# A tibble: 6 × 2\n  motive          n\n  &lt;fct&gt;       &lt;int&gt;\n1 Competition   130\n2 Theft          93\n3 Other          76\n4 Treasure       40\n5 Conquer        33\n6 &lt;NA&gt;            2\n\n\nAlso check out fct_lump_n() to specify the number of levels retained, fct_lump_prop() to lump low-percentage levels, and fct_lump_lowfreq() to try to force the new “Other” level to have lowest frequency."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#rearranging-levels",
+    "href": "posts/2026-09-07/index.html#rearranging-levels",
+    "title": "Working with factors in R",
+    "section": "Rearranging levels",
+    "text": "Rearranging levels\nSometimes the order of factor levels matters, for instance in a bar chart. The default odering is alphanumeric.\n\nggplot(scooby_sm2, \n       aes(x = motive)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nUse fct_relevel() to shift levels to the front. For instance, the next code chunk places the motives Treasure and Theft before Compitition and others.\n\nscooby_sm3 &lt;- scooby_sm2 |&gt; \n  mutate(motive = fct_relevel(motive,\n                              \"Treasure\",\n                              \"Theft\")) \n\nggplot(scooby_sm3, \n       aes(x = motive)) + \n  geom_bar()\n\n\n\n\n\n\n\n\nOften, you just want to put the most common factor levels first. Use fct_infreq() to accomplish this.\n\nggplot(scooby_sm2, aes(x = fct_infreq(motive))) + \n  geom_bar()\n\n\n\n\n\n\n\n\nYou can also reverse the order of the factor levels with fct_rev."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#reordering-levels-using-a-second-variable",
+    "href": "posts/2026-09-07/index.html#reordering-levels-using-a-second-variable",
+    "title": "Working with factors in R",
+    "section": "Reordering levels using a second variable",
+    "text": "Reordering levels using a second variable\nFor some plots, it can be natural to order a categorical variable using a numeric one. For instance, in the next plot, it would be preferable to show the various motives in increasing order of imdb ratings.\n\nggplot(scooby_sm3, aes(x = motive,\n                       y = imdb)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\nUse fct_reorder to accomplish this.\n\nscooby_sm4 &lt;- scooby_sm3 |&gt; \n  mutate(motive = fct_reorder(motive,\n                              imdb))\n\nggplot(scooby_sm4, aes(x = motive,\n                       y = imdb)) + \n  geom_boxplot()\n\n\n\n\n\n\n\n\nBy default, fct_reorder sorts using the median. You can specify a different function (like mean) by adding a .fun argument."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#ordered-factors",
+    "href": "posts/2026-09-07/index.html#ordered-factors",
+    "title": "Working with factors in R",
+    "section": "Ordered factors",
+    "text": "Ordered factors\nOccasionally you may encounter ordered factors, ones of class ord. For the most part, you can treat these like regular factors.\n\nglimpse(diamonds)\n\nRows: 53,940\nColumns: 10\n$ carat   &lt;dbl&gt; 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.…\n$ cut     &lt;ord&gt; Ideal, Premium, Good, Premium, Good, Very Good, Very Good, Ver…\n$ color   &lt;ord&gt; E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I,…\n$ clarity &lt;ord&gt; SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, …\n$ depth   &lt;dbl&gt; 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64…\n$ table   &lt;dbl&gt; 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58…\n$ price   &lt;int&gt; 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 34…\n$ x       &lt;dbl&gt; 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.…\n$ y       &lt;dbl&gt; 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.…\n$ z       &lt;dbl&gt; 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.…\n\ndiamonds |&gt; \n  count(cut) # several ordered factors\n\n# A tibble: 5 × 2\n  cut           n\n  &lt;ord&gt;     &lt;int&gt;\n1 Fair       1610\n2 Good       4906\n3 Very Good 12082\n4 Premium   13791\n5 Ideal     21551\n\n\nSpecifying that a factor is ordered (for instance using ordered) can occasionally matter in modeling applications and certain forms of statistical inference. Other than that, the most visible difference with ordered factors in R is how they’re displayed by ggplot.\n\nggplot(diamonds, aes(x = cut,\n                     fill = cut)) + \n  geom_bar(show.legend = FALSE)\n\n\n\n\n\n\n\n\nBy default, ordered factors are colored using the viridis palette, which is has a distinct order to it."
+  },
+  {
+    "objectID": "posts/2026-09-07/index.html#want-more",
+    "href": "posts/2026-09-07/index.html#want-more",
+    "title": "Working with factors in R",
+    "section": "Want more?",
+    "text": "Want more?\nIf something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:\n\n\n Download scooby.xlsx   Download Quarto   Download html \nThis post will be cross-listed on R-bloggers, a site that I totally recommend."
+  },
+  {
+    "objectID": "posts/2026-01-05/index.html",
+    "href": "posts/2026-01-05/index.html",
+    "title": "Understanding the grammar of graphics",
+    "section": "",
+    "text": "The world of data visualization has been revolutionized in recent years with the introduction of the grammar of graphics and its implementation in R, the ggplot2 package. While other plotting systems set aside a different function for each sort of visualization (histogram, scatterplot, and so on), the grammar of graphics takes the view that the most fundamental characteristics of a plot are the variables it includes and the roles they play (x-axis, y-axis, color, etc). The specific brand of plot is secondary and can be specified later.\nTo create a visualization, we need to specify three things:\n\nwhat data is being used.\nhow the variables are mapped onto the plot (in this case, onto the x- and y-axes).\nwhich geometry should be used to represent the data (scatter plot, line graph, or something else entirely).\n\nDesign considerations like axis labels, color palette, and font, can be specified separately after the fact\nNotice how all of these elements appear, in order, in the following code chunk.\n\nlibrary(tidyverse)\n\nggplot(penguins, \n       aes(x = bill_len, y = body_mass)) + \n  geom_point() +\n  labs(x = \"Bill length (mm)\",\n       y = \"Body mass (g)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n Download slides   Download practice plots"
+  },
+  {
+    "objectID": "posts/2025-07-28/index.html",
+    "href": "posts/2025-07-28/index.html",
+    "title": "All about system prompts",
+    "section": "",
+    "text": "I’m generally ambivalent about large language models, but that doesn’t mean I’m going to bury my head in the sand about them. This week I learned how to assign Chat a specific role, require that it respond in the style (here, tidyverse) that I want, and place limitations on its behavior. All of this isn’t generally possible in a browser-based interface, which sent me even deeper into the ellmer package. It’s actually more fun when you understand how these things work.\nAs usual, code and other supporting materials are available below the vid.\n\n\n Download script   Download slides"
+  },
+  {
+    "objectID": "posts/2026-10-12/index.html",
+    "href": "posts/2026-10-12/index.html",
+    "title": "Stabilizing regression coefficients with the lasso",
+    "section": "",
+    "text": "Sometimes linear regression gives poor results even when the data comes from a linear relationship. I’ll explain why and then show you what you can do about it.\n\n\n Download slides"
+  },
+  {
     "objectID": "posts/2025-05-12/index.html",
     "href": "posts/2025-05-12/index.html",
     "title": "Hollywood age gaps and the Bechdel test",
@@ -445,7 +452,7 @@
     "href": "posts.html",
     "title": "This is not a blog",
     "section": "",
-    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCross validation\n\n\n\nMachine learning\n\n\n\nCross validation is a method for estimating the future performance of a model without relying on a separate holdout set. It’s often used in machine learning for the tuning of hyperparameters.\n\n\n\n\n\nOct 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to tidymodels\n\n\n\nMachine learning\n\ntidymodels\n\n\n\nPull up your socks! It’s time to tackle machine learning in R.\n\n\n\n\n\nSep 21, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with factors in R\n\n\n\nforcats\n\nR-bloggers\n\n\n\nNeed to change the ordering of a categorical variable? Update its labels? Create an ‘other’ category? You’ve come to the right place.\n\n\n\n\n\nSep 7, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions for R users\n\n\n\nregex\n\nstringr\n\nR-bloggers\n\n\n\nRegular expressions let you search and manipulate strings based on patterns rather than just literal matches. This is often straightforward, but when it’s not, watch out!\n\n\n\n\n\nAug 24, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding the grammar of graphics\n\n\n\nGrammar of graphics\n\nggplot2\n\n\n\nHow can we efficiently and clearly describe any data visualization, particularly when coding?\n\n\n\n\n\nJan 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nContent to support my course, Data Science with R\n\n\n\ndplyr\n\nggplot2\n\ntidyr\n\n\n\nThis is the place to find data sets and other supporting documents for my YouTube course, Data Science with R, at least until I can build something more permanent.\n\n\n\n\n\nNov 10, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is Quarto?\n\n\n\nQuarto\n\n\n\nI introduce Quarto at the very start of my courses on R. Here’s why.\n\n\n\n\n\nOct 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with R\n\n\n\nRStudio\n\n\n\nLooking to get started with R? I’ve got you covered.\n\n\n\n\n\nOct 13, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up RStudio for success\n\n\n\nRStudio\n\n\n\nHere are a few of the most important things I have my students do as soon as they open RStudio for the first time.\n\n\n\n\n\nSep 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhy haven’t I covered tidymodels?\n\n\n\ntidymodels\n\n\n\nI get this question from time to time, and with good reason. Here’s the reason, along with thoughts on when I’ll finally take up the challenge.\n\n\n\n\n\nSep 22, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nDiscrete probability calculations in R\n\n\n\nProbability\n\nR-bloggers\n\n\n\nR has built-in functions for all major discrete probability distributions, including the binomial, geometric, negative binomial, hypergeometric, and Poisson. In this post, I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.\n\n\n\n\n\nSep 15, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWriting prompts using interpolate()\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nI just discovered interpolate(), which is similar but not identical to glue::glue().\n\n\n\n\n\nSep 2, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nTeaching an AI to webscrape using the ellmer package\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nGiving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.\n\n\n\n\n\nAug 11, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nProbability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHollywood age gaps and the Bechdel test\n\n\n\nData analysis\n\n\n\nDo age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?\n\n\n\n\n\nMay 12, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
+    "text": "Here you can watch my most recent vids and occasionally read some additional thoughts on the topics covered. I also just write for fun sometimes, about my world, the times we live in, or whatever else might be keeping me up at night. All very informal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCross validation\n\n\n\nMachine learning\n\n\n\nCross validation is a method for estimating the future performance of a model without relying on a separate holdout set. It’s often used in machine learning for the tuning of hyperparameters.\n\n\n\n\n\nOct 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nStabilizing regression coefficients with the lasso\n\n\n\nMachine learning\n\n\n\n\n\n\n\n\n\nOct 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to tidymodels\n\n\n\nMachine learning\n\ntidymodels\n\n\n\nPull up your socks! It’s time to tackle machine learning in R.\n\n\n\n\n\nSep 21, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWorking with factors in R\n\n\n\nforcats\n\nR-bloggers\n\n\n\nNeed to change the ordering of a categorical variable? Update its labels? Create an ‘other’ category? You’ve come to the right place.\n\n\n\n\n\nSep 7, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nRegular expressions for R users\n\n\n\nregex\n\nstringr\n\nR-bloggers\n\n\n\nRegular expressions let you search and manipulate strings based on patterns rather than just literal matches. This is often straightforward, but when it’s not, watch out!\n\n\n\n\n\nAug 24, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nUnderstanding the grammar of graphics\n\n\n\nGrammar of graphics\n\nggplot2\n\n\n\nHow can we efficiently and clearly describe any data visualization, particularly when coding?\n\n\n\n\n\nJan 5, 2026\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nContent to support my course, Data Science with R\n\n\n\ndplyr\n\nggplot2\n\ntidyr\n\n\n\nThis is the place to find data sets and other supporting documents for my YouTube course, Data Science with R, at least until I can build something more permanent.\n\n\n\n\n\nNov 10, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhat is Quarto?\n\n\n\nQuarto\n\n\n\nI introduce Quarto at the very start of my courses on R. Here’s why.\n\n\n\n\n\nOct 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nGetting started with R\n\n\n\nRStudio\n\n\n\nLooking to get started with R? I’ve got you covered.\n\n\n\n\n\nOct 13, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to set up RStudio for success\n\n\n\nRStudio\n\n\n\nHere are a few of the most important things I have my students do as soon as they open RStudio for the first time.\n\n\n\n\n\nSep 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWhy haven’t I covered tidymodels?\n\n\n\ntidymodels\n\n\n\nI get this question from time to time, and with good reason. Here’s the reason, along with thoughts on when I’ll finally take up the challenge.\n\n\n\n\n\nSep 22, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nDiscrete probability calculations in R\n\n\n\nProbability\n\nR-bloggers\n\n\n\nR has built-in functions for all major discrete probability distributions, including the binomial, geometric, negative binomial, hypergeometric, and Poisson. In this post, I’ll show you how to compute probabilities, find quantiles, and generate random values from any of these.\n\n\n\n\n\nSep 15, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nWriting prompts using interpolate()\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nI just discovered interpolate(), which is similar but not identical to glue::glue().\n\n\n\n\n\nSep 2, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nTeaching an AI to webscrape using the ellmer package\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nGiving Claude access to specific R functions is a powerful technique. Let’s get into the details of how it works.\n\n\n\n\n\nAug 11, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about system prompts\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nWhat is a system prompt and why should you care?\n\n\n\n\n\nJul 28, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAdvanced counting\n\n\n\nProbability\n\n\n\nCan I brag about this title for a sec?\n\n\n\n\n\nJul 25, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHow to show a ggplot to an AI assistant\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nA picture is worth a thousand words, especially when working with a chatbot.\n\n\n\n\n\nJul 14, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nCan using an LLM for coding be ethical?\n\n\n\nAI\n\nLLMs\n\n\n\nA short stream-of-consciousness piece about one particular ethical consideration.\n\n\n\n\n\nJul 7, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nChatting with Claude AI in RStudio using ellmer\n\n\n\nAI\n\nellmer\n\nLLMs\n\n\n\nHow to establish an Anthropic API key which RStudio can use to communicate with Claude, generally considered to be the best large language model for R.\n\n\n\n\n\nJun 30, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nAll about facets\n\n\n\nggplot2\n\n\n\nThere’s so much more to ggplot2’s faceting system than I knew. This deep-dive includes a lot of personal lessons learned.\n\n\n\n\n\nMay 27, 2025\n\n\nAndrew Gard\n\n\n\n\n\n\n\n\n\n\n\n\nHollywood age gaps and the Bechdel test\n\n\n\nData analysis\n\n\n\nDo age gaps between romantic leads in movies help predict whether films will pass the Bechdel test?\n\n\n\n\n\nMay 12, 2025\n\n\nAndrew Gard\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "license.html",
