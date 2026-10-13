@@ -2,7 +2,7 @@
 title: "Stabilizing regression coefficients with the lasso"
 author:
   - name: Andrew Gard
-date: 2026-10-05
+date: 2026-10-12
 categories: [Machine learning] 
 image: "lasso thumb.png"
 draft: false 

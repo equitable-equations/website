@@ -15,27 +15,1032 @@
 <link>https://equitableequations.com/posts.html</link>
 </image>
 <generator>quarto-1.7.32</generator>
-<lastBuildDate>Mon, 05 Oct 2026 05:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 19 Oct 2026 05:00:00 GMT</lastBuildDate>
 <item>
-  <title>Cross validation</title>
+  <title>Lasso regression using tidymodels</title>
   <dc:creator>Andrew Gard</dc:creator>
-  <link>https://equitableequations.com/posts/2026-10-05/</link>
+  <link>https://equitableequations.com/posts/2026-10-19/</link>
   <description><![CDATA[ 
 
 
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U1LxW3DWn1M?si=itcYKAcIrBIkMQ0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts36462"><i class="bi bi-download"></i> Download slides </button></p>
+<p><strong>The lasso</strong> addresses instability in linear regression models by penalizing larger coefficient values. For a conceptual introduction, check out my explainer <a href="https://youtu.be/hBqEECNP5mQ">here</a>.</p>
+<p>In this post, we’ll obtain a lasso model for <code>solubility</code> in chemical compounds using data from the <code>AppliedPredictiveModeling</code> package, which supports the excellent book of the same name. We’ll do this from the machine learning perspective using the <code>tidymodels</code> framework. If you haven’t worked with <code>tidymodels</code> before, I recommend pausing to check out my tutorial <a href="https://youtu.be/fRj8dr-aSsU">here</a>.</p>
+<p>The <code>solubility</code> data has already been split into training and testing sets, but in each case the explanatory and response variables have been stored separately. We start by resolving this.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidymodels)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(AppliedPredictiveModeling)</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data</span>(solubility)</span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">set.seed</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb1-7"></span>
+<span id="cb1-8">sol_train <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> solTrainXtrans <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">solubility =</span> solTrainY)</span>
+<span id="cb1-10">sol_test <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> solTestXtrans <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb1-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">solubility =</span> solTestY)</span></code></pre></div>
+</div>
+<p>The training set includes 951 observations while the test test includes 316. There are 228 total predictors available as we attempt to model the response variable, <code>solubility</code>.</p>
+<p>Penalized regression in R is typically carried out using the <code>glmnet()</code> engine. Since we’re using <code>tidymodels</code>, we’ll rely on the <code>linear_reg()</code> wrapper, which standardizes the syntax of modeling functions like <code>glmnnet()</code> and ensures their output is compatible with the tools we’ll use for tuning and evaluation.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">my_lasso <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">linear_reg</span>(</span>
+<span id="cb2-2">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">engine =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"glmnet"</span>,</span>
+<span id="cb2-3">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">mixture =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># one for lasso, zero for ridge</span></span>
+<span id="cb2-4">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">penalty =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tune</span>() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># lambda </span><span class="al" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">TBD</span></span>
+<span id="cb2-5">  ) </span></code></pre></div>
+</div>
+<p>Since there are no missing values in these sets and the variables are all numeric, little preprocessing needs to be done with this data. The following recipe (which standardizes all predictors and removes any with zero-variance) is added for consistency and clarity.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">my_rec <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">recipe</span>(solubility <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span>., <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> sol_train) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">step_zv</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">all_predictors</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">step_normalize</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">all_numeric_predictors</span>())</span>
+<span id="cb3-4"></span>
+<span id="cb3-5">my_wf <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">workflow</span>(</span>
+<span id="cb3-6">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">spec =</span> my_lasso,</span>
+<span id="cb3-7">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">preprocessor =</span> my_rec</span>
+<span id="cb3-8">  )</span></code></pre></div>
+</div>
+<p>Since the <code>glmnet()</code> engine performs standardization by default, <code>step_normalize()</code> turns out to be redundant here.</p>
+<p>As a reminder, <code>tidymodels</code> separates model specification (accomplished here with <code>linear_reg()</code>) from model fitting (which we’ll do later). This allows us to incorporate preprocessing in a programmatic way, via a <code>recipe</code>, ensuring our steps will be applied consistently whether we’re working with the training set, the testing set, or something else entirely.</p>
+<p>We determine the best choice for the penalty, <img src="https://latex.codecogs.com/png.latex?%5Clambda">, using cross validation.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># create 5 separate 10-fold splits</span></span>
+<span id="cb4-2">folds <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">vfold_cv</span>(</span>
+<span id="cb4-3">  sol_train,</span>
+<span id="cb4-4">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">v =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,</span>
+<span id="cb4-5">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">repeats =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span></span>
+<span id="cb4-6">  ) </span>
+<span id="cb4-7"></span>
+<span id="cb4-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># tune using a default grid of values</span></span>
+<span id="cb4-9">tune_results <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tune_grid</span>(</span>
+<span id="cb4-10">  my_wf, </span>
+<span id="cb4-11">  folds</span>
+<span id="cb4-12">  ) </span>
+<span id="cb4-13"></span>
+<span id="cb4-14"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">glimpse</span>(tune_results)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 50
+Columns: 5
+$ splits   &lt;list&gt; [&lt;vfold_split[855 x 96 x 951 x 229]&gt;], [&lt;vfold_split[856 x 9…
+$ id       &lt;chr&gt; "Repeat1", "Repeat1", "Repeat1", "Repeat1", "Repeat1", "Repea…
+$ id2      &lt;chr&gt; "Fold01", "Fold02", "Fold03", "Fold04", "Fold05", "Fold06", "…
+$ .metrics &lt;list&gt; [&lt;tbl_df[20 x 5]&gt;], [&lt;tbl_df[20 x 5]&gt;], [&lt;tbl_df[20 x 5]&gt;], …
+$ .notes   &lt;list&gt; [&lt;tbl_df[0 x 4]&gt;], [&lt;tbl_df[0 x 4]&gt;], [&lt;tbl_df[0 x 4]&gt;], [&lt;t…</code></pre>
+</div>
+</div>
+<p>The output of <code>tune_grid()</code> is a copy of the object created by <code>vfold_cv()</code>, that is, a tibble with one row per fold per repeat. This one, however, includes an extra column, <code>.metrics</code>, which tracks the performance of models built with different <img src="https://latex.codecogs.com/png.latex?%5Clambda"> values. Each element of <code>tune_results$.metrics</code> is itself a tibble.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># for example:</span></span>
+<span id="cb6-2">tune_results<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">$</span>.metrics[[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]]</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 5
+    penalty .metric .estimator .estimate .config         
+      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;           
+ 1 1.62e-10 rmse    standard       0.698 pre0_mod01_post0
+ 2 1.62e-10 rsq     standard       0.891 pre0_mod01_post0
+ 3 3.51e- 9 rmse    standard       0.698 pre0_mod02_post0
+ 4 3.51e- 9 rsq     standard       0.891 pre0_mod02_post0
+ 5 7.19e- 8 rmse    standard       0.698 pre0_mod03_post0
+ 6 7.19e- 8 rsq     standard       0.891 pre0_mod03_post0
+ 7 1.19e- 6 rmse    standard       0.698 pre0_mod04_post0
+ 8 1.19e- 6 rsq     standard       0.891 pre0_mod04_post0
+ 9 1.45e- 5 rmse    standard       0.698 pre0_mod05_post0
+10 1.45e- 5 rsq     standard       0.891 pre0_mod05_post0
+11 1.92e- 4 rmse    standard       0.697 pre0_mod06_post0
+12 1.92e- 4 rsq     standard       0.891 pre0_mod06_post0
+13 2.08e- 3 rmse    standard       0.659 pre0_mod07_post0
+14 2.08e- 3 rsq     standard       0.902 pre0_mod07_post0
+15 1.83e- 2 rmse    standard       0.633 pre0_mod08_post0
+16 1.83e- 2 rsq     standard       0.909 pre0_mod08_post0
+17 1.23e- 1 rmse    standard       0.801 pre0_mod09_post0
+18 1.23e- 1 rsq     standard       0.866 pre0_mod09_post0
+19 8.15e- 1 rmse    standard       1.77  pre0_mod10_post0
+20 8.15e- 1 rsq     standard       0.501 pre0_mod10_post0</code></pre>
+</div>
+</div>
+<p>We can now plot performance versus penalty to visually estimate the best value of <img src="https://latex.codecogs.com/png.latex?%5Clambda">.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">rmse_path <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">collect_metrics</span>(tune_results) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb8-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(.metric <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rmse"</span>)</span>
+<span id="cb8-3"></span>
+<span id="cb8-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(rmse_path, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> penalty, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> mean)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb8-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb8-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>()<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb8-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_x_log10</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> scales<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">label_log</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb8-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Penalty"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"CV error"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb8-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb8-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(</span>
+<span id="cb8-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(</span>
+<span id="cb8-12">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#E1E1D3"</span>,</span>
+<span id="cb8-13">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#595959"</span></span>
+<span id="cb8-14">      )</span>
+<span id="cb8-15">    )</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-10-19/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can zoom in on the apparent minimum by specifying a data frame of penalty values for <code>tune_grid()</code> to work with. Since the search grid for <img src="https://latex.codecogs.com/png.latex?%5Clambda"> must span several orders of magnitude, it’s best to specify it using a logarithmic scale, meaning that adjacent values will differ by the same <em>factor</em> rather than the same <em>constant</em>.</p>
+<p>The grid can also be built using functions from the <code>dials</code> package, but for me this is usually more trouble than it’s worth.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># specify values </span></span>
+<span id="cb9-2">my_grid <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(</span>
+<span id="cb9-3">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">penalty =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">length.out =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb9-4">  )</span>
+<span id="cb9-5"></span>
+<span id="cb9-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># repeat tuning and plotting</span></span>
+<span id="cb9-7">tune_results <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tune_grid</span>(</span>
+<span id="cb9-8">  my_wf, </span>
+<span id="cb9-9">  folds, </span>
+<span id="cb9-10">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">grid =</span> my_grid</span>
+<span id="cb9-11">  )</span>
+<span id="cb9-12"></span>
+<span id="cb9-13">rmse_path <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">collect_metrics</span>(tune_results) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb9-14">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(.metric <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rmse"</span>)</span>
+<span id="cb9-15"></span>
+<span id="cb9-16"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(rmse_path, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> penalty, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> mean)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb9-17">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb9-18">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb9-19">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_x_log10</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> scales<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">label_log</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb9-20">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Penalty"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Test error"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb9-21">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb9-22">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb9-23">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(</span>
+<span id="cb9-24">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(</span>
+<span id="cb9-25">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#E1E1D3"</span>,</span>
+<span id="cb9-26">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#595959"</span></span>
+<span id="cb9-27">      )</span>
+<span id="cb9-28">    )</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-10-19/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Use <code>show_best()</code> to obtain a data frame of the best-performing hyperparameter values. Here we use root mean squared error to measure “best.”</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">show_best</span>(tune_results, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">metric =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rmse"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 7
+  penalty .metric .estimator  mean     n std_err .config         
+    &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;           
+1 0.00546 rmse    standard   0.679    50 0.00708 pre0_mod12_post0
+2 0.00379 rmse    standard   0.680    50 0.00714 pre0_mod11_post0
+3 0.00785 rmse    standard   0.681    50 0.00690 pre0_mod13_post0
+4 0.0113  rmse    standard   0.684    50 0.00677 pre0_mod14_post0
+5 0.00264 rmse    standard   0.685    50 0.00731 pre0_mod10_post0</code></pre>
+</div>
+</div>
+<p>Once we’re satisfied that we’ve found a good hyperparameter value, we can insert it into our model with <code>finalize_workflow()</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># manual specification (less common)</span></span>
+<span id="cb12-2">my_wf_final <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> my_wf <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">finalize_workflow</span>(</span>
+<span id="cb12-3">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">parameters =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">list</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">penalty =</span> .<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">00546</span>)</span>
+<span id="cb12-4">  ) </span>
+<span id="cb12-5"></span>
+<span id="cb12-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># automated specification (more common)</span></span>
+<span id="cb12-7">best_lambda <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select_best</span>(tune_results, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">metric =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rmse"</span>)</span>
+<span id="cb12-8">my_wf_final <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> my_wf <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">finalize_workflow</span>(best_lambda)</span>
+<span id="cb12-9">my_wf_final</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>══ Workflow ════════════════════════════════════════════════════════════════════
+Preprocessor: Recipe
+Model: linear_reg()
+
+── Preprocessor ────────────────────────────────────────────────────────────────
+2 Recipe Steps
+
+• step_zv()
+• step_normalize()
+
+── Model ───────────────────────────────────────────────────────────────────────
+Linear Regression Model Specification (regression)
+
+Main Arguments:
+  penalty = 0.00545559478116851
+  mixture = 1
+
+Computational engine: glmnet </code></pre>
+</div>
+</div>
+<p>A workflow is a set of instructions for building a model from data, not the model itself. To incorporate the training data and create an algorithm for making predictions, use <code>fit()</code>. To obtain model coefficients in a tibble, use <code>broom::tidy()</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">my_wf_fit <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> my_wf_final <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fit</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> sol_train)</span>
+<span id="cb14-3"></span>
+<span id="cb14-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tidy</span>(my_wf_fit)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 229 × 3
+   term        estimate penalty
+   &lt;chr&gt;          &lt;dbl&gt;   &lt;dbl&gt;
+ 1 (Intercept)  -2.72   0.00546
+ 2 FP001         0      0.00546
+ 3 FP002         0.110  0.00546
+ 4 FP003        -0.0154 0.00546
+ 5 FP004        -0.106  0.00546
+ 6 FP005         0      0.00546
+ 7 FP006        -0.0341 0.00546
+ 8 FP007         0      0.00546
+ 9 FP008         0      0.00546
+10 FP009         0      0.00546
+# ℹ 219 more rows</code></pre>
+</div>
+</div>
+<p>While <code>predict()</code> works perfectly well for applying a fitted model to new data, I often prefer another <code>broom</code> function: <code>augment()</code>. This returns a data frame that includes all relevant explanatory variables as well as the predicted values.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># predictions only</span></span>
+<span id="cb16-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">predict</span>(my_wf_fit, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">new_data =</span> sol_test) </span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 316 × 1
+     .pred
+     &lt;dbl&gt;
+ 1  0.599 
+ 2  0.168 
+ 3 -0.459 
+ 4  0.705 
+ 5 -0.0386
+ 6  1.47  
+ 7  0.532 
+ 8  0.409 
+ 9  0.477 
+10 -0.555 
+# ℹ 306 more rows</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># add predictions to df</span></span>
+<span id="cb18-2">sol_test_aug <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">augment</span>(my_wf_fit, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">new_data =</span> sol_test) </span>
+<span id="cb18-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">head</span>(sol_test_aug)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 230
+    .pred FP001 FP002 FP003 FP004 FP005 FP006 FP007 FP008 FP009 FP010 FP011
+    &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;
+1  0.599      1     0     0     1     0     0     0     0     1     1     0
+2  0.168      1     0     1     1     0     1     0     0     0     0     1
+3 -0.459      0     1     0     0     1     0     0     0     0     1     0
+4  0.705      0     0     1     0     0     1     0     0     0     0     0
+5 -0.0386     1     1     0     1     1     1     0     1     0     0     1
+6  1.47       1     0     0     1     0     0     0     0     0     0     0
+# ℹ 218 more variables: FP012 &lt;int&gt;, FP013 &lt;int&gt;, FP014 &lt;int&gt;, FP015 &lt;int&gt;,
+#   FP016 &lt;int&gt;, FP017 &lt;int&gt;, FP018 &lt;int&gt;, FP019 &lt;int&gt;, FP020 &lt;int&gt;,
+#   FP021 &lt;int&gt;, FP022 &lt;int&gt;, FP023 &lt;int&gt;, FP024 &lt;int&gt;, FP025 &lt;int&gt;,
+#   FP026 &lt;int&gt;, FP027 &lt;int&gt;, FP028 &lt;int&gt;, FP029 &lt;int&gt;, FP030 &lt;int&gt;,
+#   FP031 &lt;int&gt;, FP032 &lt;int&gt;, FP033 &lt;int&gt;, FP034 &lt;int&gt;, FP035 &lt;int&gt;,
+#   FP036 &lt;int&gt;, FP037 &lt;int&gt;, FP038 &lt;int&gt;, FP039 &lt;int&gt;, FP040 &lt;int&gt;,
+#   FP041 &lt;int&gt;, FP042 &lt;int&gt;, FP043 &lt;int&gt;, FP044 &lt;int&gt;, FP045 &lt;int&gt;, …</code></pre>
+</div>
+</div>
+<p>This augmented data frame is particularly convenient when applying assessment functions like <code>yardstick::rmse()</code></p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rmse</span>(sol_test_aug,</span>
+<span id="cb20-2">     <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">truth =</span> solubility,</span>
+<span id="cb20-3">     <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">estimate =</span> .pred)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 rmse    standard       0.704</code></pre>
+</div>
+</div>
+<p>On average, predictions made using this model miss true <code>solubility</code> by about .7 units.</p>
+<section id="bonus-1-unpacking-the-recipe" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-1-unpacking-the-recipe">Bonus #1: unpacking the <code>recipe</code></h2>
+<p>A major advantage to <code>tidymodels</code> is the ease with which we can incorporate preprocessing steps like variable standardization. In the above analysis, for instance, we said which steps we wanted to carry out and then forgot all about them, never dealing with <img src="https://latex.codecogs.com/png.latex?z">-scores directly at all. In this section, we extract those transformed variables.</p>
+<p>A <code>recipe</code> is a set of instructions for preprocessing data. On its own, it doesn’t take into account the training data or perform any transformations. To accomplish the former, use <code>prep()</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1">rec_prepped <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">prep</span>(my_rec)</span>
+<span id="cb22-2">rec_prepped</span></code></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Recipe ──────────────────────────────────────────────────────────────────────</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Inputs </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Number of variables by role</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>outcome:     1
+predictor: 228</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Training information </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Training data contained 951 data points and no incomplete rows.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code></code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Operations </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>• Zero variance filter removed: &lt;none&gt; | Trained</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>• Centering and scaling for: FP001, FP002, FP003, FP004, ... | Trained</code></pre>
+</div>
+</div>
+<p>We now hove a <em>trained</em> recipe. While previously we only had a generic instruction to compute <img src="https://latex.codecogs.com/png.latex?z">-scores using the formula <img src="https://latex.codecogs.com/png.latex?z_%7Bij%7D%20=%20%5Cfrac%7Bx_%7Bij%7D%20-%20%5Coverline%7Bx%7D_j%7D%7Bs_j%7D,"></p>
+<p>now sample means and standard deviations (<img src="https://latex.codecogs.com/png.latex?%5Coverline%7Bx%7D_j"> and <img src="https://latex.codecogs.com/png.latex?s_j">) from the training set have been computed and incorporated into those instructions. This fact is indicated by the word “trained” at the end of the <code>rec_prepped</code> printout.</p>
+<p>To obtain a tibble of transformed predictors, apply <code>bake()</code> to a trained recipe.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">bake</span>(rec_prepped, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">new_data =</span> sol_train) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb36-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(</span>
+<span id="cb36-3">    HydrophilicFactor,</span>
+<span id="cb36-4">    NumAtoms,</span>
+<span id="cb36-5">    NumBonds,</span>
+<span id="cb36-6">    SurfaceArea1</span>
+<span id="cb36-7">    ) </span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 951 × 4
+   HydrophilicFactor NumAtoms NumBonds SurfaceArea1
+               &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;
+ 1           -1.11      0.423    0.528       0.0232
+ 2            0.0110    1.62     1.63        0.676 
+ 3            0.0652    0.771    0.717       0.341 
+ 4           -1.84      0.267    0.245      -1.49  
+ 5            0.367     0.639    0.593       0.711 
+ 6           -0.477     0.706    0.593      -0.157 
+ 7           -0.669     0.896    0.998       0.479 
+ 8           -1.02      1.07     0.945       0.0392
+ 9            0.608     1.90     1.88        1.09  
+10            0.734     1.01     0.998       0.434 
+# ℹ 941 more rows</code></pre>
+</div>
+</div>
+<p>We could have just as easily applied this recipe to any other set with compatible variables, including the test set.</p>
+</section>
+<section id="bonus-2-plotting-coefficient-trajectories" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-2-plotting-coefficient-trajectories">Bonus #2: plotting coefficient trajectories</h2>
+<p>It’s often useful to visualize the trajectories of model coefficients as the penalty increases. Since <code>tune_grid()</code> doesn’t retain model coefficients, some new code is needed.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># desired penalty values for plot</span></span>
+<span id="cb38-2">lambda_vals <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">seq</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">length.out =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span>)</span>
+<span id="cb38-3"></span>
+<span id="cb38-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># model specification. penalty=1 is a placeholder ignored by glmnet()</span></span>
+<span id="cb38-5">lasso_spec2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">linear_reg</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">mixture =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">penalty =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span>  </span>
+<span id="cb38-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">set_engine</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"glmnet"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">path_values =</span> lambda_vals)</span>
+<span id="cb38-7"></span>
+<span id="cb38-8">lasso_wf2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">workflow</span>(</span>
+<span id="cb38-9">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">spec =</span> lasso_spec2,</span>
+<span id="cb38-10">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">preprocessor =</span> my_rec</span>
+<span id="cb38-11">)</span>
+<span id="cb38-12"></span>
+<span id="cb38-13">lasso_fit <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span></span>
+<span id="cb38-14">  lasso_wf2 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb38-15">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">fit</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> sol_train)</span></code></pre></div>
+</div>
+<p>The output of <code>fit()</code> is an updated workflow object. In order to get model coefficients for each penalty value specified in <code>lambda_vals</code>, we use <code>extract_fit_engine()</code> followed by <code>tidy()</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1">glmnet_object <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> lasso_fit <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb39-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">extract_fit_engine</span>()</span>
+<span id="cb39-3">coef_paths <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tidy</span>(glmnet_object)</span>
+<span id="cb39-4">coef_paths</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 130,284 × 5
+   term         step estimate lambda dev.ratio
+   &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+ 1 (Intercept)     1    -2.72  10            0
+ 2 (Intercept)     2    -2.72   9.84         0
+ 3 (Intercept)     3    -2.72   9.68         0
+ 4 (Intercept)     4    -2.72   9.53         0
+ 5 (Intercept)     5    -2.72   9.38         0
+ 6 (Intercept)     6    -2.72   9.22         0
+ 7 (Intercept)     7    -2.72   9.08         0
+ 8 (Intercept)     8    -2.72   8.93         0
+ 9 (Intercept)     9    -2.72   8.79         0
+10 (Intercept)    10    -2.72   8.65         0
+# ℹ 130,274 more rows</code></pre>
+</div>
+</div>
+<p>For neatness, let’s restrict our plot to just a few interesting variables.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1">vars <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(</span>
+<span id="cb41-2">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NumBonds"</span>,</span>
+<span id="cb41-3">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"NumAtoms"</span>,</span>
+<span id="cb41-4">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"HydrophilicFactor"</span>,</span>
+<span id="cb41-5">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"SurfaceArea1"</span></span>
+<span id="cb41-6">  )</span>
+<span id="cb41-7"></span>
+<span id="cb41-8">coef_paths <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(term <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%in%</span> vars) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb41-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(</span>
+<span id="cb41-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> lambda, </span>
+<span id="cb41-11">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> estimate, </span>
+<span id="cb41-12">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> term)</span>
+<span id="cb41-13">    ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-14">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-15">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_segment</span>(</span>
+<span id="cb41-16">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,</span>
+<span id="cb41-17">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,</span>
+<span id="cb41-18">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">xend =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, </span>
+<span id="cb41-19">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"dotted"</span></span>
+<span id="cb41-20">    ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-21">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb41-22">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Penalty"</span>,</span>
+<span id="cb41-23">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Coefficient"</span>,</span>
+<span id="cb41-24">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Variable"</span></span>
+<span id="cb41-25">    ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-26">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_x_log10</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">labels =</span> scales<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">label_log</span>()) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-27">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_color_manual</span>(</span>
+<span id="cb41-28">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">values =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#5798A6"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#ED8C3B"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#8050A5"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#4C9F70"</span></span>
+<span id="cb41-29">               )</span>
+<span id="cb41-30">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-31">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-32">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(</span>
+<span id="cb41-33">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>, </span>
+<span id="cb41-34">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_rect</span>(</span>
+<span id="cb41-35">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#E1E1D3"</span>,</span>
+<span id="cb41-36">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#595959"</span></span>
+<span id="cb41-37">      )</span>
+<span id="cb41-38">    )</span></code></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://equitableequations.com/posts/2026-10-19/index_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="480"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 
  ]]></description>
   <category>Machine learning</category>
-  <guid>https://equitableequations.com/posts/2026-10-05/</guid>
-  <pubDate>Mon, 05 Oct 2026 05:00:00 GMT</pubDate>
-  <media:content url="https://equitableequations.com/posts/2026-10-05/cross validation thumb.png" medium="image" type="image/png" height="81" width="144"/>
+  <category>tidymodels</category>
+  <category>R-bloggers</category>
+  <guid>https://equitableequations.com/posts/2026-10-19/</guid>
+  <pubDate>Mon, 19 Oct 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://equitableequations.com/posts/2026-10-19/lasso in r thumb.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>Stabilizing regression coefficients with the lasso</title>
@@ -49,15 +1054,36 @@
 <p>Sometimes linear regression gives poor results even when the data comes from a linear relationship. I’ll explain why and then show you what you can do about it.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hBqEECNP5mQ?si=tFJEWFTZhY-RGNAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts38053"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts43523"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
  ]]></description>
   <category>Machine learning</category>
   <guid>https://equitableequations.com/posts/2026-10-12/</guid>
-  <pubDate>Mon, 05 Oct 2026 05:00:00 GMT</pubDate>
+  <pubDate>Mon, 12 Oct 2026 05:00:00 GMT</pubDate>
   <media:content url="https://equitableequations.com/posts/2026-10-12/lasso thumb.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
+  <title>Cross validation</title>
+  <dc:creator>Andrew Gard</dc:creator>
+  <link>https://equitableequations.com/posts/2026-10-05/</link>
+  <description><![CDATA[ 
+
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U1LxW3DWn1M?si=itcYKAcIrBIkMQ0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><button class="btn btn-default downloadthis  " id="dnldts58628"><i class="bi bi-download"></i> Download slides </button></p>
+
+
+
+ ]]></description>
+  <category>Machine learning</category>
+  <guid>https://equitableequations.com/posts/2026-10-05/</guid>
+  <pubDate>Mon, 05 Oct 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://equitableequations.com/posts/2026-10-05/cross validation thumb.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
   <title>How to tidymodels</title>
@@ -1053,7 +2079,7 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
 <p>Want to hear me explain all of this? Here’s the vid corresponding to this post:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fRj8dr-aSsU?si=Sk6hpWQa70A98l6-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts55132"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts63303"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts62862"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts55014"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
@@ -1584,7 +2610,7 @@ font-style: inherit;">FALSE</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nkjy6UFKJsc?si=7OCFQeMoxzYjsK_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts37302"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts41825"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts29359"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts37014"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts9985"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts5276"><i class="bi bi-download"></i> Download html </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -1913,7 +2939,7 @@ font-style: inherit;">"(chicken|hog)s"</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wy0cEKYeaF8?si=RktCufxzNGzK8UEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts24297"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts2629"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts9212"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts43013"><i class="bi bi-download"></i> Download html </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -1994,7 +3020,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
-<p><button class="btn btn-default downloadthis  " id="dnldts60351"><i class="bi bi-download"></i> Download slides </button> <button class="btn btn-default downloadthis  " id="dnldts8304"><i class="bi bi-download"></i> Download practice plots </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts2401"><i class="bi bi-download"></i> Download slides </button> <button class="btn btn-default downloadthis  " id="dnldts24113"><i class="bi bi-download"></i> Download practice plots </button></p>
 
 
 
@@ -2021,33 +3047,33 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 </div>
 <ul>
 <li><p>Data manipulation with R:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts40012"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts34145"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts18815"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts62953"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Getting started with ggplot:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts16431"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts45850"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts58987"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts7087"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Single-variable plots with ggplot2:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts1494"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts6854"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts33752"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3773"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Quantitative vs categorical plots with ggplot2:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts5833"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts18631"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts2894"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts46639"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Introducing the pipe:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts26958"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts63357"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts34676"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts28082"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Grouped summaries in R:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts2366"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts18045"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts48507"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts52935"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Grouped filters and mutates</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts55468"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts37074"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts21240"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3911"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Tidying data with <code>pivot_longer</code>:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts2633"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts58882"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts20280"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts15113"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Tidying data with <code>pivot_wider</code>:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts30330"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts27045"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts32683"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts4186"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Mutating joins:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts30113"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts15786"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts8331"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts6998"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Filtering joins</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts55717"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts18144"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts29416"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts16203"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with dates and times</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts59832"><i class="bi bi-download"></i> Download optical.csv </button> <button class="btn btn-default downloadthis  " id="dnldts32322"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts51328"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts56108"><i class="bi bi-download"></i> Download optical.csv </button> <button class="btn btn-default downloadthis  " id="dnldts581"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts22952"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with strings</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts2660"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts22858"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts10707"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts64570"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with factors</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts37617"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts57693"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts4745"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts20416"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts7330"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts21502"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 </ul>
 
 
@@ -2072,7 +3098,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 <p>Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w5vBoaN6t-M?si=1HmMNFWiIRoBpCnW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts14199"><i class="bi bi-download"></i> Download erykah.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts61897"><i class="bi bi-download"></i> Download notes </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts21794"><i class="bi bi-download"></i> Download erykah.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts5875"><i class="bi bi-download"></i> Download notes </button></p>
 
 
 
@@ -2094,7 +3120,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 <p>I’ve decided to start updating my introductory-level content, much of which was recorded early in the 2020 pandemic. When completed, I expect to have a complete course in data science with R, roughly paralleling what you might find in a sophomore-level university course for students with some statistical knowledge but not necessarily and programming experience.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ftb7u_JuJwg?si=dON-HYvqMeF0Ped6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts37789"><i class="bi bi-download"></i> Download amy.csv </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts42052"><i class="bi bi-download"></i> Download amy.csv </button></p>
 
 
 
@@ -2375,7 +3401,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>Prefer to have this all clearly explained in a short vid? I’ve got you covered:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts56035"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts39109"><i class="bi bi-download"></i> Download slides </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -2398,7 +3424,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <p>This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about <code>interpolate()</code>, in particular.</p>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/KrIkDPBg9Zk?si=xemfivqMi38eMHyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></p>
-<p><button class="btn btn-default downloadthis  " id="dnldts14776"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts18958"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -2421,7 +3447,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UPtMr8eOr5U?si=stSeGMamAUtaRC3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts37789"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts42052"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -2446,7 +3472,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>As usual, code and other supporting materials are available below the vid.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RDnRiGupF4U?si=zl7dGXrvsw5mbl2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts39541"><i class="bi bi-download"></i> Download script </button> <button class="btn btn-default downloadthis  " id="dnldts15659"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts43417"><i class="bi bi-download"></i> Download script </button> <button class="btn btn-default downloadthis  " id="dnldts17376"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
@@ -2544,27 +3570,6 @@ font-style: inherit;">85</span>)</span></code></pre></div>
   <guid>https://equitableequations.com/posts/2025-06-30/</guid>
   <pubDate>Mon, 30 Jun 2025 05:00:00 GMT</pubDate>
   <media:content url="https://equitableequations.com/posts/2025-06-30/ellmer thumb.jpg" medium="image" type="image/jpeg"/>
-</item>
-<item>
-  <title>All about facets</title>
-  <dc:creator>Andrew Gard</dc:creator>
-  <link>https://equitableequations.com/posts/2025-05-27/</link>
-  <description><![CDATA[ 
-
-
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n6P7eLG80D8?si=mtav1XM23U6JZ991" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts59538"><i class="bi bi-download"></i> Download script </button></p>
-
-
-
- ]]></description>
-  <category>ggplot2</category>
-  <guid>https://equitableequations.com/posts/2025-05-27/</guid>
-  <pubDate>Tue, 27 May 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://equitableequations.com/posts/2025-05-27/facets thumb.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 </channel>
 </rss>

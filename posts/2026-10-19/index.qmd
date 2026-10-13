@@ -1,12 +1,12 @@
 ---
 title: "Lasso regression using `tidymodels`"
-description: TDB
+description: "Today I'm walking through the code used to produce results in my most recent vid, *Stabilizing regression coefficients with the lasso.*"
 author:
   - name: Andrew Gard
 date: 2026-10-19
 categories: [Machine learning, tidymodels, R-bloggers] 
 image: "lasso in r thumb.png"
-draft: true 
+draft: false 
 comments:
   utterances:
     repo: equitable-equations/website
@@ -17,8 +17,7 @@ knitr:
     fig.align: center
 ---
 
-
-**The lasso** addresses instability in linear regression models by penalizing larger coefficient values. See (link) for a conceptual introduction. 
+**The lasso** addresses instability in linear regression models by penalizing larger coefficient values. For a conceptual introduction, check out my explainer [here](https://youtu.be/hBqEECNP5mQ).
 
 In this post, we'll obtain a lasso model for `solubility` in chemical compounds using data from the `AppliedPredictiveModeling` package, which supports the excellent book of the same name. We'll do this from the machine learning perspective using the `tidymodels` framework. If you haven't worked with `tidymodels` before, I recommend pausing to check out my tutorial [here](https://youtu.be/fRj8dr-aSsU).
 
@@ -29,10 +28,11 @@ The `solubility` data has already been split into training and testing sets, but
 #| message: false
 
 library(tidymodels)
-library(eeplot) # local package with personal plot theming
 
 library(AppliedPredictiveModeling)
 data(solubility)
+
+set.seed(0)
 
 sol_train <- solTrainXtrans |> 
   mutate(solubility = solTrainY)
@@ -69,7 +69,7 @@ Since the `glmnet()` engine performs standardization by default, `step_normalize
 
 As a reminder, `tidymodels` separates model specification (accomplished here with `linear_reg()`) from model fitting (which we'll do later). This allows us to incorporate preprocessing in a programmatic way, via a `recipe`, ensuring our steps will be applied consistently whether we're working with the training set, the testing set, or something else entirely.
 
-We determine the best choice for the penalty $\lambda$ using cross validation.
+We determine the best choice for the penalty, $\lambda$, using cross validation.
 
 ```{r}
 # create 5 separate 10-fold splits
@@ -85,7 +85,19 @@ tune_results <- tune_grid(
   folds
   ) 
 
-# plot results
+glimpse(tune_results)
+```
+
+The output of `tune_grid()` is a copy of the object created by `vfold_cv()`, that is, a tibble with one row per fold per repeat. This one, however, includes an extra column, `.metrics`, which tracks the performance of models built with different $\lambda$ values. Each element of `tune_results$.metrics` is itself a tibble. 
+
+```{r}
+# for example:
+tune_results$.metrics[[1]]
+```
+
+We can now plot performance versus penalty to visually estimate the best value of $\lambda$.
+
+```{r}
 rmse_path <- collect_metrics(tune_results) |> 
   filter(.metric == "rmse")
 
@@ -93,14 +105,22 @@ ggplot(rmse_path, aes(x = penalty, y = mean)) +
   geom_point() + 
   geom_line()+
   scale_x_log10(labels = scales::label_log()) +
-  labs(x = "Penalty", y = "Test error") +
-  theme_ee()
+  labs(x = "Penalty", y = "CV error") +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(
+      fill = "#E1E1D3",
+      color = "#595959"
+      )
+    )
 ```
 
-We can zoom in on the apparent minimum by specifying a data frame of penalty values for `tune_grid()` to work with. This can also be done using functions from the `dials` package, but for me this is usually more trouble than it's worth.
+We can zoom in on the apparent minimum by specifying a data frame of penalty values for `tune_grid()` to work with. Since the search grid for $\lambda$ must span several orders of magnitude, it's best to specify it using a logarithmic scale, meaning that adjacent values will differ by the same *factor* rather than the same *constant*.
+
+The grid can also be built using functions from the `dials` package, but for me this is usually more trouble than it's worth.
 
 ```{r}
-# specify values (log scale)
+# specify values 
 my_grid <- data.frame(
   penalty = 10^seq(-4, -1, length.out = 20)
   )
@@ -120,7 +140,14 @@ ggplot(rmse_path, aes(x = penalty, y = mean)) +
   geom_line() +
   scale_x_log10(labels = scales::label_log()) +
   labs(x = "Penalty", y = "Test error") +
-  theme_ee()
+  theme_minimal() +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(
+      fill = "#E1E1D3",
+      color = "#595959"
+      )
+    )
 ```
 
 Use `show_best()` to obtain a data frame of the best-performing hyperparameter values. Here we use root mean squared error to measure "best."
@@ -160,7 +187,7 @@ While `predict()` works perfectly well for applying a fitted model to new data, 
 # predictions only
 predict(my_wf_fit, new_data = sol_test) 
 
-# add preds and resids to df
+# add predictions to df
 sol_test_aug <- augment(my_wf_fit, new_data = sol_test) 
 head(sol_test_aug)
 ```
@@ -175,7 +202,37 @@ rmse(sol_test_aug,
 
 On average, predictions made using this model miss true `solubility` by about .7 units.
 
-## Bonus: plotting coefficient trajectories
+## Bonus #1: unpacking the `recipe`
+
+A major advantage to `tidymodels` is the ease with which we can incorporate preprocessing steps like variable standardization. In the above analysis, for instance, we said which steps we wanted to carry out and then forgot all about them, never dealing with $z$-scores directly at all. In this section, we extract those transformed variables.
+
+A `recipe` is a set of instructions for preprocessing data. On its own, it doesn't take into account the training data or perform any transformations. To accomplish the former, use `prep()`. 
+
+```{r}
+rec_prepped <- prep(my_rec)
+rec_prepped
+```
+
+We now hove a *trained* recipe. While previously we only had a generic instruction to compute $z$-scores using the formula
+$$z_{ij} = \frac{x_{ij} - \overline{x}_j}{s_j},$$
+
+now sample means and standard deviations ($\overline{x}_j$ and $s_j$) from the training set have been computed and incorporated into those instructions. This fact is indicated by the word "trained" at the end of the `rec_prepped` printout.
+
+To obtain a tibble of transformed predictors, apply `bake()` to a trained recipe.
+
+```{r}
+bake(rec_prepped, new_data = sol_train) |> 
+  select(
+    HydrophilicFactor,
+    NumAtoms,
+    NumBonds,
+    SurfaceArea1
+    ) 
+```
+
+We could have just as easily applied this recipe to any other set with compatible variables, including the test set. 
+
+## Bonus #2: plotting coefficient trajectories
 
 It's often useful to visualize the trajectories of model coefficients as the penalty increases. Since `tune_grid()` doesn't retain model coefficients, some new code is needed.
 
@@ -235,9 +292,18 @@ ggplot(aes(
     color = "Variable"
     ) +
   scale_x_log10(labels = scales::label_log()) +
-  scale_color_ee() + 
-  theme_ee() +
-  theme(legend.position = "none")
+  scale_color_manual(
+    values = c("#5798A6", "#ED8C3B", "#8050A5", "#4C9F70"
+               )
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "none", 
+    plot.background = element_rect(
+      fill = "#E1E1D3",
+      color = "#595959"
+      )
+    )
 ```
 
 
