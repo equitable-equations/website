@@ -38,6 +38,28 @@
   <media:content url="https://equitableequations.com/posts/2026-10-05/cross validation thumb.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 <item>
+  <title>Stabilizing regression coefficients with the lasso</title>
+  <dc:creator>Andrew Gard</dc:creator>
+  <link>https://equitableequations.com/posts/2026-10-12/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Sometimes linear regression gives poor results even when the data comes from a linear relationship. I’ll explain why and then show you what you can do about it.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hBqEECNP5mQ?si=tFJEWFTZhY-RGNAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><button class="btn btn-default downloadthis  " id="dnldts38053"><i class="bi bi-download"></i> Download slides </button></p>
+
+
+
+ ]]></description>
+  <category>Machine learning</category>
+  <guid>https://equitableequations.com/posts/2026-10-12/</guid>
+  <pubDate>Mon, 05 Oct 2026 05:00:00 GMT</pubDate>
+  <media:content url="https://equitableequations.com/posts/2026-10-12/lasso thumb.png" medium="image" type="image/png" height="81" width="144"/>
+</item>
+<item>
   <title>How to tidymodels</title>
   <dc:creator>Andrew Gard</dc:creator>
   <link>https://equitableequations.com/posts/2026-09-21/</link>
@@ -2543,28 +2565,6 @@ font-style: inherit;">85</span>)</span></code></pre></div>
   <guid>https://equitableequations.com/posts/2025-05-27/</guid>
   <pubDate>Tue, 27 May 2025 05:00:00 GMT</pubDate>
   <media:content url="https://equitableequations.com/posts/2025-05-27/facets thumb.png" medium="image" type="image/png" height="81" width="144"/>
-</item>
-<item>
-  <title>Hollywood age gaps and the Bechdel test</title>
-  <dc:creator>Andrew Gard</dc:creator>
-  <link>https://equitableequations.com/posts/2025-05-12/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>In this vid, I answer a question proposed in a 2023 <a href="https://github.com/rfordatascience/tidytuesday/blob/main/data/2023/2023-02-14/readme.md">TidyTuesday challenge</a>. It sounds plausible, but is it actually the case?</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mMoXJ-_UnYE?si=542nGmPIe9buhEwl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
-</iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts37789"><i class="bi bi-download"></i> Download script </button></p>
-
-
-
- ]]></description>
-  <category>Data analysis</category>
-  <guid>https://equitableequations.com/posts/2025-05-12/</guid>
-  <pubDate>Mon, 12 May 2025 05:00:00 GMT</pubDate>
-  <media:content url="https://equitableequations.com/posts/2025-05-12/bechdel_thumb.png" medium="image" type="image/png" height="81" width="144"/>
 </item>
 </channel>
 </rss>

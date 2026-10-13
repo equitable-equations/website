@@ -1,0 +1,21 @@
+---
+title: "Stabilizing regression coefficients with the lasso"
+author:
+  - name: Andrew Gard
+date: 2026-10-05
+categories: [Machine learning] 
+image: "lasso thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+---
+
+Sometimes linear regression gives poor results even when the data comes from a linear relationship. I'll explain why and then show you what you can do about it. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hBqEECNP5mQ?si=tFJEWFTZhY-RGNAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  {{< downloadthis "lasso.pdf" label="Download slides" dname="lasso">}}
+ 
+  
+  
