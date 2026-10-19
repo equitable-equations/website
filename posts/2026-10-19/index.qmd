@@ -17,7 +17,7 @@ knitr:
     fig.align: center
 ---
 
-**The lasso** addresses instability in linear regression models by penalizing larger coefficient values. For a conceptual introduction, check out my explainer [here](https://youtu.be/hBqEECNP5mQ).
+**The lasso** addresses instability in linear regression models by penalizing larger coefficient values. For a conceptual introduction, check out my explainer [here](https://youtu.be/hBqEECNP5mQ). 
 
 In this post, we'll obtain a lasso model for `solubility` in chemical compounds using data from the `AppliedPredictiveModeling` package, which supports the excellent book of the same name. We'll do this from the machine learning perspective using the `tidymodels` framework. If you haven't worked with `tidymodels` before, I recommend pausing to check out my tutorial [here](https://youtu.be/fRj8dr-aSsU).
 
@@ -274,11 +274,13 @@ vars <- c(
   )
 
 coef_paths |> filter(term %in% vars) |> 
-ggplot(aes(
+ggplot(
+  aes(
     x = lambda, 
     y = estimate, 
-    color = term)
-    ) +
+    color = term
+    )
+  ) +
   geom_line() +
   geom_segment(
     x = -6,
@@ -293,9 +295,8 @@ ggplot(aes(
     ) +
   scale_x_log10(labels = scales::label_log()) +
   scale_color_manual(
-    values = c("#5798A6", "#ED8C3B", "#8050A5", "#4C9F70"
-               )
-  ) +
+    values = c("#5798A6", "#ED8C3B", "#8050A5", "#4C9F70")
+    ) +
   theme_minimal() +
   theme(
     legend.position = "none", 
@@ -306,7 +307,9 @@ ggplot(aes(
     )
 ```
 
+Want to watch and listen to me explain this stuff? Check out my vid:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eLqbK-BExFk?si=momu6jwXS8-k-Zpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
   

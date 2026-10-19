@@ -892,76 +892,78 @@ background-color: null;
 font-style: inherit;">|&gt;</span> </span>
 <span id="cb41-9"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
+font-style: inherit;">ggplot</span>(</span>
+<span id="cb41-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(</span>
-<span id="cb41-10">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> lambda, </span>
 <span id="cb41-11">    <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">y =</span> estimate, </span>
+font-style: inherit;">x =</span> lambda, </span>
 <span id="cb41-12">    <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">color =</span> term)</span>
-<span id="cb41-13">    ) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">y =</span> estimate, </span>
+<span id="cb41-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> term</span>
+<span id="cb41-14">    )</span>
+<span id="cb41-15">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-14">  <span class="fu" style="color: #4758AB;
+<span id="cb41-16">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_line</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-15">  <span class="fu" style="color: #4758AB;
+<span id="cb41-17">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_segment</span>(</span>
-<span id="cb41-16">    <span class="at" style="color: #657422;
+<span id="cb41-18">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>,</span>
-<span id="cb41-17">    <span class="at" style="color: #657422;
+<span id="cb41-19">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>,</span>
-<span id="cb41-18">    <span class="at" style="color: #657422;
+<span id="cb41-20">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">xend =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>, </span>
-<span id="cb41-19">    <span class="at" style="color: #657422;
+<span id="cb41-21">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"dotted"</span></span>
-<span id="cb41-20">    ) <span class="sc" style="color: #5E5E5E;
+<span id="cb41-22">    ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-21">  <span class="fu" style="color: #4758AB;
+<span id="cb41-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(</span>
-<span id="cb41-22">    <span class="at" style="color: #657422;
+<span id="cb41-24">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Penalty"</span>,</span>
-<span id="cb41-23">    <span class="at" style="color: #657422;
+<span id="cb41-25">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Coefficient"</span>,</span>
-<span id="cb41-24">    <span class="at" style="color: #657422;
+<span id="cb41-26">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Variable"</span></span>
-<span id="cb41-25">    ) <span class="sc" style="color: #5E5E5E;
+<span id="cb41-27">    ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-26">  <span class="fu" style="color: #4758AB;
+<span id="cb41-28">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_log10</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -972,10 +974,10 @@ background-color: null;
 font-style: inherit;">label_log</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-27">  <span class="fu" style="color: #4758AB;
+<span id="cb41-29">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_color_manual</span>(</span>
-<span id="cb41-28">    <span class="at" style="color: #657422;
+<span id="cb41-30">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">values =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -987,41 +989,40 @@ font-style: inherit;">"#ED8C3B"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#8050A5"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#4C9F70"</span></span>
-<span id="cb41-29">               )</span>
-<span id="cb41-30">  ) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb41-31">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#4C9F70"</span>)</span>
+<span id="cb41-31">    ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb41-32">  <span class="fu" style="color: #4758AB;
 background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-33">  <span class="fu" style="color: #4758AB;
+background-color: null;
 font-style: inherit;">theme</span>(</span>
-<span id="cb41-33">    <span class="at" style="color: #657422;
+<span id="cb41-34">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"none"</span>, </span>
-<span id="cb41-34">    <span class="at" style="color: #657422;
+<span id="cb41-35">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_rect</span>(</span>
-<span id="cb41-35">      <span class="at" style="color: #657422;
+<span id="cb41-36">      <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#E1E1D3"</span>,</span>
-<span id="cb41-36">      <span class="at" style="color: #657422;
+<span id="cb41-37">      <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#595959"</span></span>
-<span id="cb41-37">      )</span>
-<span id="cb41-38">    )</span></code></pre></div>
+<span id="cb41-38">      )</span>
+<span id="cb41-39">    )</span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1030,6 +1031,9 @@ font-style: inherit;">"#595959"</span></span>
 </div>
 </div>
 </div>
+<p>Want to watch and listen to me explain this stuff? Check out my vid:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eLqbK-BExFk?si=momu6jwXS8-k-Zpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 
 
 </section>
@@ -1561,7 +1565,7 @@ font-style: inherit;">FALSE</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nkjy6UFKJsc?si=7OCFQeMoxzYjsK_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts37014"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts9985"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts5276"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts25633"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts39288"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts189"><i class="bi bi-download"></i> Download html </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -1890,7 +1894,7 @@ font-style: inherit;">"(chicken|hog)s"</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wy0cEKYeaF8?si=RktCufxzNGzK8UEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts9212"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts43013"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts4804"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts28931"><i class="bi bi-download"></i> Download html </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -2124,7 +2128,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>Prefer to have this all clearly explained in a short vid? I’ve got you covered:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts39109"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts63705"><i class="bi bi-download"></i> Download slides </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
