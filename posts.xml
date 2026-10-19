@@ -892,76 +892,78 @@ background-color: null;
 font-style: inherit;">|&gt;</span> </span>
 <span id="cb41-9"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
+font-style: inherit;">ggplot</span>(</span>
+<span id="cb41-10">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(</span>
-<span id="cb41-10">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> lambda, </span>
 <span id="cb41-11">    <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">y =</span> estimate, </span>
+font-style: inherit;">x =</span> lambda, </span>
 <span id="cb41-12">    <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">color =</span> term)</span>
-<span id="cb41-13">    ) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">y =</span> estimate, </span>
+<span id="cb41-13">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">color =</span> term</span>
+<span id="cb41-14">    )</span>
+<span id="cb41-15">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-14">  <span class="fu" style="color: #4758AB;
+<span id="cb41-16">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_line</span>() <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-15">  <span class="fu" style="color: #4758AB;
+<span id="cb41-17">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">geom_segment</span>(</span>
-<span id="cb41-16">    <span class="at" style="color: #657422;
+<span id="cb41-18">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>,</span>
-<span id="cb41-17">    <span class="at" style="color: #657422;
+<span id="cb41-19">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>,</span>
-<span id="cb41-18">    <span class="at" style="color: #657422;
+<span id="cb41-20">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">xend =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>, </span>
-<span id="cb41-19">    <span class="at" style="color: #657422;
+<span id="cb41-21">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">linetype =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"dotted"</span></span>
-<span id="cb41-20">    ) <span class="sc" style="color: #5E5E5E;
+<span id="cb41-22">    ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-21">  <span class="fu" style="color: #4758AB;
+<span id="cb41-23">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(</span>
-<span id="cb41-22">    <span class="at" style="color: #657422;
+<span id="cb41-24">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Penalty"</span>,</span>
-<span id="cb41-23">    <span class="at" style="color: #657422;
+<span id="cb41-25">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Coefficient"</span>,</span>
-<span id="cb41-24">    <span class="at" style="color: #657422;
+<span id="cb41-26">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Variable"</span></span>
-<span id="cb41-25">    ) <span class="sc" style="color: #5E5E5E;
+<span id="cb41-27">    ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-26">  <span class="fu" style="color: #4758AB;
+<span id="cb41-28">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_x_log10</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -972,10 +974,10 @@ background-color: null;
 font-style: inherit;">label_log</span>()) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
-<span id="cb41-27">  <span class="fu" style="color: #4758AB;
+<span id="cb41-29">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_color_manual</span>(</span>
-<span id="cb41-28">    <span class="at" style="color: #657422;
+<span id="cb41-30">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">values =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -987,41 +989,40 @@ font-style: inherit;">"#ED8C3B"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#8050A5"</span>, <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#4C9F70"</span></span>
-<span id="cb41-29">               )</span>
-<span id="cb41-30">  ) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb41-31">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#4C9F70"</span>)</span>
+<span id="cb41-31">    ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span></span>
 <span id="cb41-32">  <span class="fu" style="color: #4758AB;
 background-color: null;
+font-style: inherit;">theme_minimal</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb41-33">  <span class="fu" style="color: #4758AB;
+background-color: null;
 font-style: inherit;">theme</span>(</span>
-<span id="cb41-33">    <span class="at" style="color: #657422;
+<span id="cb41-34">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"none"</span>, </span>
-<span id="cb41-34">    <span class="at" style="color: #657422;
+<span id="cb41-35">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">plot.background =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">element_rect</span>(</span>
-<span id="cb41-35">      <span class="at" style="color: #657422;
+<span id="cb41-36">      <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#E1E1D3"</span>,</span>
-<span id="cb41-36">      <span class="at" style="color: #657422;
+<span id="cb41-37">      <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">color =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"#595959"</span></span>
-<span id="cb41-37">      )</span>
-<span id="cb41-38">    )</span></code></pre></div>
+<span id="cb41-38">      )</span>
+<span id="cb41-39">    )</span></code></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -1030,6 +1031,9 @@ font-style: inherit;">"#595959"</span></span>
 </div>
 </div>
 </div>
+<p>Want to watch and listen to me explain this stuff? Check out my vid:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eLqbK-BExFk?si=momu6jwXS8-k-Zpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 
 
 </section>
@@ -1054,7 +1058,7 @@ font-style: inherit;">"#595959"</span></span>
 <p>Sometimes linear regression gives poor results even when the data comes from a linear relationship. I’ll explain why and then show you what you can do about it.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hBqEECNP5mQ?si=tFJEWFTZhY-RGNAj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts43523"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts37953"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
@@ -1075,7 +1079,7 @@ font-style: inherit;">"#595959"</span></span>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U1LxW3DWn1M?si=itcYKAcIrBIkMQ0o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts58628"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts47274"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
@@ -2079,7 +2083,7 @@ font-style: inherit;">collect_metrics</span>()</span></code></pre></div>
 <p>Want to hear me explain all of this? Here’s the vid corresponding to this post:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fRj8dr-aSsU?si=Sk6hpWQa70A98l6-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts62862"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts55014"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts39586"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts32606"><i class="bi bi-download"></i> Download html </button></p>
 
 
 </section>
@@ -2610,7 +2614,7 @@ font-style: inherit;">FALSE</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Nkjy6UFKJsc?si=7OCFQeMoxzYjsK_l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts37014"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts9985"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts5276"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts25633"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts39288"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts189"><i class="bi bi-download"></i> Download html </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -2939,7 +2943,7 @@ font-style: inherit;">"(chicken|hog)s"</span>)</span></code></pre></div>
 <p>If something here isn’t clear, there’s a good chance you’ll find an explanation in my vid on the subject:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wy0cEKYeaF8?si=RktCufxzNGzK8UEi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts9212"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts43013"><i class="bi bi-download"></i> Download html </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts4804"><i class="bi bi-download"></i> Download Quarto </button> <button class="btn btn-default downloadthis  " id="dnldts28931"><i class="bi bi-download"></i> Download html </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -3020,7 +3024,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 </div>
 </div>
 </div>
-<p><button class="btn btn-default downloadthis  " id="dnldts2401"><i class="bi bi-download"></i> Download slides </button> <button class="btn btn-default downloadthis  " id="dnldts24113"><i class="bi bi-download"></i> Download practice plots </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts13620"><i class="bi bi-download"></i> Download slides </button> <button class="btn btn-default downloadthis  " id="dnldts15958"><i class="bi bi-download"></i> Download practice plots </button></p>
 
 
 
@@ -3047,33 +3051,33 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 </div>
 <ul>
 <li><p>Data manipulation with R:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts18815"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts62953"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts62778"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts30649"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Getting started with ggplot:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts58987"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts7087"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts8725"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts64591"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Single-variable plots with ggplot2:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts33752"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3773"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts45308"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts36696"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Quantitative vs categorical plots with ggplot2:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts2894"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts46639"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts8459"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts27469"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Introducing the pipe:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts34676"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts28082"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts8614"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts25709"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Grouped summaries in R:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts48507"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts52935"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts44736"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts43843"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Grouped filters and mutates</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts21240"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3911"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts55492"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3014"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Tidying data with <code>pivot_longer</code>:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts20280"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts15113"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts50589"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts39982"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Tidying data with <code>pivot_wider</code>:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts32683"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts4186"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts651"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts26502"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Mutating joins:</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts8331"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts6998"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts36876"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts6054"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Filtering joins</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts29416"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts16203"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts24397"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts55879"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with dates and times</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts56108"><i class="bi bi-download"></i> Download optical.csv </button> <button class="btn btn-default downloadthis  " id="dnldts581"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts22952"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts24633"><i class="bi bi-download"></i> Download optical.csv </button> <button class="btn btn-default downloadthis  " id="dnldts8043"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts54812"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with strings</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts10707"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts64570"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts45211"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts64095"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 <li><p>Working with factors</p>
-<p><button class="btn btn-default downloadthis  " id="dnldts20416"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts7330"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts21502"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
+<p><button class="btn btn-default downloadthis  " id="dnldts4807"><i class="bi bi-download"></i> Download scooby.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts64015"><i class="bi bi-download"></i> Download html notes </button> <button class="btn btn-default downloadthis  " id="dnldts3015"><i class="bi bi-download"></i> Download quarto notes </button></p></li>
 </ul>
 
 
@@ -3098,7 +3102,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 <p>Quarto lets you write and save code while also adding text, images, and other content to contextualize what you’re doing. It makes it easy to create attractive public-facing versions of your data work. My advice is to always work inside of a Quarto document when building your R skills.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w5vBoaN6t-M?si=1HmMNFWiIRoBpCnW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts21794"><i class="bi bi-download"></i> Download erykah.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts5875"><i class="bi bi-download"></i> Download notes </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts22085"><i class="bi bi-download"></i> Download erykah.xlsx </button> <button class="btn btn-default downloadthis  " id="dnldts17362"><i class="bi bi-download"></i> Download notes </button></p>
 
 
 
@@ -3120,7 +3124,7 @@ font-style: inherit;">theme_minimal</span>()</span></code></pre></div>
 <p>I’ve decided to start updating my introductory-level content, much of which was recorded early in the 2020 pandemic. When completed, I expect to have a complete course in data science with R, roughly paralleling what you might find in a sophomore-level university course for students with some statistical knowledge but not necessarily and programming experience.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ftb7u_JuJwg?si=dON-HYvqMeF0Ped6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts42052"><i class="bi bi-download"></i> Download amy.csv </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts59603"><i class="bi bi-download"></i> Download amy.csv </button></p>
 
 
 
@@ -3401,7 +3405,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>Prefer to have this all clearly explained in a short vid? I’ve got you covered:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_11FDzyn7k?si=6wco1eMthtb-Rskj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts39109"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts63705"><i class="bi bi-download"></i> Download slides </button></p>
 <p>This post will be cross-listed on <a href="https://www.r-bloggers.com/">R-bloggers</a>, a site that I totally recommend.</p>
 
 
@@ -3424,7 +3428,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <p>This week, I’m writing a function that generates a short help file for any stats concept the user specifies. While prompting ChatGPT to do this isn’t particularly hard, the process spotlights some important and interesting aspects of embedding such prompts inside of functions. I had a great time learning about <code>interpolate()</code>, in particular.</p>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/KrIkDPBg9Zk?si=xemfivqMi38eMHyJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></p>
-<p><button class="btn btn-default downloadthis  " id="dnldts18958"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts18605"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -3447,7 +3451,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UPtMr8eOr5U?si=stSeGMamAUtaRC3X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts42052"><i class="bi bi-download"></i> Download script </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts59603"><i class="bi bi-download"></i> Download script </button></p>
 
 
 
@@ -3472,7 +3476,7 @@ font-style: inherit;">85</span>)</span></code></pre></div>
 <p>As usual, code and other supporting materials are available below the vid.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/RDnRiGupF4U?si=zl7dGXrvsw5mbl2j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
-<p><button class="btn btn-default downloadthis  " id="dnldts43417"><i class="bi bi-download"></i> Download script </button> <button class="btn btn-default downloadthis  " id="dnldts17376"><i class="bi bi-download"></i> Download slides </button></p>
+<p><button class="btn btn-default downloadthis  " id="dnldts58256"><i class="bi bi-download"></i> Download script </button> <button class="btn btn-default downloadthis  " id="dnldts10431"><i class="bi bi-download"></i> Download slides </button></p>
 
 
 
