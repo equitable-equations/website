@@ -5,7 +5,7 @@ author:
   - name: Andrew Gard
 date: 2026-10-19
 categories: [Machine learning, tidymodels, R-bloggers] 
-image: "lasso in r thumb.png"
+image: "lasso with R thumb.png"
 draft: false 
 comments:
   utterances:
@@ -311,6 +311,8 @@ Want to watch and listen to me explain this stuff? Check out my vid:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eLqbK-BExFk?si=momu6jwXS8-k-Zpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
+  {{< downloadthis "_internal/lasso regression using tidymodels.qmd" label="Download quarto notes" dname="lasso">}}
+  {{< downloadthis "_internal/lasso regression using tidymodels.html" label="Download html notes" dname="lasso">}} 
 
   
   

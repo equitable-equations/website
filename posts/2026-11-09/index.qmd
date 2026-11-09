@@ -1,0 +1,25 @@
+---
+title: "What is ridge regression?"
+description: "Ridge regression addresses model instability by introducing a small amount of bias into the process."
+author:
+  - name: Andrew Gard
+date: 2026-11-09
+categories: [Machine learning] 
+image: "ridge thumb.png"
+draft: false 
+comments:
+  utterances:
+    repo: equitable-equations/website
+fig-width: 5
+fig-height: 3
+knitr:
+  opts_chunk:
+    fig.align: center
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/joVq2ND11v8?si=45FR1HdH9HDGqjW2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  {{< downloadthis "_internal/ridge.pdf" label="Download slides" dname="ridge">}} 
+
+  
+  
